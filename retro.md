@@ -1,5 +1,7 @@
 # Conclusiones de la retrospectiva
 
+Creemos que a grandes rasgos el sprint 1 fue productivo e identificamos algunas oportunidades y puntos fuertes que queremos replicar:
+
 * Comenzar a hacer
 
 -Ser puntuales con las reuniones en zoom
