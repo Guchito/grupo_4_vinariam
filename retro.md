@@ -1,3 +1,5 @@
+Conclusiones de la retrospectiva
+
 Comenzar a hacer
 
 -Ser puntuales con las reuniones en zoom
@@ -18,7 +20,7 @@ Hacer menos
 
 Dejar de hacer
 
--Distraernos tanto 
+-Distraernos  
 
 
 
