@@ -1,0 +1,22 @@
+{
+  "name": "vinariam",
+  "version": "1.0.0",
+  "description": "E commerce dedicado a la venta de:",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Guchito/grupo_4_vinariam.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Guchito/grupo_4_vinariam/issues"
+  },
+  "homepage": "https://github.com/Guchito/grupo_4_vinariam#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
