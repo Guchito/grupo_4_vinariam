@@ -7,21 +7,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
-   
+    <link rel="stylesheet" href="css/stylesLogin.css">
+
     <title>Vinariam</title>
 </head>
 
 <body>
-
     <header>
         <div class="LogoPrincipal">
-            <img class="logo" src="img/Logocopa.svg" alt="LogoPrincipal">
+            <img class="logo" src="img/logolargo.svg" alt="LogoPrincipal">
         </div>
 
             <div class="menuDerecho">
 
                 <nav> 
-                    <ul class="barraNav"> 
+                    <ul class="barraNavL"> 
                         <li><a class="mayus" href="#">Vinos</a></li>
                         <li><a class="mayus" href="#">El club</a></li>
                         <li><a class="mayus" href="#">Experiencias</a></li>
@@ -35,7 +35,18 @@
     </header>   
 
     <main>
-        
+        <div class="izquierdaLogin">
+            <img class="mujerLogin" src="img/mujerlogin.svg" alt="mujerLogin">
+        </div>
+        <div class="formLogin">
+            <form >
+                <input class="camposLogin" type="text" name="login" placeholder="Usuario"><br>
+                <input class="camposLogin" type="password" name="login" placeholder="Contraseña"><br>
+                <button class="botonLogin camposLogin" type="submit" name="login" id="login">Ingresar</button>
+                <button class="botonLoginGoogle camposLogin" type="submit" name="login" id="login">Sign up with Google</button>
+
+            </form>
+        </div>
     </main>
     <footer class="footer">
   
@@ -68,6 +79,4 @@
 
     </footer>
 </body>
-
-
 </html>

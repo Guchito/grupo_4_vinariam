@@ -7,6 +7,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/stylesRegister.css">
+
    
     <title>Vinariam</title>
 </head>
@@ -15,13 +17,13 @@
 
     <header>
         <div class="LogoPrincipal">
-            <img class="logo" src="img/Logocopa.svg" alt="LogoPrincipal">
+            <img class="logo" src="img/logolargo.svg" alt="LogoPrincipal">
         </div>
 
             <div class="menuDerecho">
 
                 <nav> 
-                    <ul class="barraNav"> 
+                    <ul class="barraNavR"> 
                         <li><a class="mayus" href="#">Vinos</a></li>
                         <li><a class="mayus" href="#">El club</a></li>
                         <li><a class="mayus" href="#">Experiencias</a></li>
@@ -35,7 +37,23 @@
     </header>   
 
     <main>
-        
+        <div class="genteRegister">
+            <img class="hombreRegister" src="img/hombre.svg" alt="genteRegister">
+            <img class="mujerRegister" src="img/mujer.svg" alt="genteRegister">
+        </div>
+        <div class="formRegister">
+            <form >
+                <h2>Contanos de vos</h2>
+                <input class="camposForm" type="text" name="register" placeholder="Nombre"><br>
+                <input class="camposForm" type="text" name="register" placeholder="Apellido"><br>
+                <input class="camposForm" type="date" name="register"><br> 
+                <input class="camposForm" type="email" name="register" placeholder="E-mail"><br>
+                <input class="camposForm" type="password" name="register" placeholder="Clave"><br>
+                <input class="camposForm" type="password" name="register" placeholder="Confirmá tu clave"><br>
+                <input class="boton" type="checkbox" name="terminos" value="terminos"><label class="terminos" name="terminos">Acepto los Términos y Condiciones</label><br>
+                <button class="boton camposForm" type="submit" name="register" id="register"><strong>Continuar</strong></button>
+            </form>
+        </div>
     </main>
     <footer class="footer">
   
@@ -68,6 +86,4 @@
 
     </footer>
 </body>
-
-
 </html>
