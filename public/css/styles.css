@@ -9,19 +9,24 @@ header{
 }
 .LogoPrincipal{
     width: 20%;
+    padding: 20px;
 }
 
 .menuDerecho{
     width: 80%;
+    padding-left: 60px;
+
 }
 
 .barraNav{
     display: flex;
     justify-content: space-around;
+    padding-bottom: 10px ;
+    border-bottom: 3px solid #278828;
 }
 
 .contenedor{
-   background-image: url('/img/banner.png');
+   background-image: url('/img/barriles.svg');
    background-size: cover;
    width: 100%;
    height: 350px;
@@ -47,53 +52,73 @@ a{
 }
 
 
-h1 {
-    font-family:'Montserrat', sans-serif;
-    font-weight: 300;
-    text-transform: uppercase;
-
-}
 
 .tituloSlider {
     color: white;
+    justify-content: center;
+    text-align: center;
+    font-family:'Montserrat', sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 60pt;
+    letter-spacing: 20pt;
+
+
 }
 
-/*------------------------*/
+/*----------Contenido--------------*/
 
-
-.vinos,.fondos{
+.vinosYVideos{
     display: flex;
-    justify-content: space-around;
-    align-items: flex-end
+    padding: 100px 0;
 }
-
-.vinos{
-    display: flex;
-    justify-content: space-around;
-    align-content: flex-end;
-}
-
-.vinoFoto{
-    height: 200px;
-}
-
-.fondos{
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-end
-}
-
-.fondoFoto{
-    height: 200px;
-}
-
 
 .fonditosyVinos{
-    position: relative;
-    align-items: flex-end;
+    display: flex;
+    width: 60%;
+    
+
 }
 
+.padreVinos{
+    display: flex;
+    position: absolute;
+    z-index: 1;
+}
+.padreManchas {
+    display: flex;
+    position: relative;
+}
+.vinos {
+    padding: 0 75px;
+}
+
+.fondos {
+    padding: 28px 25px 0 25px;
+}
+
+
+.tamanoV{
+
+    height: 200px;
+}
+
+.tamanoF{
+    height: 150px;
+}
+
+
+
+.video{
+    justify-content: flex-end;
+    width: 40%;
+}
+
+
+
 /*------------------------*/
+
+
 
 
 .bloque {
