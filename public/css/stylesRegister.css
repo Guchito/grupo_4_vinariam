@@ -1,0 +1,68 @@
+.barraNavR{
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 10px ;
+    border-bottom: 1px solid gray;
+}
+
+main{
+    display:flex;
+}
+
+.genteRegister{
+    display:flex;
+    width: 55%;
+    padding-left: 100px;
+    padding-top: 50px;
+}
+.mujerRegister{
+    width: 300px; height: 300px;
+    top: 200px;
+    left: 250px;
+    display: flex;
+    position: relative;
+    
+}
+.hombreRegister{
+    width: 300px; height: 300px;
+    position: absolute;
+    z-index: 1;
+    display: flex;
+
+}
+
+.terminos{
+ padding: 20px 3px 20px;
+}
+
+.camposForm{
+margin-bottom: 10px; 
+border: #edeae3;
+border: 5px solid #edeae3;
+border-radius: 50px;
+width: 100%;
+padding: 12px 15px;
+}
+
+.camposForm:focus{
+background-color: #edeae3;
+}
+
+.formRegister{
+    margin-bottom: 100px;
+    
+}
+
+.boton{
+    margin-top: 20px;
+    
+}
+
+body{
+    font-family:'Montserrat', sans-serif;
+    background-color: #edeae3;
+}
+
+h2{
+    font-weight: 200;
+}
