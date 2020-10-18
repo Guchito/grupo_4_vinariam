@@ -111,7 +111,9 @@ a{
 
 .video{
     justify-content: flex-end;
+    display:flex;
     width: 40%;
+    position: relative;
 }
 
 
