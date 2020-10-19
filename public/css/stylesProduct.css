@@ -1,0 +1,132 @@
+body{
+    font-family:'Montserrat', sans-serif;
+    background-color: #edeae3;
+}
+
+.LogoPrincipal{
+    width: 20%;
+    padding: 20px;
+}
+
+.menuDerecho{
+    width: 80%;
+    padding-left: 60px;
+}
+
+ul{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.mayus:hover{
+    text-decoration: underline;
+
+}
+
+.mayus {
+    text-transform: uppercase;
+}
+
+.barraNavR{
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 10px ;
+    border-bottom: 1px solid #278828;
+}
+
+header{
+    display: flex;
+}
+
+/* Ilus, info de producto y foto de producto */
+
+.tituloVino{
+    justify-content: center;
+    text-align: left;
+    font-weight: 300;
+    text-transform: uppercase;
+    padding-bottom: 20px;
+
+}
+
+.BloqueGeneral{
+    display: grid;
+    grid-template-columns: 300px 1fr 300px;
+    grid-template-rows: auto 1fr auto;
+    grid-gap: 10px;
+    height: 100%;
+}
+
+.ContenedorInfoProducto{
+    align-content: left;
+    padding-left: 150px;
+}
+
+h3{
+    width: 60%;
+    text-align: left;
+    font-weight: 300;
+    font-size: 11pt;
+    line-height: 1.5;
+}
+
+.RateProduct{
+    width: 80%;
+    text-align: left;
+    font-weight: 300;
+    font-size: 10pt;
+}
+
+.circle{
+    width: 20%;
+    padding: 5px;
+}
+
+.mujer{
+    display: flex;
+    width: 100%;
+    padding-left: 50px;
+    padding-top: 150px;
+
+}
+
+.vinoproduct{
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+
+
+/* Footer */
+
+
+.bloque {
+    display: block;
+    width: 100%;
+    height: 20vh;
+    color: white;
+    padding: 5%;
+}
+
+.bloqueSolo {
+    display: block;
+    width: 100%;
+    height: 20vh;
+    color: white;
+    padding: 5%;
+}
+
+
+.footer{
+    display:flex;
+    justify-content: center;
+}
+
+footer{
+background-color: #212960;
+
+}
