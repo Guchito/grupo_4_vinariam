@@ -21,6 +21,12 @@ app.get('/register', (req, res) => {
 res.sendFile(__dirname + '/views/register.html')
 });
 
+app.get('/product', (req, res) => {
+    res.sendFile(__dirname + '/views/product.html')
+    });
 
-
-
+    
+app.get('/cart', (req, res) => {
+    res.sendFile(__dirname + '/views/cart.html')
+    });
+    
