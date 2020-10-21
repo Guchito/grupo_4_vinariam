@@ -1,6 +1,7 @@
 body{
     background-image: url("/img/uvas.png");
     font-family:'Montserrat', sans-serif;
+    background-size: cover;
 
 }
 
