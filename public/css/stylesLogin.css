@@ -1,63 +1,59 @@
-body{
-    background-image: url("/img/uvas.png");
-    font-family:'Montserrat', sans-serif;
-
-}
-
-.izquierdaLogin{
-    display:flex;
-    justify-content: flex-end;
-    padding-right: 150px;
-    padding-top: 50px;
-}
-.mujerLogin{
-    display:flex;
-    width: 600px; height: 500px;
-}
-
-main{
-    display:flex;
-}
-
-.formLogin{
-    order: -1;
-    width: 55%;
-    padding-left: 100px;
-    padding-top: 150px;
-}
-
-.camposLogin{
-    margin-bottom: 10px; 
-    border-radius: 50px;
-    width: 55%;
-    padding: 12px 15px;
-    border-color: white;   
-}
-
-.botonLogin{
-    width: 62%;
-    color: #F3E1DF;
-    border-color: #B0827D;   
-    background-color: #B0827D;
-    font-weight: 100;
-}
-
 .barraNavL{
     display: flex;
     justify-content: space-around;
     padding-bottom: 10px ;
     border-bottom: 1px solid gray;
 }
+body{
+    background-image: url("/img/uvas.png");
+    font-family:'Montserrat', sans-serif;
+    background-size: cover;
+
+}
+.content{
+    display:flex;
+}
+
+.izquierdaLogin{
+    padding-top: 10%;
+    width: 50%;
+    display: flex;
+}
+
+.mujerLogin{
+    display:flex;
+    width: 600px; height: 500px;
+    width: 100%
+}
+
+.derechaLogin{
+    order: 1;
+    width: 50%;
+    padding-top: 5%;
+    justify-content: center;
+}
+
+.camposLogin{
+    margin-bottom: 10px; 
+    border-radius: 50px;
+    padding: 12px 15px;
+    border-style: none;
+    position: relative;
+    left: 50%
+}
+
+.botonLogin{
+    color: #F3E1DF;
+    background-color: #B0827D;
+    left: 50%
+
+}
 
 .botonLoginGoogle{
-    width: 62%;
     color:#628FB9;
-    font-weight: 100;
-    border-color: white;   
+    left: 50%
 }
 
-/*
-.logo{
-    filter: invert(100%);
+.mayus,.fa-shopping-cart,.fa-user{
+    color: white;
 }
-*/
