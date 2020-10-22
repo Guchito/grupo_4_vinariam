@@ -165,7 +165,11 @@ background-color: #212960;
     padding: 20px 30px;
 }
 
-.margenDescripcion{
+
+.resumen img,
+.resumen p,
+.resumen input,
+.resumen i{
     margin: 0 20px;
 }
 
@@ -196,16 +200,25 @@ background-color: #212960;
 
 .contenedorCart{
     display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
 }
 
 .dibujito{
-    display: flex;
-    margin-left: 500px;
- 
+    background: url(../img/carritoyglobo.svg);
+    width: 600px;
+    background-size: cover;
+    background-repeat: no-repeat;   
 }
 
-.carritoYGlobo{
-    width: 600px;
 
-    justify-content: flex-end;
+.mensaje{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 65px 0 0 130px;
+}
+.mensaje img{
+    width: 300px;
+    border-radius: 15px;
 }
