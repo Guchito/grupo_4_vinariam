@@ -198,6 +198,11 @@ background-color: #212960;
     margin: 0 0 0 146px;
 }
 
+.mainCart{
+    max-width: 1350px;
+    margin: 0 auto;
+}
+
 .contenedorCart{
     display: flex;
     justify-content: space-between;
@@ -206,8 +211,8 @@ background-color: #212960;
 
 .dibujito{
     background: url(../img/carritoyglobo.svg);
-    width: 600px;
-    background-size: cover;
+    width: 450px;
+    background-size: auto;
     background-repeat: no-repeat;   
 }
 
@@ -216,9 +221,13 @@ background-color: #212960;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 65px 0 0 130px;
+    padding: 28px 0 0 100px;
 }
 .mensaje img{
-    width: 300px;
+    width: 200px;
     border-radius: 15px;
+}
+
+.mensaje p{
+    width: 260px;
 }
