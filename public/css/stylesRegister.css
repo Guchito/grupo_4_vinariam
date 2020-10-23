@@ -7,6 +7,8 @@
 
 .contentR{
     display: flex;
+    min-width: 1350px;
+    margin: 0 auto;
 }
 
 .genteRegister{
@@ -15,6 +17,7 @@
     flex-basis: 50%;
     padding-left: 100px;
     padding-top: 50px;
+    min-width: 700px;
 }
 .mujerRegister{
     width: 300px; height: 300px;
@@ -27,7 +30,6 @@
 .hombreRegister{
     width: 300px; height: 300px;
     position: absolute;
-    z-index: 1;
     display: flex;
 
 }
