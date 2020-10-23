@@ -3,13 +3,18 @@ body{
     background-color: #edeae3;
 }
 
+.contenedorIndex{
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
 header{
     display: flex;
 
 }
 .LogoPrincipal{
     width: 20%;
-    padding: 20px;
+    margin: 20px;
 }
 
 .menuDerecho{
@@ -26,10 +31,7 @@ header{
 }
 
 .contenedor{
-   background-image: url('/img/barriles.svg');
-   background-size: cover;
-   width: 100%;
-   height: 350px;
+  height: 350px;
 }
 
 ul{
@@ -67,76 +69,79 @@ a{
 }
 
 /*----------Contenido--------------*/
-
+.destacados h1{
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 5pt;
+}
 .vinosYVideos{
     display: flex;
-    padding: 100px 0;
+    justify-content: space-around;
 }
 
 .fonditosyVinos{
+    flex-basis: calc(60% - 10px);
     display: flex;
-    width: 60%;
-    
-
+    justify-content: space-around;
+    align-items: center;
+    min-width: 750px;
+    padding-top: 50px;
 }
 
-.padreVinos{
+.articulo{
+    flex-basis: calc(25% - 10px);
     display: flex;
-    position: absolute;
-    z-index: 1;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 400px;
 }
-.padreManchas {
+.detalle {
     display: flex;
-    position: relative;
+    justify-content: center;
 }
-.vinos {
-    padding: 0 75px;
+.detalle p{
+    text-transform: uppercase;
 }
-
-.fondos {
-    padding: 28px 25px 0 25px;
-}
-
-
-.tamanoV{
-
+.vino{
     height: 200px;
 }
-
-.tamanoF{
+.fondo{
     height: 150px;
+
 }
-
-
-
 .video{
+    flex-basis: calc(40% - 10px);
     justify-content: flex-end;
-    display:flex;
-    width: 40%;
+}
+.cuadrito {
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cuadrito img{
+    position: absolute;
 }
 
 
 
-/*------------------------*/
+
+
+/*----------FOOTER--------------*/
 
 
 
 
-.bloque {
-    display: block;
+.bloque{
     width: 100%;
     height: 20vh;
     color: white;
-    padding: 5%;
+    padding: 40px 3%;
 }
 
-.bloqueSolo {
-    display: block;
-    width: 100%;
-    height: 20vh;
-    color: white;
-    padding: 5%;
+.abajo{
+    display: flex;
+    align-items: flex-end;
 }
 
 
@@ -149,7 +154,21 @@ footer{
 background-color: #212960;
 
 }
+.social{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.redes{
+    display: flex;
+}
 
+.redes .fab{
+    color: white;
+    font-size: 30px;
+    margin-right: 20px;
+
+}
 /**************CART****************/
 .tituloCart{
     margin: 30px;
@@ -173,7 +192,7 @@ background-color: #212960;
     margin: 0 20px;
 }
 
-.articulo{
+.articuloCart{
     height: 150px;
 }
 
@@ -198,15 +217,13 @@ background-color: #212960;
     margin: 0 0 0 146px;
 }
 
-.mainCart{
-    max-width: 1350px;
-    margin: 0 auto;
-}
 
 .contenedorCart{
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
+    max-width: 1350px;
+    margin: 0 auto;
 }
 
 .dibujito{

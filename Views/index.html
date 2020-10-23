@@ -12,10 +12,11 @@
 </head>
 
 <body>
-    <header>
-        <div class="LogoPrincipal">
-            <img class="logo" src="img/Logocopa.svg" alt="LogoPrincipal">
-        </div>
+    <div class="contenedorIndex">
+        <header class="headerIndex">
+            <div class="LogoPrincipal">
+                <img src="img/Logocopa.svg" alt="LogoPrincipal">
+            </div>
 
             <div class="menuDerecho">
 
@@ -25,48 +26,69 @@
                         <li><a class="mayus" href="#">El club</a></li>
                         <li><a class="mayus" href="#">Experiencias</a></li>
                         <li><a class="mayus" href="#">Conocenos</a></li>
-                        <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                        <li><a href="/cart"><i class="fas fa-shopping-cart"></i></a></li>
                         <li><a href="#"><i class="fas fa-user"></i></a></li>
                     </ul>
-            </nav>
+                </nav>
 
-            <div class="contenedor">
-                <h1 class="tituloSlider"></h1>
-            </div>   
+                <div class="contenedor">
+                    <img src="img/barriles.svg" alt="banner">
+                </div>   
         
             </div> 
 
-    </header>   
+        </header>   
 
-    <main>
-        <div class="vinosYVideos">
-            <div class="fonditosyVinos">
-                    <div class="padreVinos">
-                        <div class="vinos"><img class= "tamanoV"src="img/1.png" alt="vino1"></div>
-
-                        <div class="vinos"><img class= "tamanoV"src="img/2.png" alt="vino2"></div>
-
-                        <div class="vinos"><img class= "tamanoV"src="img/3.png" alt="vino3"></div>
-
-                        <div class="vinos"><img class= "tamanoV"src="img/4.png" alt="vino4"></div>
+        <main>
+            <div class="destacados">
+                <h1>Destacados</h1>
+                <div class="vinosYVideos">
+                    <div class="fonditosyVinos">
+                            <article class="articulo">
+                                <div class="cuadrito">
+                                    <img class="fondo" src="img/coral.png" alt="coral">
+                                    <img class="vino" src="img/1.png" alt="vino1">
+                                </div>
+                                <div class="detalle">
+                                    <p>benegas malbec 2013</p>
+                                </div>
+                            </article>
+                            <article class="articulo">
+                                <div class="cuadrito">
+                                    <img class="fondo" src="img/azul.png" alt="azul">
+                                    <img class="vino" src="img/2.png" alt="vino2">
+                                </div>
+                                <div class="detalle">
+                                    <p>animal malbec</p>
+                                </div>
+                            </article>
+                            <article class="articulo">
+                                <div class="cuadrito">
+                                    <img class="fondo" src="img/rosa.png" alt="rosa">
+                                    <img class="vino" src="img/3.png" alt="vino3">
+                                </div>
+                                <div class="detalle">
+                                    <p>montchenot 10 años</p>
+                                </div>
+                            </article>
+                            <article class="articulo">
+                                <div class="cuadrito">
+                                    <img class="fondo" src="img/verde.png" alt="verde">
+                                    <img class="vino" src="img/4.png" alt="vino4">
+                                </div>
+                                <div class="detalle">
+                                    <p>padrillos malbec</p>
+                                </div>
+                            </article>
                     </div>
-                    <div class="padreManchas">
-                        <div class="fondos"><img class= "tamanoF"src="img/coral.png" alt="coral"></div>
 
-                        <div class="fondos"><img class= "tamanoF"src="img/azul.png" alt="azul"></div>
-
-                        <div class="fondos"><img class= "tamanoF"src="img/rosa.png" alt="rosa"></div>
-
-                        <div class="fondos"><img class= "tamanoF"src="img/verde.png" alt="verde"></div>
+                    <div class="video">
+                        <iframe src="https://player.vimeo.com/video/48035169" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
                     </div>
+                </div>
             </div>
-
-            <div class="video">
-                <iframe src="https://player.vimeo.com/video/48035169" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-            </div>
-        </div>
-
-    </main>
+        </main>
+    </div>    
     <footer class="footer">
   
         <div class="bloque">
@@ -83,19 +105,21 @@
             <p>Términos y Condiciones </p>
         </div>
 
-        <div class="bloqueSolo">
+        <div class="bloque">
             
             <p>Copyright© VINARIAM. All rights reserved. </p>
 
         </div>
 
-        <div class="bloqueSolo">
+        <div class="bloque social">
             
             <p>Seguinos</p>
-
+            <div class="redes">
+                <p><i class="fab fa-facebook-f"></i></p>
+                <p><i class="fab fa-instagram"></i></p>
+                <p><i class="fab fa-whatsapp"></i></p>
+            </div>
         </div>
-
-
     </footer>
 </body>
 </html>
