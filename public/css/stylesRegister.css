@@ -10,11 +10,11 @@
 }
 
 .genteRegister{
-    display:flex;
-    width: 60%;
+    display: flex;
+    justify-content: flex-start;
+    flex-basis: 50%;
     padding-left: 100px;
     padding-top: 50px;
-    justify-content: flex-start;
 }
 .mujerRegister{
     width: 300px; height: 300px;
