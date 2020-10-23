@@ -92,15 +92,25 @@ a{
     flex-basis: calc(25% - 10px);
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     height: 400px;
 }
+
 .detalle {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
+
 .detalle p{
     text-transform: uppercase;
+}
+.estrellas{
+    padding-top: 5px;
+}
+.fa-star{
+    color: goldenrod;
 }
 .vino{
     height: 200px;
