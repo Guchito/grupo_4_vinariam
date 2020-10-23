@@ -4,33 +4,39 @@
     padding-bottom: 10px ;
     border-bottom: 1px solid gray;
 }
+
 body{
     background-image: url("/img/uvas.png");
     font-family:'Montserrat', sans-serif;
     background-size: cover;
 
 }
+
+/* login */
+
 .content{
     display:flex;
 }
 
 .izquierdaLogin{
     padding-top: 10%;
-    width: 50%;
+    justify-content: flex-start;
     display: flex;
+    flex-basis: 50%;
+
+}
+
+.derechaLogin{
+    display: flex;
+    justify-content: flex-end;
+    flex-basis: 50%;
+
 }
 
 .mujerLogin{
     display:flex;
+    right: 20%;
     width: 600px; height: 500px;
-    width: 100%
-}
-
-.derechaLogin{
-    order: 1;
-    width: 50%;
-    padding-top: 5%;
-    justify-content: center;
 }
 
 .camposLogin{
@@ -38,8 +44,8 @@ body{
     border-radius: 50px;
     padding: 12px 15px;
     border-style: none;
-    position: relative;
-    left: 50%
+    display: flex;
+
 }
 
 .botonLogin{
@@ -57,3 +63,6 @@ body{
 .mayus,.fa-shopping-cart,.fa-user{
     color: white;
 }
+
+/* login */
+
