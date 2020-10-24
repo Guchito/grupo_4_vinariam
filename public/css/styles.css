@@ -14,10 +14,56 @@ header{
     display: flex;
 
 }
+
+@media (max-width:480px){
+    .headerIndex{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media (max-width:1100px){
+    .headerIndex{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 .LogoPrincipal{
     width: 20%;
     margin: 20px;
 }
+
+
+@media (max-width:480px){
+    .LogoPrincipal{
+        width: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: fixed;
+        z-index: 1;
+        background-color:#edeae3;
+        padding: 20px 0;
+        top: 0px;
+    }
+}
+
+@media (max-width:1100px){
+    .LogoPrincipal{
+        width: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: fixed;
+        z-index: 1;
+        background-color:#edeae3;
+        padding: 20px 0;
+        top: 0px;
+    }
+}
+
 
 .menuDerecho{
     width: 80%;
@@ -25,6 +71,18 @@ header{
 
 }
 
+@media (max-width:480px){
+    .menuDerecho{
+        width: 100%;
+        padding: 0px;
+    }
+}
+@media (max-width:1100px){
+    .menuDerecho{
+        width: 100%;
+        padding: 0px;
+    }
+}
 .barraNav{
     display: flex;
     justify-content: space-around;
@@ -32,8 +90,75 @@ header{
     border-bottom: 1px solid #278828;
 }
 
+@media (max-width:480px){
+    .barraNav{
+        display: none;
+    }
+    
+    nav{
+        display: flex;
+        justify-content: center;
+    }
+
+    .fa-bars{
+        font-size: 28px;
+    }
+
+    .LogoPrincipal .fa-shopping-cart{
+        font-size: 25px;
+    }
+}
+
+@media (max-width:1100px){
+    .barraNav{
+        display: none;
+    }
+    
+    nav{
+        display: flex;
+        justify-content: center;
+    }
+
+    .fa-bars{
+        font-size: 28px;
+    }
+
+    .LogoPrincipal .fa-shopping-cart{
+        font-size: 25px;
+    }
+}
+
+
+@media (min-width:1100px){
+    .barraNav{
+        display: flex;
+    }
+    .fa-bars{
+        display: none;
+    }
+    .fa-shopping-cart{
+        display: none;
+    }
+    
+}
+
 .contenedor{
   height: 350px;
+}
+
+@media (max-width:480px){
+    .contenedor{
+        height: auto;
+        margin-top: 78px;
+    }
+    
+}
+@media (max-width:1100px){
+    .contenedor{
+        height: auto;
+        margin-top: 196px;
+    }
+    
 }
 
 ul{
@@ -71,16 +196,83 @@ a{
 }
 
 /*----------Contenido--------------*/
+
+@media (max-width:480px){
+    .logoDesktop{
+        display: none;        
+    }
+    .logoMobile{
+        display: flex;
+        width: 50%;
+    }
+}
+@media (max-width:1100px){
+    .logoDesktop{
+        display: none;        
+    }
+    .logoMobile{
+        display: flex;
+        width: 50%;
+    }
+}
+
+    
+}
+@media (min-width:1100px){ /*Uso un min-width para decirle que oculte el otro logo cuando es mas grande*/
+    .logoMobile{
+        display: none;
+    }
+    
+}
+
+
 .destacados h1{
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 5pt;
+}
+@media (max-width:480px){
+    .destacados h1{
+        font-size: 25px;    
+    }
+}
+@media (max-width:1100px){
+    .destacados h1{
+        font-size: 40px;    
+    }
 }
 .vinosYVideos{
     display: flex;
     justify-content: space-around;
 }
 
+@media (max-width:480px){
+    .vinosYVideos{
+        flex-direction: column;
+    }
+}
+
+@media (max-width:1100px){
+    .vinosYVideos{
+        flex-direction: column;
+    }
+}
+
+@media (max-width:480px){
+    .tituloIndex{
+        display: flex;
+        justify-content: center;
+    }
+    
+}
+
+@media (max-width:1100px){
+    .tituloIndex{
+        display: flex;
+        justify-content: center;
+    }
+    
+}
 .fonditosyVinos{
     flex-basis: calc(60% - 10px);
     display: flex;
@@ -90,6 +282,24 @@ a{
     padding-top: 50px;
 }
 
+@media (max-width:480px){
+    .fonditosyVinos{
+        min-width: auto;
+        display: block;
+    }
+    
+}
+
+@media (max-width:1100px){
+    .fonditosyVinos{
+        min-width: auto;
+        display: flex;
+    }
+    
+}
+
+
+
 .articulo{
     flex-basis: calc(25% - 10px);
     display: flex;
@@ -97,6 +307,16 @@ a{
     justify-content: space-evenly;
     height: 400px;
 }
+@media (max-width:480px){
+    .articulo{
+        width: 100%;
+    }
+    
+}
+
+
+
+
 
 .detalle {
     display: flex;
@@ -107,6 +327,12 @@ a{
 
 .detalle p{
     text-transform: uppercase;
+}
+@media (max-width:480px){
+    .detalle p{
+        margin-top: 30px;
+    }
+    
 }
 .estrellas{
     padding-top: 5px;
@@ -121,9 +347,25 @@ a{
     height: 150px;
 
 }
+
+@media (max-width:480px){
+    .vino{
+        height: 250px;
+    }
+    .fondo{
+        height: 200px;
+    }
+}
 .video{
     flex-basis: calc(40% - 10px);
     justify-content: flex-end;
+    margin-bottom: 40px;
+}
+@media (max-width:1100px){
+    .video iframe{
+        width: 100%;
+    }
+    
 }
 .cuadrito {
     position: relative;
@@ -147,7 +389,40 @@ a{
     color: white;
     padding: 40px 3%;
 }
+.social{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
 
+@media (max-width:480px){
+    .bloque{
+        display: none;
+    }
+    .social{
+        display: flex;
+        height: auto;
+        flex-direction: row;
+        padding: 10px;
+        align-items: center;
+    }
+    .social p{
+        font-size: 20px;
+    }
+}
+@media (max-width:1100px){
+    .social{
+        justify-content: unset;
+    }
+    .bloque{
+        height: 11vh;
+        
+    }
+    .bloque:first-child{
+        margin-left: 120px;
+    }
+    
+}
 .abajo{
     display: flex;
     align-items: flex-end;
@@ -158,6 +433,19 @@ a{
     display:flex;
     justify-content: center;
 }
+@media (max-width:480px){
+    .footer{
+        flex-direction: column;
+    }
+    
+}
+
+@media (max-width:1100px){
+    .notDisplay{
+        display: none;
+    }
+    
+}
 
 footer{
 background-color: #212960;
@@ -165,11 +453,7 @@ bottom: 0px;
 width: 100%;
 
 }
-.social{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
+
 .redes{
     display: flex;
 }
@@ -179,6 +463,13 @@ width: 100%;
     font-size: 30px;
     margin-right: 20px;
 
+}
+@media (max-width:480px){
+    .redes .fab{
+        font-size: 35px;
+        margin-right: 40px;
+    }
+    
 }
 /**************CART****************/
 .tituloCart{
