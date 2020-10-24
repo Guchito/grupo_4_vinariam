@@ -22,3 +22,4 @@ La idea de su negocio es llegar a clientes apasionados por el vino y que buscan 
 
 Ivan y su papá son amantes del vino, con mucho conocimiento y ganas de impulsar su negocio en este momento tan particular, nos acompañarán durante este proyecto brindándonos la información necesaria para construír este sitio, ¡un win-win! 
 
+Enlace al tablero de trabajo: https://trello.com/b/9iVDNqOo/vinariam
