@@ -116,7 +116,7 @@ header{
 @media (max-width:1100px){
     .contenedor{
         height: auto;
-        margin-top: 196px;
+        margin-top: 116px;
     }
     
 }
@@ -163,7 +163,7 @@ a{
 
 }
 
-/*----------Contenido--------------*/
+/*----------Contenido index--------------*/
 
 
 @media (max-width:1100px){
@@ -355,7 +355,7 @@ a{
         display: flex;
         height: auto;
         flex-direction: row;
-        padding: 10px;
+        padding: 0px;
         align-items: center;
     }
     .social p{
@@ -364,7 +364,7 @@ a{
 }
 @media (max-width:1100px){
     .social{
-        justify-content: unset;
+        justify-content: space-around;
     }
     .bloque{
         height: 11vh;
@@ -419,7 +419,7 @@ width: 100%;
 @media (max-width:480px){
     .redes .fab{
         font-size: 35px;
-        margin-right: 40px;
+        margin: 0 20px;
     }
     
 }
@@ -501,4 +501,22 @@ width: 100%;
 
 .mensaje p{
     width: 260px;
+}
+
+.comprarCarrito{
+    display: flex;
+    border-radius: 50px;
+    background-color: white;
+    height: 40px;
+    width: 150px;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 20px
+
+
+}
+
+.contenedorComprar{
+    display: flex;
+    justify-content: center;
 }
