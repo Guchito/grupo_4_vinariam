@@ -2,7 +2,7 @@
   "name": "vinariam",
   "version": "1.0.0",
   "description": "E commerce dedicado a la venta de:",
-  "main": "app.js",
+  "main": "/src/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon ./src/bin/www"
