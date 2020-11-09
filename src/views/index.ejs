@@ -1,16 +1,5 @@
-<!DOCTYPE html>
-<html lang="es">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/styles.css">
-   
-    <title>Vinariam</title>
-</head>
+    <%- include ('./partials/head', {title: 'Inicio'}) %>
 
 <body>
     <div class="contenedorIndex">
@@ -24,17 +13,7 @@
 
             <div class="menuDerecho">
 
-                <nav> 
-                    <ul class="barraNav"> 
-                        <li><a class="mayus" href="#">Vinos</a></li>
-                        <li><a class="mayus" href="#">El club</a></li>
-                        <li><a class="mayus" href="#">Experiencias</a></li>
-                        <li><a class="mayus" href="#">Conocenos</a></li>
-                        <li><a href="/productos/cart"><i class="fas fa-shopping-cart"></i></a></li>
-                        <li><a href="/users/login"><i class="fas fa-user"></i></a></li>
-                    </ul>
-                    
-                </nav>
+                <%- include ('./partials/nav') %>
 
                 <div class="contenedor">
                     <img src="img/barriles.svg" alt="banner">
@@ -127,37 +106,7 @@
             </div>
         </main>
     </div>    
-    <footer class="footer">
-  
-        <div class="bloque">
-            <p>Distribuidora Boutique</p>
-            <p>Calle Falsa 123, CABA</p>
-            <p>Tel: +54 9 11 2222 3333</p>
-            <p>contacto@vinariam.com</p>
-        </div>
-        
-        <div class="bloque">
-            <p>Ayuda</p>
-            <p>Cómo comprar</p>
-            <p>Envíos</p>
-            <p>Términos y Condiciones </p>
-        </div>
+    <%- include ('./partials/footer') %>
 
-        <div class="bloque notDisplay">
-            
-            <p>Copyright© VINARIAM. All rights reserved. </p>
-
-        </div>
-
-        <div class="bloque social">
-            
-            <p>Seguinos</p>
-            <div class="redes">
-                <p><i class="fab fa-facebook-f"></i></p>
-                <p><i class="fab fa-instagram"></i></p>
-                <p><i class="fab fa-whatsapp"></i></p>
-            </div>
-        </div>
-    </footer>
 </body>
 </html>
