@@ -4,7 +4,7 @@ body{
     
 }
 
-.contenedorIndex{
+.center{
     max-width: 1500px;
     margin: 0 auto;
 }
@@ -61,7 +61,7 @@ header{
 .barraNav{
     display: flex;
     justify-content: space-around;
-    padding-bottom: 10px ;
+    padding-bottom: 10px;
     border-bottom: 1px solid #278828;
 }
 
@@ -692,11 +692,7 @@ h2{
 }
 
 /* LOGIN */ 
-
-.barraNavLogin{
-    display: flex;
-    justify-content: space-around;
-    padding-bottom: 10px ;
+.barraNavBlanca{
     border-bottom: 1px solid white;
 }
 
@@ -704,6 +700,7 @@ h2{
     background-image: url("/img/uvas.png");
     font-family:'Montserrat', sans-serif;
     background-size: cover;
+
 }
 
 .content{
@@ -769,5 +766,9 @@ h2{
 
 .mayus,.fa-shopping-cart,.fa-user{
     color: black;
+}
+
+.blanco{
+    color: white;
 }
 

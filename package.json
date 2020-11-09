@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Guchito/grupo_4_vinariam#readme",
   "dependencies": {
     "ejs": "^3.1.5",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "express-generator": "^4.16.1"
   }
 }
