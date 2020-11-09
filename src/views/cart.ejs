@@ -1,67 +1,67 @@
   
 <%- include ('./partials/head', {title: 'Carrito'}) %>
-
 <body>
-    <%- include ('./partials/header') %>
-    
-    <main>
-        <h1 class="tituloCart">Tu carrito de compras</h1>
-        <div class="contenedorCart">
-            <div class="articulos">
-                <article class="resumen">
-                    <a href="/product"><img class="articuloCart" src="img/1.png" alt="Articulo"></a>
-                    <p class="descripcion">Benegas Malbec 2015</p>
-                    <input class="cantidad" type="number" name="cantidad" placeholder="1">
-                    <p class="precio">$1.200</p>
-                    <i class="fas fa-trash-alt"></i>
-                </article>
+    <div class="center">
+        <%- include ('./partials/header') %>
+        <main>
+            <h1 class="tituloCart">Tu carrito de compras</h1>
+            <div class="contenedorCart">
+                <div class="articulos">
+                    <article class="resumen">
+                        <a href="/productos/producto"><img class="articuloCart" src="/img/1.png" alt="Articulo"></a>
+                        <p class="descripcion">Benegas Malbec 2015</p>
+                        <input class="cantidad" type="number" name="cantidad" placeholder="1">
+                        <p class="precio">$1.200</p>
+                        <i class="fas fa-trash-alt"></i>
+                    </article>
 
-                <article class="resumen">
-                    <a href="/product"><img class="articuloCart" src="img/2.png" alt="Articulo"></a>
-                    <p class="descripcion">Animal Malbec 2015</p>
-                    <input class="cantidad" type="number" name="cantidad" placeholder="1">
-                    <p class="precio">$1.000</p>
-                    <i class="fas fa-trash-alt"></i>
-                </article>
+                    <article class="resumen">
+                        <a href="/productos/producto"><img class="articuloCart" src="/img/2.png" alt="Articulo"></a>
+                        <p class="descripcion">Animal Malbec 2015</p>
+                        <input class="cantidad" type="number" name="cantidad" placeholder="1">
+                        <p class="precio">$1.000</p>
+                        <i class="fas fa-trash-alt"></i>
+                    </article>
 
-                <article class="resumen">
-                    <a href="/product"><img class="articuloCart" src="img/4.png" alt="Articulo"></a>
-                    <p class="descripcion">Padrillos Malbec 2015</p>
-                    <input class="cantidad" type="number" name="cantidad" placeholder="1">
-                    <p class="precio">$1.400</p>
-                    <i class="fas fa-trash-alt"></i>
-                </article>
+                    <article class="resumen">
+                        <a href="/productos/producto"><img class="articuloCart" src="/img/4.png" alt="Articulo"></a>
+                        <p class="descripcion">Padrillos Malbec 2015</p>
+                        <input class="cantidad" type="number" name="cantidad" placeholder="1">
+                        <p class="precio">$1.400</p>
+                        <i class="fas fa-trash-alt"></i>
+                    </article>
 
-                <article class="totales">
-                    <div class="primeraColumna">
-                        <p>Subtotal</p>
-                        <p>Envío</p>
-                        <p>Total</p>
-                    </div>
-                    <div class="segundaColumna">
-                        <p>$3.600</p>
-                        <p>$400</p>
-                        <p>$4.000</p>
-                    </div>
-                </article>
-                <div class="contenedorComprar">
-                    <div class="comprarCarrito">
-                        <a href="/cart">Comprar</a> 
-                        <a href="/cart"><i class="fas fa-shopping-cart"></i></a>  
+                    <article class="totales">
+                        <div class="primeraColumna">
+                            <p>Subtotal</p>
+                            <p>Envío</p>
+                            <p>Total</p>
+                        </div>
+                        <div class="segundaColumna">
+                            <p>$3.600</p>
+                            <p>$400</p>
+                            <p>$4.000</p>
+                        </div>
+                    </article>
+                    <div class="contenedorComprar">
+                        <div class="comprarCarrito">
+                            <a href="/productos/cart">Comprar</a> 
+                            <a href="/productos/cart"><i class="fas fa-shopping-cart"></i></a>  
+                        </div>
                     </div>
                 </div>
+                <div class="dibujito">
+                    <article class="mensaje">
+                        <p>Combínalo con estos maridajes increíbles</p>
+                        <img src="/img/sardo.png" alt="maridaje">
+                    </article>
+                </div>
             </div>
-            <div class="dibujito">
-                <article class="mensaje">
-                    <p>Combínalo con estos maridajes increíbles</p>
-                    <img src="img/sardo.png" alt="maridaje">
-                </article>
-            </div>
-        </div>
-        
-    </main>
-
+            
+        </main>
+    </div>
     <%- include ('./partials/footer') %>
 
 </body>
+
 </html>

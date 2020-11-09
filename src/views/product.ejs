@@ -1,71 +1,72 @@
 <%- include ('./partials/head', {title: 'Productos'}) %>
 
 <body>
-
-    <%- include ('./partials/header') %>
-    
-    <main>
-    
-        <div class="BloqueGeneral">
-            
-            <div class= "mujer">
-                    <img src="img/productwomen.svg" alt="ProductWomen">
-            </div>
-    
-            <div class="ContenedorInfoProducto">
-          
-                <div class="tituloVino">
-                    <h1 class="tituloVino">Monchenot 10 años</h1>
-                </div>  
+    <div class="center">
+        <%- include ('./partials/header') %>
+        
+        <main>
+        
+            <div class="BloqueGeneral">
                 
-                <div class="agregarCarrito">
-                    <a href="/productos/cart">Agregar </a> 
-                    <a href="/productos/cart"><i class="fas fa-shopping-cart"></i></a>  
+                <div class= "mujer">
+                        <img src="/img/productwomen.svg" alt="ProductWomen">
                 </div>
+        
+                <div class="ContenedorInfoProducto">
+            
+                    <div class="tituloVino">
+                        <h1 class="tituloVino">Monchenot 10 años</h1>
+                    </div>  
+                    
+                    <div class="agregarCarrito">
+                        <a href="/productos/cart">Agregar </a> 
+                        <a href="/productos/cart"><i class="fas fa-shopping-cart"></i></a>  
+                    </div>
 
-                <div class="RateProduct">
-                <div>
-                    <h3 class="Cant">ALCOHOL 13,5%</h3>
-                </div>
-                <div>
-                    <img class="circle" src="img/circle1.svg" alt="circle1">
-                </div>
-                <div>
-                    <h3 class="Cant">ACIDEZ VOLATIL 0,55 gr/l</h3>
-                </div>
-                <div>
-                    <img class="circle" src="img/circle2.svg" alt="circle2">
-                </div>
-                <div>
-                    <h3 class="Cant">ACIDEZ TOTAL 5,20 gr/l.</h3>
-                </div>
-                <div>
-                    <img class="circle" src="img/circle3.svg" alt="circle3">
-                </div>
+                    <div class="RateProduct">
+                    <div>
+                        <h3 class="Cant">ALCOHOL 13,5%</h3>
+                    </div>
+                    <div>
+                        <img class="circle" src="/img/circle1.svg" alt="circle1">
+                    </div>
+                    <div>
+                        <h3 class="Cant">ACIDEZ VOLATIL 0,55 gr/l</h3>
+                    </div>
+                    <div>
+                        <img class="circle" src="/img/circle2.svg" alt="circle2">
+                    </div>
+                    <div>
+                        <h3 class="Cant">ACIDEZ TOTAL 5,20 gr/l.</h3>
+                    </div>
+                    <div>
+                        <img class="circle" src="/img/circle3.svg" alt="circle3">
+                    </div>
+                    </div>  
+
+                <div class="InfoProducto">
+                <h3 class="Info Producto">Vino de color rubí intenso, con sutiles 
+                    tonos caoba. Se manifiestan aromas complejos. En boca revela 
+                    una excelente estructura con taninos suaves y maduros presentando un largo final.
+                    De acuerdo a la preferencia del consumidor, el añejamiento de este vino en su 
+                    botella puede prolongarse por un período de 10 años o más, pudiendo lograrse 
+                    lo que hoy es el Montchenot 15 y 20 años. Por sus características es un vino 
+                    ideal para acompañar carnes rojas y comidas con salsas suaves. Se aconseja 
+                    consumir a una temperatura de 18 a 20 oC. Para mantener sus atributos intactos, 
+                    durante la guarda, la botella debe permanecer en posición horizontal, de manera 
+                    que el vino se encuentre en contacto con el corcho, alejado del calor y la luz.</h3>
                 </div>  
+                </div>
 
-            <div class="InfoProducto">
-            <h3 class="Info Producto">Vino de color rubí intenso, con sutiles 
-                tonos caoba. Se manifiestan aromas complejos. En boca revela 
-                una excelente estructura con taninos suaves y maduros presentando un largo final.
-                De acuerdo a la preferencia del consumidor, el añejamiento de este vino en su 
-                botella puede prolongarse por un período de 10 años o más, pudiendo lograrse 
-                lo que hoy es el Montchenot 15 y 20 años. Por sus características es un vino 
-                ideal para acompañar carnes rojas y comidas con salsas suaves. Se aconseja 
-                consumir a una temperatura de 18 a 20 oC. Para mantener sus atributos intactos, 
-                durante la guarda, la botella debe permanecer en posición horizontal, de manera 
-                que el vino se encuentre en contacto con el corcho, alejado del calor y la luz.</h3>
-            </div>  
+                <div class="vinoproduct">
+                    <img src="/img/vinoproduct.png" alt="vinoproduct">
+                </div>
+
+
             </div>
 
-            <div class="vinoproduct">
-                <img src="img/vinoproduct.png" alt="vinoproduct">
-            </div>
-
-
-        </div>
-
-    </main>
+        </main>
+    </div>
     <%- include ('./partials/footer') %>
 
 </body>
