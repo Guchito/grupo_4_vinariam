@@ -10,13 +10,16 @@ app.set('view engine', 'ejs');
 
 app.listen(3001);
 
-const mainRouter = require('./routes/main'); // Rutas main
-const productsRouter = require('./routes/products'); // Rutas /productos
-const usersRouter = require('./routes/users'); // Rutas /users
+const mainRouter = require('./routes/main'); // Rutas Main
+const productsRouter = require('./routes/products'); // Rutas / Products
+const usersRouter = require('./routes/users'); // Rutas / Users
+
 
 app.use('/', mainRouter);
 app.use('/productos', productsRouter);
 app.use('/users', usersRouter);
+app.use('/enter', mainRouter);
 
 
 module.exports = app;
+

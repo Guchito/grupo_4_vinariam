@@ -5,7 +5,7 @@ const mainController = require('../controllers/mainController'); //requiero al c
 /* GET home page. */
 
 router.get('/', mainController.index);
-
+router.get('/enter', mainController.enter);
 
 /*Export */
 
