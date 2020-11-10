@@ -774,8 +774,38 @@ h2{
 
 /* ENTER PAGE */
 
-.fondoEnter{
-    background-image: url("/img/.fondoEnter.png");
-    font-family:'Montserrat', sans-serif;
+.enter{
+    display: flex;
 }
 
+
+.ladoIzquierdo{
+    width: 40%;
+    padding-left: 50px;
+}
+
+.originaLogo{
+    width: 80%;
+    padding-left: 50px;
+    padding-top: 80px;
+
+}
+
+.textoEnter{
+    font-size: 30px;
+    padding-top: 50px;
+}
+
+.soyMayor{
+padding: 30px;
+font-size: 20px;
+
+}
+
+.fondoEnter{
+    width: 100%;
+}
+
+.fondoEnter img{
+    width: 100%;
+}
