@@ -772,3 +772,10 @@ h2{
     color: white;
 }
 
+/* ENTER PAGE */
+
+.fondoEnter{
+    background-image: url("/img/.fondoEnter.png");
+    font-family:'Montserrat', sans-serif;
+}
+
