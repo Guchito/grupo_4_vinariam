@@ -1,3 +1,4 @@
+/**************** GLOBAL *****************/
 body{
     font-family:'Montserrat', sans-serif;
     background-color: #edeae3;
@@ -9,24 +10,14 @@ body{
     margin: 0 auto;
 }
 
-header{
-    display: flex;
-
-}
-
-
-@media (max-width:1100px){
-    .headerIndex{
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
 .LogoPrincipal{
     width: 20%;
     margin: 20px;
 }
 
+header{
+    display: flex;
+}
 
 
 @media (max-width:1100px){
@@ -44,25 +35,61 @@ header{
     }
 }
 
-
-.menuDerecho{
+.menu{
     width: 80%;
     padding-left: 60px;
 
 }
 
-
 @media (max-width:1100px){
-    .menuDerecho{
+    .menu{
         width: 100%;
         padding: 0px;
     }
 }
+
+ul{
+    list-style-type: none;
+
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+
+/**************** HEADER *****************/
+a .mayus:hover {
+    text-decoration: underline;
+
+}
+
+.mayus {
+    text-transform: uppercase;
+}
+
+.LogoPrincipal{
+    width: 25%;
+    padding: 10px;
+}
+
 .barraNav{
     display: flex;
     justify-content: space-around;
     padding-bottom: 10px;
     border-bottom: 1px solid #278828;
+}
+
+.barraNavBlanca{
+    border-bottom: 1px solid white;
+}
+
+.fa-bars{
+    display: none;
+}
+.LogoPrincipal .fa-shopping-cart{
+    display: none;
 }
 
 
@@ -77,11 +104,13 @@ header{
     }
 
     .fa-bars{
+        display: block;
         font-size: 59px;
     }
 
     .LogoPrincipal .fa-shopping-cart{
         font-size: 35px;
+        display: block;
     }
 }
 @media (max-width:480px){
@@ -93,18 +122,106 @@ header{
     }
 }
 
-/*Uso un min-width para decirle que oculte el otro logo cuando es mas grande*/
-@media (min-width:1100px){ 
-    .barraNav{
-        display: flex;
-    }
-    .fa-bars{
+
+/*************** FOOTER **************/
+
+.bloque{
+    width: 100%;
+    height: 20vh;
+    color: white;
+    padding: 40px 3%;
+}
+.social{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+@media (max-width:480px){
+    .bloque{
         display: none;
     }
-    .LogoPrincipal .fa-shopping-cart{
+    .social{
+        display: flex;
+        height: auto;
+        flex-direction: row;
+        padding: 0px;
+        align-items: center;
+    }
+    .social p{
+        font-size: 20px;
+    }
+}
+@media (max-width:1100px){
+    .social{
+        justify-content: space-around;
+    }
+    .bloque{
+        height: 11vh;
+        
+    }
+    .bloque:first-child{
+        margin-left: 120px;
+    }
+    
+}
+.abajo{
+    display: flex;
+    align-items: flex-end;
+}
+
+
+.footer{
+    display: flex;
+    justify-content: center;
+}
+@media (max-width:480px){
+    .footer{
+        flex-direction: column;
+    }
+    
+}
+
+@media (max-width:1100px){
+    .notDisplay{
         display: none;
     }
     
+}
+
+footer{
+background-color: #212960;
+bottom: 0px;
+width: 100%;
+
+}
+
+.redes{
+    display: flex;
+}
+
+.redes .fab{
+    color: white;
+    font-size: 30px;
+    margin-right: 20px;
+
+}
+@media (max-width:480px){
+    .redes .fab{
+        font-size: 35px;
+        margin: 0 20px;
+    }
+    
+}
+
+
+/**************** INDEX *****************/
+
+@media (max-width:1100px){
+    .headerIndex{
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 .contenedor{
@@ -127,40 +244,9 @@ header{
     
 }
 
-ul{
-    list-style-type: none;
-
+.logoMobile{
+    display: none;
 }
-
-a{
-    text-decoration: none;
-    color: black;
-}
-
-.mayus:hover {
-    text-decoration: underline;
-
-}
-
-.mayus {
-    text-transform: uppercase;
-}
-
-.tituloSlider {
-    color: white;
-    justify-content: center;
-    text-align: center;
-    font-family:'Montserrat', sans-serif;
-    font-weight: 300;
-    text-transform: uppercase;
-    font-size: 60pt;
-    letter-spacing: 20pt;
-
-
-}
-
-/* INDEX */
-
 
 @media (max-width:1100px){
     .logoDesktop{
@@ -171,16 +257,6 @@ a{
         width: 50%;
     }
 }
-
-    
-
-@media (min-width:1100px){ /*Uso un min-width para decirle que oculte el otro logo cuando es mas grande*/
-    .logoMobile{
-       display: none;
-    }
-    
-}
-
 
 .destacados h1{
     font-weight: 400;
@@ -259,7 +335,7 @@ a{
     
 }
 
-.detalle {
+.detalle{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -319,97 +395,8 @@ a{
 }
 
 
-/* FOOTER */
 
-.bloque{
-    width: 100%;
-    height: 20vh;
-    color: white;
-    padding: 40px 3%;
-}
-.social{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
-
-@media (max-width:480px){
-    .bloque{
-        display: none;
-    }
-    .social{
-        display: flex;
-        height: auto;
-        flex-direction: row;
-        padding: 0px;
-        align-items: center;
-    }
-    .social p{
-        font-size: 20px;
-    }
-}
-@media (max-width:1100px){
-    .social{
-        justify-content: space-around;
-    }
-    .bloque{
-        height: 11vh;
-        
-    }
-    .bloque:first-child{
-        margin-left: 120px;
-    }
-    
-}
-.abajo{
-    display: flex;
-    align-items: flex-end;
-}
-
-
-.footer{
-    display:flex;
-    justify-content: center;
-}
-@media (max-width:480px){
-    .footer{
-        flex-direction: column;
-    }
-    
-}
-
-@media (max-width:1100px){
-    .notDisplay{
-        display: none;
-    }
-    
-}
-
-footer{
-background-color: #212960;
-bottom: 0px;
-width: 100%;
-
-}
-
-.redes{
-    display: flex;
-}
-
-.redes .fab{
-    color: white;
-    font-size: 30px;
-    margin-right: 20px;
-
-}
-@media (max-width:480px){
-    .redes .fab{
-        font-size: 35px;
-        margin: 0 20px;
-    }
-    
-}
-/* CART */
+/************** CART ***************/
 
 .tituloCart{
     margin: 30px;
@@ -511,37 +498,10 @@ width: 100%;
 
 
 
-/* PRODUCTO */
+/*************** PRODUCTO ****************/
 
 
 
-.LogoPrincipal{
-    width: 25%;
-    padding: 10px;
-}
-
-.menuDerecho{
-    width: 80%;
-    padding-left: 60px;
-}
-
-ul{
-    list-style-type: none;
-}
-
-a{
-    text-decoration: none;
-    color: black;
-}
-
-.mayus:hover{
-    text-decoration: underline;
-
-}
-
-header{
-    display: flex;
-}
 
 
 .BloqueGeneral{
@@ -605,7 +565,7 @@ header{
     padding: 5px;
 }
 
-h3{
+.Cant{
     width: 80%;
     text-align: left;
     font-weight: 300;
@@ -621,7 +581,7 @@ h3{
     width: 25%;
 }
 
-/* REGISTRO */
+/******************* REGISTRO *******************/
 
 .contentR{
     display: flex;
@@ -685,26 +645,22 @@ background-color: #edeae3;
     margin-top: 20px;    
 }
 
-h2{
+.contanos{
     font-weight: 100;
     position: relative;
     left: 2%;
 }
 
-/* LOGIN */ 
-.barraNavBlanca{
-    border-bottom: 1px solid white;
-}
+/*********** LOGIN *************/ 
 
 .bodyLogin{
     background-image: url("/img/uvas.png");
-    font-family:'Montserrat', sans-serif;
     background-size: cover;
 
 }
 
 .content{
-    display:flex;
+    display: flex;
 }
 
 .izquierdaLogin{
@@ -723,7 +679,7 @@ h2{
 }
 
 .mujerLogin{
-    display:flex;
+    display: flex;
     width: 700px; height: 600px; 
 }
 
@@ -764,18 +720,15 @@ h2{
     text-decoration: underline;
 }
 
-.mayus,.fa-shopping-cart,.fa-user{
-    color: black;
-}
-
 .blanco{
     color: white;
 }
 
-/* ENTER PAGE */
+/********** ENTER PAGE ************/
 
 .enter{
     display: flex;
+    
 }
 
 

@@ -1,39 +1,31 @@
 <!DOCTYPE html>
 <html lang="es">
     
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/styles.css">
+    <%- include ('./partials/head', {title: 'Enter'}) %>
    
-    <title> Enter | Vinariam</title>
-</head>
-<body>
+    <body>
 
-   <div class="enter">
+        <div class="enter">
 
-    <div class="ladoIzquierdo">
+            <div class="ladoIzquierdo">
+                <h2 class="textoEnter">
+                    Nuestros vinos maduraron los años necesarios, 
+                    necesitamos asegurarnos que vos también.
+                </h2>
 
-           <h2 class="textoEnter">
-            Nuestros vinos maduraron los años necesarios, 
-            necesitamos asegurarnos que vos también.
-           </h2>
+                <div class="soyMayor">
+                    <input class="soyMayor" type="checkbox" name="soyMayor" value="terminos"><label class="soyMayor" name="terminos">Soy mayor de 18 años.</label><br>
+                    <button class="botonEnter" type="submit" name="soyMayor" id="soyMayor"><strong>Continuar</strong></button>
+                </div>
+            
+                <img class="originaLogo" src="/img/originaLogo.svg" alt="Logo">
+            </div>
 
-           <div class="soyMayor">
-            <input class="soyMayor" type="checkbox" name="soyMayor" value="terminos"><label class="soyMayor" name="terminos">Soy mayor de 18 años.</label><br>
-            <button class="botonEnter" type="submit" name="soyMayor" id="soyMayor"><strong>Continuar</strong></button>
-          </div>
-       
-           <img class="originaLogo" src="/img/originaLogo.svg" alt="Logo">
-    </div>
-
-    <div class="fondoEnter">
-        <img class="fondoEnter" src="/img/fondoEnter.svg" alt="Enter">
-    </div>
-    
-   </div>
-    
-</body>
+            <div class="fondoEnter">
+                <img class="fondoEnter" src="/img/fondoEnter.svg" alt="Enter">
+            </div>
+            
+        </div>
+        
+    </body>
 </html>
