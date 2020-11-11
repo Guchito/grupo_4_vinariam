@@ -767,9 +767,7 @@ font-size: 20px;
 
 
 .fila1{
-    display: flex;
-    justify-content: space-around;
-    
+    display: flex;    
 }
 
 .fila2{
