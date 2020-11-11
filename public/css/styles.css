@@ -762,3 +762,28 @@ font-size: 20px;
 .fondoEnter img{
     width: 100%;
 }
+
+/* LISTADO DE PRODUCTOS */
+
+
+.fila1{
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.fila2{
+    display: flex;
+}
+
+.producto1{
+    width: 60%;
+}
+
+.producto1 img{
+    width: 60%;
+}
+
+.mujerComprando{
+    width: 20%;
+}

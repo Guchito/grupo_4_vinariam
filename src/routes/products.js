@@ -6,6 +6,7 @@ const productsController = require('../controllers/productsController'); //requi
 
 router.get('/producto', productsController.producto); //productos/producto (el "productos" ya viene por default en el router)
 router.get('/cart', productsController.cart);
+router.get('/listaProductos', productsController.listaProductos);
 
 
 /*Export */
