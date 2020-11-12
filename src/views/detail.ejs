@@ -1,4 +1,4 @@
-<%- include ('./partials/head', {title: 'Productos'}) %>
+<%- include ('./partials/head', {title: product.name}) %>
 
 <body>
     <div class="center">
@@ -15,7 +15,7 @@
                 <div class="ContenedorInfoProducto">
             
                     <div class="tituloVino">
-                        <h1 class="tituloVino">Monchenot 10 años</h1>
+                        <h1 class="tituloVino"><%= product.name %></h1>
                     </div>  
                     
                     <div class="agregarCarrito">
@@ -45,21 +45,12 @@
                     </div>  
 
                 <div class="InfoProducto">
-                <h3 class="Info Producto Cant">Vino de color rubí intenso, con sutiles 
-                    tonos caoba. Se manifiestan aromas complejos. En boca revela 
-                    una excelente estructura con taninos suaves y maduros presentando un largo final.
-                    De acuerdo a la preferencia del consumidor, el añejamiento de este vino en su 
-                    botella puede prolongarse por un período de 10 años o más, pudiendo lograrse 
-                    lo que hoy es el Montchenot 15 y 20 años. Por sus características es un vino 
-                    ideal para acompañar carnes rojas y comidas con salsas suaves. Se aconseja 
-                    consumir a una temperatura de 18 a 20 oC. Para mantener sus atributos intactos, 
-                    durante la guarda, la botella debe permanecer en posición horizontal, de manera 
-                    que el vino se encuentre en contacto con el corcho, alejado del calor y la luz.</h3>
+                <h3 class="Info Producto Cant"><%= product.description %></h3>
                 </div>  
                 </div>
 
                 <div class="vinoproduct">
-                    <img src="/img/vinoproduct.png" alt="vinoproduct">
+                    <img src="/img/<%= product.image %>" alt="vinoproduct">
                 </div>
 
 

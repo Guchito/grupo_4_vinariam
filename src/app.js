@@ -13,13 +13,13 @@ app.listen(3002);
 const mainRouter = require('./routes/main'); // Rutas Main
 const productsRouter = require('./routes/products'); // Rutas / Products
 const usersRouter = require('./routes/users'); // Rutas / Users
+const adminRouter = require('./routes/admin'); // rutas /admin
 
 
 app.use('/', mainRouter);
 app.use('/productos', productsRouter);
-app.use('/listaProductos', productsRouter);
 app.use('/users', usersRouter);
-app.use('/enter', mainRouter);
+app.use('/admin', adminRouter);
 
 
 module.exports = app;
