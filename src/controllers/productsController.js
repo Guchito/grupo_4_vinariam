@@ -1,36 +1,14 @@
-const fs = require('fs');
-const path = require('path');
 
-const productsFilePath = path.resolve(__dirname, '../data/vinos.json');
+const helper = require('../helpers/helpers') // Requiero a las funciones de helpers
 
 
-/********* Funciones  ******/
 
-
-function getAllProducts(){
-
-	const jsonProducts = fs.readFileSync(productsFilePath, 'utf-8');
-
-	const productsParsed = JSON.parse(jsonProducts);
-
-	return productsParsed;
-}
-
-function writeProducts(arrayToTransform) {
-	const productsJson = JSON.stringify(arrayToTransform, null, " ");
-	fs.writeFileSync(productsFilePath, productsJson);
-}
-
-function generateNewId(){
-	const products = getAllProducts();
-	return products.pop().id + 1;
-}
 
 /*********Controllers ******************/
 
 const productsController = {
 	producto: (req, res) => {
-        const products = getAllProducts();
+        const products = helper.getAllProducts();
         res.render('product', {products: products});
     },
 
@@ -39,14 +17,14 @@ const productsController = {
     },
 
     listaProductos: (req, res) => {
-        const products = getAllProducts();
+        const products = helper.getAllProducts();
         res.render('listaProductos', {products: products});
     },
 
     update: (req, res) => {
 		
 
-		const products = getAllProducts();
+		const products = helper.getAllProducts();
 
 		const id = req.params.id;
 		
@@ -64,7 +42,7 @@ const productsController = {
 			return product;
 		});
 
-		writeProducts(newProducts);
+		helper.writeProducts(newProducts);
 
 		res.redirect("/products/detail/" + id);
 	},
