@@ -4,9 +4,10 @@ const productsController = require('../controllers/productsController'); //requi
 
 /* GET prducts page. */
 
+router.get('/', productsController.listaProductos); /// localhost:3000/productos
 router.get('/producto', productsController.producto); //productos/producto (el "productos" ya viene por default en el router)
 router.get('/cart', productsController.cart);
-router.get('/listaProductos', productsController.listaProductos);
+
 
 
 /*Export */
