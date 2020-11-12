@@ -8,7 +8,7 @@ app.use(express.static(path.join(__dirname, '../public')));  // Necesario para l
 app.set('view engine', 'ejs');
 
 
-app.listen(3001);
+app.listen(3002);
 
 const mainRouter = require('./routes/main'); // Rutas Main
 const productsRouter = require('./routes/products'); // Rutas / Products

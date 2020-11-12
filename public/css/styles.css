@@ -766,6 +766,22 @@ font-size: 20px;
 /* LISTADO DE PRODUCTOS */
 
 
+
+.listaBloqueGeneral{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    margin-bottom: 50px;
+}
+
+
+.mujerComprando{
+    display: flex;
+    width: 20%;
+}
+
+
 .fila1{
     display: flex;    
 }
@@ -782,6 +798,3 @@ font-size: 20px;
     width: 60%;
 }
 
-.mujerComprando{
-    width: 20%;
-}
