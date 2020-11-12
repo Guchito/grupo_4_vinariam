@@ -1,75 +1,70 @@
 <%- include ('./partials/head', {title: 'Productos'}) %>
-
-<body>
-    <div class="center">
-        <%- include ('./partials/header') %>
-        
+    <body>
+        <div class="center">
+            <%- include ('./partials/header') %>
+        </div>
         <main>
-            
 
+            <h1 class="tituloVino">Vinos</h1>
 
-<div class="listaBloqueGeneral"> 
+            <div class= "mujerComprando">
+                <img src="/img/mujerComprando.svg" alt="mujerComprando">
+            </div>
+            <nav class="product-filter">
 
-    
-    <div class="comprandoIzquierda">
-        
-        <div class= "mujerComprando">
-            <img src="/img/mujerComprando.svg" alt="mujerComprando">
-        </div>
+                <div class="filtros">
 
-    </div>
-
-
-
-    <div class="comprandoVinos">
-
-        <h1 class="tituloVino">Vinos</h1>
-
-
-        <div class="articulosTodos">
-            <% for (product of products) { %>
-
-            <a href="/productos/producto/<%= product.id %>">
-
-                <article class="producto">
-                    <img src="/img/listado/<%= product.image %>" alt="producto">
-            
-                    <h2>$ <%= product.name %></h2>
-                    <p><%= product.price %></p>
-                            
-                    <div class="agregarCarrito">
-                        <a href="/productos/cart">Agregar </a> 
-                        <a href="/productos/cart"><i class="fas fa-shopping-cart"></i></a>  
+                    <div class="filtrarPor">
+                        <label>Filtrar</label>
+                        <select>
+                            <option value="/">Malbec</option>
+                            <option value="/">Cabernet Sauvignon</option>
+                            <option value="/">Syrah</option>
+                            <option value="/">Rosado</option>
+                        </select>
                     </div>
-                </article>
 
-            </a>
-            <% } %>
-        </div>
-    </div>
+                    <div class="filtrarPor">
+                        <label>Ordenar:</label>
+                        <select>
+                            <option value="/">Mayor precio</option>
+                            <option value="/">Menor precio</option>
+                            <option value="/">Más buscados</option>
+                        </select>
+                    </div>
 
+                </div>
 
-</div>
-    
+            </nav>
+            <div class="conteinerProducts">
 
-                
-            
-        
+                <div class="articulosTodos">
 
-               
+                    <% for (product of products) { %>
+                        <section class="product-box">
 
+                            <a href="/productos/detail/<%= product.id %>">
+
+                                <figure class="product-box-image">
+                                <img src="/img/listado/<%= product.image %>"
+                                alt="producto">
+                                </figure>
+                                <article class="product-box-data">
+                                    <h4><%= product.name %></h4>
+                                    <p>$<%= product.price %></p>
+                                    <div class="agregarCarrito">
+                                        <a href="/productos/cart">Agregar </a>
+                                        <a href="/productos/cart"><i class="fas fa-shoppingcart"></i></a>
+                                    </div>
+                                </article>
+                            </a>
+                        </section>
+                    <% } %>
+                    </div>
+            </div>
 
         </main>
-    </div>
-    <%- include ('./partials/footer') %>
-
-</body>
+        
+        <%- include ('./partials/footer') %>
+    </body>
 </html>
-
-
-
-
-
-
-
-
