@@ -4,63 +4,65 @@
             <%- include ('./partials/header') %>
         </div>
         <main>
-
             <h1 class="tituloVino">Vinos</h1>
+            <div class="contenedorListado">
+                <div class="listadoIzquierda">
+                    <nav class="product-filter">
 
-            <div class= "mujerComprando">
-                <img src="/img/mujerComprando.svg" alt="mujerComprando">
-            </div>
-            <nav class="product-filter">
+                        <div class="filtros">
 
-                <div class="filtros">
+                            <div class="filtrarPor">
+                                <label>Filtrar</label>
+                                <select>
+                                    <option value="/">Malbec</option>
+                                    <option value="/">Cabernet Sauvignon</option>
+                                    <option value="/">Syrah</option>
+                                    <option value="/">Rosado</option>
+                                </select>
+                            </div>
 
-                    <div class="filtrarPor">
-                        <label>Filtrar</label>
-                        <select>
-                            <option value="/">Malbec</option>
-                            <option value="/">Cabernet Sauvignon</option>
-                            <option value="/">Syrah</option>
-                            <option value="/">Rosado</option>
-                        </select>
+                            <div class="filtrarPor">
+                                <label>Ordenar:</label>
+                                <select>
+                                    <option value="/">Mayor precio</option>
+                                    <option value="/">Menor precio</option>
+                                    <option value="/">Más buscados</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+                    </nav>
+                    <div class= "mujerComprando">
+                        <img src="/img/mujerComprando.svg" alt="mujerComprando">
                     </div>
-
-                    <div class="filtrarPor">
-                        <label>Ordenar:</label>
-                        <select>
-                            <option value="/">Mayor precio</option>
-                            <option value="/">Menor precio</option>
-                            <option value="/">Más buscados</option>
-                        </select>
-                    </div>
-
                 </div>
+                <div class="conteinerProducts">
 
-            </nav>
-            <div class="conteinerProducts">
+                    <div class="articulosTodos">
 
-                <div class="articulosTodos">
+                        <% for (product of products) { %>
+                            <section>
 
-                    <% for (product of products) { %>
-                        <section class="product-box">
-
-                            <a href="/productos/detail/<%= product.id %>">
-
-                                <figure class="product-box-image">
-                                <img src="/img/listado/<%= product.image %>"
-                                alt="producto">
-                                </figure>
-                                <article class="product-box-data">
-                                    <h4><%= product.name %></h4>
-                                    <p>$<%= product.price %></p>
-                                    <div class="agregarCarrito">
-                                        <a href="/productos/cart">Agregar </a>
-                                        <a href="/productos/cart"><i class="fas fa-shoppingcart"></i></a>
-                                    </div>
-                                </article>
-                            </a>
-                        </section>
-                    <% } %>
-                    </div>
+                                <a href="/productos/detail/<%= product.id %>">
+                                    <article class="productBoxImage">
+                                        <img src="/img/listado/<%= product.image %>" alt="producto">
+                                    </article>
+                                    <article class="productBoxData">
+                                        <div class="nombreYPrecio">
+                                            <h4><%= product.name %></h4>
+                                            <p>$<%= product.price %></p>
+                                        </div>
+                                        <div class="agregarCarrito">
+                                            <a href="/productos/cart">Agregar </a>
+                                            <a href="/productos/cart"><i class="fas fa-shoppingcart"></i></a>
+                                        </div>
+                                    </article>
+                                </a>
+                            </section>
+                        <% } %>
+                        </div>
+                </div>
             </div>
 
         </main>
