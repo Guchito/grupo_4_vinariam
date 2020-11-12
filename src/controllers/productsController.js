@@ -3,6 +3,10 @@ const path = require('path');
 
 const productsFilePath = path.resolve(__dirname, '../data/vinos.json');
 
+
+/********* Funciones  ******/
+
+
 function getAllProducts(){
 
 	const jsonProducts = fs.readFileSync(productsFilePath, 'utf-8');
@@ -22,7 +26,7 @@ function generateNewId(){
 	return products.pop().id + 1;
 }
 
-//NUESTRO CODIGO//
+/*********Controllers ******************/
 
 const productsController = {
 	producto: (req, res) => {
