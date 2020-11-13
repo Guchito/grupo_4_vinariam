@@ -845,7 +845,6 @@ font-size: 20px;
 
 .selectorCategoria{
     width: 15%;
-    padding: 10px;
     margin-top: 20px;
 }
 
@@ -945,4 +944,32 @@ label[for=" cargarFoto"]{
     cursor: pointer;
     padding: 15px !important;
     outline: none;
+}
+
+
+/* MENSAJE DE ERROR */
+
+.contenedorError{
+    display: flex;
+}
+
+.izquierdaError{
+    margin: 5%;
+    width: 40%;
+}
+
+.textoError{ 
+    font-size: 35px;
+    font-weight: 300;
+    margin: 0px;
+}
+
+.textoError p{
+    font-weight: 600;
+    margin: 0px;
+}
+
+.paciencia{
+    width: 60%; 
+    margin-left: 5%;
 }

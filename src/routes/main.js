@@ -6,6 +6,8 @@ const mainController = require('../controllers/mainController'); //requiero al c
 
 router.get('/', mainController.index);
 router.get('/enter', mainController.enter);
+router.get('/error', mainController.error);
+
 
 /*Export */
 

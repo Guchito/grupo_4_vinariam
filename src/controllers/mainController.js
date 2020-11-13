@@ -4,6 +4,9 @@ const mainController = {
     },
     enter: (req, res) => {
         res.render('enter');
+    },
+    error: (req, res) => {
+        res.render('error');
     }
 }
 
