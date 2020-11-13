@@ -20,7 +20,6 @@ app.use('/productos', productsRouter);
 app.use('/users', usersRouter);
 app.use('/admin', adminRouter);
 
-
 app.use((req, res, next) => next(createError(404)));
 
 // error 

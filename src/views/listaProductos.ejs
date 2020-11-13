@@ -10,8 +10,8 @@
                     <div class="filtros">
 
                         <div class="filtrarPor">
-                            <label>Filtrar</label>
-                            <select>
+                            <label> Filtrar:</label>
+                            <select class="filtrosEstilo">
                                 <option value="/">Malbec</option>
                                 <option value="/">Cabernet Sauvignon</option>
                                 <option value="/">Syrah</option>
@@ -21,7 +21,7 @@
 
                         <div class="filtrarPor">
                             <label>Ordenar:</label>
-                            <select>
+                            <select class="filtrosEstilo">
                                 <option value="/">Mayor precio</option>
                                 <option value="/">Menor precio</option>
                                 <option value="/">Más buscados</option>
@@ -42,15 +42,17 @@
                                     <img src="/img/<%= product.image %>" alt="producto">
                                 </div>
                                 <div class="productBoxData">
-                                    <div class="nombreYPrecio">
+                                    <div class="nombre-info">
                                         <h4><%= product.name %></h4>
                                         <p class="productDescription"><%= product.description %></p>
+                                    </div>
+                                   <div class="agregarAlCarro">
                                         <p>$<%= product.price %></p>
-                                    </div>
-                                    <div class="agregarCarrito">
-                                        <a href="/productos/cart">Agregar </a>
-                                        <a href="/productos/cart"><i class="fas fa-shoppingcart"></i></a>
-                                    </div>
+                                        <div class="agregarCarrito">
+                                            <a href="/productos/cart">Agregar </a>
+                                            <a href="/productos/cart"><i class="fas fa-shoppingcart"></i></a>
+                                        </div>
+                                  </div>
                                 </div>
                             </a>
                         </article>

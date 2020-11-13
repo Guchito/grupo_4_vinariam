@@ -740,28 +740,31 @@ background-color: var(--colorFondo);
     
 }
 
-
 .ladoIzquierdo{
     width: 40%;
     padding-left: 50px;
 }
 
+.textoEnter{
+    font-weight: 300;
+    font-size: 30px;
+    padding-top: 40px;
+
+}
+
+.textoEnter b{
+    font-weight: 600;
+    padding-top: 20px;
+} 
+
+.soyMayor{
+    font-size: 16px;
+}
+
 .originaLogo{
     width: 80%;
     padding-left: 50px;
-    padding-top: 80px;
-
-}
-
-.textoEnter{
-    font-size: 30px;
-    padding-top: 50px;
-}
-
-.soyMayor{
-padding: 30px;
-font-size: 20px;
-
+    padding-top: 130px;
 }
 
 .fondoEnter{
@@ -770,6 +773,20 @@ font-size: 20px;
 
 .fondoEnter img{
     width: 100%;
+}
+
+.botonEnter{
+    font-family:'Montserrat', sans-serif;
+    font-weight: 300;
+    color:white; 
+    background-color: var(--colorAzul);
+    border-radius: 15px;
+    display: inline-block;
+    cursor: pointer;
+    padding: 10px;
+    margin: 20px 0;
+    border-style: none;
+      
 }
 
 
@@ -790,7 +807,7 @@ font-size: 20px;
 .listadoIzquierda{
     display: flex;
     flex-direction: column;
-    margin: 35px 23px;
+    margin: 60px 25px;
 }
 
 .product-filter {
@@ -809,8 +826,21 @@ font-size: 20px;
     margin: 10px;
 }
 
+.filtrosEstilo{
+    font-family:'Montserrat', sans-serif;
+    color: grey; 
+    background-color: white;
+    border-radius: 15px;
+    display: inline-block;
+    cursor: pointer;
+    padding: 10px;
+    outline: none;
+    margin: 10px 0;
+    border: 0;
+}
+
 .mujerComprando{
-    width: 70%;
+    width: 80%;
     margin: 50px 20px 0 20px;
   
 }
@@ -832,7 +862,6 @@ font-size: 20px;
 .productBoxData{
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 .productBoxImage {
     display: flex;
@@ -842,21 +871,39 @@ font-size: 20px;
     height: 40vh;
 }
 
-.nombreYPrecio{
+.nombre-info{
     display: flex;
     flex-direction: column;
-    align-items: center;
+
 }
 
-.nombreYPrecio h4{
+.nombre-info h4{
     margin: 5px 0 10px 0;
 }
 
 .productDescription{
     height: 150px;
     font-weight: 200;
+    font-size: 13px;
+    line-height: 1.5;
     margin: 0;
 }
+
+.agregarAlCarro{
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+    justify-content: space-around;
+}
+
+.agregarAlCarro p{
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    letter-spacing: 2pt;
+    font-size: 10pt;
+}
+
 
 
 /************* MENSAJE DE ERROR ****************/
@@ -992,6 +1039,7 @@ label[for=" cargarFoto"]{
 .sinborde{
     border: 0;
 }
+
 
 .botonGuardar{
     border: 0;
