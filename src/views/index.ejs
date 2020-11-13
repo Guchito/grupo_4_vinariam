@@ -26,83 +26,39 @@
         <main>
             <div class="destacados">
                 <div class="tituloIndex"><h1>Destacados</h1></div>
-                
                 <div class="vinosYVideos">
-                    <div class="fonditosyVinos">
-                            <article class="articulo">
-                                <div class="cuadrito">
-                                    <img class="fondo" src="/img/coral.png" alt="coral">
-                                    <img class="vino" src="/img/1.png" alt="vino1">
-                                </div>
-                                <div class="detalle">
-                                    <a href="/productos/producto"><p>benegas malbec 2013</p></a>
-                                    <div class="estrellas">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="far fa-star"></i>
+    
+                    <div class="fonditosyVinos, articulosTodos">
+                        <% for (product of productDest) { %>
+
+                            <a href="/productos/detail/<%= product.id %>">
+                                <article class="articulo">
+                                    <div class="cuadrito">
+                                        <img class="fondo" src="/img/rosa.png" alt="coral">
+                                        <img class="vino" src="/img/<%= product.image %>" alt="vino<%=product.id%>">
                                     </div>
 
-                                </div>
-                            </article>
-                            <article class="articulo">
-                                <div class="cuadrito">
-                                    <img class="fondo" src="/img/azul.png" alt="azul">
-                                    <img class="vino" src="/img/2.png" alt="vino2">
-                                </div>
-                                <div class="detalle">
-                                    <a href="/productos/producto"><p>animal malbec</p></a>
-     
-                                    <div class="estrellas">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
+                                    <div class="detalle">
+                                        <a href="/productos/producto"><p><%= product.name %></p></a>
+                                        <div class="estrellas">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
                                     </div>
-                                </div>
-                            </article>
-                            <article class="articulo">
-                                <div class="cuadrito">
-                                    <img class="fondo" src="/img/rosa.png" alt="rosa">
-                                    <img class="vino" src="/img/3.png" alt="vino3">
-                                </div>
-                                <div class="detalle">
-                                    <a href="/productos/producto"><p>montchenot 10 años</p></a>
+                                </article>
+                            </a>  
+                        <% } %>
 
-                                    <div class="estrellas">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="articulo">
-                                <div class="cuadrito">
-                                    <img class="fondo" src="/img/verde.png" alt="verde">
-                                    <img class="vino" src="/img/4.png" alt="vino4">
-                                </div>
-                                <div class="detalle">
-                                    <a href="/productos/producto"><p>padrillos malbec</p></a>
-  
-                                    <div class="estrellas">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                    </div>
-                                </div>
-                            </article>
                     </div>
 
                     <div class="video">
                         <iframe src="https://player.vimeo.com/video/48035169" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                        </div>
                     </div>
-                </div>
+                </div>  
             </div>
         </main>
     </div>    

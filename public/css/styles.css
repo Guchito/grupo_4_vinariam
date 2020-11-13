@@ -815,7 +815,7 @@ font-size: 20px;
   
 }
 
-.conteinerProducts{
+.conteinerProducts{ 
     display: flex;
     flex-wrap: wrap;
 }
