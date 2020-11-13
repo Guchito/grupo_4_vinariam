@@ -17,7 +17,8 @@ const helper = {
     generateNewId(){
         const products = getAllProducts();
         return products.pop().id + 1;
-    }
+    },
+
 }
 
 module.exports = helper;

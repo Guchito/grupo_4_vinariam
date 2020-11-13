@@ -2,8 +2,6 @@
 const helper = require('../helpers/helpers') // Requiero a las funciones de helpers
 
 
-
-
 /*********Controllers ******************/
 
 const productsController = {
