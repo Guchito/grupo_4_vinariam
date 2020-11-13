@@ -44,30 +44,35 @@
                     <input class="sinborde" type="text" id="price" name="price" placeholder="/ precio" class="form-input">
                 </div>
                 <div class="cargaCampos">
-                    <label for="discount" class="form-label"></label>
-                    <input class="sinborde" type="text" id="discount" name="discount" placeholder="/descuento" class="form-input">
+                    <label for="class" class="form-label"></label>
+                    <select class="sinborde" name="class" id="class" class="form-input">
+                        <option value="" disabled = "true">/ variedad</option>
+                        <option value="no-destacado">No destacado</option>
+                        <option value="destacado">Destacado</option>                        
+                    </select>
                 </div>
                 <div class="cargaCampos">
-                    <label for="category" class="form-label"></label>
-                    <select class="sinborde" name="category" id="category" class="form-input">
+                    <label for="subCategory" class="form-label"></label>
+                    <select class="sinborde" name="subCategory" id="subCategory" class="form-input">
                         <option value="" disabled = "true">/ variedad</option>
                         <option value="malbec">Malbec</option>                        
                         <option value="cabernet">Cabernet Sauvignon</option>
-                        <option value="cabernet">Blend</option>
+                        <option value="blend">Blend</option>
+                        <option value="blanco">Blanco</option>
+                        <option value="rosado">Rosado</option>
 
                     </select>
                 </div>
                 <div class="cargaCampos">
                     <label for="cargarFoto">
                         <input class="cargarFoto" type="file" name="image" id="image">
-                    
-                     / cargar imagen
+                        /cargar imagen
                     </label>
                 </div>
 
                 <div class="cargaCampos">
                     <label for="description" class="form-label"></label>
-                    <textarea class="sinborde" name="description" id="description" class="form-input">/descipción</textarea>
+                    <textarea class="sinborde" name="description" id="description" class="form-input" placeholder="/descipción"></textarea>
                 </div>
                 <div class="Guardar">
                     <button class="botonGuardar" type="submit" class="buy-now-button">Cargar producto</button>
