@@ -26,5 +26,18 @@ Creemos que a grandes rasgos el sprint 1 fue productivo e identificamos algunas 
 
 -Distraernos  
 
+# Conclusiones de la retrospectiva sprint 2
 
+* Hacer más
+-Dividir el trabajo 
+-Nutrirnos de otros equipos de trabajo
 
+* Empezar a hacer
+-Modularizar
+
+* Continuar haciendo
+-Organizarnos 
+-Igualar el conocimiento entre todos
+
+* Hacer menos
+-Trabajo solo en zoom en el equipo
