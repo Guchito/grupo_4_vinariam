@@ -27,7 +27,7 @@ const adminController = {
     const products = helper.getAllProducts();
     const saveProduct = [...products, newProduct];
 
-    writeProducts(saveProduct);
+    helper.writeProducts(saveProduct);
 
     res.redirect('/');
 },

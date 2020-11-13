@@ -15,7 +15,7 @@ const helper = {
     },
     
     generateNewId(){
-        const products = getAllProducts();
+        const products = helper.getAllProducts();
         return products.pop().id + 1;
     },
 
