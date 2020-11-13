@@ -1,1 +1,76 @@
-<h1>hola</h1>
+<%- include ('./partials/head', {title: 'Carga de productos'}) %>
+
+<body>
+
+    <%- include ('./partials/header') %>
+
+    <h1 class="tituloCarga">Carga de productos</h1>
+    <div class="contenedorCarga">
+        <div class="navAdmin">
+            <div class="usuarioAdmin">
+                <img src="/img/avatar1.svg" alt="Avatar">
+                <div class="nombreAdmin">
+                    <h3>Violeta Aguirre</h3>
+                    <p>Ver mi perfil</p>
+                </div>
+            </div>
+            <p>Proveedores</p>
+            <p class="seleccionado">Cargar producto</p>
+            <p>Pedidos</p>
+            <p>Configuración</p>
+            <p>Mensajes</p>
+            <p>Métricas</p>
+        </div>
+        <div class="selectorCategoria">
+            <a href="/admin/carga">
+                <img src="/img/cargaVino.svg" alt="Carga de vinos">
+            </a>
+            <a href="/admin/carga">
+                <img src="/img/cargaConservas.svg" alt="Carga de conservas">
+            </a>
+            <a href="/admin/carga">
+                <img src="/img/cargaExp.svg" alt="Carga de experiencias">
+            </a>
+            <a href="/admin/carga">
+                <img src="/img/cargaBoxes.svg" alt="Carga de boxes">
+            </a>
+        </div>
+        <div class="carga">
+            <form action="/admin/carga" method="POST" enctype="multipart/form-data">
+                <div class="col-12 col-md-6">
+                    <input type="text" id="name" name="name" placeholder="/nombre" class="form-input">
+                </div>
+                <div class="col-12 col-md-6">
+                    <input type="text" id="price" name="price" placeholder="/precio" class="form-input">
+                </div>
+                <div class="col-12 col-md-6">
+                    <label for="discount" class="form-label"></label>
+                    <input type="text" id="discount" name="discount" placeholder="/descuento" class="form-input">
+                </div>
+                <div class="col-12 col-md-6">
+                    <label for="category" class="form-label"></label>
+                    <select name="category" id="category" class="form-input">
+                        <option value="">/categoría</option>
+                        <option value="malbec">Malbec</option>
+                        <option value="cabernet">Cabernet Sauvignon</option>
+                    </select>
+                </div>
+                <div class="col-12 col-md-6">
+                    <label for="image" class="form-label">/cargar imagen</label>
+                    <input type="file" name="image" id="image">
+                </div>
+
+                <div class="col-12">
+                    <label for="description" class="form-label"></label>
+                    <textarea name="description" id="description" class="form-input">/descipción</textarea>
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="buy-now-button">Guardar producto</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</body>
+</html>

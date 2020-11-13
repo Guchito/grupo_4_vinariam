@@ -4,6 +4,7 @@
      "name": "Lopez Cabernet Sauvignon",
      "price": 180,
      "category": "Vinos",
+     "subCategory": "Cabernet Sauvignon",
      "presentation": "750ml",
      "description": "Creado en 2011 para sumarse a la clásica marca. Añejado en toneles de roble francés. De color rubí profundo, con leves tonos caoba y aromas intensos. Excelente estructura, taninos suaves, untuoso y de largo final. Ideal para acompañar carnes rojas y comidas con salsas suaves.",
      "image": "1.png"
@@ -13,6 +14,7 @@
      "name": "Lopez Dulce Natural",
      "price": 178,
      "category": "Vinos",
+     "subCategory": "Blanco",
      "presentation": "750ml",
      "description": "Exquisito, fresco, equilibrado y delicado. Elaborado con uvas Torrontés Riojano, Moscatel y Viognier. Menos alcohol, más dulce natural. Disfrutalo bien frío y en todo momento. Ideal para compartir acompañado de platos dulces y como aperitivo.",
      "image": "2.png"
@@ -22,6 +24,7 @@
      "name": "Lopez Malbec",
      "price": 144,
      "category": "Vinos",
+     "subCategory": "Malbec",
      "presentation": "750ml",
      "description": "Emblemático vino argentino que desde su creación en 1973 conserva intacta la calidad convirtiéndose en un clásico indiscutible. Este Malbec, armónico y bien equilibrado, es añejado en grandes toneles de roble francés.",
      "image": "3.png"
@@ -31,7 +34,8 @@
      "name": "Lopez Rincon Famoso Tinto",
      "description": "Cepas Sangiovese, Merlot y Malbec dan origen a este clásico vino argentino. Añejado en toneles de roble francés. Equilibrado, de taninos maduros y un largo final.",
      "price": 245,
-     "category": "Vinos",
+     "category": "Blend",
+     "subCategory": "Cabernet Sauvignon",
      "presentation": "750ml",
      "image": "4.png"
     },
@@ -41,6 +45,7 @@
      "description": "Destacado Blend Gran Reserva. Una cuidada combinación de uvas Cabernet Sauvignon, Merlot y Pinot Noir que se conserva desde sus primeras cosechas a principios del siglo XX. Añejado en grandes toneles de roble francés. Redondo, armónico y equilibrado.",
      "price": 437,
      "category": "Vinos",
+     "subCategory": "Blend",
      "presentation": "750ml",
      "image": "5.png"
     },
@@ -50,6 +55,7 @@
      "description": "De color rosado pálido debido a su corta maceración. Una combinación entre Malbec y Pinot Noir, un blend fresco y frutado.",
      "price": 247,
      "category": "Vinos",
+     "subCategory": "Rosado",
      "presentation": "750ml",
      "image": "6.png"
     },
@@ -59,6 +65,7 @@
      "description": "Su menor tiempo de guarda define una personalidad distinta. Más joven e intenso, de un particular color rojo brillante con destellos granate, suave aroma, armónico y con un largo final. Equilibrio entre crianza y frescura con mayor cuerpo y carácter.",
      "price": 464,
      "category": "Vinos",
+     "subCategory": "Blend",
      "presentation": "750ml",
      "image": "7.png"
     },
@@ -68,6 +75,7 @@
      "description": "De uvas excepcionales, añejado en grandes toneles y luego en su botella por 5 años más. Blend donde los aromas y sabores se unieron en una expresión profunda y delicada que conecta con el pasado descubriendo equilibrio y complejidad en cada trago.",
      "price": 712,
      "category": "Vinos",
+     "subCategory": "Blend",
      "presentation": "750ml",
      "image": "8.png"
     }

@@ -15,12 +15,10 @@ const productsRouter = require('./routes/products'); // Rutas / Products
 const usersRouter = require('./routes/users'); // Rutas / Users
 const adminRouter = require('./routes/admin'); // rutas /admin
 
-
 app.use('/', mainRouter);
 app.use('/productos', productsRouter);
 app.use('/users', usersRouter);
 app.use('/admin', adminRouter);
-
 
 module.exports = app;
 
