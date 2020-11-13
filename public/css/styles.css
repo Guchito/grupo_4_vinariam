@@ -773,7 +773,15 @@ font-size: 20px;
 }
 
 
-/* LISTADO DE PRODUCTOS */
+/******************** LISTADO DE PRODUCTOS ************************/
+
+.tituloListado{
+    justify-content: center;
+    text-align: left;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin: 0 31px;
+}
 
 .contenedorListado{
     display: flex;
@@ -782,15 +790,17 @@ font-size: 20px;
 .listadoIzquierda{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    margin: 35px 23px;
 }
 
 .product-filter {
     display: flex;
+
 }
 
 .filtros {
     display: flex;
+    flex-direction: column;
 }
 
 .filtrarPor {
@@ -800,11 +810,18 @@ font-size: 20px;
 }
 
 .mujerComprando{
-    width: 60%;
+    width: 70%;
+    margin: 50px 20px 0 20px;
+  
 }
 
 .conteinerProducts{
     display: flex;
+    flex-wrap: wrap;
+}
+.articuloListado{
+    width: calc(25% - 20px);
+    margin: 0 10px;
 }
 
 .articulosTodos{
@@ -817,7 +834,10 @@ font-size: 20px;
     flex-direction: column;
     align-items: center;
 }
-
+.productBoxImage {
+    display: flex;
+    justify-content: center;
+}
 .productBoxImage img{
     height: 40vh;
 }
@@ -828,11 +848,49 @@ font-size: 20px;
     align-items: center;
 }
 
+.nombreYPrecio h4{
+    margin: 5px 0 10px 0;
+}
+
+.productDescription{
+    height: 150px;
+    font-weight: 200;
+    margin: 0;
+}
+
+
+/************* MENSAJE DE ERROR ****************/
+
+.contenedorError{
+    display: flex;
+}
+
+.izquierdaError{
+    margin: 5%;
+    width: 40%;
+}
+
+.textoError{ 
+    font-size: 35px;
+    font-weight: 300;
+    margin: 0px;
+}
+
+.textoError p{
+    font-weight: 600;
+    margin: 0px;
+}
+
+.paciencia{
+    width: 60%; 
+    margin-left: 5%;
+}
+
+
 /************************************************ ADMIN **************************************************************************/
 
 
 /******** CARGA DE PRODUCTOS ********************/
-
 
 .tituloCarga{
     margin: 10px;
@@ -947,29 +1005,3 @@ label[for=" cargarFoto"]{
 }
 
 
-/* MENSAJE DE ERROR */
-
-.contenedorError{
-    display: flex;
-}
-
-.izquierdaError{
-    margin: 5%;
-    width: 40%;
-}
-
-.textoError{ 
-    font-size: 35px;
-    font-weight: 300;
-    margin: 0px;
-}
-
-.textoError p{
-    font-weight: 600;
-    margin: 0px;
-}
-
-.paciencia{
-    width: 60%; 
-    margin-left: 5%;
-}
