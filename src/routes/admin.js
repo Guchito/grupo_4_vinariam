@@ -4,7 +4,8 @@ const adminController = require('../controllers/adminController'); //requiero al
 
 /* ROUTES ADMIN */
 
-router.get('/carga', adminController.carga);
+router.get('/carga', adminController.carga); // Ver la vista de carga de productos
+router.post('/carga', adminController.store); // Carga el formulario
 
 /*Export */
 
