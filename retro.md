@@ -34,10 +34,11 @@ Creemos que a grandes rasgos el sprint 1 fue productivo e identificamos algunas 
 
 * Empezar a hacer
 -Modularizar
+-Setear reuniones fijas de forma semanal
+-De la mano de la nueva metodología, vamos a empezar a trabajar de forma idividual y grupal a la vez para poder ser mas eficientes y productivos
 
-* Continuar haciendo
--Organizarnos 
+* Continuar haciendo 
 -Igualar el conocimiento entre todos
 
 * Hacer menos
--Trabajo solo en zoom en el equipo
+-Tener reuniones extensas sin definir objetivos claros para cada una
