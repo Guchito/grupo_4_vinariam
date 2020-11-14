@@ -44,6 +44,7 @@ header{
 .menu{
     width: 80%;
     padding-left: 60px;
+    padding-top: 20px;
 
 }
 
@@ -83,7 +84,7 @@ a .mayus:hover {
 .barraNav{
     display: flex;
     justify-content: space-around;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
     border-bottom: 1px solid #278828;
 }
 
