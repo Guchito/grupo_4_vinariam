@@ -975,7 +975,7 @@ background-color: var(--colorFondo);
     border-radius: 0px 45px 45px 0px;
 }
 
-.navAdmin p {
+.navAdminElemnto {
     height: 45px;
     margin: 5px;
     display: flex;
@@ -983,7 +983,7 @@ background-color: var(--colorFondo);
     transition: 0.5s;
 }
 
-.navAdmin p:hover{
+.navAdminElemnto:hover{
     background-color: var(--colorFondo);
     width: 70%;
     border-radius: 0 17px 17px 0;  
