@@ -22,8 +22,9 @@
             <p>Métricas</p>
         </div>
         <div class="selectorCategoria">
+            <h3>/tipo de producto</h3>
             <a href="/admin/carga">
-                <img class="selectedCategory" src="/img/cargaVino.svg" alt="Carga de vinos">
+                <img src="/img/cargaVino.svg" alt="Carga de vinos">
             </a>
             <a href="/admin/carga">
                 <img src="/img/cargaConservas.svg" alt="Carga de conservas">
@@ -60,22 +61,23 @@
                         <option value="blend">Blend</option>
                         <option value="blanco">Blanco</option>
                         <option value="rosado">Rosado</option>
-
                     </select>
                 </div>
                 <div class="cargaCampos">
-                    <label for="cargarFoto">
-                        <input class="cargarFoto" type="file" name="image" id="image">
-                        /cargar imagen
-                    </label>
+                    <input class="sinborde" type="text" id="presentation" name="presentation" placeholder="/ presentacion" class="form-input">
+                </div>
+                <div class="cargaCampos">
+                    <label for="image" class="form-label"></label>
+					<input type="file" name="image" id="image">
                 </div>
 
                 <div class="cargaCampos">
-                    <label for="description" class="form-label"></label>
                     <textarea class="sinborde" name="description" id="description" class="form-input" placeholder="/descipción"></textarea>
                 </div>
-                <div class="Guardar">
-                    <button class="botonGuardar" type="submit" class="buy-now-button">Cargar producto</button>
+                <div class="contenedorGuardar">
+                    <div class="Guardar">
+                        <button class="botonGuardar" type="submit" class="buy-now-button">Cargar producto</button>
+                    </div>
                 </div>
             </form>
         </div>
