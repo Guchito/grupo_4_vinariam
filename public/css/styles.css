@@ -951,12 +951,14 @@ background-color: var(--colorFondo);
 }
 
 .selectorCategoria{
-    width: 15%;
+    width: 16%;
     margin-top: 20px;
 }
 
-.selectedCategory{
-    transform: scale(1.2)
+.selectorCategoria h3{
+    font-weight: 300;
+    font-size: 35px;
+    margin: 0;
 }
 
 .selectorCategoria a img{
@@ -1020,7 +1022,7 @@ background-color: var(--colorFondo);
 .carga{
     display: flex;
     flex-direction: column;
-    margin-right: 200px;
+    margin-right: 150px;
 
 
 }
@@ -1071,6 +1073,16 @@ label[for=" cargarFoto"]{
     cursor: pointer;
     padding: 15px !important;
     outline: none;
+    margin-top: 5px;
+}
+
+.contenedorGuardar{
+    display: flex;
+    justify-content: flex-end;
 }
 
 
+textarea {
+    width: 350px;
+    height: 150px;
+  }
