@@ -7,30 +7,16 @@
             <h1 class="tituloCart">Tu carrito de compras</h1>
             <div class="contenedorCart">
                 <div class="articulos">
-                    <article class="resumen">
-                        <a href="/productos/producto"><img class="articuloCart" src="/img/1.png" alt="Articulo"></a>
-                        <p class="descripcion">Benegas Malbec 2015</p>
-                        <input class="cantidad" type="number" name="cantidad" placeholder="1">
-                        <p class="precio">$1.200</p>
-                        <i class="fas fa-trash-alt"></i>
-                    </article>
-
-                    <article class="resumen">
-                        <a href="/productos/producto"><img class="articuloCart" src="/img/2.png" alt="Articulo"></a>
-                        <p class="descripcion">Animal Malbec 2015</p>
-                        <input class="cantidad" type="number" name="cantidad" placeholder="1">
-                        <p class="precio">$1.000</p>
-                        <i class="fas fa-trash-alt"></i>
-                    </article>
-
-                    <article class="resumen">
-                        <a href="/productos/producto"><img class="articuloCart" src="/img/4.png" alt="Articulo"></a>
-                        <p class="descripcion">Padrillos Malbec 2015</p>
-                        <input class="cantidad" type="number" name="cantidad" placeholder="1">
-                        <p class="precio">$1.400</p>
-                        <i class="fas fa-trash-alt"></i>
-                    </article>
-
+                    <% for (const product of products) {%>
+                        <article class="resumen">
+                            <a href="/productos/detail/<%= product.id %>"><img class="articuloCart" src="/img/<%= product.image %>" alt="Articulo"></a>
+                            <p class="descripcion"><%= product.name %></p>
+                            <input class="cantidad" type="number" name="cantidad" placeholder="1">
+                            <p class="precio">$<%= product.price %></p>
+                            <i class="fas fa-trash-alt"></i>
+                        </article>
+                    <% } %>
+                
                     <article class="totales">
                         <div class="primeraColumna">
                             <p>Subtotal</p>
@@ -38,9 +24,9 @@
                             <p>Total</p>
                         </div>
                         <div class="segundaColumna">
-                            <p>$3.600</p>
-                            <p>$400</p>
-                            <p>$4.000</p>
+                            <p>$<%= subTotal %> </p>
+                            <p>$<%= shipping %> </p>
+                            <p>$<%= total %> </p>
                         </div>
                     </article>
                     <div class="contenedorComprar">
