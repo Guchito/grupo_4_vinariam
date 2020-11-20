@@ -10,15 +10,26 @@ const productsController = {
 		const products = helper.getAllProducts();
 		const result = products.find((product) => {
 			return product.id == id
-		})
+		});
 
-		res.render('detail', {
-			product: result
-		})
+		res.render('detail', {product: result});
 	},
 
     cart: (req, res) => {
-        res.render('cart');
+		const products = helper.getAllProducts();
+		const someProducts = products.filter((product) => {
+			return product.id < 4;
+		});
+
+		let subTotal = 0;
+		for (let i = 0; i < someProducts.length; i++) {
+			const element = someProducts[i].price;
+			subTotal += element;
+		}
+		const shipping = 400;
+		const total = subTotal + shipping;
+		
+		res.render('cart', {products: someProducts, subTotal: subTotal, shipping: shipping, total: total});
     },
 
     listaProductos: (req, res) => {

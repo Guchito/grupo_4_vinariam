@@ -29,12 +29,12 @@
                 <div class="vinosYVideos">
     
                     <div class="fonditosyVinos">
-                        <% for (product of productDest) { %>
+                        <% for (const product of productDest) { %>
 
                             <a href="/productos/detail/<%= product.id %>">
                                 <article class="articulo">
                                     <div class="cuadrito">
-                                        <img class="fondo" src="/img/mancha<%= product.id %>.png" alt="coral">
+                                        <img class="fondo" src="/img/mancha<%= product.id %>.png" alt="fondo">
                                         <img class="vino" src="/img/<%= product.image %>" alt="vino<%=product.id%>">
                                     </div>
 
