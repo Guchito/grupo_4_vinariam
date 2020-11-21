@@ -18,7 +18,7 @@ const mainController = {
     soyMayor: (req,res) => {
         req.session.mayor = true;
         console.log('En el controller: ' + originalUrl);
-        res.redirect('/productos');
+        res.redirect('/');
     },
     error: (req, res) => {
         res.render('error');
