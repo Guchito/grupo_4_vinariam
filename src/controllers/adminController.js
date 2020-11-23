@@ -9,7 +9,8 @@ const adminController = {
     },
     
     // Carga - Store
-    store: (req, res, next) => { 
+    store: (req, res, next) => 
+    { 
     
         const newProduct = {
             id: helper.generateNewId(),
@@ -24,13 +25,26 @@ const adminController = {
             image: req.files[0].filename
         }
 
-    const products = helper.getAllProducts();
-    const saveProduct = [...products, newProduct];
+     const products = helper.getAllProducts();
+     const saveProduct = [...products, newProduct];
 
-    helper.writeProducts(saveProduct);
+     helper.writeProducts(saveProduct);
 
-    res.redirect('/');
-},
+     res.redirect('/');
+    },
+
+   /* delete: (req, res, next) => {
+
+        const products = helper.getAllProducts();
+        const productToDelete = req.params.id;
+        products = products.filter(function(product){
+            return product != productToDelete;
+
+        })
+
+        res.redirect('/productos'); o a la vista de admin de edicion 
+    }*/
+     
 }
 
 
