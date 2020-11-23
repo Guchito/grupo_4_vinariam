@@ -1,4 +1,4 @@
-const helper = require('../helpers/helpers') // Requiero a las funciones de helpers
+const helper = require('../helpers/helpers'); // Requiero a las funciones de helpers
 const soyMayor = require ('../middlewares/soyMayorMiddleware');
 const originalUrl = soyMayor.originalUrl
 
