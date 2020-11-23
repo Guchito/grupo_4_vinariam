@@ -33,7 +33,13 @@ const adminController = {
      res.redirect('/');
     },
     editar: (req, res, next) => {
-        res.render('editProduct')
+        const products = helper.getAllProducts();
+        const id = req.params.id;
+        const result = products.find((product) => product.id == id);
+        
+        res.render('editProduct', {
+            productEdit: result
+        });
     },
 
    delete: (req, res, next) => {
@@ -49,9 +55,5 @@ const adminController = {
     }
      
 }
-
-
-
-
 
 module.exports = adminController;
