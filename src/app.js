@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
-const session = require('express-session')
+const session = require('express-session');
+const methodOverride = require('method-override');
 
 
 const app = express();
@@ -10,6 +11,7 @@ app.use(express.static(path.join(__dirname, '../public')));  // Necesario para l
 app.set('view engine', 'ejs');
 
 app.use(session ({secret:'aca va una frase secreta, shh!', resave: true, saveUninitialized: true}));
+app.use(methodOverride('_method'));
 
 /**Middlewares */
 
