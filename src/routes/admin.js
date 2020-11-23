@@ -10,6 +10,7 @@ const helper = require('../helpers/helpers');
 
 router.get('/carga', adminController.carga); // Ver la vista de carga de productos
 router.post('/carga', helper.upload().any(), adminController.store); // Carga el formulario
+router.get('/editar/:id', adminController.editar);
 
 /*Export */
 

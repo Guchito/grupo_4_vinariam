@@ -15,7 +15,7 @@
                 </div>
             </div>
             <a class="navAdminElemnto" href="#">Proveedores</a>
-            <a class="navAdminElemnto" href="#" class="selectedAdminNav">Cargar producto</a>
+            <a class="navAdminElemnto selectedAdminNav" href="#">Cargar producto</a>
             <a class="navAdminElemnto" href="#">Pedidos</a>
             <a class="navAdminElemnto" href="#">Configuración</a>
             <a class="navAdminElemnto" href="#">Mensajes</a>
@@ -39,14 +39,14 @@
         <div>
             <form class="carga" action="/admin/carga" method="POST" enctype="multipart/form-data">
                 <div class="cargaCampos">
-                    <input class="sinborde" type="text" id="name" name="name" placeholder="/nombre" class="form-input">
+                    <input class="sinborde" type="text" id="name" name="name" placeholder="/nombre">
                 </div>
                 <div class="cargaCampos">
-                    <input class="sinborde" type="text" id="price" name="price" placeholder="/ precio" class="form-input">
+                    <input class="sinborde" type="text" id="price" name="price" placeholder="/ precio">
                 </div>
                 <div class="cargaCampos">
                     <label for="class" class="form-label"></label>
-                    <select class="sinborde" name="class" id="class" class="form-input">
+                    <select class="sinborde" name="class" id="class">
                         <option value="" disabled = "true">/ variedad</option>
                         <option value="no-destacado">No destacado</option>
                         <option value="destacado">Destacado</option>                        
@@ -54,7 +54,7 @@
                 </div>
                 <div class="cargaCampos">
                     <label for="subCategory" class="form-label"></label>
-                    <select class="sinborde" name="subCategory" id="subCategory" class="form-input">
+                    <select class="sinborde" name="subCategory" id="subCategory">
                         <option value="" disabled = "true">/ variedad</option>
                         <option value="malbec">Malbec</option>                        
                         <option value="cabernet">Cabernet Sauvignon</option>
@@ -64,7 +64,7 @@
                     </select>
                 </div>
                 <div class="cargaCampos">
-                    <input class="sinborde" type="text" id="presentation" name="presentation" placeholder="/ presentacion" class="form-input">
+                    <input class="sinborde" type="text" id="presentation" name="presentation" placeholder="/ presentacion">
                 </div>
                 <div class="cargaCampos">
                     <label for="image" class="form-label"></label>
@@ -72,11 +72,11 @@
                 </div>
 
                 <div class="cargaCampos">
-                    <textarea class="sinborde" name="description" id="description" class="form-input" placeholder="/descipción"></textarea>
+                    <textarea class="sinborde" name="description" id="description" placeholder="/descipción"></textarea>
                 </div>
                 <div class="contenedorGuardar">
                     <div class="Guardar">
-                        <button class="botonGuardar" type="submit" class="buy-now-button">Cargar producto</button>
+                        <button class="botonGuardar" type="submit">Cargar producto</button>
                     </div>
                 </div>
             </form>
