@@ -1,8 +1,9 @@
 const helper = require('../helpers/helpers') // Requiero a las funciones de helpers
-
+const soyMayor = require ('../middlewares/soyMayorMiddleware');
+const originalUrl = soyMayor.originalUrl
 
 const mainController = {
-	index: (req, res) => {
+	index: (req, res, next) => {
         const products = helper.getAllProducts();
         const destacados = products.filter((product) => {
 			return product.class == "destacado";
@@ -13,6 +14,11 @@ const mainController = {
     },
     enter: (req, res) => {
         res.render('enter');
+    },
+    soyMayor: (req,res) => {
+        req.session.mayor = true;
+        console.log('En el controller: ' + originalUrl);
+        res.redirect('/');
     },
     error: (req, res) => {
         res.render('error');
