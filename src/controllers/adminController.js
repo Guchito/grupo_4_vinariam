@@ -32,6 +32,9 @@ const adminController = {
 
      res.redirect('/');
     },
+    editar: (req, res, next) => {
+        res.render('editProduct')
+    },
 
    delete: (req, res, next) => {
 
