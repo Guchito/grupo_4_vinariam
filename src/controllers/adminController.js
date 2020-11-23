@@ -5,7 +5,7 @@ const helper = require('../helpers/helpers') // Requiero a las funciones de help
 
 const adminController = {
 	carga: (req, res) => {
-        res.render('cargaProducto');
+        res.render('uploadProduct');
     },
     
     // Carga - Store
@@ -31,6 +31,15 @@ const adminController = {
 
     res.redirect('/admin/carga');
 },
+    editar: (req, res, next) => {
+        const products = helper.getAllProducts();
+        const id = req.params.id;
+		const result = products.find((product) => product.id == id);
+        
+        res.render('editProduct', {
+            productEdit: result
+        });
+    }
 }
 
 
