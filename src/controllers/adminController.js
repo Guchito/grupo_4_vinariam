@@ -33,7 +33,7 @@ const adminController = {
      res.redirect('/');
     },
 
-   /* delete: (req, res, next) => {
+   delete: (req, res, next) => {
 
         const products = helper.getAllProducts();
         const productToDelete = req.params.id;
@@ -42,8 +42,8 @@ const adminController = {
 
         })
 
-        res.redirect('/productos'); o a la vista de admin de edicion 
-    }*/
+        res.redirect('/productos'); 
+    }
      
 }
 
