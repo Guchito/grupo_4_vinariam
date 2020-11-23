@@ -5,7 +5,7 @@ const helper = require('../helpers/helpers') // Requiero a las funciones de help
 
 const adminController = {
 	carga: (req, res) => {
-        res.render('carga');
+        res.render('cargaProducto');
     },
     
     // Carga - Store
@@ -29,7 +29,7 @@ const adminController = {
 
     helper.writeProducts(saveProduct);
 
-    res.redirect('/');
+    res.redirect('/admin/carga');
 },
 }
 
