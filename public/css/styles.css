@@ -2,6 +2,7 @@
 :root {
     --colorFondo: #edeae3; /* Declaro color de fondo para ser reutilizado*/
     --colorAzul: #212960;
+    --colorRojo: #cc1515;
 }
 
 
@@ -541,7 +542,7 @@ width: 100%;
 }
 
 
-.agregarCarrito{
+.agregarYEditar{
     display: flex;
     border-radius: 50px;
     background-color: white;
@@ -554,7 +555,7 @@ width: 100%;
 
 }
 
-.agregarCarrito a{
+.agregarYEditar a{
     text-decoration: none;
     color: black;
     text-transform: uppercase;
@@ -1088,3 +1089,23 @@ textarea {
     width: 350px;
     height: 150px;
   }
+
+
+  /******** EDICION DE PRODUCTOS ********************/
+
+  .contenedorEditar{
+    display: flex;
+    justify-content: space-between;
+}
+
+.botonEliminar{
+    border: 0;
+    color:white; 
+    background-color: var(--colorRojo);
+    border-radius: 15px;
+    display: inline-block;
+    cursor: pointer;
+    padding: 15px !important;
+    outline: none;
+    margin-top: 5px;
+}

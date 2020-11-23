@@ -34,7 +34,7 @@ const productsController = {
 
     listaProductos: (req, res) => {
         const products = helper.getAllProducts();
-        res.render('listaProductos', {products: products});
+        res.render('listProducts', {products: products});
     }
 
 }

@@ -22,6 +22,8 @@ const storage = multer.diskStorage({
 router.get('/carga', adminController.carga); // Ver la vista de carga de productos
 router.post('/carga', upload.any(), adminController.store); // Carga el formulario
 router.delete('/admin/edicion/:id', adminController.delete); //Borrar un item 
+router.get('/editar/:id', adminController.editar);
+
 
 /*Export */
 
