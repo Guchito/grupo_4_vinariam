@@ -5,11 +5,12 @@ const helper = require('../helpers/helpers') // Requiero a las funciones de help
 
 const adminController = {
 	carga: (req, res) => {
-        res.render('uploadProduct');
+        res.render('carga');
     },
     
     // Carga - Store
-    store: (req, res, next) => { 
+    store: (req, res, next) => 
+    { 
     
         const newProduct = {
             id: helper.generateNewId(),
@@ -24,22 +25,26 @@ const adminController = {
             image: req.files[0].filename
         }
 
-    const products = helper.getAllProducts();
-    const saveProduct = [...products, newProduct];
+     const products = helper.getAllProducts();
+     const saveProduct = [...products, newProduct];
 
-    helper.writeProducts(saveProduct);
+     helper.writeProducts(saveProduct);
 
-    res.redirect('/admin/carga');
-},
-    editar: (req, res, next) => {
+     res.redirect('/');
+    },
+
+   delete: (req, res, next) => {
+
         const products = helper.getAllProducts();
-        const id = req.params.id;
-		const result = products.find((product) => product.id == id);
-        
-        res.render('editProduct', {
-            productEdit: result
-        });
+        const productToDelete = req.params.id;
+        products = products.filter(function(product){
+            return product != productToDelete;
+
+        })
+
+        res.redirect('/productos'); 
     }
+     
 }
 
 
