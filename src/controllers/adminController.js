@@ -1,3 +1,4 @@
+const { writeProducts } = require('../helpers/helpers');
 const helper = require('../helpers/helpers') // Requiero a las funciones de helpers
 
 
@@ -5,7 +6,7 @@ const helper = require('../helpers/helpers') // Requiero a las funciones de help
 
 const adminController = {
 	carga: (req, res) => {
-        res.render('carga');
+        res.render('uploadProduct');
     },
     
     // Carga - Store
@@ -48,8 +49,8 @@ const adminController = {
         const productToDelete = req.params.id;
         products = products.filter(function(product){
             return product != productToDelete;
-
-        })
+        });
+        writeProducts(products);
 
         res.redirect('/productos'); 
     }

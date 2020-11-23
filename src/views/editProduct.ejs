@@ -37,7 +37,7 @@
             </a>
         </div>
         <div>
-            <form class="carga" action="/admin/carga" method="POST" enctype="multipart/form-data">
+            <form class="carga" action="/admin/editProduct" method="POST" enctype="multipart/form-data">
                 <div class="cargaCampos">
                     <input class="sinborde" type="text" id="name" name="name" value="<%= productEdit.name %>">
                 </div>
@@ -78,10 +78,11 @@
                     <div class="Guardar">
                         <button class="botonGuardar" type="submit">Editar producto</button>
                     </div>
-                    <div class="Guardar">
-                        <button class="botonEliminar" type="submit">Eliminar producto</button>
-                    </div>
+
                 </div>
+            </form>
+            <form class="Guardar" method="POST" action= "editar/<%= productEdit.id %> ?_method=DELETE"  enctype="multipart/form-data">
+                <button class="botonEliminar">Eliminar producto</button> 
             </form>
         </div>
     </div>
