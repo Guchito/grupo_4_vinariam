@@ -18,7 +18,7 @@
                         <h1 class="tituloVino"><%= product.name %></h1>
                     </div>  
                     
-                    <div class="agregarCarrito">
+                    <div class="agregarYEditar">
                         <a href="/productos/cart">Agregar </a> 
                         <a href="/productos/cart"><i class="fas fa-shopping-cart"></i></a>  
                     </div>
@@ -43,10 +43,13 @@
                         <img class="circle" src="/img/circle3.svg" alt="circle3">
                     </div>
                     </div>  
-
-                <div class="InfoProducto">
-                <h3 class="Info Producto Cant"><%= product.description %></h3>
-                </div>  
+                    <div class="InfoProducto">
+                        <h3 class="Info Producto Cant"><%= product.description %></h3>
+                    </div>
+                    <div class="agregarYEditar">
+                        <a href="/admin/editar/<%= product.id %> ">Editar </a> 
+                        <a href="/admin/editar/<%= product.id %> "><i class="far fa-edit"></i></a> 
+                    </div>
                 </div>
 
                 <div class="vinoproduct">
