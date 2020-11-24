@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const session = require('express-session');
 const methodOverride = require('method-override');
+const soyMayorMiddleware = require('./middlewares/soyMayorMiddleware');
 
 
 const app = express();
@@ -14,7 +15,7 @@ app.use(session ({secret:'aca va una frase secreta, shh!', resave: true, saveUni
 app.use(methodOverride('_method'));
 
 /**Middlewares */
-
+// app.use(soyMayorMiddleware); Desahibilito el middleware de soy mayor, porque es molesto para trabajar
 
 app.listen(3002);
 
