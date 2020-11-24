@@ -45,14 +45,15 @@ const adminController = {
 
    delete: (req, res, next) => {
 
-        const products = helper.getAllProducts();
+        let products = helper.getAllProducts();
         const productToDelete = req.params.id;
         products = products.filter(function(product){
-            return product != productToDelete;
+            return product.id != productToDelete;
         });
-        writeProducts(products);
+        helper.writeProducts(products);
 
-        res.redirect('/productos'); 
+        res.redirect('/productos');  
+       
     },
 
     edit: (req, res, next) => {
