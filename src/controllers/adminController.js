@@ -53,8 +53,15 @@ const adminController = {
         writeProducts(products);
 
         res.redirect('/productos'); 
+    },
+
+    edit: (req, res, next) => {
+
+    
     }
      
 }
+
+
 
 module.exports = adminController;
