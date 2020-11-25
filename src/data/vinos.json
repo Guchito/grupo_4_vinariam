@@ -3,7 +3,7 @@
   "id": 1,
   "name": "Lopez Cabernet Sauvignon ",
   "price": "180        ",
-  "class": "no-destacado",
+  "class": "destacado",
   "subCategory": "Cabernet Sauvignon",
   "presentation": "750ml",
   "description": "Creado en 2011 para sumarse a la clásica marca. Añejado en toneles de roble francés. De color rubí profundo, con leves tonos caoba y aromas intensos. Excelente estructura, taninos suaves, untuoso y de largo final. Ideal para acompañar carnes rojas y comidas con salsas suaves.        ",
@@ -13,7 +13,7 @@
   "id": 2,
   "name": "Lopez Dulce Natural",
   "price": "178  ",
-  "class": "no-destacado",
+  "class": "destacado",
   "subCategory": "Blanco",
   "presentation": "750ml",
   "description": "Exquisito, fresco, equilibrado y delicado. Elaborado con uvas Torrontés Riojano, Moscatel y Viognier. Menos alcohol, más dulce natural. Disfrutalo bien frío y en todo momento. Ideal para compartir acompañado de platos dulces y como aperitivo.  ",
@@ -22,12 +22,11 @@
  {
   "id": 3,
   "name": "Lopez Malbec",
-  "price": 144,
+  "price": "144 ",
   "class": "destacado",
-  "category": "Vinos",
   "subCategory": "Malbec",
   "presentation": "750ml",
-  "description": "Emblemático vino argentino que desde su creación en 1973 conserva intacta la calidad convirtiéndose en un clásico indiscutible. Este Malbec, armónico y bien equilibrado, es añejado en grandes toneles de roble francés.",
+  "description": "Emblemático vino argentino que desde su creación en 1973 conserva intacta la calidad convirtiéndose en un clásico indiscutible. Este Malbec, armónico y bien equilibrado, es añejado en grandes toneles de roble francés. ",
   "image": "3.png"
  },
  {
@@ -55,10 +54,9 @@
  {
   "id": 6,
   "name": "Lopez Rincon Rosado",
-  "description": "De color rosado pálido debido a su corta maceración. Una combinación entre Malbec y Pinot Noir, un blend fresco y frutado.",
-  "price": 247,
+  "description": "De color rosado pálido debido a su corta maceración. Una combinación entre Malbec y Pinot Noir, un blend fresco y frutado.  ",
+  "price": "247  ",
   "class": "no-destacado",
-  "category": "Vinos",
   "subCategory": "Rosado",
   "presentation": "750ml",
   "image": "6.png"
@@ -77,10 +75,9 @@
  {
   "id": 8,
   "name": "Lopez Montchenot 10 Años",
-  "description": "De uvas excepcionales, añejado en grandes toneles y luego en su botella por 5 años más. Blend donde los aromas y sabores se unieron en una expresión profunda y delicada que conecta con el pasado descubriendo equilibrio y complejidad en cada trago.",
-  "price": 712,
+  "description": "De uvas excepcionales, añejado en grandes toneles y luego en su botella por 5 años más. Blend donde los aromas y sabores se unieron en una expresión profunda y delicada que conecta con el pasado descubriendo equilibrio y complejidad en cada trago.  ",
+  "price": "712  ",
   "class": "no-destacado",
-  "category": "Vinos",
   "subCategory": "Blend",
   "presentation": "750ml",
   "image": "8.png"
