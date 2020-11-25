@@ -17,7 +17,6 @@ app.use(methodOverride('_method'));
 /**Middlewares */
 // app.use(soyMayorMiddleware); Desahibilito el middleware de soy mayor, porque es molesto para trabajar
 
-app.listen(3002);
 
 /** Rutas */
 const mainRouter = require('./routes/main'); // Rutas Main

@@ -51,9 +51,35 @@ const adminController = {
     edit: (req, res, next) => {
 
     
-    }
+    },
      
+    processEdit: (req, res, next) => {
+
+        const products = helper.getAllProducts();
+        const editedProducts = products.map(function(product){
+        
+            if (product.id == req.params.id){
+                product.name = req.body.name;
+                product.price = req.body.price;
+                product.category = req.body.category;
+                product.code = req.body.code;
+                product.stock = req.body.stock;
+                product.description = req.body.description;
+                product.class = req.body.class;
+                product.image = req.files[0] ? req.files[0].filename:product.image
+            }
+            
+            return product
+        
+            });
+        
+            helper.writeProducts(editedProducts);    
+
+            res.redirect('/productos'); 
+    }
 }
+
+
 
 
 
