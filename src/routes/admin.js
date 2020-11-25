@@ -10,6 +10,7 @@ router.get('/carga', adminController.carga); // Ver la vista de carga de product
 router.post('/carga', helper.upload().any(), adminController.store); // Carga el formulario
 router.get('/editar/:id', adminController.editar);
 router.delete('/editar/:id', adminController.delete); //Borrar un item 
+router.put('/editar/:id', helper.upload().any(), adminController.processEdit); // Edita el formulario desde el put
 
 
 

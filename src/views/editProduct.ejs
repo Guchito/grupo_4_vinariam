@@ -37,7 +37,7 @@
             </a>
         </div>
         <div>
-            <form class="carga" action="/admin/editProduct" method="POST" enctype="multipart/form-data">
+            <form class="carga" action="/admin/editar/<%=productEdit.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                 <div class="cargaCampos">
                     <input class="sinborde" type="text" id="name" name="name" value="<%= productEdit.name %>">
                 </div>
