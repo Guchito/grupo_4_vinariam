@@ -1,23 +1,22 @@
 [
  {
   "id": 1,
-  "name": "Lopez Cabernet Sauvignon",
-  "price": "180    ",
+  "name": "Lopez Cabernet Sauvignon ",
+  "price": "180        ",
   "class": "no-destacado",
   "subCategory": "Cabernet Sauvignon",
   "presentation": "750ml",
-  "description": "Creado en 2011 para sumarse a la clásica marca. Añejado en toneles de roble francés. De color rubí profundo, con leves tonos caoba y aromas intensos. Excelente estructura, taninos suaves, untuoso y de largo final. Ideal para acompañar carnes rojas y comidas con salsas suaves.    ",
+  "description": "Creado en 2011 para sumarse a la clásica marca. Añejado en toneles de roble francés. De color rubí profundo, con leves tonos caoba y aromas intensos. Excelente estructura, taninos suaves, untuoso y de largo final. Ideal para acompañar carnes rojas y comidas con salsas suaves.        ",
   "image": "1.png"
  },
  {
   "id": 2,
   "name": "Lopez Dulce Natural",
-  "price": 178,
-  "class": "destacado",
-  "category": "Vinos",
+  "price": "178  ",
+  "class": "no-destacado",
   "subCategory": "Blanco",
   "presentation": "750ml",
-  "description": "Exquisito, fresco, equilibrado y delicado. Elaborado con uvas Torrontés Riojano, Moscatel y Viognier. Menos alcohol, más dulce natural. Disfrutalo bien frío y en todo momento. Ideal para compartir acompañado de platos dulces y como aperitivo.",
+  "description": "Exquisito, fresco, equilibrado y delicado. Elaborado con uvas Torrontés Riojano, Moscatel y Viognier. Menos alcohol, más dulce natural. Disfrutalo bien frío y en todo momento. Ideal para compartir acompañado de platos dulces y como aperitivo.  ",
   "image": "2.png"
  },
  {

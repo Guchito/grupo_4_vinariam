@@ -47,13 +47,9 @@ const adminController = {
         helper.delete(req.params.id);
         res.redirect('/productos');  
     },
-
-    edit: (req, res, next) => {
-
-    
-    },
      
     processEdit: (req, res, next) => {
+        const id = req.params.id;
 
         const products = helper.getAllProducts();
         const editedProducts = products.map(function(product){
@@ -75,7 +71,7 @@ const adminController = {
         
             helper.writeProducts(editedProducts);    
 
-            res.redirect('/productos'); 
+            res.redirect('/productos/detail/' + id); 
     }
 }
 
