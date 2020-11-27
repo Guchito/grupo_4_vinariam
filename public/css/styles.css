@@ -1066,6 +1066,9 @@ label[for=" cargarFoto"]{
     border: 0;
 }
 
+.width300{
+    width: 300px;
+}
 
 .botonGuardar{
     border: 0;
