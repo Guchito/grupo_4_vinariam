@@ -23,23 +23,23 @@
         </div>
         <div class="selectorCategoria">
             <h3>/tipo de producto</h3>
-            <a href="/admin/carga">
+            <a href="/admin/editar/<%= productEdit.id %>">
                 <img src="/img/cargaVino.svg" alt="Carga de vinos">
             </a>
-            <a href="/admin/carga">
+            <a href="/admin/editar/<%= productEdit.id %>">
                 <img src="/img/cargaConservas.svg" alt="Carga de conservas">
             </a>
-            <a href="/admin/carga">
+            <a href="/admin/editar/<%= productEdit.id %>">
                 <img src="/img/cargaExp.svg" alt="Carga de experiencias">
             </a>
-            <a href="/admin/carga">
+            <a href="/admin/editar/<%= productEdit.id %>">
                 <img src="/img/cargaBoxes.svg" alt="Carga de boxes">
             </a>
         </div>
         <div>
             <form class="carga" action="/admin/editar/<%=productEdit.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                 <div class="cargaCampos">
-                    <input class="sinborde" type="text" id="name" name="name" value="<%= productEdit.name %>">
+                    <input class="sinborde width300" type="text" id="name" name="name" value="<%= productEdit.name %>">
                 </div>
                 <div class="cargaCampos">
                     <input class="sinborde" type="text" id="price" name="price" value="<%= productEdit.price %> " >
@@ -49,7 +49,7 @@
                     <select class="sinborde" name="class" id="class" >
                         <option value="" disabled = "true">/ variedad</option>
                         <option value="no-destacado">No destacado</option>
-                        <option value="destacado">Destacado</option>                        
+                        <option value="destacado">Destacado</option>
                     </select>
                 </div>
                 <div class="cargaCampos">
@@ -67,7 +67,7 @@
                     <input class="sinborde" type="text" id="presentation" name="presentation" value="<%= productEdit.presentation %> " >
                 </div>
                 <div class="cargaCampos">
-                    <label for="image" class="form-label"></label>
+                    <label for="image"></label>
 					<input type="file" name="image" id="image">
                 </div>
 
