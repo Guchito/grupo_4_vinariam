@@ -42,3 +42,20 @@ Creemos que a grandes rasgos el sprint 1 fue productivo e identificamos algunas 
 
 * Hacer menos
 -Tener reuniones extensas sin definir objetivos claros para cada una
+
+# Conclusiones de la retrospectiva sprint 3
+
+* Empezar a hacer
+- Repasos individuales teóricos extra a los espacios con DH
+
+* Hacer más 
+- Usar las reuniones/chats para desatar impedimentos y avanzar
+- Dar seguimiento a t iempo real a las weeklys a partir de Trello
+
+* Continuar haciendo 
+- Modularizar
+- Dividir las tareas y hacer más eficiente y productivo nuestro tiempo.
+- Comenzar el sprint con una reunión de lectura y división de tareas
+
+* Hacer menos 
+- No llevar las dudas a los colearning
