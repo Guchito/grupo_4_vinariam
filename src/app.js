@@ -15,8 +15,8 @@ app.use(session ({secret:'aca va una frase secreta, shh!', resave: true, saveUni
 app.use(methodOverride('_method'));
 
 /**Middlewares */
-// app.use(soyMayorMiddleware); Desahibilito el middleware de soy mayor, porque es molesto para trabajar
 
+app.use(soyMayorMiddleware); // Desahibilito el middleware de soy mayor, porque es molesto para trabajar
 
 /** Rutas */
 const mainRouter = require('./routes/main'); // Rutas Main

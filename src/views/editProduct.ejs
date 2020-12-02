@@ -47,20 +47,20 @@
                 <div class="cargaCampos">
                     <label for="class" class="form-label"></label>
                     <select class="sinborde" name="class" id="class" >
-                        <option value="" disabled = "true">/ variedad</option>
-                        <option value="no-destacado">No destacado</option>
-                        <option value="destacado">Destacado</option>
+                        <option value="" disabled = "true">/ destacado</option>
+                        <option value="no-destacado" <%= productEdit.class == "no-destacado" ? "selected" : "" %> >No destacado</option>
+                        <option value="destacado" <%= productEdit.class == "destacado" ? "selected" : "" %> >Destacado</option>                        
                     </select>
                 </div>
                 <div class="cargaCampos">
                     <label for="subCategory" class="form-label"></label>
                     <select class="sinborde" name="subCategory" id="subCategory" value="<%= productEdit.subCategory %> ">
                         <option value="" disabled>/ variedad</option>
-                        <option value="Malbec">Malbec</option>                        
-                        <option value="Cabernet">Cabernet Sauvignon</option>
-                        <option value="Blend">Blend</option>
-                        <option value="Blanco">Blanco</option>
-                        <option value="Rosado">Rosado</option>
+                        <option value="Malbec" <%= productEdit.subCategory == "Malbec" ? "selected" : "" %> >Malbec</option>                        
+                        <option value="Cabernet" <%= productEdit.subCategory == "Cabernet Sauvignon" ? "selected" : "" %> >Cabernet Sauvignon</option>
+                        <option value="Blend" <%= productEdit.subCategory == "Blend" ? "selected" : "" %> >Blend</option>
+                        <option value="Blanco" <%= productEdit.subCategory == "Blanco" ? "selected" : "" %> >Blanco</option>
+                        <option value="Rosado" <%= productEdit.subCategory == "Rosado" ? "selected" : "" %> >Rosado</option>
                     </select>
                 </div>
                 <div class="cargaCampos">
