@@ -44,24 +44,38 @@ const adminController = {
     },
 
    delete: (req, res, next) => {
-
-        let products = helper.getAllProducts();
-        const productToDelete = req.params.id;
-        products = products.filter(function(product){
-            return product.id != productToDelete;
-        });
-        helper.writeProducts(products);
-
+        helper.delete(req.params.id);
         res.redirect('/productos');  
-       
     },
-
-    edit: (req, res, next) => {
-
-    
-    }
      
+    processEdit: (req, res, next) => {
+        const id = req.params.id;
+
+        const products = helper.getAllProducts();
+        const editedProducts = products.map(function(product){
+        
+            if (product.id == req.params.id){
+                product.name = req.body.name;
+                product.price = req.body.price;
+                product.category = req.body.category;
+                product.code = req.body.code;
+                product.stock = req.body.stock;
+                product.description = req.body.description;
+                product.class = req.body.class;
+                product.image = req.files[0] ? req.files[0].filename:product.image
+            }
+            
+            return product
+        
+            });
+        
+            helper.writeProducts(editedProducts);    
+
+            res.redirect('/productos/detail/' + id); 
+    }
 }
+
+
 
 
 

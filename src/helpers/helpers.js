@@ -31,7 +31,17 @@ const helper = {
           })
             
           return multer({ storage: storage })
+    },
+
+    delete(idToDelete){
+      let products = helper.getAllProducts();
+        const productToDelete = idToDelete;
+        products = products.filter(function(product){
+            return product.id != productToDelete;
+        });
+        helper.writeProducts(products);
     }
+
 
 }
 
