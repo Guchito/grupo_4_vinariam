@@ -50,7 +50,7 @@ Creemos que a grandes rasgos el sprint 1 fue productivo e identificamos algunas 
 
 * Hacer más 
 - Usar las reuniones/chats para desatar impedimentos y avanzar
-- Dar seguimiento a t iempo real a las weeklys a partir de Trello
+- Dar seguimiento a tiempo real a las weeklys a partir de Trello
 
 * Continuar haciendo 
 - Modularizar
@@ -59,3 +59,22 @@ Creemos que a grandes rasgos el sprint 1 fue productivo e identificamos algunas 
 
 * Hacer menos 
 - No llevar las dudas a los colearning
+
+# Conclusiones de la retrospectiva sprint 4 
+
+* Empezar a hacer 
+- Navegar el sitio en tiempos libre para no perdernos en el proyecto con el tiempo 
+- Pedirle a otras personas que naveguen nuestro sitio para encontrar errores (Pruebas piloto)
+
+* Hacer más 
+- Buscar mejoras continuamente a pesar de haber terminado las tareas obligatorias
+
+* Continuar haciendo
+- Ser organizados y modularizar
+- Por más que dividamos tareas, ser parte de la tarea del otro 
+
+* Hacer menos
+-  Buscar la perfección
+-  No estresarnos con detalles no prioritarios 
+
+# Conclusiones de la retrospectiva sprint 5 
