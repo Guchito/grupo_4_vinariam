@@ -16,6 +16,7 @@ const usersController = {
                 name: req.body.name,
                 lastName: req.body.lastName,
                 userName: req.body.userName,
+                birthday: req.body.birthday,
                 email: req.body.email,
                 password: bcrypt.hashSync(req.body.password, 10),
                 image: req.files[0].filename,
@@ -24,7 +25,6 @@ const usersController = {
     
          const users = helper.getAllUsers();
          const saveUser = [...users, newUser];
-    
          helper.writeUsers(saveUser);
     
          res.redirect('/');
