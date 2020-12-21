@@ -12,6 +12,10 @@ module.exports = {
             return !userExiste
         }).withMessage('E-mail ya existente').bail(),
        
+        body('name').notEmpty().withMessage('Debes indicar tu nombre').bail(), 
+        body('lastName').notEmpty().withMessage('Debes indicar tu apellido').bail(), 
+
+
         body('userName').notEmpty().withMessage('El campo usuario no puede estar vacío').bail()
         .custom(value => {
             users = helper.getAllUsers();
@@ -39,6 +43,7 @@ module.exports = {
                 return false;
             } 
             
-        }).withMessage('El email y la contraseña no coinciden').bail()
+        }).withMessage('El email y la contraseña no coinciden').bail(), 
+        body('password').notEmpty().withMessage('El campo contraseña es obligatorio')
     ]
 }
