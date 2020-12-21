@@ -58,7 +58,7 @@ const usersController = {
 			})
 		}
 
-	}
+	},
 
     /* processLogin: (req, res) => {
         const email = req.body.email;
@@ -92,7 +92,9 @@ const usersController = {
         }
         return res.redirect('/');
     }*/
-
+    profile: (req,res) => {
+        res.render('profile')
+    }
 }
 
 module.exports = usersController;

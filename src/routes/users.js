@@ -10,6 +10,7 @@ router.get('/login', usersController.login); //users/login (el "users" ya viene 
 router.post('/login', usersController.processLogin);
 router.get('/register', usersController.register);
 router.post('/carga', helper.uploadUser().any(), usersController.carga);
+router.get('/profile', usersController.profile)
 
 /*Export */
 
