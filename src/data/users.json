@@ -580,21 +580,10 @@
   "email": "guchi@gmail.com",
   "password": "$2b$10$lAbaG7ncahY/aZHq5Bw8EOZQyK72f/PtT5uwTcJAZKk5Y.zGZQRv6",
   "image": "1608488838221-.jpeg",
-  "category": "user"
+  "category": "admin"
  },
- {
+  {
   "id": 54,
-  "name": "Violeta",
-  "lastName": "aguirre",
-  "userName": "drogadicta",
-  "birthday": "1996-07-02",
-  "email": "vaguirre@gmail.com",
-  "password": "$2b$10$PssoC62b2p/bKgUfvhpmn.8ECn6MvojCjfZc0tlpSFwONASUyC6IO",
-  "image": "1608501009649-.jpg",
-  "category": "user"
- },
- {
-  "id": 55,
   "name": "Violeta",
   "lastName": "Aguirre",
   "userName": "violeta",
