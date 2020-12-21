@@ -10,7 +10,7 @@ const validator = require('../middlewares/validator'); //requiero al middle de v
 router.get('/login', usersController.login); //users/login (el "users" ya viene por default en el router)
 router.post('/login', validator.login, usersController.processLogin);
 router.get('/register', usersController.register);
-router.post('/processRegister', validator.register, helper.uploadUser().any(), usersController.processRegister);
+router.post('/processRegister', helper.uploadUser().any(), validator.register, usersController.processRegister);
 
 /*Export */
 

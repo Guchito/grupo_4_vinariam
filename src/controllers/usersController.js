@@ -4,7 +4,7 @@ const helper = require('../helpers/helpers');
 const bcryptjs = require('bcryptjs');
 
 /* VIOLE */
-const {check, validationResult, body } = require('express-validator');
+const { validationResult } = require('express-validator');
 
 const usersController = {
 	login: (req, res) => {
