@@ -4,7 +4,7 @@ const helper = require('../helpers/helpers');
 const bcryptjs = require('bcryptjs');
 
 /* VIOLE */
-const { check, validationResult, body } = require ('express-validator')
+const {check, validationResult, body } = require('express-validator');
 
 const usersController = {
 	login: (req, res) => {
@@ -13,7 +13,12 @@ const usersController = {
     register: (req, res) => {
         res.render('register');
     }, 
-    carga: (req, res) => {
+    processRegister: (req, res) => {
+        let errors = validationResult(req);
+        if (!errors.isEmpty()){
+            res.render('register', {errors: errors.errors})
+        } else 
+        {
     
             const newUser = {
                 id: helper.generateNewIdUsers(),
@@ -32,12 +37,25 @@ const usersController = {
          helper.writeUsers(saveUser);
     
          res.redirect('/');
+        }
  
     },
 
     /* VIOLE */
 
     processLogin: (req, res) => {
+        let errors = validationResult(req);
+        if (!errors.isEmpty()){
+            res.render('login', {errors: errors.errors})
+        }  
+        
+        console.log(req.body)
+        
+			req.session.email = req.body.email;			
+			res.redirect('/');
+        
+    }
+/*
         const email = req.body.email;
 		const password = req.body.password;
 		const users = helper.getAllUsers();
@@ -57,8 +75,8 @@ const usersController = {
 				loginError: true
 			})
 		}
-
-	}
+*/
+	
 
     /* processLogin: (req, res) => {
         const email = req.body.email;
