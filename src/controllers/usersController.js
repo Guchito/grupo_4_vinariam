@@ -55,7 +55,27 @@ const usersController = {
 			res.redirect('/');
         
     }
+/*
+        const email = req.body.email;
+		const password = req.body.password;
+		const users = helper.getAllUsers();
+		const userExist = users.find((user) => {
+			return user.email == email
+		});
 
+		if (userExist && bcryptjs.compareSync(password, userExist.password)) {
+            req.session.email = email;
+            if(userExist.category == "admin"){
+                req.session.admin = email;
+            };
+            console.log('Usuario: ' + req.session.email + ' Admin: ' + req.session.admin)
+			res.redirect('/');
+		}else{
+			res.render('login',{
+				loginError: true
+			})
+		}
+*/
 	
 
     /* processLogin: (req, res) => {
