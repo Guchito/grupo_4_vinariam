@@ -14,6 +14,7 @@ router.post('/login', validator.login, usersController.processLogin);
 router.get('/register', guest , usersController.register);
 router.post('/processRegister', helper.uploadUser().any(), validator.register, usersController.processRegister);
 router.get('/profile', user ,usersController.profile);
+router.get('/logout', usersController.logout)
 
 /*Export */
 
