@@ -53,7 +53,7 @@ const usersController = {
     },
     profile: (req,res) => {
         const email = req.session.email;
-        res.send('Profile')
+        res.render('profile')
     }
 /*
         const email = req.body.email;

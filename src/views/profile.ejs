@@ -1,0 +1,46 @@
+<%- include ('./partials/head', {title: 'Profile'}) %>
+
+<body>
+<div class="center">
+        <%- include ('./partials/header') %>
+
+        <main>
+            <h1>Tu perfil</h1>
+
+        <div class="BloqueGeneral">
+
+            <div class="bloqueUno">
+                <img class="hombreRegister" src="/img/profile.svg" alt="genteRegister">
+            </div>
+
+
+            <div class="bloqueDos">
+                <div class="textoBloqueDos">
+                <h2 class="datosPerfil">Tus datos</h2>
+                <h4 class="datosPersonales">
+                    <br>Iván Carnavale</br>
+                    <br>Gurruchaga 1278</br>
+                    <br>1162456431</br>
+                </h4>
+                <h2 class="datosPerfil">Facturación</h2>
+                </div>
+
+                <div class="fotoTarjeta">
+                    <img class="fotoTarjeta" src="/img/tarjeta.svg" alt="tarjeta">
+                </div>
+            </div>
+
+            
+            <div class="bloqueTres">
+                <h2 class="datosPerfil">Tus compras</h2>
+                <h2 class="datosPerfil">Reservas activas</h2>
+
+            </div>
+            
+        </div>
+        </main>
+    </div>
+    <%- include ('./partials/footer') %>
+
+</body>
+</html>
