@@ -22,6 +22,10 @@ module.exports = {
             userExiste = users.find(user => user.userName == value);
             return !userExiste
         }).withMessage('Nombre de usuario ya existente').bail(),
+        body('image')
+        .custom((value, { req }) => req.files[0])
+        .withMessage('La imagen de perfil es obligatoria')
+        .bail(),
         
         body('password').notEmpty().withMessage('El campo contraseña no puede estar vacío').bail()
         .isLength({min: 6, max:99}).withMessage('La contraseña debe tener como mínimo 6 caracteres').bail()
