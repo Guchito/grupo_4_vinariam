@@ -4,6 +4,7 @@ const session = require('express-session');
 const methodOverride = require('method-override');
 const soyMayorMiddleware = require('./middlewares/soyMayorMiddleware');
 const cookieParser = require('cookie-parser')
+const rememberMe = require('./middlewares/rememberMe')
 
 
 const app = express();
@@ -25,6 +26,7 @@ app.use(cookieParser());
 /**Middlewares */
 
 //app.use(soyMayorMiddleware); // Desahibilito el middleware de soy mayor, porque es molesto para trabajar
+app.use(rememberMe);
 
 
 

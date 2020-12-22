@@ -48,13 +48,27 @@ const usersController = {
             res.render('login', {errors: errors.errors})
         }
         req.session.email = req.body.email;			
-        res.redirect('/users/profile');
         
+        if (req.body.recordame){
+            res.cookie('email', req.body.email, { maxAge: 1000 * 60 * 60 * 24 * 365 });
+            console.log(req.cookies.email)
+        };	
+        res.redirect('/users/profile');	
     },
     profile: (req,res) => {
         const email = req.session.email;
-        res.send('Profile')
+
+        res.render('profileProvisorio')
+    },
+    logout: (req, res) => {
+        console.log('llegue')
+        if(req.cookies.user){
+            res.clearCookie('email');
+        }
+        req.session.destroy();
+        res.redirect('/');
     }
+    
 /*
         const email = req.body.email;
 		const password = req.body.password;
