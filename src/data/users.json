@@ -582,7 +582,7 @@
   "image": "1608488838221-.jpeg",
   "category": "admin"
  },
-  {
+ {
   "id": 54,
   "name": "Violeta",
   "lastName": "Aguirre",
@@ -591,6 +591,17 @@
   "email": "aguirregonzalezvioleta@gmail.com",
   "password": "$2b$10$odAL840fWI2XIyRVRyZRYOWAiokkSYO3zqmknK7ZR4Sz3/dcDwJWq",
   "image": "1608502427356-.jpg",
+  "category": "user"
+ },
+ {
+  "id": 55,
+  "name": "Ivan",
+  "lastName": "Carnevale",
+  "userName": "icarne",
+  "birthday": "1212-12-12",
+  "email": "icarne@gmail.com",
+  "password": "$2a$10$A2NzAn3k5a8ljBaWQQeDOuhzv.WDQRQ7uBhjyJnqz72zNFAug8IIO",
+  "image": "1608651916342-.jpeg",
   "category": "user"
  }
 ]

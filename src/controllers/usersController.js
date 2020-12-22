@@ -17,7 +17,7 @@ const usersController = {
         let errors = validationResult(req);
         if (!errors.isEmpty()){
             res.render('register', {errors: errors.errors})
-        } 
+        } else {
            
         const newUser = {
             id: helper.generateNewIdUsers(),
@@ -35,8 +35,8 @@ const usersController = {
         const saveUser = [...users, newUser];
         helper.writeUsers(saveUser);
     
-        res.redirect('/');
-        
+        res.redirect('/users/login');
+    }
  
     },
 
@@ -48,7 +48,7 @@ const usersController = {
             res.render('login', {errors: errors.errors})
         }
         req.session.email = req.body.email;			
-        res.redirect('/');
+        res.redirect('/users/profile');
         
     },
     profile: (req,res) => {
