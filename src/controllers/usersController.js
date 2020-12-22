@@ -50,6 +50,7 @@ const usersController = {
         req.session.email = req.body.email;			
         res.redirect('/');
         
+        
     },
     profile: (req,res) => {
         const email = req.session.email;
