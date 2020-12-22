@@ -44,6 +44,8 @@ module.exports = {
             } 
             
         }).withMessage('El email y la contraseña no coinciden').bail(), 
-        body('password').notEmpty().withMessage('El campo contraseña es obligatorio')
+        body('password').notEmpty().withMessage('El campo contraseña es obligatorio').bail(),
+        
+        
     ]
 }

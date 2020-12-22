@@ -3,6 +3,7 @@ const path = require('path');
 const session = require('express-session');
 const methodOverride = require('method-override');
 const soyMayorMiddleware = require('./middlewares/soyMayorMiddleware');
+const cookieParser = require('cookie-parser')
 
 
 const app = express();
@@ -19,6 +20,7 @@ app.use(express.urlencoded({
 
 app.use(session ({secret:'aca va una frase secreta, shh!', resave: true, saveUninitialized: true}));
 app.use(methodOverride('_method'));
+app.use(cookieParser());
 
 /**Middlewares */
 

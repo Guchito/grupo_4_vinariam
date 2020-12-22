@@ -17,27 +17,26 @@ const usersController = {
         let errors = validationResult(req);
         if (!errors.isEmpty()){
             res.render('register', {errors: errors.errors})
-        } else 
-        {
-    
-            const newUser = {
-                id: helper.generateNewIdUsers(),
-                name: req.body.name,
-                lastName: req.body.lastName,
-                userName: req.body.userName,
-                birthday: req.body.birthday,
-                email: req.body.email,
-                password: bcryptjs.hashSync(req.body.password, 10),
-                image: req.files[0].filename,
-                category: "user"
-            }
-    
-         const users = helper.getAllUsers();
-         const saveUser = [...users, newUser];
-         helper.writeUsers(saveUser);
-    
-         res.redirect('/');
+        } 
+           
+        const newUser = {
+            id: helper.generateNewIdUsers(),
+            name: req.body.name,
+            lastName: req.body.lastName,
+            userName: req.body.userName,
+            birthday: req.body.birthday,
+            email: req.body.email,
+            password: bcryptjs.hashSync(req.body.password, 10),
+            image: req.files[0].filename,
+            category: "user"
         }
+    
+        const users = helper.getAllUsers();
+        const saveUser = [...users, newUser];
+        helper.writeUsers(saveUser);
+    
+        res.redirect('/');
+        
  
     },
 
@@ -47,13 +46,14 @@ const usersController = {
         let errors = validationResult(req);
         if (!errors.isEmpty()){
             res.render('login', {errors: errors.errors})
-        }  
+        }
+        req.session.email = req.body.email;			
+        res.redirect('/');
         
-        console.log(req.body)
-        
-			req.session.email = req.body.email;			
-			res.redirect('/');
-        
+    },
+    profile: (req,res) => {
+        const email = req.session.email;
+        res.send('Profile')
     }
 /*
         const email = req.body.email;
