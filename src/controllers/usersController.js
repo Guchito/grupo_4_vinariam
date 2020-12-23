@@ -57,7 +57,7 @@ const usersController = {
     profile: (req,res) => {
         const email = req.session.email;
 
-        res.render('profileProvisorio')
+        res.render('profile')
     },
     logout: (req, res) => {
         if(req.cookies.email){
