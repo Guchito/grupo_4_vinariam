@@ -814,7 +814,7 @@ background-color: var(--colorFondo);
     flex-direction: column;
     border-radius: 50px;
     background-color: white;
-    height: 500px;
+    height: 600px;
     width: 350px;
     justify-content: space-evenly;
     align-items: center;
@@ -839,7 +839,7 @@ padding-right: 40px;
     display: flex;
     border-radius: 50px;
     background-color: white;
-    height: 500px;
+    height: 600px;
     width: 350px;
     justify-content: space-evenly;
     align-items: center;
@@ -853,6 +853,10 @@ padding-right: 40px;
 
 }
 
+.textoBloqueDos img{
+    width: 60%;
+
+}
 
 
 /******************** LISTADO DE PRODUCTOS ************************/
@@ -999,6 +1003,36 @@ padding-right: 40px;
 
 
 /************************************************ ADMIN **************************************************************************/
+
+/****** ADMIN PROFILE *******/
+
+.contenedorPadre{
+    display: flex;
+}
+
+.contenedorAdmin{
+    margin: 10px;
+    justify-content: space-evenly;
+}
+
+.bloqueAdmin{
+    display: flex;
+    flex-direction: column;
+    border-radius: 50px;
+    background-color: white;
+    height: 500px;
+    width: 350px;
+    justify-content: space-evenly;
+    margin-left: 300px;
+}
+
+.textoAdmin{
+    flex-direction: column;
+    font-weight: 300;
+    padding: 50px;
+    text-align: center;
+}
+
 
 
 /******** CARGA DE PRODUCTOS ********************/
