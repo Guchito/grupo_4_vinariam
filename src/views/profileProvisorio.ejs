@@ -4,7 +4,8 @@
             <%- include ('./partials/header') %>
         </div>
         <main>
-            <h1 class="tituloListado">Usarname</h1>
+            <h1 class="tituloListado"><%= user.userName %></h1>
+            <p><%= user.email %> </p>
             <a href="/users/logout">Logout</a>
             
         </main>
