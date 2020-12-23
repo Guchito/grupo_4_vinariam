@@ -5,6 +5,7 @@ const methodOverride = require('method-override');
 const soyMayorMiddleware = require('./middlewares/soyMayorMiddleware');
 const cookieParser = require('cookie-parser')
 const rememberMe = require('./middlewares/rememberMe')
+const createError = require('http-errors')
 
 
 const app = express();
@@ -13,11 +14,11 @@ app.set('views', path.join(__dirname, '/views')); // Define la ubicación de la 
 app.use(express.static(path.join(__dirname, '../public')));  // Necesario para los archivos estáticos en el folder /public
 app.set('view engine', 'ejs');
 
-
-app.use(express.json());
 app.use(express.urlencoded({
   extended: false
 }));
+app.use(express.json());
+
 
 app.use(session ({secret:'aca va una frase secreta, shh!', resave: true, saveUninitialized: true}));
 app.use(methodOverride('_method'));
@@ -25,7 +26,7 @@ app.use(cookieParser());
 
 /**Middlewares */
 
-//app.use(soyMayorMiddleware); // Desahibilito el middleware de soy mayor, porque es molesto para trabajar
+// app.use(soyMayorMiddleware); // Desahibilito el middleware de soy mayor, porque es molesto para trabajar
 app.use(rememberMe);
 
 
@@ -54,7 +55,7 @@ app.use((err, req, res, next) => {
   res.locals.path = req.path;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  res.status(err.status || 404);
+  res.status(err.status || 500);
   res.render('error');
 });
 

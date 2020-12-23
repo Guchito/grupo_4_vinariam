@@ -51,7 +51,6 @@ const usersController = {
         
         if (req.body.recordame){
             res.cookie('email', req.body.email, { maxAge: 1000 * 60 * 60 * 24 * 365 });
-            console.log(req.cookies.email)
         };	
         res.redirect('/users/profile');	
     },
@@ -61,9 +60,9 @@ const usersController = {
         res.render('profileProvisorio')
     },
     logout: (req, res) => {
-        console.log('llegue')
-        if(req.cookies.user){
+        if(req.cookies.email){
             res.clearCookie('email');
+            
         }
         req.session.destroy();
         res.redirect('/');
