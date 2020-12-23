@@ -1,4 +1,3 @@
-const { writeUsers } = require('../helpers/helpers');
 const helper = require('../helpers/helpers');
 const bcrypt = require('bcrypt');
 
