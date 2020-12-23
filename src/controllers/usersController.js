@@ -41,7 +41,8 @@ const usersController = {
     },
 
     processLogin: (req, res) => {
-        let errors = validationResult(req);
+        
+        const errors = validationResult(req);
         if (!errors.isEmpty()){
             res.render('login', {errors: errors.errors})
         }
@@ -49,16 +50,14 @@ const usersController = {
         
         if (req.body.recordame){
             res.cookie('email', req.body.email, { maxAge: 1000 * 60 * 60 * 24 * 365 });
-        };	
+        };
+
         res.redirect('/users/profile');	
     },
+
     profile: (req,res) => {
-        const email = req.session.email;
-        const users = helper.getAllUsers();
-        const user = users.filter(function(user){
-            return user.email == email
-        })
-        res.render('profileProvisorio', {user: user[0]})
+        const user = helper.getAUser(req.session.email)
+        res.render('profile', {user: user})
     },
     logout: (req, res) => {
         if(req.cookies.email){
