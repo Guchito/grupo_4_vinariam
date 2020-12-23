@@ -578,7 +578,7 @@
   "userName": "guchi",
   "birthday": "2020-09-08",
   "email": "guchi@gmail.com",
-  "password": "$2b$10$lAbaG7ncahY/aZHq5Bw8EOZQyK72f/PtT5uwTcJAZKk5Y.zGZQRv6", 
+  "password": "$2b$10$lAbaG7ncahY/aZHq5Bw8EOZQyK72f/PtT5uwTcJAZKk5Y.zGZQRv6",
   "image": "1608488838221-.jpeg",
   "category": "admin"
  },
@@ -603,5 +603,27 @@
   "password": "$2a$10$A2NzAn3k5a8ljBaWQQeDOuhzv.WDQRQ7uBhjyJnqz72zNFAug8IIO",
   "image": "1608651916342-.jpeg",
   "category": "user"
+ },
+ {
+  "id": 56,
+  "name": "Gonzalo",
+  "lastName": "Zevallos",
+  "userName": "Toto",
+  "birthday": "1990-12-12",
+  "email": "gonza@dh.com",
+  "password": "$2a$10$qk8rPiAn7u9YXy2sSKXktOkJHb9Z9PD.tXNtiBCzIlIn6xOkgrb/C",
+  "image": "1608743099430-.png",
+  "category": "admin"
+ },
+ {
+  "id": 57,
+  "name": "Joaquin",
+  "lastName": "Di Toma",
+  "userName": "Pola",
+  "birthday": "1990-12-12",
+  "email": "pola@dh.com",
+  "password": "$2a$10$9ebWQU0R12sh/d3SlD31duXQDNBr3sPFQ2itf6L4jW5K9dM3cyX8m",
+  "image": "1608743437197-.png",
+  "category": "admin"
  }
 ]
