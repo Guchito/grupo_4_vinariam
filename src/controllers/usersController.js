@@ -40,8 +40,6 @@ const usersController = {
  
     },
 
-    /* VIOLE */
-
     processLogin: (req, res) => {
         let errors = validationResult(req);
         if (!errors.isEmpty()){
@@ -56,8 +54,11 @@ const usersController = {
     },
     profile: (req,res) => {
         const email = req.session.email;
-
-        res.render('profile')
+        const users = helper.getAllUsers();
+        const user = users.filter(function(user){
+            return user.email == email
+        })
+        res.render('profileProvisorio', {user: user[0]})
     },
     logout: (req, res) => {
         if(req.cookies.email){
