@@ -6,6 +6,7 @@
 
         <main>
             <h1>Tu perfil</h1>
+            <a href="/users/logout">Logout</a>
 
         <div class="BloqueGeneral">
 
@@ -18,7 +19,7 @@
                 <div class="textoBloqueDos">
                 <h2 class="datosPerfil">Tus datos</h2>
                 <p class="datosPersonales">
-                    <br>Iván Carnavale</br>
+                    <br><%= user.name + ' ' + user.lastName %></br>
                     <br>Gurruchaga 1278</br>
                     <br>1162456431</br>
                 </p>

@@ -1,5 +1,5 @@
-const { writeProducts } = require('../helpers/helpers');
-const helper = require('../helpers/helpers') // Requiero a las funciones de helpers
+const { writeProducts, getAllUsers } = require('../helpers/helpers');
+const helper = require('../helpers/helpers'); // Requiero a las funciones de helpers
 
 
 /** CONTROLADORES **/
@@ -10,7 +10,7 @@ const adminController = {
     },
     
     // Carga - Store
-    store: (req, res, next) => 
+    store: (req, res) => 
     { 
     
         const newProduct = {
@@ -33,7 +33,7 @@ const adminController = {
 
      res.redirect('/');
     },
-    editar: (req, res, next) => {
+    editar: (req, res) => {
         const products = helper.getAllProducts();
         const id = req.params.id;
         const result = products.find((product) => product.id == id);
@@ -43,12 +43,12 @@ const adminController = {
         });
     },
 
-   delete: (req, res, next) => {
+   delete: (req, res) => {
         helper.delete(req.params.id);
         res.redirect('/productos');  
     },
      
-    processEdit: (req, res, next) => {
+    processEdit: (req, res) => {
         const id = req.params.id;
 
         const products = helper.getAllProducts();
@@ -72,6 +72,11 @@ const adminController = {
             helper.writeProducts(editedProducts);    
 
             res.redirect('/productos/detail/' + id); 
+    },
+    index: (req, res) => {
+        
+        res.render('adminIndex')
+
     }
 }
 
