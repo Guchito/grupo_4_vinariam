@@ -667,6 +667,7 @@ background-color: var(--colorFondo);
 
 /*********** LOGIN *************/ 
 
+
 .bodyLogin{
     background-image: url("/img/uvas.png");
     background-size: cover;
@@ -793,6 +794,65 @@ background-color: var(--colorFondo);
     border-style: none;
       
 }
+
+
+/**************** PROFILE *****************/
+
+.bloqueUno{
+    display: flex;
+    border-radius: 50px;
+    height: 450px;
+    width: 350px;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 10px
+}
+
+
+.bloqueDos{
+    display: flex;
+    flex-direction: column;
+    border-radius: 50px;
+    background-color: white;
+    height: 500px;
+    width: 350px;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 10px
+}
+
+.bloqueDos img {
+width: 100%;
+padding-right: 40px;
+
+}   
+
+.textoBloqueDos{
+    flex-direction: column;
+    font-weight: 300;
+    padding-right: 115px;
+
+}
+
+
+.bloqueTres{
+    display: flex;
+    border-radius: 50px;
+    background-color: white;
+    height: 500px;
+    width: 350px;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 10px
+}
+
+.textoBloqueDos{
+    flex-direction: column;
+    font-weight: 300;
+    padding-right: 115px;
+
+}
+
 
 
 /******************** LISTADO DE PRODUCTOS ************************/
