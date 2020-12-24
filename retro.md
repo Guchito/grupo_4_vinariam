@@ -78,3 +78,15 @@ Creemos que a grandes rasgos el sprint 1 fue productivo e identificamos algunas 
 -  No estresarnos con detalles no prioritarios 
 
 # Conclusiones de la retrospectiva sprint 5 
+
+Estuvimos complicados con los tiempos, lo cual hizo que dejemos bastante para los últimos días.
+Como positivo, nos ayudamos bastante entre todos y lo sacamos adelante sumando todos.
+
+* Hacer más: 
+- planificar y aprender a buscar documentación o resolucion de errores online
+
+* Seguir haciendo: 
+- Repasar contenidos y ayudarnos mutuamente para hacer todos un poco de todo
+- Empezamos a dividir las tareas y hacer más eficiente y productivo nuestro tiempo.
+- Usamos las reuniones/chats para desatar impedimentos y avanzamos.
+- Nos juntamos ni bien se lanzó el sprint para leerlo y modularizarlo.
