@@ -605,17 +605,6 @@
   "category": "user"
  },
  {
-  "id": 56,
-  "name": "Gonzalo",
-  "lastName": "Zevallos",
-  "userName": "Toto",
-  "birthday": "1990-12-12",
-  "email": "gonza@dh.com",
-  "password": "$2a$10$qk8rPiAn7u9YXy2sSKXktOkJHb9Z9PD.tXNtiBCzIlIn6xOkgrb/C",
-  "image": "1608743099430-.png",
-  "category": "user"
- },
- {
   "id": 57,
   "name": "Joaquín",
   "lastName": "Di Toma",
@@ -625,5 +614,16 @@
   "password": "$2a$10$9ebWQU0R12sh/d3SlD31duXQDNBr3sPFQ2itf6L4jW5K9dM3cyX8m",
   "image": "1608743437197-.png",
   "category": "admin"
+ },
+ {
+  "id": 58,
+  "name": "Gonzalo",
+  "lastName": "Zevallos",
+  "userName": "Toto",
+  "birthday": "1987-02-14",
+  "email": "gonza@dh.com",
+  "password": "$2a$10$J4AbIH.JgGSnr24d56rmtujf1zhgONBeTs8FdbPKbkF9x0l0k2aQu",
+  "image": "1608778404442-.png",
+  "category": "user"
  }
 ]

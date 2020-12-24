@@ -74,8 +74,8 @@ const adminController = {
             res.redirect('/productos/detail/' + id); 
     },
     index: (req, res) => {
-        
-        res.render('adminIndex')
+        const user = helper.getAUser(req.session.email)        
+        res.render('adminIndex', {user: user})
 
     }
 }
