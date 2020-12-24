@@ -827,13 +827,6 @@ padding-right: 40px;
 
 }   
 
-.textoBloqueDos{
-    flex-direction: column;
-    font-weight: 300;
-    padding-right: 115px;
-
-}
-
 
 .bloqueTres{
     display: flex;
@@ -849,12 +842,11 @@ padding-right: 40px;
 .textoBloqueDos{
     flex-direction: column;
     font-weight: 300;
-    padding-right: 115px;
-
+    margin-left: -65px;
 }
 
 .textoBloqueDos img{
-    width: 60%;
+    width: 70%;
 
 }
 
@@ -1015,15 +1007,31 @@ padding-right: 40px;
     justify-content: space-evenly;
 }
 
+.barraAdmin{
+    background-color: white;
+    width: 250px;
+    border-radius: 0px 45px 45px 0px;
+}
+
 .bloqueAdmin{
     display: flex;
     flex-direction: column;
     border-radius: 50px;
     background-color: white;
-    height: 500px;
     width: 350px;
     justify-content: space-evenly;
-    margin-left: 300px;
+
+}
+
+.bloqueAdminPadre{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.avatarProfile{
+    max-width: 150px;
+    border-radius: 50%;
 }
 
 .textoAdmin{

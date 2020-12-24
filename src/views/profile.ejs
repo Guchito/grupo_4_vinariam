@@ -5,28 +5,31 @@
         <%- include ('./partials/header') %>
 
         <main>
-            <h1>Tu perfil</h1>
-            <a href="/users/logout">Logout</a>
+
 
         <div class="BloqueGeneral">
 
             <div class="bloqueUno">
-                <img class="hombreRegister" src="/img/profile.svg" alt="genteRegister">
+                <h1>Tu perfil</h1>
+                 <a href="/users/logout">Logout</a>
+                <div>  
+                  <img class="hombreRegister" src="/img/profile.svg" alt="genteRegister">
+                </div>  
             </div>
 
 
             <div class="bloqueDos">
                 <div class="textoBloqueDos">
-                <h2 class="datosPerfil">Tus datos</h2>
-                <p class="datosPersonales">
-                    <br><%= user.name + ' ' + user.lastName %></br>
-                    <br>Gurruchaga 1278</br>
-                    <br>1162456431</br>
+                    <h2 class="datosPerfil">Tus datos</h2>
                     <div class="userPhoto">
-                        <img class="userPhoto" src="/img/users/userPhoto.svg" alt="userPhoto">
+                        <img class="avatarProfile" src="/img/users/<%=user.image%>" alt="foto">
                     </div>
-                </p>
-                <h2 class="datosPerfil">Facturación</h2>
+                    <p class="datosPersonales">
+                        <br><%= user.name + ' ' + user.lastName %></br>
+                        <br><%= user.address %> </br>
+                    
+                    </p>
+                    <h2 class="datosPerfil">Facturación</h2>
                 </div>
 
                 <div class="fotoTarjeta">

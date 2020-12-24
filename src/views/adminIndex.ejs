@@ -1,21 +1,21 @@
-<%- include ('./partials/head', {title: 'Carga de productos'}) %>
+<%- include ('./partials/head', {title: 'Perfil administrador'}) %>
 
 <body>
 
     <%- include ('./partials/header') %>
 
-    <h1 class="tituloCarga">Panel de control</h1>
+    <h1 class="tituloCarga">Panel administrador</h1>
     
 
     <div class="contenedorPadre">
 
         <div class="contenedorAdmin">
-            <div class="navAdmin">
+            <div class="barraAdmin">
                 <div class="usuarioAdmin">
                     <img class="avatar" src="/img/avatar1.svg" alt="Avatar">
                     <div class="nombreAdmin">
                         <h3> <%= user.userName %></h3>
-                        <a href="./users/profile">Ver mi perfil</a>
+                        <p><a href="/users/logout">Logout</a></p>
                     </div>
                 </div>
                 <a class="navAdminElemnto" href="#">Proveedores</a>
@@ -27,18 +27,18 @@
             </div>
             
         </div>
-
-        <div class="bloqueAdmin">
-            <div class="textoAdmin">
-            <h2 class="datosPerfil">Tus datos</h2>
-            <div class="fotoAdmin">
-                <img class="fotoAdmin" src="/img/fotoAdmin.svg" alt="fotoAdmin">
-            </div>
-            <p class="datosPersonales">
-                <br>Violeta Aguirre</br>
-                <br>José Bonifacio 1679</br>
-                <br>1165652125</br>
-            </p>
+        <div class="bloqueAdminPadre">
+            <div class="bloqueAdmin">
+                <div class="textoAdmin">
+                <h2 class="datosPerfil">Tus datos</h2>
+                <div class="fotoAdmin">
+                        <img class="avatarProfile" src="/img/users/<%=user.image%>" alt="foto">
+                    </div>
+                    <p class="datosPersonales">
+                        <br> <%= user.name + " " +  user.lastName %> </br>
+                        <br> <%= user.address %>  </br>
+                    </p>
+                </div>
             </div>
         </div>
 
