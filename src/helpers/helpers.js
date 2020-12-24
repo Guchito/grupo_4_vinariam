@@ -78,7 +78,8 @@ const helper = {
       const users = helper.getAllUsers();
       const user =  users.filter(function(user){
           return user.email == email
-      });
+          
+      });      
       return user[0]
     }
   

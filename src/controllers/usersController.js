@@ -51,11 +51,13 @@ const usersController = {
         if (req.body.recordame){
             res.cookie('email', req.body.email, { maxAge: 1000 * 60 * 60 * 24 * 365 });
         };
-
         res.redirect('/users/profile');	
     },
 
     profile: (req,res) => {
+        if(req.session.admin){
+            res.redirect('/admin')
+        }
         const user = helper.getAUser(req.session.email)
         res.render('profile', {user: user})
     },
