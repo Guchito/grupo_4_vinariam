@@ -87,11 +87,14 @@ Hice el validador principal sobre el login y el register y pasé la logica de am
 
 Week 1:
 Divimos las tareas. vi con sofi algo unas cosas sobre el register.
+
 me puse a repasar sobre sessions y cookies, porque no me acordaba mucho.
 
 Week2:
 Cree las sessions y las cookies con sus middlewares que te permiten o no el paso. hice el metodo recordame y de logout.
+
 hice una session de admin y sus middlewares. Trabajamos con Vilu en unas cosas del diseño y de la experiencia de UX de la pagina.
+
 Estuve buscando la forma de hacer que ciertos elementos se muestren en pantalla o no, dependiendo el tipo de usuario. Lo logre en el vista del producto, que si sos admin, te muestra un boton de edicion de producto.
 
 * Vilu
