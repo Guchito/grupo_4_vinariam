@@ -27,6 +27,7 @@ Weeklys
 # Sprint 4
 
 * Sofi 
+
 Week 1
 
 La primer semana arranqué con la ruta del delete y un pantallazo del metodo de array que iba a usar para iterarlo.
@@ -44,6 +45,7 @@ Terminamos el delete. Tuve algunos errores que Guchi me ayudó a solucionar.
 Con Vio terminamos el edit.
 
 * Vio 
+
 Week 1
 
 Repasé las clases de subida de archivos y edición, para tenerlo fresco y poder hacer bien la ruta por post que edita los productos.
@@ -82,6 +84,7 @@ Nos trabamos con el login porque el objeto request no nos pasaba el body al cont
 Hice el validador principal sobre el login y el register y pasé la logica de ambos por atrás, es decir, la saqué del controlador y la pasamos al middleware.
 
 * Guchi
+
 Week 1:
 Divimos las tareas. vi con sofi algo unas cosas sobre el register.
 me puse a repasar sobre sessions y cookies, porque no me acordaba mucho.
@@ -91,6 +94,7 @@ Cree las sessions y las cookies con sus middlewares que te permiten o no el paso
 hice una session de admin y sus middlewares. Trabajamos con Vilu en unas cosas del diseño y de la experiencia de UX de la pagina.
 
 * Vilu
+
 Week 1:
 Repasé las clases de session y middleweres antes de comenzar a hacer el formulario de Login
 
