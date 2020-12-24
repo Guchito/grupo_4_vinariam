@@ -620,7 +620,8 @@ width: 100%;
     
 }
 .hombreRegister{
-    width: 300px; height: 300px;
+    width: 300px; 
+    height: 300px;
     position: absolute;
     display: flex;
 
@@ -797,15 +798,27 @@ background-color: var(--colorFondo);
 
 
 /**************** PROFILE *****************/
+.BloqueGeneralAdmin{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 50px;
+}
+.hombreProfile{
+    width: 300px; 
+    height: 300px;
+}
 
 .bloqueUno{
     display: flex;
-    border-radius: 50px;
+    flex-direction: column;
     height: 450px;
     width: 350px;
-    justify-content: space-evenly;
-    align-items: center;
     margin-bottom: 10px
+}
+.bloqueUnoTitulo{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 
@@ -1215,15 +1228,21 @@ textarea {
 }
 
 /************* ABOUT ****************/
-
+.map{
+    border-radius: 5%;
+}
 
 .bloqueAbout{
     display: flex;
 }
 
 .about{
-    width: 60%;
+    width: 50%;
     margin: 20px;
+}
+.about img{
+    width: 70%;
+    padding-left: 120px;
 }
 
 .ladoDerecho{
