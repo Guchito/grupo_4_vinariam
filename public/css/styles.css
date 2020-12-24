@@ -1205,3 +1205,21 @@ textarea {
     outline: none;
     margin-top: 5px;
 }
+
+/************* ABOUT ****************/
+
+
+.bloqueAbout{
+    display: flex;
+}
+
+.about{
+    width: 60%;
+    margin: 20px;
+}
+
+.ladoDerecho{
+    width: 30%;
+    margin: 20px;
+}
+

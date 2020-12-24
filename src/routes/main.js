@@ -9,6 +9,8 @@ router.get('/', mainController.index);
 router.get('/enter', mainController.enter);
 router.post('/enter', mainController.soyMayor);
 router.get('/error', mainController.error);
+router.get('/about', mainController.about);
+
 
 
 /*Export */
