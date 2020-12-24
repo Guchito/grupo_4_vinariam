@@ -74,27 +74,27 @@ Ayude a sofi con dos lineas de codigo de la logica del edit porque crasheaba. Y 
 
 * Sofi
 
-- Week 1
+Week 1:
 Dividimos las tareas. Hice la logica del register. Estuve repasando express validator.
 
-- Week 2
+Week 2:
 Nos trabamos con el login porque el objeto request no nos pasaba el body al controlador.
 Hice el validador principal sobre el login y el register y pasé la logica de ambos por atrás, es decir, la saqué del controlador y la pasamos al middleware.
 
 * Guchi
-- week 1:
+Week 1:
 Divimos las tareas. vi con sofi algo unas cosas sobre el register.
 me puse a repasar sobre sessions y cookies, porque no me acordaba mucho.
 
-- week2:
+Week2:
 Cree las sessions y las cookies con sus middlewares que te permiten o no el paso. hice el metodo recordame y de logout.
 hice una session de admin y sus middlewares. Trabajamos con Vilu en unas cosas del diseño y de la experiencia de UX de la pagina.
 
 * Vilu
-- Week 1
+Week 1:
 Repasé las clases de session y middleweres antes de comenzar a hacer el formulario de Login
 
-- Week 2 
+Week 2 
 Cree el formulario de login, para probarlo necesitaba utilizar el metodo register pero mi computadora no me dejaba pullear correctamente. Solucionado esto, avancé con el login. 
 Tuvimos una complicación al ver que no se mostraba nada de lo que llegaba por el body y por ende no nos permitia loguear usuarios. 
 
