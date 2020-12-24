@@ -21,7 +21,11 @@ const mainController = {
     },
     error: (req, res) => {
         res.render('error');
+    },
+    about: (req, res) => {
+        res.render('about');
     }
+
 }
 
 
