@@ -578,8 +578,9 @@
   "userName": "guchi",
   "birthday": "2020-09-08",
   "email": "guchi@gmail.com",
+  "address": "Paraguay 3362",
   "password": "$2b$10$lAbaG7ncahY/aZHq5Bw8EOZQyK72f/PtT5uwTcJAZKk5Y.zGZQRv6",
-  "image": "1608488838221-.jpeg",
+  "image": "guchi.jpeg",
   "category": "admin"
  },
  {
@@ -589,9 +590,10 @@
   "userName": "violeta",
   "birthday": "1996-07-02",
   "email": "aguirregonzalezvioleta@gmail.com",
+  "address": "Jose Bonifacio 1679",
   "password": "$2b$10$odAL840fWI2XIyRVRyZRYOWAiokkSYO3zqmknK7ZR4Sz3/dcDwJWq",
   "image": "1608502427356-.jpg",
-  "category": "user"
+  "category": "admin"
  },
  {
   "id": 55,
@@ -622,6 +624,7 @@
   "userName": "Toto",
   "birthday": "1987-02-14",
   "email": "gonza@dh.com",
+  "address": "Av. Las Flores 1423, Wilde",
   "password": "$2a$10$J4AbIH.JgGSnr24d56rmtujf1zhgONBeTs8FdbPKbkF9x0l0k2aQu",
   "image": "1608778404442-.png",
   "category": "user"
