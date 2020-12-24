@@ -97,6 +97,8 @@ hice una session de admin y sus middlewares. Trabajamos con Vilu en unas cosas d
 
 Estuve buscando la forma de hacer que ciertos elementos se muestren en pantalla o no, dependiendo el tipo de usuario. Lo logre en el vista del producto, que si sos admin, te muestra un boton de edicion de producto.
 
+Arregle con gonza en un colearning, los redireccionamientos del middleware que chequea si sos mayor o no. Funcionaba el middleware, pero tiraba un error por consola de headers.
+
 * Vilu
 
 Week 1:
