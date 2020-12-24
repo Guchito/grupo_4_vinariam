@@ -11,8 +11,10 @@ const productsController = {
 		const result = products.find((product) => {
 			return product.id == id
 		});
-
-		res.render('detail', {product: result});
+		const admin = (req.session.admin) ? true: "";
+		res.render('detail', {
+			product: result, 
+			admin: admin});
 	},
 
     cart: (req, res) => {
