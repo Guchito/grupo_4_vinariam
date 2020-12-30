@@ -1,0 +1,84 @@
+[
+    {
+      "name": "ABSOLUT AZUL 40° 750CC",
+      "description": "ABSOLUT AZUL 40° 750CC",
+      "price": 1170,
+      "stock": 3,
+      "category": "Paseo",
+      "id": 1,
+      "image": ""
+      
+    },
+    {
+      "name": "ABSOLUT MANGO 750CC",
+      "description": "ABSOLUT MANGO 750CC",
+      "price": 1275,
+      "stock": 3,
+      "category": "Vodka",
+      "id": 2,
+      "image": ""
+    },
+    {
+      "name": "ABSOLUT RASPBERRY 750CC",
+      "description": "ABSOLUT RASPBERRY 750CC",
+      "price": 1275,
+      "stock": 3,
+      "category": "Vodka",
+      "id": 3,
+      "image": ""
+    },
+    {
+      "name": "ACEITE DE OLIVA EXTRA VIRGEN SINOLEA YANCANELO BOTELLA 500CC",
+      "description": "ACEITE DE OLIVA EXTRA VIRGEN SINOLEA YANCANELO BOTELLA 500CC",
+      "price": 520,
+      "stock": 0,
+      "category": "Aceites",
+      "id": 4,
+      "image": ""
+    },
+    {
+      "name": "ACEITE DE OLIVA EXTRA VIRGEN YANCANELO LATA 500CC",
+      "description": "ACEITE DE OLIVA EXTRA VIRGEN YANCANELO LATA 500CC",
+      "price": 460,
+      "stock": 21,
+      "category": "Aceites",
+      "id": 5,
+      "image": ""
+    },
+    {
+      "name": "ACEITUNAS VERDES CLASICAS YANCANELO DOYPACK 100GR",
+      "description": "ACEITUNAS VERDES CLASICAS YANCANELO DOYPACK 100GR",
+      "price": 70,
+      "stock": 22,
+      "category": "Conservas",
+      "id": 6,
+      "image": ""
+    },
+    {
+      "name": "ACETO BALSAMICO TIPO MODENA YANCANELO 250CC",
+      "description": "ACETO BALSAMICO TIPO MODENA YANCANELO 250CC",
+      "price": 285,
+      "stock": 23,
+      "category": "Aceites",
+      "id": 7,
+      "image": ""
+    },
+    {
+      "name": "ALCAUCILES YANCANELO FRASCO 330GR",
+      "description": "ALCAUCILES YANCANELO FRASCO 330GR",
+      "price": 420,
+      "stock": 11,
+      "category": "Conservas",
+      "id": 8,
+      "image": ""
+    },
+    {
+      "name": "ANTARES BARLEY WINE 500CC",
+      "description": "ANTARES BARLEY WINE 500CC",
+      "price": 140,
+      "stock": 6,
+      "category": "Cerveza",
+      "id": 9,
+      "image": ""
+    }
+   ]

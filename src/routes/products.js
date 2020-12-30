@@ -8,6 +8,7 @@ const productsController = require('../controllers/productsController'); //requi
 router.get('/', productsController.listaProductos); /// localhost:3000/productos
 router.get('/detail/:id/', productsController.detail); //productos/producto (el "productos" ya viene por default en el router)
 router.get('/cart', productsController.cart);
+router.get('/experiences', productsController.experiences);
 
 
 

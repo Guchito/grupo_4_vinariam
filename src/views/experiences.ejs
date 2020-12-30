@@ -1,0 +1,66 @@
+<%- include ('./partials/head', {title: 'Experiencias'}) %>
+    <body>
+        <div class="center">
+            <%- include ('./partials/header') %>
+        </div>
+        <main>
+            <h1 class="tituloListado">Experiencias</h1>
+            <div class="contenedorListado">
+                <div class="listadoIzquierda">
+                    <div class="filtros">
+
+                        <div class="filtrarPor">
+                            <label> Filtrar:</label>
+                            <select class="filtrosEstilo">
+                                <option value="/">Catas</option>
+                                <option value="/">Paseos</option>
+                                <option value="/">Workshops</option>
+                            </select>
+                        </div>
+
+                        <div class="filtrarPor">
+                            <label>Ordenar:</label>
+                            <select class="filtrosEstilo">
+                                <option value="/">Mayor precio</option>
+                                <option value="/">Menor precio</option>
+                                <option value="/">Más buscados</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class= "hombreDadoVuelta">
+                        <img src="/img/exp.svg" alt="hombreDadoVuelta">
+                    </div>
+                </div>
+                <div class="conteinerProducts">
+
+                    <% for (const product of products) { %>
+                        <article class="articuloListado">
+                            <a href="/productos/detail/<%= product.id %>">
+                                <div class="productBoxImage">
+                                    <img src="/img/<%= product.image %>" alt="producto">
+                                </div>
+                                <div class="productBoxData">
+                                    <div class="nombre-info">
+                                        <h4><%= product.name %></h4>
+                                        <p class="productDescription"><%= product.description %></p>
+                                    </div>
+                                   <div class="agregarAlCarro">
+                                        <p>$<%= product.price %></p>
+                                        <a class="agregarYEditar" href="/productos/cart">
+                                            <p>Agregar <i class="fas fa-shopping-cart"></i></p>
+                                        </a>
+                                        
+                                  </div>
+                                </div>
+                            </a>
+                        </article>
+                    <% } %>
+                </div>
+            </div>
+
+        </main>
+        
+        <%- include ('./partials/footer') %>
+    </body>
+</html>
