@@ -37,7 +37,12 @@ const productsController = {
     listaProductos: (req, res) => {
         const products = helper.getAllProducts();
         res.render('listProducts', {products: products});
-    }
+	},
+	
+	experiences: (req, res) => {
+		const products = helper.getAllProducts();
+        res.render('experiences', {products: products});
+	}
 
 }
 
