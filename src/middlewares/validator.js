@@ -37,17 +37,20 @@ module.exports = {
     ], 
     
     login: [
-        body('email').notEmpty().withMessage('El campo e-mail es obligatorio').bail()
+        body('email').notEmpty().withMessage('El campo usuario es obligatorio').bail()
         .custom((value, {req}) => {
             users = helper.getAllUsers();
-            userExiste = users.find(user => user.email == value);
-            if(userExiste) {
-                return bcrypt.compareSync(req.body.password, userExiste.password);
-            } else {
+            mailExist = users.find(user => user.email == value);
+            userNameExist = users.find(user => user.userName.toLowerCase() == value.toLowerCase());
+            if(mailExist) {
+                return bcrypt.compareSync(req.body.password, mailExist.password);
+            } else if(userNameExist) {
+                return bcrypt.compareSync(req.body.password, userNameExist.password);
+            } else{
                 return false;
-            } 
+            }
             
-        }).withMessage('El email y la contraseña no coinciden').bail(), 
+        }).withMessage('El usuario y la contraseña no coinciden').bail(), 
         body('password').notEmpty().withMessage('El campo contraseña es obligatorio').bail(),
         
         

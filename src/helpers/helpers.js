@@ -74,12 +74,18 @@ const helper = {
         
       return multer({ storage: storage })
     },
-    getAUser(email){
+    getAUser(value){
       const users = helper.getAllUsers();
-      const user =  users.filter(function(user){
-          return user.email == email
-          
-      });      
+      let user =  users.filter(function(user){
+          return user.email == value
+      });
+      
+      if(!user.length>0){
+        user = users.filter(function(user){
+          return user.userName.toLowerCase() == value.toLowerCase()
+      });
+      }
+       
       return user[0]
     }
   
