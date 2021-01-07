@@ -5,6 +5,7 @@ const bcryptjs = require('bcryptjs');
 
 /* VIOLE */
 const { validationResult } = require('express-validator');
+const { getAUser } = require('../helpers/helpers');
 
 const usersController = {
 	login: (req, res) => {
@@ -46,7 +47,14 @@ const usersController = {
         if (!errors.isEmpty()){
             res.render('login', {errors: errors.errors})
         }
-        req.session.email = req.body.email;			
+        /*if (helper.getAUser(req.body.email)){
+            req.session.email = req.body.email;
+        } else {
+            const users = helper.getAllUsers();
+            const userNameExist = users.find(user => user.userName.toLowerCase() == req.body.email.toLowerCase());
+            req.session.email = userNameExist.email;
+        }*/
+        req.session.email = req.body.email;
         
         if (req.body.recordame){
             res.cookie('email', req.body.email, { maxAge: 1000 * 60 * 60 * 24 * 365 });
