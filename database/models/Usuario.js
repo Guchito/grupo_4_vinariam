@@ -1,8 +1,8 @@
 module.exports = (sequelize, DataTypes) => {
-    const alias = "Usuario"
+    const alias = "User"
     const cols = {
         id: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.INTEGER.UNSIGNED,
             autoIncrement: true,
             primaryKey: true
         },
@@ -21,24 +21,33 @@ module.exports = (sequelize, DataTypes) => {
         userName: {
             type: DataTypes.STRING
         },
-        typeId: {
+        type: {
             type: DataTypes.INTEGER
 
+        },
+        image: {
+            type: DataTypes.STRING
+        }, 
+        dob: {
+            type: DataTypes.DATE
         }
-        /*image: {
-            type: ¿?.
-        }*/
+
     }
     const config = {
-        tableName: "usuarios",
-        timestamps: false
+        tableName: "users",
+        timestamps: true
     }
 
 
-    const Usuario = sequelize.define(alias, cols, config);
+    const User = sequelize.define(alias, cols, config);
 
-    //relaciones
+    /*User.associate = function (models) {
+        User.hasMany(models.Product, {
+            as: 'products',
+            foreignKey: 'user_id'
+        })
+    }*/
 
-    return Usuario;
+    return User;
 
 }
