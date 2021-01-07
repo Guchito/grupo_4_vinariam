@@ -40,7 +40,7 @@ module.exports = {
         body('email').notEmpty().withMessage('El campo usuario es obligatorio').bail()
         .custom((value, {req}) => {
             users = helper.getAllUsers();
-            mailExist = users.find(user => user.email == value);
+            mailExist = users.find(user => user.email.toLowerCase() == value.toLowerCase());
             userNameExist = users.find(user => user.userName.toLowerCase() == value.toLowerCase());
             if(mailExist) {
                 return bcrypt.compareSync(req.body.password, mailExist.password);
