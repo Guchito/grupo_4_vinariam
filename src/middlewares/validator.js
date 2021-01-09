@@ -6,8 +6,8 @@ module.exports = {
     register: [
         body('email').notEmpty().withMessage('El campo e-mail es obligatorio').bail()
         .isEmail().withMessage('El e-mail ingresado es inválido').bail()
-        .custom(value => {
-            users = helper.getAllUsers();
+        .custom(async value => {
+            users = await helper.getAllUsers();
             userExiste = users.find(user => user.email == value);
             return !userExiste
         }).withMessage('E-mail ya existente').bail(),
@@ -17,8 +17,8 @@ module.exports = {
 
 
         body('userName').notEmpty().withMessage('El campo usuario no puede estar vacío').bail()
-        .custom(value => {
-            users = helper.getAllUsers();
+        .custom(async value => {
+            users = await helper.getAllUsers();
             userExiste = users.find(user => user.userName == value);
             return !userExiste
         }).withMessage('Nombre de usuario ya existente').bail(),
@@ -38,8 +38,8 @@ module.exports = {
     
     login: [
         body('email').notEmpty().withMessage('El campo usuario es obligatorio').bail()
-        .custom((value, {req}) => {
-            users = helper.getAllUsers();
+        .custom(async (value, {req}) => {
+            users = await helper.getAllUsers();
             mailExist = users.find(user => user.email.toLowerCase() == value.toLowerCase());
             userNameExist = users.find(user => user.userName.toLowerCase() == value.toLowerCase());
             if(mailExist) {
@@ -52,7 +52,5 @@ module.exports = {
             
         }).withMessage('El usuario y la contraseña no coinciden').bail(), 
         body('password').notEmpty().withMessage('El campo contraseña es obligatorio').bail(),
-        
-        
     ]
 }

@@ -14,7 +14,7 @@ const usersController = {
     register: (req, res) => {
         res.render('register');
     }, 
-    processRegister: (req, res) => {
+    processRegister: async (req, res) => {
         let errors = validationResult(req);
         if (!errors.isEmpty()){
             res.render('register', {errors: errors.errors})
@@ -32,7 +32,7 @@ const usersController = {
             category: "user"
         }
     
-        const users = helper.getAllUsers();
+        const users = await helper.getAllUsers();
         const saveUser = [...users, newUser];
         helper.writeUsers(saveUser);
     
@@ -47,13 +47,6 @@ const usersController = {
         if (!errors.isEmpty()){
             res.render('login', {errors: errors.errors})
         }
-        /*if (helper.getAUser(req.body.email)){
-            req.session.email = req.body.email;
-        } else {
-            const users = helper.getAllUsers();
-            const userNameExist = users.find(user => user.userName.toLowerCase() == req.body.email.toLowerCase());
-            req.session.email = userNameExist.email;
-        }*/
         req.session.email = req.body.email;
         
         if (req.body.recordame){
