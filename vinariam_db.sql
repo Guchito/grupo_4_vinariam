@@ -61,8 +61,8 @@ CREATE TABLE sizes (
 
 CREATE TABLE product_size (
 	id int unsigned primary key auto_increment,
-    product_id int not null,
-    size_id int not null,
+    product_id int unsigned not null,
+    size_id int unsigned not null,
     
     created_at datetime default current_timestamp,
     updated_at datetime on update current_timestamp,
@@ -77,10 +77,11 @@ CREATE TABLE brands (
     updated_at datetime on update current_timestamp,
     deleted_at datetime
 );
-drop table product_category;
 
-ALTER TABLE product_category
+drop table product_size;
+
+ALTER TABLE product_size
 ADD FOREIGN KEY (product_id) REFERENCES products(id),
-ADD FOREIGN KEY (category_id) REFERENCES categories(id);
+ADD FOREIGN KEY (size_id) REFERENCES sizes(id);
 
 
