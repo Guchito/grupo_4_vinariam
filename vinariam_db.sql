@@ -42,8 +42,8 @@ CREATE TABLE categories (
 
 CREATE TABLE product_category (
 	id int unsigned primary key auto_increment,
-    product_id int not null,
-    category_id int not null,
+    product_id int unsigned not null,
+    category_id int unsigned not null,
     
     created_at datetime default current_timestamp,
     updated_at datetime on update current_timestamp,
@@ -77,12 +77,10 @@ CREATE TABLE brands (
     updated_at datetime on update current_timestamp,
     deleted_at datetime
 );
-
+drop table product_category;
 
 ALTER TABLE product_category
 ADD FOREIGN KEY (product_id) REFERENCES products(id),
 ADD FOREIGN KEY (category_id) REFERENCES categories(id);
 
-
-show table status;
 
