@@ -47,13 +47,6 @@ const usersController = {
         if (!errors.isEmpty()){
             res.render('login', {errors: errors.errors})
         }
-        /*if (helper.getAUser(req.body.email)){
-            req.session.email = req.body.email;
-        } else {
-            const users = helper.getAllUsers();
-            const userNameExist = users.find(user => user.userName.toLowerCase() == req.body.email.toLowerCase());
-            req.session.email = userNameExist.email;
-        }*/
         req.session.email = req.body.email;
         
         if (req.body.recordame){

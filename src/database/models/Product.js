@@ -12,21 +12,20 @@ module.exports = (sequelize, DataTypes) => {
         detail: {
             type: DataTypes.TEXT
         },
-        discount: {
+        price: {
             type: DataTypes.INTEGER.UNSIGNED
         },
-        price: {
+        discount: {
             type: DataTypes.INTEGER.UNSIGNED
         },
         stock: {
             type: DataTypes.INTEGER.UNSIGNED
-
         },
         image: {
             type: DataTypes.STRING
         }, 
-        category: {
-            type: DataTypes.STRING
+        brand_id: {
+            type: DataTypes.INTEGER.UNSIGNED
         }
     }
     const config = {
@@ -35,10 +34,10 @@ module.exports = (sequelize, DataTypes) => {
     }
 
 
-    const Product = sequelize.define(alias, cols, config);
+    const ProductModel = sequelize.define(alias, cols, config);
 
     //relaciones
 
-    return Product;
+    return ProductModel;
 
 }

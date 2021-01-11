@@ -6,28 +6,27 @@ module.exports = (sequelize, DataTypes) => {
             autoIncrement: true,
             primaryKey: true
         },
+        name: {
+            type: DataTypes.STRING
+        },
+        last_name: {
+            type: DataTypes.STRING
+        },
+        user_name: {
+            type: DataTypes.STRING
+        },
         email: {
             type: DataTypes.STRING
         },
         password: {
             type: DataTypes.STRING
         },
-        name: {
-            type: DataTypes.STRING
-        },
-        lastName: {
-            type: DataTypes.STRING
-        },
-        userName: {
-            type: DataTypes.STRING
-        },
-        type: {
-            type: DataTypes.INTEGER
-
-        },
-        image: {
+        avatar: {
             type: DataTypes.STRING
         }, 
+        rol: {
+            type: DataTypes.INTEGER
+        },
         dob: {
             type: DataTypes.DATE
         }
@@ -39,7 +38,7 @@ module.exports = (sequelize, DataTypes) => {
     }
 
 
-    const User = sequelize.define(alias, cols, config);
+    const UserModel = sequelize.define(alias, cols, config);
 
     /*User.associate = function (models) {
         User.hasMany(models.Product, {
@@ -48,6 +47,6 @@ module.exports = (sequelize, DataTypes) => {
         })
     }*/
 
-    return User;
+    return UserModel;
 
 }

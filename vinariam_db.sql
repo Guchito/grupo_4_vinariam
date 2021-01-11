@@ -2,7 +2,7 @@ CREATE TABLE users (
 	id int unsigned primary key auto_increment,
     name varchar(50) not null,
     last_name varchar(50) not null,
-    username varchar(50) not null unique,
+    user_name varchar(50) not null unique,
     email varchar(50) not null unique,
     password varchar(255) not null,
     avatar varchar(255) not null,
@@ -77,11 +77,3 @@ CREATE TABLE brands (
     updated_at datetime on update current_timestamp,
     deleted_at datetime
 );
-
-drop table product_size;
-
-ALTER TABLE product_size
-ADD FOREIGN KEY (product_id) REFERENCES products(id),
-ADD FOREIGN KEY (size_id) REFERENCES sizes(id);
-
-

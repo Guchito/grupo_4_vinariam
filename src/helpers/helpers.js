@@ -3,6 +3,7 @@ const path = require('path');
 const productsFilePath = path.resolve(__dirname, '../data/vinos.json');
 const usersFilePath = path.resolve(__dirname, '../data/users.json');
 const multer = require('multer');
+const db = require('../database/models');
 
 const helper = { 
 
@@ -50,6 +51,7 @@ const helper = {
       const jsonUsers = fs.readFileSync(usersFilePath, 'utf-8');
       const usersParsed = JSON.parse(jsonUsers);
       return usersParsed;
+      /*return db.User.findAll();*/
     },
 
   writeUsers(arrayToTransform){

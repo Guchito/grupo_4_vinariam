@@ -52,7 +52,5 @@ module.exports = {
             
         }).withMessage('El usuario y la contraseña no coinciden').bail(), 
         body('password').notEmpty().withMessage('El campo contraseña es obligatorio').bail(),
-        
-        
     ]
 }
