@@ -22,6 +22,7 @@ CREATE TABLE products (
     discount int unsigned default 0,
     stock int unsigned not null,
     img varchar(255) not null,
+    class varchar(50) default "no-destacado",
     brand_id int unsigned,
     
     
