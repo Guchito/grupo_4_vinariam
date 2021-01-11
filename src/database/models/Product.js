@@ -35,13 +35,15 @@ module.exports = (sequelize, DataTypes) => {
 
 
     const Product = sequelize.define(alias, cols, config);
-
+   
+    Product.associate = (models) => {
+        Product.belongsTo(models.Brand,{
+            as: "brand",
+            foreignKey: "brand_id",
+        });
+    };
 
     Product.associate = (models) => {
-        Product.belongsTo(models.Brand, {
-            as: "brand",
-            foreignKey: "brand_id"
-        });
         Product.belongsToMany(models.Size,{
             as: "sizes",
             through: "product_size",
@@ -49,15 +51,16 @@ module.exports = (sequelize, DataTypes) => {
             otherKey: "product_id",
             timestamps: true
         });
-        Product.belongsToMany(models.Categroy,{
+    };
+    Product.associate = (models) => {
+        Product.belongsToMany(models.Category,{
             as: "categories",
             through: "product_category",
             foreignKey: "category_id",
             otherKey: "product_id",
             timestamps: true
-        })
-    }
-
+        });
+    };
     return Product;
 
 }

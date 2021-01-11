@@ -16,6 +16,7 @@ module.exports = (sequelize, DataTypes) => {
         timestamps: true
     };
     const Size = sequelize.define(alias, cols, config);
+    
     Size.associate = function(models){
         Size.belongsToMany(models.Product,{
             as: "products",
