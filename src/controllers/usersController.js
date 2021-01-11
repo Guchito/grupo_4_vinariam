@@ -2,6 +2,7 @@ const helper = require('../helpers/helpers');
 const bcryptjs = require('bcryptjs');
 const { validationResult } = require('express-validator');
 const { getAUser } = require('../helpers/helpers');
+const db = require('../database/models')
 
 const usersController = {
 	login: (req, res) => {
@@ -10,28 +11,25 @@ const usersController = {
     register: (req, res) => {
         res.render('register');
     }, 
-    processRegister: (req, res) => {
+    processRegister: async (req, res) => {
         let errors = validationResult(req);
         if (!errors.isEmpty()){
             res.render('register', {errors: errors.errors})
         } else {
            
         const newUser = {
-            id: helper.generateNewIdUsers(),
             name: req.body.name,
-            lastName: req.body.lastName,
-            userName: req.body.userName,
-            birthday: req.body.birthday,
+            last_name: req.body.lastName,
+            user_name: req.body.userName,
+            dob: req.body.birthday,
             email: req.body.email,
             password: bcryptjs.hashSync(req.body.password, 10),
-            image: req.files[0].filename,
-            category: "user"
-        }
-    
-        const users = helper.getAllUsers();
-        const saveUser = [...users, newUser];
-        helper.writeUsers(saveUser);
-    
+            avatar: req.files[0].filename
+        };
+       
+        await db.User.create(newUser);
+        
+        
         res.redirect('/users/login');
     }
  
