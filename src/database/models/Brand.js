@@ -16,6 +16,7 @@ module.exports = (sequelize, DataTypes) => {
         timestamps: true
     };
     const Brand = sequelize.define(alias, cols, config);
+    
     Brand.associate = function(models){
         Brand.hasMany(models.Product,{
             as: "products",
