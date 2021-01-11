@@ -48,10 +48,10 @@ const helper = {
   
   //users
     getAllUsers(){
-      /*const jsonUsers = fs.readFileSync(usersFilePath, 'utf-8');
+      const jsonUsers = fs.readFileSync(usersFilePath, 'utf-8');
       const usersParsed = JSON.parse(jsonUsers);
-      return usersParsed;*/
-      return db.User.findAll();
+      return usersParsed;
+      /*return db.User.findAll();*/
     },
 
   writeUsers(arrayToTransform){
@@ -59,8 +59,8 @@ const helper = {
       fs.writeFileSync(usersFilePath, usersJson);
   },
   
-  async generateNewIdUsers(){
-      const users = await helper.getAllUsers();
+  generateNewIdUsers(){
+      const users = helper.getAllUsers();
       return users.pop().id + 1;
   }, 
   

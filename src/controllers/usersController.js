@@ -14,7 +14,7 @@ const usersController = {
     register: (req, res) => {
         res.render('register');
     }, 
-    processRegister: async (req, res) => {
+    processRegister: (req, res) => {
         let errors = validationResult(req);
         if (!errors.isEmpty()){
             res.render('register', {errors: errors.errors})
@@ -32,7 +32,7 @@ const usersController = {
             category: "user"
         }
     
-        const users = await helper.getAllUsers();
+        const users = helper.getAllUsers();
         const saveUser = [...users, newUser];
         helper.writeUsers(saveUser);
     
