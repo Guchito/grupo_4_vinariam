@@ -1,9 +1,5 @@
 const helper = require('../helpers/helpers');
-
-/* VIOLE, LE AGREGUE EL JS */
 const bcryptjs = require('bcryptjs');
-
-/* VIOLE */
 const { validationResult } = require('express-validator');
 const { getAUser } = require('../helpers/helpers');
 

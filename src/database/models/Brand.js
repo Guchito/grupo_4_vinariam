@@ -15,7 +15,14 @@ module.exports = (sequelize, DataTypes) => {
         tableName: "brands",
         timestamps: true
     };
-    const BrandModel = sequelize.define(alias, cols, config);
-    return BrandModel;
+    const Brand = sequelize.define(alias, cols, config);
+    Brand.associate = function(models){
+        Brand.hasMany(models.Product,{
+            as: "products",
+            foreignKey: "brand_id"
+        })
+    }
+
+    return Brand;
 
 }

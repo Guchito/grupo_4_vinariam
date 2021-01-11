@@ -34,10 +34,30 @@ module.exports = (sequelize, DataTypes) => {
     }
 
 
-    const ProductModel = sequelize.define(alias, cols, config);
+    const Product = sequelize.define(alias, cols, config);
 
-    //relaciones
 
-    return ProductModel;
+    Product.associate = (models) => {
+        Product.belongsTo(models.Brand, {
+            as: "brand",
+            foreignKey: "brand_id"
+        });
+        Product.belongsToMany(models.Size,{
+            as: "sizes",
+            through: "product_size",
+            foreignKey: "size_id",
+            otherKey: "product_id",
+            timestamps: true
+        });
+        Product.belongsToMany(models.Categroy,{
+            as: "categories",
+            through: "product_category",
+            foreignKey: "category_id",
+            otherKey: "product_id",
+            timestamps: true
+        })
+    }
+
+    return Product;
 
 }
