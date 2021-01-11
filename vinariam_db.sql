@@ -77,3 +77,16 @@ CREATE TABLE brands (
     updated_at datetime on update current_timestamp,
     deleted_at datetime
 );
+
+ALTER TABLE products
+ADD FOREIGN KEY (brand_id) REFERENCES brands(id);
+
+ALTER TABLE product_category
+ADD FOREIGN KEY (product_id) REFERENCES products(id),
+ADD FOREIGN KEY (category_id) REFERENCES categories(id);
+
+ALTER TABLE product_size
+ADD FOREIGN KEY (product_id) REFERENCES products(id),
+ADD FOREIGN KEY (size_id) REFERENCES sizes(id);
+
+
