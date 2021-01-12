@@ -45,8 +45,8 @@ const usersController = {
     processLogin: (req, res) => {
         
         const errors = validationResult(req);
-        if (!errors.isEmpty()){
-            res.render('login', {errors: errors.errors})
+        if  (!errors.isEmpty()){
+            return res.render('login', {errors: errors.errors})
         }
         req.session.email = req.body.email;
         
