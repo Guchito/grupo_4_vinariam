@@ -88,7 +88,7 @@ const usersController = {
                      id: req.params.id
                  }
              });
-             res.redirect('/profile' + req.params.id)
+             res.redirect('/profile/' + req.params.id)
     },
 
     logout: (req, res) => {
