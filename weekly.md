@@ -111,3 +111,15 @@ Tuvimos una complicación al ver que no se mostraba nada de lo que llegaba por e
 Consultamos con otros compañeros y teníamos un par de lineas faltantes en el app.js que en teoría vienen con Express Generator, las debimos borrar accidentalmente. 
 
 Luego cree la vista Conocenos, Perfil User y Perfil Admin. Si bien no están terminadas a lujo de detalle, quedamos muy conformes con los primeros acercamientos. Nos queda pendiente repensarlas un poco más
+
+# Sprint 6?
+
+* Vilu
+
+Week 1:
+Con Guchi nos conectamos y escribimos la base en MySQL a la par que repasábamos la última clase, 
+nos tiraba error cuando queríamos crearla y la dejamos así. Luego Guchi consultó y lo corrigió. 
+
+Week 2:
+Mi aporte en este sprint no fue gran cosa, tuve que reever el CRUD en Playground a modo repaso 
+para poder hacer mi parte. 
