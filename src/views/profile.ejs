@@ -28,10 +28,15 @@
                         <img class="avatarProfile" src="/img/users/<%=user.image%>" alt="foto">
                     </div>
                     <p class="datosPersonales">
-                        <br><%= user.name + ' ' + user.lastName %></br>
-                        <br><%= user.address %> </br>
-                    
+                        <br><%= user.name + ' ' + user.lastName%></br>
+                        <br><%= user.email%> </br>
+                        <br><%= user.dob%> </br>
                     </p>
+                    <!-- ESTE BOTON ES HORRIBLE, YA SABEMOS, DESPUES NOS OCUPAMOS -->
+                    <a href = '/perfil/editar/:id'>
+                        <button>Editar</button>
+                    </a>
+
                     <h2 class="datosPerfil">Facturación</h2>
                 </div>
 

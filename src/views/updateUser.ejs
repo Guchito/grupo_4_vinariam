@@ -1,0 +1,15 @@
+<%- include ('./partials/head', {title: 'Actualizar perfil'}) %>
+
+<body>
+
+    <%- include ('./partials/header') %>
+
+    <h1 class="tituloCarga">Actualizar perfil</h1>
+    
+    <form action= "perfil/editar/<%=user.id%>" method = "POST" >
+        <label for="">Nombre</label>
+        <input type='text' name='name' value='<%=user.id%></form>'> </input>
+        </form>
+
+</body>
+</html>

@@ -26,7 +26,14 @@ const usersController = {
             password: bcryptjs.hashSync(req.body.password, 10),
             avatar: req.files[0].filename
         };
-       
+
+        /* createUser: (req,res) => {
+            db.Users.findAll()
+                return res.render('perfil', {users: users}) 
+            }) 
+        }
+        */
+        
         await db.User.create(newUser);
         
         
@@ -53,9 +60,37 @@ const usersController = {
         if(req.session.admin){
             res.redirect('/admin')
         }
-        const user = helper.getAUser(req.session.email)
-        res.render('profile', {user: user})
+        db.Users.findByPk(req.params.id)
+        .then(function(user){
+             res.render('userDetail', {users: users});
+        })
     },
+
+    editUser: async (req,res) => {
+        let editarUsuario = await db.Users.findAll(req.params.id);
+            (function(user){
+                res.render('editUser', {users: users});
+            })
+    },
+
+    updateUser: async (req,res) => {
+        await db.Users.update({
+             name: req.body.name,  
+             last_name: req.body.lasName,
+             user_name: req.body.userName,
+             email: req.body.email, 
+             password: req.body.password,
+             avatar: req.files[0].filename,
+             dob: req.body.birthday
+             }, 
+             {
+                 where: {
+                     id: req.params.id
+                 }
+             });
+             res.redirect('/profile' + req.params.id)
+    },
+
     logout: (req, res) => {
         if(req.cookies.email){
             res.clearCookie('email');
@@ -65,61 +100,6 @@ const usersController = {
         res.redirect('/');
     }
     
-/*
-        const email = req.body.email;
-		const password = req.body.password;
-		const users = helper.getAllUsers();
-		const userExist = users.find((user) => {
-			return user.email == email
-		});
-
-		if (userExist && bcryptjs.compareSync(password, userExist.password)) {
-            req.session.email = email;
-            if(userExist.category == "admin"){
-                req.session.admin = email;
-            };
-            console.log('Usuario: ' + req.session.email + ' Admin: ' + req.session.admin)
-			res.redirect('/');
-		}else{
-			res.render('login',{
-				loginError: true
-			})
-		}
-*/
-	
-
-    /* processLogin: (req, res) => {
-        const email = req.body.email;
-        const password = req.body.password;
-        const users = helper.getAllUsers();
-
-        const userExist = users.find((user) => {
-        return user.email === email;
-        });
-
-        if (userExist && bycryptjs.compareSync(password, userExist.password)){
-        req.session.user = userExist.email;
-        console.log(userExist)
-        
-
-        }
-*/
-
-        /*processLogin: (req, res) => {
-        const results = validationResult(req);
-        if (!results.isEmpty()) {
-            return res.render('login', {
-                errors: results.errors,
-                old: req.body
-            });    
-        }
-        const userFound = readJson().find(user => user.email == req.body.email);
-        req.session.user = userFound;
-        if (req.body.remember){
-            res.cookie('user', userFound.id, { maxAge: 1000 * 60 * 60 });
-        }
-        return res.redirect('/');
-    }*/
 
 }
 
