@@ -1,14 +1,15 @@
 const { body } = require('express-validator');
 const bcrypt = require('bcryptjs');
 const helper = require('../helpers/helpers');
+const db = require('../database/models')
 
 module.exports = {
     register: [
         body('email').notEmpty().withMessage('El campo e-mail es obligatorio').bail()
         .isEmail().withMessage('El e-mail ingresado es inválido').bail()
-        .custom(value => {
-            users = helper.getAllUsers();
-            userExiste = users.find(user => user.email == value);
+        .custom(async function (value) {
+            //users = helper.getAllUsers();
+            userExiste = await db.User.findOne({where:{email:value}});
             return !userExiste
         }).withMessage('E-mail ya existente').bail(),
        
@@ -17,9 +18,9 @@ module.exports = {
 
 
         body('userName').notEmpty().withMessage('El campo usuario no puede estar vacío').bail()
-        .custom(value => {
-            users = helper.getAllUsers();
-            userExiste = users.find(user => user.userName == value);
+        .custom(async function (value) {
+            //users = helper.getAllUsers();
+            userExiste = await db.User.findOne({where:{user_name:value}});
             return !userExiste
         }).withMessage('Nombre de usuario ya existente').bail(),
         body('image')
@@ -38,18 +39,16 @@ module.exports = {
     
     login: [
         body('email').notEmpty().withMessage('El campo usuario es obligatorio').bail()
-        .custom((value, {req}) => {
-            users = helper.getAllUsers();
-            mailExist = users.find(user => user.email.toLowerCase() == value.toLowerCase());
-            userNameExist = users.find(user => user.userName.toLowerCase() == value.toLowerCase());
+        .custom(async function(value, {req}){
+            let mailExist = await db.User.findOne({where:{email:req.body.email}});
+            let userNameExist = await db.User.findOne({where:{user_name:req.body.userName}});
             if(mailExist) {
                 return bcrypt.compareSync(req.body.password, mailExist.password);
             } else if(userNameExist) {
                 return bcrypt.compareSync(req.body.password, userNameExist.password);
             } else{
                 return false;
-            }
-            
+            }   
         }).withMessage('El usuario y la contraseña no coinciden').bail(), 
         body('password').notEmpty().withMessage('El campo contraseña es obligatorio').bail(),
     ]
