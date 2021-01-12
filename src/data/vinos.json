@@ -1,7 +1,7 @@
 [
  {
   "id": 1,
-  "name": "Lopez Cabernet Sauvignon ",
+  "name": "Lopez Cabernet Sauvignon",
   "price": 180,
   "class": "destacado",
   "subCategory": "Cabernet Sauvignon",
@@ -74,7 +74,7 @@
  },
  {
   "id": 8,
-  "name": "Lopez Montchenot 10 Años",
+  "name": "Lopez",
   "description": "De uvas excepcionales, añejado en grandes toneles y luego en su botella por 5 años más. Blend donde los aromas y sabores se unieron en una expresión profunda y delicada que conecta con el pasado descubriendo equilibrio y complejidad en cada trago.  ",
   "price": 712,
   "class": "no-destacado",
