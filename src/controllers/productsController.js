@@ -1,24 +1,28 @@
 
-const helper = require('../helpers/helpers') // Requiero a las funciones de helpers
-
+const helper = require('../helpers/helpers'); // Requiero a las funciones de helpers
+const db = require('../database/models');
 
 /*********Controllers ******************/
 
-const productsController = {
-	detail: (req, res) => {
-		const id = req.params.id;
-		const products = helper.getAllProducts();
-		const result = products.find((product) => {
-			return product.id == id
-		});
-		const admin = (req.session.admin) ? true: "";
-		res.render('detail', {
-			product: result, 
-			admin: admin});
+const productsController = {    
+	listaProductos: async (req, res) => {
+		const products = await db.Product.findAll();
+        res.render('listProducts', {products});
 	},
 
-    cart: (req, res) => {
-		const products = helper.getAllProducts();
+	detail: async (req, res) => {
+		const id = req.params.id;
+		/*const products = helper.getAllProducts();
+		const result = products.find((product) => {
+			return product.id == id
+		});*/
+		const product = await db.Product.findByPk(id)
+		const admin = (req.session.admin) ? true: "";
+		res.render('detail', {product, admin});
+	},
+
+    cart: async (req, res) => {
+		const products = await db.Product.findAll();
 		const someProducts = products.filter((product) => {
 			return product.id < 4;
 		});
@@ -34,13 +38,10 @@ const productsController = {
 		res.render('cart', {products: someProducts, subTotal: subTotal, shipping: shipping, total: total});
     },
 
-    listaProductos: (req, res) => {
-        const products = helper.getAllProducts();
-        res.render('listProducts', {products: products});
-	},
+
 	
-	experiences: (req, res) => {
-		const products = helper.getAllProducts();
+	experiences: async (req, res) => {
+		const products = await db.Product.findAll();
         res.render('experiences', {products: products});
 	}
 

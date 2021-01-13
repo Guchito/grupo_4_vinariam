@@ -39,12 +39,12 @@
                         <article class="articuloListado">
                             <a href="/productos/detail/<%= product.id %>">
                                 <div class="productBoxImage">
-                                    <img src="/img/<%= product.image %>" alt="producto">
+                                    <img src="/img/<%= product.img %>" alt="producto">
                                 </div>
                                 <div class="productBoxData">
                                     <div class="nombre-info">
-                                        <h4><%= product.name %></h4>
-                                        <p class="productDescription"><%= product.description %></p>
+                                        <h4> <%= product.name %></h4>
+                                        <p class="productDescription"><%= product.detail %></p>
                                     </div>
                                    <div class="agregarAlCarro">
                                         <p>$<%= product.price %></p>

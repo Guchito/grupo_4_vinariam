@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-01-2021 a las 00:22:06
+-- Tiempo de generación: 13-01-2021 a las 06:50:33
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.2.34
 
@@ -98,12 +98,12 @@ CREATE TABLE `products` (
 
 INSERT INTO `products` (`id`, `name`, `detail`, `price`, `discount`, `stock`, `img`, `brand_id`, `created_at`, `updated_at`, `deleted_at`, `class`) VALUES
 (1, '', 'Creado en 2011 para sumarse a la clásica marca. Añejado en toneles de roble francés. De color rubí profundo, con leves tonos caoba y aromas intensos. Excelente estructura, taninos suaves, untuoso y de largo final. Ideal para acompañar carnes rojas y comidas con salsas suaves.', '180', 0, 10, '1.png', 1, '2021-01-12 19:27:53', NULL, NULL, 'no'),
-(2, 'Dulce Natural', 'Exquisito, fresco, equilibrado y delicado. Elaborado con uvas Torrontés Riojano, Moscatel y Viognier. Menos alcohol, más dulce natural. Disfrutalo bien frío y en todo momento. Ideal para compartir acompañado de platos dulces y como aperitivo.', '178', 0, 10, '2.png', 1, '2021-01-12 19:40:17', NULL, NULL, 'no'),
+(2, 'Dulce Natural', 'Exquisito, fresco, equilibrado y delicado. Elaborado con uvas Torrontés Riojano, Moscatel y Viognier. Menos alcohol, más dulce natural. Disfrutalo bien frío y en todo momento. Ideal para compartir acompañado de platos dulces y como aperitivo.', '178', 0, 10, '2.png', 1, '2021-01-12 19:40:17', '2021-01-13 02:49:31', NULL, 'destacado'),
 (3, '', 'Emblemático vino argentino que desde su creación en 1973 conserva intacta la calidad convirtiéndose en un clásico indiscutible. Este Malbec, armónico y bien equilibrado, es añejado en grandes toneles de roble francés.', '144', 0, 10, '3.png', 1, '2021-01-12 19:41:43', NULL, NULL, 'no'),
-(4, 'Rincon Famoso', 'Cepas Sangiovese, Merlot y Malbec dan origen a este clásico vino argentino. Añejado en toneles de roble francés. Equilibrado, de taninos maduros y un largo final.', '245', 0, 10, '4.png', 1, '2021-01-12 19:48:55', NULL, NULL, 'no'),
-(5, 'Chateau Vieux', 'Destacado Blend Gran Reserva. Una cuidada combinación de uvas Cabernet Sauvignon, Merlot y Pinot Noir que se conserva desde sus primeras cosechas a principios del siglo XX. Añejado en grandes toneles de roble francés. Redondo, armónico y equilibrado.', '437', 0, 10, '5.png', 1, '2021-01-12 19:51:08', NULL, NULL, 'no'),
+(4, 'Rincon Famoso', 'Cepas Sangiovese, Merlot y Malbec dan origen a este clásico vino argentino. Añejado en toneles de roble francés. Equilibrado, de taninos maduros y un largo final.', '245', 0, 10, '4.png', 1, '2021-01-12 19:48:55', '2021-01-13 02:49:38', NULL, 'destacado'),
+(5, 'Chateau Vieux', 'Destacado Blend Gran Reserva. Una cuidada combinación de uvas Cabernet Sauvignon, Merlot y Pinot Noir que se conserva desde sus primeras cosechas a principios del siglo XX. Añejado en grandes toneles de roble francés. Redondo, armónico y equilibrado.', '437', 0, 10, '5.png', 1, '2021-01-12 19:51:08', '2021-01-13 02:50:03', NULL, 'destacado'),
 (6, 'Rincon', 'De color rosado pálido debido a su corta maceración. Una combinación entre Malbec y Pinot Noir, un blend fresco y frutado.', '247', 0, 10, '6.png', 1, '2021-01-12 19:51:46', NULL, NULL, 'no'),
-(8, 'Montchenot 10 Años', 'De uvas excepcionales, añejado en grandes toneles y luego en su botella por 5 años más. Blend donde los aromas y sabores se unieron en una expresión profunda y delicada que conecta con el pasado descubriendo equilibrio y complejidad en cada trago.', '712', 0, 10, '8.png', 1, '2021-01-12 19:54:33', NULL, NULL, 'no'),
+(8, 'Montchenot 10 Años', 'De uvas excepcionales, añejado en grandes toneles y luego en su botella por 5 años más. Blend donde los aromas y sabores se unieron en una expresión profunda y delicada que conecta con el pasado descubriendo equilibrio y complejidad en cada trago.', '712', 0, 10, '8.png', 1, '2021-01-12 19:54:33', '2021-01-13 02:50:13', NULL, 'destacado'),
 (9, 'Monteagrelo', 'Color rojo intenso con tonalidades púrpuras propias del varietal. Perfecto equilibrio entre fruta y madera, muy pimentoso y especiado. Muy buen cuerpo, carnoso, con final de boca balanceado. Sin aristas, maduro y armónico.', '1356', 0, 10, '9.png', 2, '2021-01-12 20:06:41', NULL, NULL, 'no'),
 (10, 'Monteagrelo', 'Este delicado Malbec impacta de inmediato por su color rojo intenso, con tonalidades púrpuras y entorno negro. En nariz es fuertemente atractivo, al ofrecer una combinación exquisita de aromas de frutos rojos y negros, combinados con la vainilla, el chocolate y el café, gracias a su paso por roble.', '955', 0, 10, '10.png', 2, '2021-01-12 20:07:49', NULL, NULL, 'no'),
 (11, 'Montchenot 5 Años', 'Su menor tiempo de guarda define una personalidad distinta. Más joven e intenso, de un particular color rojo brillante con destellos granate, suave aroma, armónico y con un largo final. Equilibrio entre crianza y frescura con mayor cuerpo y carácter.', '464', 0, 10, '7.png', 1, '2021-01-12 20:09:21', NULL, NULL, 'no');
@@ -218,7 +218,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `last_name`, `user_name`, `email`, `password`, `avatar`, `rol`, `dob`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(15, 'admin', 'admin', 'admin', 'admin@admin.com', '$2a$10$kfavMTyWVOyIL7tr9pHsh.gxDaSpoOSRXLoKB9vpMzSKXRM2X6vl6', '1610487972954-.jpg', 20, '1991-01-01', '2021-01-12 21:46:13', '2021-01-12 18:48:53', NULL);
+(15, 'admin', 'admin', 'admin', 'admin@admin.com', '$2a$10$kfavMTyWVOyIL7tr9pHsh.gxDaSpoOSRXLoKB9vpMzSKXRM2X6vl6', '1610487972954-.jpg', 20, '1991-01-01', '2021-01-12 21:46:13', '2021-01-12 18:48:53', NULL),
+(16, 'Agustin', 'Gaggero', 'Guchi', 'a_gaggero@hotmail.com', '$2a$10$HatHEVgu7TDYc3R05Kye5uT6LHoeoCDJb4Jo5Jhpmpfu3ooUCoBiS', '1610504257179-.PNG', 10, '1987-12-05', '2021-01-12 23:34:36', '2021-01-13 02:17:37', NULL);
 
 --
 -- Índices para tablas volcadas
@@ -318,7 +319,7 @@ ALTER TABLE `sizes`
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- Restricciones para tablas volcadas
