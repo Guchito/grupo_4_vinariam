@@ -112,7 +112,7 @@ Consultamos con otros compañeros y teníamos un par de lineas faltantes en el a
 
 Luego cree la vista Conocenos, Perfil User y Perfil Admin. Si bien no están terminadas a lujo de detalle, quedamos muy conformes con los primeros acercamientos. Nos queda pendiente repensarlas un poco más
 
-# Sprint 6?
+# Sprint 6
 
 * Vilu
 
@@ -123,3 +123,21 @@ nos tiraba error cuando queríamos crearla y la dejamos así. Luego Guchi consul
 Week 2:
 Mi aporte en este sprint no fue gran cosa, tuve que reever el CRUD en Playground a modo repaso 
 para poder hacer mi parte. 
+
+* Sofi
+
+Week 1:
+Hice la configuracion de sequelize e instalacion. 
+Hice los modelos de forma temporal ya que no teniamos disponible aun el script de MySQL para hacer las columnas como correspondia. Tuve dudas en cuanto a ¿cuantas tablas deberiamos hacer, o deberiamos hacerlas todas? Luego Guchi me ayudó con esto y lo terminó. 
+
+Week 2:
+Tuvimos complicaciones con el tiempo. Con Guchi hicimos el crud de users. Mi conexion a la base de datos se rompió a ultimo momento asique no pude testear correctamente desde mi computadora. 
+
+* Guchi 
+
+Week 1:
+Hice los schemas en MySQL. Agregue una base de productos minimos y un usuario admin para que el sitio funcione. 
+Terminé y corregí los modelos en base a la modificación de schemas. 
+
+Week 2:
+Vimos con Sofi el crud de users. Luego hice el crud de productos, tuvimos algunos problemas con la conexion a la base de datos. 
