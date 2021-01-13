@@ -14,7 +14,7 @@
                 <div class="usuarioAdmin">
                     <img class="avatar" src="/img/avatar1.svg" alt="Avatar">
                     <div class="nombreAdmin">
-                        <h3> <%= user.userName %></h3>
+                        <h3> <%= user.user_name %></h3>
                         <p><a href="/users/logout">Logout</a></p>
                     </div>
                 </div>
@@ -32,10 +32,10 @@
                 <div class="textoAdmin">
                 <h2 class="datosPerfil">Tus datos</h2>
                 <div class="fotoAdmin">
-                        <img class="avatarProfile" src="/img/users/<%=user.image%>" alt="foto">
+                        <img class="avatarProfile" src="/img/users/<%=user.avatar%>" alt="foto">
                     </div>
                     <p class="datosPersonales">
-                        <br> <%= user.name + " " +  user.lastName %> </br>
+                        <br> <%= user.name + " " +  user.last_name %> </br>
                         <br> <%= user.address %>  </br>
                     </p>
                 </div>

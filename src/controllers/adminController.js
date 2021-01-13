@@ -1,10 +1,18 @@
 const { writeProducts, getAllUsers } = require('../helpers/helpers');
 const helper = require('../helpers/helpers'); // Requiero a las funciones de helpers
+const db = require('../database/models')
+
 
 
 /** CONTROLADORES **/
 
 const adminController = {
+    index: async (req, res) => {
+        const user = await db.User.findOne({where:{email:req.session.email}})        
+        res.render('adminIndex', {user: user})
+
+    },
+
 	carga: (req, res) => {
         res.render('uploadProduct');
     },
@@ -72,11 +80,6 @@ const adminController = {
             helper.writeProducts(editedProducts);    
 
             res.redirect('/productos/detail/' + id); 
-    },
-    index: (req, res) => {
-        const user = helper.getAUser(req.session.email)        
-        res.render('adminIndex', {user: user})
-
     }
 }
 

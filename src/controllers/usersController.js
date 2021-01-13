@@ -26,69 +26,71 @@ const usersController = {
             password: bcryptjs.hashSync(req.body.password, 10),
             avatar: req.files[0].filename
         };
-
-        /* createUser: (req,res) => {
-            db.Users.findAll()
-                return res.render('perfil', {users: users}) 
-            }) 
-        }
-        */
         
         await db.User.create(newUser);
-        
-        
         res.redirect('/users/login');
     }
  
     },
 
-    processLogin: (req, res) => {
+    processLogin: async (req, res) => {
         
         const errors = validationResult(req);
+        console.log(errors)
         if  (!errors.isEmpty()){
             return res.render('login', {errors: errors.errors})
         }
-        req.session.email = req.body.email;
-        
+        const user = await db.User.findOne({where: {email:req.body.email}})
+        req.session.email = user.email; 
+
         if (req.body.recordame){
             res.cookie('email', req.body.email, { maxAge: 1000 * 60 * 60 * 24 * 365 });
         };
         res.redirect('/users/profile');	
     },
 
-    profile: (req,res) => {
+    profile: async (req,res) => {
+
+        const user = await db.User.findOne({where:{email:req.session.email}})
+    
         if(req.session.admin){
             res.redirect('/admin')
         }
-        db.Users.findByPk(req.params.id)
-        .then(function(user){
-             res.render('userDetail', {users: users});
-        })
+        
+        res.render('profile', {user: user});
+        
     },
 
     editUser: async (req,res) => {
-        let editarUsuario = await db.Users.findAll(req.params.id);
-            (function(user){
-                res.render('editUser', {users: users});
-            })
+    
+        const user = await db.User.findOne({where: { email:req.session.email }});
+        return res.render('editUser', {user: user});
     },
 
     updateUser: async (req,res) => {
-        await db.Users.update({
-             name: req.body.name,  
-             last_name: req.body.lasName,
-             user_name: req.body.userName,
-             email: req.body.email, 
-             password: req.body.password,
-             avatar: req.files[0].filename,
-             dob: req.body.birthday
-             }, 
+        const errors = validationResult(req);
+        const user = await db.User.findOne({where: { email:req.session.email }});
+        if  (!errors.isEmpty()){
+            return res.render('editUser', {errors: errors.errors, user: user})
+        };
+
+        const updatedUser = {
+            name: req.body.name,
+            last_name: req.body.lastName,
+            user_name: req.body.userName,
+            dob: req.body.birthday,
+            email: req.body.email,
+            password: bcryptjs.hashSync(req.body.password, 10),
+            avatar: req.files[0].filename
+        };
+        console.log(req.session.email)
+        await db.User.update(updatedUser, 
              {
                  where: {
-                     id: req.params.id
+                     email: req.session.email
                  }
              });
-             res.redirect('/profile/' + req.params.id)
+             res.redirect('/users/profile')
     },
 
     logout: (req, res) => {
