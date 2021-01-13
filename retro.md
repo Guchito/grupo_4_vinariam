@@ -90,3 +90,18 @@ Como positivo, nos ayudamos bastante entre todos y lo sacamos adelante sumando t
 - Empezamos a dividir las tareas y hacer más eficiente y productivo nuestro tiempo.
 - Usamos las reuniones/chats para desatar impedimentos y avanzamos.
 - Nos juntamos ni bien se lanzó el sprint para leerlo y modularizarlo.
+
+# Conclusiones de la retrospectiva sprint 6
+
+Nuevamente no calculamos bien los tiempos. La participación de todos y el trabajo en equipo se vio un poco afectado. 
+
+* Empezar a hacer:
+- Poner deadline sobre el trabajo de cada participante del equipo para que la revisión no quede para ultimo momento
+
+* Seguir haciendo: 
+- Ayudarnos y solucionar el problema cuando surge una necesidad
+- Modularizar el trabajo a hacer 
+
+* Hacer más: 
+- Repasar contenidos y practicar para llegar al sprint sin dudas sobre los conceptos base del mismko 
+
