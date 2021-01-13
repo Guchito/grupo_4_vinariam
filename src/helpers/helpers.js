@@ -64,7 +64,7 @@ const helper = {
       return users.pop().id + 1;
   }, 
   
-  uploadUser(){
+  uploadImg(){
     const storage = multer.diskStorage({
         destination: function (req, file, cb) {
           cb(null, __dirname + '/../../public/img/users')

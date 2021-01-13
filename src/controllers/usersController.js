@@ -36,53 +36,61 @@ const usersController = {
     processLogin: async (req, res) => {
         
         const errors = validationResult(req);
+        console.log(errors)
         if  (!errors.isEmpty()){
             return res.render('login', {errors: errors.errors})
         }
-        let user = await db.User.findOne({where: {email:req.body.email}})
+        const user = await db.User.findOne({where: {email:req.body.email}})
         req.session.email = user.email; 
 
         if (req.body.recordame){
-            res.cookie('email', user.email, { maxAge: 1000 * 60 * 60 * 24 * 365 });
+            res.cookie('email', req.body.email, { maxAge: 1000 * 60 * 60 * 24 * 365 });
         };
         res.redirect('/users/profile');	
     },
 
     profile: async (req,res) => {
 
-        let users = await db.User.findOne({where:{email:req.session.email}})
+        const user = await db.User.findOne({where:{email:req.session.email}})
     
         if(req.session.admin){
             res.redirect('/admin')
         }
         
-        res.render('userDetail', {users: users});
+        res.render('profile', {user: user});
         
     },
 
     editUser: async (req,res) => {
     
-        let users = await db.User.findOne({where: { email:req.session.email }});
-        return res.render('editUser', {users: users});
+        const user = await db.User.findOne({where: { email:req.session.email }});
+        return res.render('editUser', {user: user});
     },
 
     updateUser: async (req,res) => {
+        const errors = validationResult(req);
+        const user = await db.User.findOne({where: { email:req.session.email }});
+        if  (!errors.isEmpty()){
+            return res.render('editUser', {errors: errors.errors, user: user})
+        };
 
-        await db.User.update({
-             name: req.body.name,  
-             last_name: req.body.lastName,
-             user_name: req.body.userName,
-             email: req.body.email, 
-             password: req.body.password,
-             avatar: req.files[0].filename,
-             dob: req.body.birthday
-             }, 
+        const updatedUser = {
+            name: req.body.name,
+            last_name: req.body.lastName,
+            user_name: req.body.userName,
+            dob: req.body.birthday,
+            email: req.body.email,
+            password: bcryptjs.hashSync(req.body.password, 10),
+            avatar: req.files[0].filename
+        };
+        console.log(req.session.email)
+        await db.User.update(updatedUser, 
              {
                  where: {
                      email: req.session.email
                  }
              });
-             res.redirect('/profile/' + req.params.id)
+             res.redirect('/users/profile')
     },
 
     logout: (req, res) => {

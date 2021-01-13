@@ -1,0 +1,57 @@
+<%- include ('./partials/head', {title: 'Profile'}) %>
+
+<body>
+<div class="center">
+        <%- include ('./partials/header') %>
+
+        <main>
+
+
+        <div class="BloqueGeneralAdmin">
+
+            <div class="bloqueUno">
+                <div class="bloqueUnoTitulo">
+                    <h1>Tu perfil</h1>
+                    <a href="/users/logout">Logout</a>
+                </div>
+                <div>
+                <img class="hombreProfile" src="/img/profile.svg" alt="genteRegister">
+            </div>
+                  
+            </div>
+
+            <div class="formRegister">
+                <form action="/users/edit" method="POST" enctype="multipart/form-data">
+                    <h2 class="contanos">Contanos de vos</h2>
+                    <% if (typeof errors != "undefined") { %>
+							
+                        <% errors.forEach(error => { %>
+                         
+                            <p><%= error.msg %> </p>
+
+                        <% }) %>
+        
+                    <% } %>
+                    <input class="camposForm" type="text" id="name" name="name" placeholder="Nombre" value=<%= user.name%>><br>
+                    <input class="camposForm" type="text" id="lastName" name="lastName" placeholder="Apellido" value=<%= user.last_name%>><br>
+                    <input class="camposForm" type="text" id="userName" name="userName" placeholder="Nombre de usuario" value=<%= user.user_name%> ><br>
+                    <input class="camposForm" type="date" id="birthday" name="birthday"> <br> 
+                    <input class="camposForm" type="email" id="email" name="email" placeholder="E-mail" value=<%= user.email%> ><br>
+                    <input class="camposForm" type="password" id="password" name="password" placeholder="Clave"><br>
+                    <input class="camposForm" type="password" id="passwordconfirm" name="passwordconfirm" placeholder="Confirmá tu clave"><br>
+                    <div class="camposForm">
+                        <label for="image" class="form-label, text-photo">Elegí una foto de perfil</label>
+                        <input type="file" name="image" id="image">
+                    </div>
+                <div class="botones">
+                    <button class="boton camposForm" type="submit" name="register" id="register"><strong>Continuar</strong></button>
+                </div>
+            </form>
+       
+        </div>
+        </main>
+    </div>
+    <%- include ('./partials/footer') %>
+
+</body>
+</html>

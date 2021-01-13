@@ -25,15 +25,15 @@
                 <div class="textoBloqueDos">
                     <h2 class="datosPerfil">Tus datos</h2>
                     <div class="userPhoto">
-                        <img class="avatarProfile" src="/img/users/<%=user.image%>" alt="foto">
+                        <img class="avatarProfile" src="/img/users/<%=user.avatar%>" alt="foto">
                     </div>
                     <p class="datosPersonales">
-                        <br><%= user.name + ' ' + user.lastName%></br>
+                        <br><%= user.name + ' ' + user.last_name%></br>
                         <br><%= user.email%> </br>
                         <br><%= user.dob%> </br>
                     </p>
                     <!-- ESTE BOTON ES HORRIBLE, YA SABEMOS, DESPUES NOS OCUPAMOS -->
-                    <a href = '/perfil/editar/:id'>
+                    <a href = '/users/edit'>
                         <button>Editar</button>
                     </a>
 
