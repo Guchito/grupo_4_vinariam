@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-01-2021 a las 03:59:48
+-- Tiempo de generación: 13-01-2021 a las 00:22:06
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.2.34
 
@@ -37,6 +37,14 @@ CREATE TABLE `brands` (
   `deleted_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `brands`
+--
+
+INSERT INTO `brands` (`id`, `name`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'Lopez', '2021-01-12 18:56:49', NULL, NULL),
+(2, 'Bressia', '2021-01-12 18:57:14', NULL, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -50,6 +58,18 @@ CREATE TABLE `categories` (
   `updated_at` datetime DEFAULT NULL ON UPDATE current_timestamp(),
   `deleted_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `categories`
+--
+
+INSERT INTO `categories` (`id`, `name`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'Malbec', '2021-01-12 18:59:06', NULL, NULL),
+(2, 'Cabernet Sauvignon', '2021-01-12 18:59:20', NULL, NULL),
+(3, 'Syrah', '2021-01-12 18:59:21', NULL, NULL),
+(4, 'Rosado', '2021-01-12 18:59:22', NULL, NULL),
+(5, 'Blanco', '2021-01-12 18:59:23', NULL, NULL),
+(6, 'Blend', '2021-01-12 18:59:23', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -68,8 +88,25 @@ CREATE TABLE `products` (
   `brand_id` int(10) UNSIGNED DEFAULT NULL,
   `created_at` datetime DEFAULT current_timestamp(),
   `updated_at` datetime DEFAULT NULL ON UPDATE current_timestamp(),
-  `deleted_at` datetime DEFAULT NULL
+  `deleted_at` datetime DEFAULT NULL,
+  `class` varchar(20) DEFAULT 'no'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `products`
+--
+
+INSERT INTO `products` (`id`, `name`, `detail`, `price`, `discount`, `stock`, `img`, `brand_id`, `created_at`, `updated_at`, `deleted_at`, `class`) VALUES
+(1, '', 'Creado en 2011 para sumarse a la clásica marca. Añejado en toneles de roble francés. De color rubí profundo, con leves tonos caoba y aromas intensos. Excelente estructura, taninos suaves, untuoso y de largo final. Ideal para acompañar carnes rojas y comidas con salsas suaves.', '180', 0, 10, '1.png', 1, '2021-01-12 19:27:53', NULL, NULL, 'no'),
+(2, 'Dulce Natural', 'Exquisito, fresco, equilibrado y delicado. Elaborado con uvas Torrontés Riojano, Moscatel y Viognier. Menos alcohol, más dulce natural. Disfrutalo bien frío y en todo momento. Ideal para compartir acompañado de platos dulces y como aperitivo.', '178', 0, 10, '2.png', 1, '2021-01-12 19:40:17', NULL, NULL, 'no'),
+(3, '', 'Emblemático vino argentino que desde su creación en 1973 conserva intacta la calidad convirtiéndose en un clásico indiscutible. Este Malbec, armónico y bien equilibrado, es añejado en grandes toneles de roble francés.', '144', 0, 10, '3.png', 1, '2021-01-12 19:41:43', NULL, NULL, 'no'),
+(4, 'Rincon Famoso', 'Cepas Sangiovese, Merlot y Malbec dan origen a este clásico vino argentino. Añejado en toneles de roble francés. Equilibrado, de taninos maduros y un largo final.', '245', 0, 10, '4.png', 1, '2021-01-12 19:48:55', NULL, NULL, 'no'),
+(5, 'Chateau Vieux', 'Destacado Blend Gran Reserva. Una cuidada combinación de uvas Cabernet Sauvignon, Merlot y Pinot Noir que se conserva desde sus primeras cosechas a principios del siglo XX. Añejado en grandes toneles de roble francés. Redondo, armónico y equilibrado.', '437', 0, 10, '5.png', 1, '2021-01-12 19:51:08', NULL, NULL, 'no'),
+(6, 'Rincon', 'De color rosado pálido debido a su corta maceración. Una combinación entre Malbec y Pinot Noir, un blend fresco y frutado.', '247', 0, 10, '6.png', 1, '2021-01-12 19:51:46', NULL, NULL, 'no'),
+(8, 'Montchenot 10 Años', 'De uvas excepcionales, añejado en grandes toneles y luego en su botella por 5 años más. Blend donde los aromas y sabores se unieron en una expresión profunda y delicada que conecta con el pasado descubriendo equilibrio y complejidad en cada trago.', '712', 0, 10, '8.png', 1, '2021-01-12 19:54:33', NULL, NULL, 'no'),
+(9, 'Monteagrelo', 'Color rojo intenso con tonalidades púrpuras propias del varietal. Perfecto equilibrio entre fruta y madera, muy pimentoso y especiado. Muy buen cuerpo, carnoso, con final de boca balanceado. Sin aristas, maduro y armónico.', '1356', 0, 10, '9.png', 2, '2021-01-12 20:06:41', NULL, NULL, 'no'),
+(10, 'Monteagrelo', 'Este delicado Malbec impacta de inmediato por su color rojo intenso, con tonalidades púrpuras y entorno negro. En nariz es fuertemente atractivo, al ofrecer una combinación exquisita de aromas de frutos rojos y negros, combinados con la vainilla, el chocolate y el café, gracias a su paso por roble.', '955', 0, 10, '10.png', 2, '2021-01-12 20:07:49', NULL, NULL, 'no'),
+(11, 'Montchenot 5 Años', 'Su menor tiempo de guarda define una personalidad distinta. Más joven e intenso, de un particular color rojo brillante con destellos granate, suave aroma, armónico y con un largo final. Equilibrio entre crianza y frescura con mayor cuerpo y carácter.', '464', 0, 10, '7.png', 1, '2021-01-12 20:09:21', NULL, NULL, 'no');
 
 -- --------------------------------------------------------
 
@@ -86,6 +123,22 @@ CREATE TABLE `product_category` (
   `deleted_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `product_category`
+--
+
+INSERT INTO `product_category` (`id`, `product_id`, `category_id`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(2, 1, 2, '2021-01-12 20:14:50', NULL, NULL),
+(3, 2, 5, '2021-01-12 20:15:03', NULL, NULL),
+(4, 3, 1, '2021-01-12 20:15:21', NULL, NULL),
+(5, 4, 6, '2021-01-12 20:15:35', NULL, NULL),
+(6, 5, 6, '2021-01-12 20:15:47', NULL, NULL),
+(7, 6, 4, '2021-01-12 20:16:20', NULL, NULL),
+(8, 11, 6, '2021-01-12 20:17:08', NULL, NULL),
+(9, 8, 6, '2021-01-12 20:17:16', NULL, NULL),
+(10, 9, 2, '2021-01-12 20:17:53', NULL, NULL),
+(11, 10, 1, '2021-01-12 20:18:03', NULL, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -101,6 +154,22 @@ CREATE TABLE `product_size` (
   `deleted_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `product_size`
+--
+
+INSERT INTO `product_size` (`id`, `product_id`, `size_id`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 1, 1, '2021-01-12 20:19:50', NULL, NULL),
+(2, 2, 1, '2021-01-12 20:20:01', NULL, NULL),
+(3, 3, 1, '2021-01-12 20:20:02', NULL, NULL),
+(4, 4, 1, '2021-01-12 20:20:04', NULL, NULL),
+(5, 5, 1, '2021-01-12 20:20:06', NULL, NULL),
+(6, 6, 1, '2021-01-12 20:20:09', NULL, NULL),
+(7, 8, 1, '2021-01-12 20:20:11', NULL, NULL),
+(8, 9, 2, '2021-01-12 20:20:14', NULL, NULL),
+(9, 10, 2, '2021-01-12 20:20:18', NULL, NULL),
+(10, 11, 1, '2021-01-12 20:20:21', NULL, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -114,6 +183,14 @@ CREATE TABLE `sizes` (
   `updated_at` datetime DEFAULT NULL ON UPDATE current_timestamp(),
   `deleted_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `sizes`
+--
+
+INSERT INTO `sizes` (`id`, `name`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 750, '2021-01-12 19:00:13', NULL, NULL),
+(2, 1000, '2021-01-12 19:00:16', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -141,7 +218,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `last_name`, `user_name`, `email`, `password`, `avatar`, `rol`, `dob`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(3, 'Agustin', 'Gaggero', 'guchito', 'asdas@gmail.com', '$2a$10$pRLfczU468ClgyEn2D0ieehxUH4f4NQWKF6Pm15qIiFYX/HtsUG82', '1610406681043-.jpg', 10, '1987-12-05', '2021-01-11 23:11:21', '2021-01-11 23:11:21', NULL);
+(15, 'admin', 'admin', 'admin', 'admin@admin.com', '$2a$10$kfavMTyWVOyIL7tr9pHsh.gxDaSpoOSRXLoKB9vpMzSKXRM2X6vl6', '1610487972954-.jpg', 20, '1991-01-01', '2021-01-12 21:46:13', '2021-01-12 18:48:53', NULL);
 
 --
 -- Índices para tablas volcadas
@@ -205,43 +282,43 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `brands`
 --
 ALTER TABLE `brands`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `product_category`
 --
 ALTER TABLE `product_category`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `product_size`
 --
 ALTER TABLE `product_size`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `sizes`
 --
 ALTER TABLE `sizes`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- Restricciones para tablas volcadas

@@ -23,7 +23,10 @@ module.exports = (sequelize, DataTypes) => {
         },
         image: {
             type: DataTypes.STRING
-        }, 
+        },
+        class: {
+            type: DataTypes.STRING
+        },
         brand_id: {
             type: DataTypes.INTEGER.UNSIGNED
         }
