@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
         stock: {
             type: DataTypes.INTEGER.UNSIGNED
         },
-        image: {
+        img: {
             type: DataTypes.STRING
         },
         class: {

@@ -13,74 +13,78 @@ const adminController = {
 
     },
 
-	carga: (req, res) => {
-        res.render('uploadProduct');
+	carga: async (req, res) => {
+        const categories = await db.Category.findAll();
+        const brands = await db.Brand.findAll();
+        res.render('uploadProduct', {categories, brands});
     },
     
     // Carga - Store
-    store: (req, res) => 
+    store: async (req, res) => 
     { 
     
         const newProduct = {
-            id: helper.generateNewId(),
             name: req.body.name,
+            detail: req.body.description,
             price: req.body.price,
-            category: req.body.category,
-            presentation: req.body.presentation,
-            category: req.body.category,
-            subCategory: req.body.subCategory,
-            presentation: req.body.presentation,
-            description: req.body.description,
+            discount: req.body.discount,
+            stock: req.body.stock,
+            brand_id: req.body.brand,
+            class: req.body.class,            
             image: req.files[0].filename
+        };
+        const category = {
+            category_id: req.body.category
+        };
+        const size = {
+            size: req.body.size
         }
-
-     const products = helper.getAllProducts();
-     const saveProduct = [...products, newProduct];
-
-     helper.writeProducts(saveProduct);
+        await db.Product.create(newProduct);
+        
 
      res.redirect('/');
     },
-    editar: (req, res) => {
-        const products = helper.getAllProducts();
-        const id = req.params.id;
-        const result = products.find((product) => product.id == id);
+    editar: async (req, res) => {
+        const product = await db.Product.findByPk(req.params.id);
+        const categories = await db.Category.findAll();
+        const brands = await db.Brand.findAll();
         
-        res.render('editProduct', {
-            productEdit: result
+        res.render('editProduct', {product, categories, brands});
+    },
+
+    processEdit: async (req, res) => {
+        const productToEdit = {
+            name: req.body.name,
+            detail: req.body.description,
+            price: req.body.price,
+            discount: req.body.discount,
+            stock: req.body.stock,
+            brand_id: req.body.brand,
+            class: req.body.class,            
+            image: req.files[0].filename
+        };
+        const category = {
+            category_id: req.body.category
+        };
+        const size = {
+            size: req.body.size
+        }
+        await db.Product.update(
+            productToEdit,
+            {where: {id: req.params.id}
         });
-    },
-
-   delete: (req, res) => {
-        helper.delete(req.params.id);
-        res.redirect('/productos');  
-    },
-     
-    processEdit: (req, res) => {
-        const id = req.params.id;
-
-        const products = helper.getAllProducts();
-        const editedProducts = products.map(function(product){
-        
-            if (product.id == req.params.id){
-                product.name = req.body.name;
-                product.price = req.body.price;
-                product.category = req.body.category;
-                product.code = req.body.code;
-                product.stock = req.body.stock;
-                product.description = req.body.description;
-                product.class = req.body.class;
-                product.image = req.files[0] ? req.files[0].filename:product.image
-            }
-            
-            return product
-        
-            });
-        
-            helper.writeProducts(editedProducts);    
 
             res.redirect('/productos/detail/' + id); 
+    },
+
+    delete: async (req, res) => {
+        await db.Product.destroy({
+            where: {id: req.params.id }
+        });
+        res.redirect('/productos');  
     }
+     
+
 }
 
 

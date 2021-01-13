@@ -12,6 +12,7 @@ const helper = {
         const jsonProducts = fs.readFileSync(productsFilePath, 'utf-8');
         const productsParsed = JSON.parse(jsonProducts);
         return productsParsed;
+        // por que no funciona poniendo el Product.getAll() aca?
     },
 
     writeProducts(arrayToTransform){

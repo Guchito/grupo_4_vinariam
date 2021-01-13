@@ -1,10 +1,11 @@
 const helper = require('../helpers/helpers'); // Requiero a las funciones de helpers
 const soyMayor = require ('../middlewares/soyMayorMiddleware');
 const originalUrl = soyMayor.originalUrl
+const db = require('../database/models')
 
 const mainController = {
-	index: (req, res, next) => {
-        const products = helper.getAllProducts();
+	index: async (req, res, next) => {
+        const products = await db.Product.findAll();
         const destacados = products.filter((product) => {
 			return product.class == "destacado";
 		});

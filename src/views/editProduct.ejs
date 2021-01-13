@@ -23,48 +23,61 @@
         </div>
         <div class="selectorCategoria">
             <h3>/tipo de producto</h3>
-            <a href="/admin/editar/<%= productEdit.id %>">
+            <a href="/admin/editar/<%= product.id %>">
                 <img src="/img/cargaVino.svg" alt="Carga de vinos">
             </a>
-            <a href="/admin/editar/<%= productEdit.id %>">
+            <a href="/admin/editar/<%= product.id %>">
                 <img src="/img/cargaConservas.svg" alt="Carga de conservas">
             </a>
-            <a href="/admin/editar/<%= productEdit.id %>">
+            <a href="/admin/editar/<%= product.id %>">
                 <img src="/img/cargaExp.svg" alt="Carga de experiencias">
             </a>
-            <a href="/admin/editar/<%= productEdit.id %>">
+            <a href="/admin/editar/<%= product.id %>">
                 <img src="/img/cargaBoxes.svg" alt="Carga de boxes">
             </a>
         </div>
         <div>
-            <form class="carga" action="/admin/editar/<%=productEdit.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <form class="carga" action="/admin/editar/<%=product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                 <div class="cargaCampos">
-                    <input class="sinborde width300" type="text" id="name" name="name" value="<%= productEdit.name %>">
+                    <label for="brand" class="form-label"></label>
+                    <select class="sinborde" name="brand" id="brand">
+                        <option value="" disabled = "true">/ marca</option>
+                        <% for (const brand of brands) { %>
+                            <option value=<% brand.id %>  >/ <%= brand.name %></option>
+                        <% } %>
+                    </select>
                 </div>
                 <div class="cargaCampos">
-                    <input class="sinborde" type="number" id="price" name="price" value="<%= productEdit.price %> " >
+                    <input class="sinborde width300" type="text" id="name" name="name" value="<%= product.name %>">
+                </div>
+                <div class="cargaCampos">
+                    <input class="sinborde" type="number" id="price" name="price" value="<%= product.price %>" >
                 </div>
                 <div class="cargaCampos">
                     <label for="class" class="form-label"></label>
                     <select class="sinborde" name="class" id="class" >
                         <option value="" disabled = "true">/ destacado</option>
-                        <option value="no-destacado" <%= productEdit.class == "no-destacado" ? "selected" : "" %> >No destacado</option>
-                        <option value="destacado" <%= productEdit.class == "destacado" ? "selected" : "" %> >Destacado</option>                        
+                        <option value="no" <%= product.class == "no" ? "selected" : "" %> >No destacado</option>
+                        <option value="destacado" <%= product.class == "destacado" ? "selected" : "" %> >Destacado</option>                        
                     </select>
                 </div>
                 <div class="cargaCampos">
-                    <label for="subCategory" class="form-label"></label>
-                    <select class="sinborde" name="subCategory" id="subCategory" value="<%= productEdit.subCategory %> ">
-                        <option value="" disabled>/ variedad</option>
-                        <option value="Malbec" <%= productEdit.subCategory == "Malbec" ? "selected" : "" %> >Malbec</option>                        
-                        <option value="Cabernet" <%= productEdit.subCategory == "Cabernet Sauvignon" ? "selected" : "" %> >Cabernet Sauvignon</option>
-                        <option value="Blend" <%= productEdit.subCategory == "Blend" ? "selected" : "" %> >Blend</option>
-                        <option value="Blanco" <%= productEdit.subCategory == "Blanco" ? "selected" : "" %> >Blanco</option>
-                        <option value="Rosado" <%= productEdit.subCategory == "Rosado" ? "selected" : "" %> >Rosado</option>
+                    <label for="category" class="form-label"></label>
+                    <select class="sinborde" name="category" id="category">
+                        <option value="" disabled = "true">/ variedad</option>
+                        <% for (const category of categories) { %>
+                            <option value=<% category.id %>  >/ <%= category.name %></option>
+                        <% } %>
                     </select>
                 </div>
                 <div class="cargaCampos">
-                    <input class="sinborde" type="text" id="presentation" name="presentation" value="<%= productEdit.presentation %> " >
+                    <input class="sinborde width300" type="number" id="stock" name="stock" value="<%= product.stock  %> " placeholder="/stock">
+                </div>
+                <div class="cargaCampos">
+                    <input class="sinborde width300" type="number" id="discount" name="discount" placeholder="/descuento">
+                </div>
+                <div class="cargaCampos">
+                    <input class="sinborde" type="number" id="size" name="size" value="<%= product.size  %> "placeholder="/presentacion (ml) " >
                 </div>
                 <div class="cargaCampos">
                     <label for="image"></label>
@@ -72,7 +85,7 @@
                 </div>
 
                 <div class="cargaCampos">
-                    <textarea class="sinborde" name="description" id="description"  placeholder="/descipción"><%= productEdit.description %> </textarea>
+                    <textarea class="sinborde" name="detail" id="detail"  placeholder="/descipción"><%= product.detail %> </textarea>
                 </div>
                 <div class="contenedorEditar">
                     <div class="Guardar">
@@ -81,7 +94,7 @@
 
                 </div>
             </form>
-            <form class="Guardar" method="POST" action="/admin/editar/<%=productEdit.id %> ?_method=DELETE" enctype="multipart/form-data">
+            <form class="Guardar" method="POST" action="/admin/editar/<%=product.id %> ?_method=DELETE" enctype="multipart/form-data">
                 <button type="submit" class="botonEliminar">Eliminar producto</button> 
             </form>
         </div>
