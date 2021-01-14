@@ -11,7 +11,7 @@
                 <img class="avatar" src="/img/avatar1.svg" alt="Avatar">
                 <div class="nombreAdmin">
                     <h3>Violeta Aguirre</h3>
-                    <a href="#">Ver mi perfil</a>
+                    <a href="/admin">Ver mi perfil</a>
                 </div>
             </div>
             <a class="navAdminElemnto" href="#">Proveedores</a>
@@ -46,7 +46,7 @@
                     <select class="sinborde" name="brand" id="brand">
                         <option value="" disabled = "true">/ marca</option>
                         <% for (const brand of brands) { %>
-                            <option value=<% brand.id %>  >/ <%= brand.name %></option>
+                            <option value= <%= brand.id %>  >/ <%= brand.name %></option>
                         <% } %>
                     </select>
                 </div>
@@ -66,7 +66,7 @@
                     <select class="sinborde" name="category" id="category">
                         <option value="" disabled = "true">/ variedad</option>
                         <% for (const category of categories) { %>
-                            <option value=<% category.id %>  >/ <%= category.name %></option>
+                            <option value= <%= category.id %>  >/ <%= category.name %></option>
                         <% } %>
                     </select>
                 </div>
@@ -77,7 +77,13 @@
                     <input class="sinborde width300" type="number" id="discount" name="discount" placeholder="/descuento">
                 </div>
                 <div class="cargaCampos">
-                    <input class="sinborde" type="number" id="size" name="size" placeholder="/ presentacion (ml)">
+                    <label for="size" class="form-label"></label>
+                    <select class="sinborde" name="size" id="size">
+                        <option value="" disabled = "true">/ presentacion (ml)</option>
+                        <% for (const size of sizes) { %>
+                            <option value= <%= size.id %>  >/ <%= size.name %> ml</option>
+                        <% } %>
+                    </select>
                 </div>
                 <div class="cargaCampos">
                     <label for="image" class="form-label"></label>

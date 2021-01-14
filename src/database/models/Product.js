@@ -44,26 +44,22 @@ module.exports = (sequelize, DataTypes) => {
             as: "brand",
             foreignKey: "brand_id",
         });
-    };
-
-    Product.associate = (models) => {
         Product.belongsToMany(models.Size,{
             as: "sizes",
             through: "product_size",
-            foreignKey: "size_id",
-            otherKey: "product_id",
+            foreignKey: "product_id",
+            otherKey: "size_id",
             timestamps: true
         });
-    };
-    Product.associate = (models) => {
         Product.belongsToMany(models.Category,{
             as: "categories",
             through: "product_category",
-            foreignKey: "category_id",
-            otherKey: "product_id",
+            foreignKey: "product_id",
+            otherKey: "category_id",
             timestamps: true
         });
     };
+
     return Product;
 
 }

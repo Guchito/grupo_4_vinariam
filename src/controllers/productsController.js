@@ -6,7 +6,9 @@ const db = require('../database/models');
 
 const productsController = {    
 	listaProductos: async (req, res) => {
-		const products = await db.Product.findAll();
+		const products = await db.Product.findAll({
+			include: ["categories", "brand"],
+		  });
         res.render('listProducts', {products});
 	},
 
@@ -16,13 +18,17 @@ const productsController = {
 		const result = products.find((product) => {
 			return product.id == id
 		});*/
-		const product = await db.Product.findByPk(id)
+		const product = await db.Product.findByPk(id, {
+			include: ["categories", "brand"],
+		  })
 		const admin = (req.session.admin) ? true: "";
 		res.render('detail', {product, admin});
 	},
 
     cart: async (req, res) => {
-		const products = await db.Product.findAll();
+		const products = await db.Product.findAll({
+			include: ["categories", "brand"],
+		  });
 		const someProducts = products.filter((product) => {
 			return product.id < 4;
 		});
@@ -41,7 +47,9 @@ const productsController = {
 
 	
 	experiences: async (req, res) => {
-		const products = await db.Product.findAll();
+		const products = await db.Product.findAll({
+			include: ["categories", "brand"],
+		  });
         res.render('experiences', {products: products});
 	}
 

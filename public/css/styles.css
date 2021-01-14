@@ -353,6 +353,7 @@ width: 100%;
 
 .detalle p{
     text-transform: uppercase;
+    text-align: center;
 }
 @media (max-width:480px){
     .detalle p{

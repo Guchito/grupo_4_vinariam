@@ -5,7 +5,9 @@ const db = require('../database/models')
 
 const mainController = {
 	index: async (req, res, next) => {
-        const products = await db.Product.findAll();
+        const products = await db.Product.findAll({
+			include: ["categories", "brand"],
+		  });
         const destacados = products.filter((product) => {
 			return product.class == "destacado";
 		});

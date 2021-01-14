@@ -16,13 +16,13 @@ const adminController = {
 	carga: async (req, res) => {
         const categories = await db.Category.findAll();
         const brands = await db.Brand.findAll();
-        res.render('uploadProduct', {categories, brands});
+        const sizes = await db.Size.findAll();
+        res.render('uploadProduct', {categories, brands, sizes});
     },
     
     // Carga - Store
     store: async (req, res) => 
     { 
-    
         const newProduct = {
             name: req.body.name,
             detail: req.body.description,
@@ -31,18 +31,22 @@ const adminController = {
             stock: req.body.stock,
             brand_id: req.body.brand,
             class: req.body.class,            
-            image: req.files[0].filename
+            img: req.files[0].filename
         };
         const category = {
-            category_id: req.body.category
+            id: req.body.category
         };
         const size = {
-            size: req.body.size
-        }
-        await db.Product.create(newProduct);
-        
+            id: req.body.size
+        };
 
-     res.redirect('/');
+        const product = await db.Product.create(newProduct);
+        
+        await product.setCategories(category.id, product.id);
+        await product.setSizes(size.id, product.id);
+
+
+        return res.redirect(`/productos/detail/${product.id}`);
     },
     editar: async (req, res) => {
         const product = await db.Product.findByPk(req.params.id);

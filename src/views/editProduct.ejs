@@ -11,7 +11,7 @@
                 <img class="avatar" src="/img/avatar1.svg" alt="Avatar">
                 <div class="nombreAdmin">
                     <h3>Violeta Aguirre</h3>
-                    <a href="#">Ver mi perfil</a>
+                    <a href="/admin">Ver mi perfil</a>
                 </div>
             </div>
             <a class="navAdminElemnto" href="#">Proveedores</a>
@@ -48,10 +48,10 @@
                     </select>
                 </div>
                 <div class="cargaCampos">
-                    <input class="sinborde width300" type="text" id="name" name="name" value="<%= product.name %>">
+                    <input class="sinborde width300" type="text" id="name" name="name" value="<%= product.name %>" placeholder="/nombre">
                 </div>
                 <div class="cargaCampos">
-                    <input class="sinborde" type="number" id="price" name="price" value="<%= product.price %>" >
+                    <input class="sinborde" type="number" id="price" name="price" value="<%= product.price %>" placeholder="/precio" >
                 </div>
                 <div class="cargaCampos">
                     <label for="class" class="form-label"></label>
@@ -71,7 +71,7 @@
                     </select>
                 </div>
                 <div class="cargaCampos">
-                    <input class="sinborde width300" type="number" id="stock" name="stock" value="<%= product.stock  %> " placeholder="/stock">
+                    <input class="sinborde width300" type="number" id="stock" name="stock" value="<%= product.stock  %> "placeholder="/stock">
                 </div>
                 <div class="cargaCampos">
                     <input class="sinborde width300" type="number" id="discount" name="discount" placeholder="/descuento">
