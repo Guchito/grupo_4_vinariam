@@ -15,7 +15,7 @@
                 <div class="ContenedorInfoProducto">
             
                     <div class="tituloVino">
-                        <h1 class="tituloVino"><%= product.name %></h1>
+                        <h1 class="tituloVino"><%=product.brand.name %> <%=product.name %> <%= product.categories[0].name%></h1>
                     </div>  
                     
                     <div class="agregarYEditar">
@@ -44,7 +44,7 @@
                     </div>
                     </div>  
                     <div class="InfoProducto">
-                        <h3 class="Info Producto Cant"><%= product.description %></h3>
+                        <h3 class="Info Producto Cant"><%= product.detail %></h3>
                     </div>
                     <% if(admin == true ){ %> 
                     <div class="agregarYEditar">
@@ -55,7 +55,7 @@
                 </div>
 
                 <div class="vinoproduct">
-                    <img src="/img/<%= product.image %>" alt="vinoproduct">
+                    <img src="/img/<%= product.img %>" alt="vinoproduct">
                 </div>
 
 

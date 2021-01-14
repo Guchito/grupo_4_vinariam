@@ -37,9 +37,9 @@
                                         <img class="fondo" src="/img/mancha<%= product.id %>.png" alt="fondo">
                                         <img class="vino" src="/img/<%= product.img %>" alt="vino<%=product.id%>">
                                     </div>
-
+                                    
                                     <div class="detalle">
-                                        <a href="/productos/producto"><p><%= product.name %></p></a>
+                                        <a href="/productos/producto"> <p><%=product.brand.name %></p><p><%= product.name %></p><p><%= product.categories[0].name%></p></a>
                                         <div class="estrellas">
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
