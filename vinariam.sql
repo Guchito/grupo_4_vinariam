@@ -9,7 +9,7 @@
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
-SET time_zone = "+00:00";
+SET time_zone = "-03:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -85,11 +85,12 @@ CREATE TABLE `products` (
   `discount` int(10) UNSIGNED DEFAULT 0,
   `stock` int(10) UNSIGNED NOT NULL,
   `img` varchar(255) NOT NULL,
+  `class` varchar(20) DEFAULT 'no',
   `brand_id` int(10) UNSIGNED DEFAULT NULL,
   `created_at` datetime DEFAULT current_timestamp(),
   `updated_at` datetime DEFAULT NULL ON UPDATE current_timestamp(),
-  `deleted_at` datetime DEFAULT NULL,
-  `class` varchar(20) DEFAULT 'no'
+  `deleted_at` datetime DEFAULT NULL
+
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -221,6 +222,48 @@ INSERT INTO `users` (`id`, `name`, `last_name`, `user_name`, `email`, `password`
 (15, 'admin', 'admin', 'admin', 'admin@admin.com', '$2a$10$kfavMTyWVOyIL7tr9pHsh.gxDaSpoOSRXLoKB9vpMzSKXRM2X6vl6', '1610487972954-.jpg', 20, '1991-01-01', '2021-01-12 21:46:13', '2021-01-12 18:48:53', NULL),
 (16, 'Agustin', 'Gaggero', 'Guchi', 'a_gaggero@hotmail.com', '$2a$10$HatHEVgu7TDYc3R05Kye5uT6LHoeoCDJb4Jo5Jhpmpfu3ooUCoBiS', '1610504257179-.PNG', 10, '1987-12-05', '2021-01-12 23:34:36', '2021-01-13 02:17:37', NULL);
 
+-- ------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `orders`
+--
+
+CREATE TABLE `orders` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `order_number` int(10) UNSIGNED NOT NULL,
+  `total` decimal(10,0) UNSIGNED NOT NULL,
+  `user_id` int(10) UNSIGNED DEFAULT NULL,
+  `created_at` datetime DEFAULT current_timestamp(),
+  `updated_at` datetime DEFAULT NULL ON UPDATE current_timestamp(),
+  `deleted_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- ------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `items`
+--
+
+CREATE TABLE `items` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `unit_price` decimal(10,0) UNSIGNED NOT NULL,
+  `quantity` int(10) UNSIGNED NOT NULL,
+  `subTotal` decimal(10,0) UNSIGNED NOT NULL,
+  `discount` int(10) UNSIGNED DEFAULT 0,
+  `img` varchar(255) NOT NULL,
+  `status` boolean DEFAULT 0,
+  `user_id` int(10) UNSIGNED DEFAULT NULL,
+  `product_id` int(10) UNSIGNED DEFAULT NULL,
+  `order_id` int(10) UNSIGNED DEFAULT NULL,
+  `created_at` datetime DEFAULT current_timestamp(),
+  `updated_at` datetime DEFAULT NULL ON UPDATE current_timestamp(),
+  `deleted_at` datetime DEFAULT NULL
+
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+
 --
 -- Índices para tablas volcadas
 --
@@ -276,6 +319,22 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `user_name` (`user_name`);
 
 --
+-- Indices de la tabla `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_id` (`user_id`);
+
+--
+-- Indices de la tabla `items`
+--
+ALTER TABLE `items`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `product_id` (`product_id`),
+  ADD KEY `order_id` (`order_id`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -322,6 +381,21 @@ ALTER TABLE `users`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
+-- AUTO_INCREMENT de la tabla `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+
+
+--
+-- AUTO_INCREMENT de la tabla `items`
+--
+ALTER TABLE `items`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+
+
+
+--
 -- Restricciones para tablas volcadas
 --
 
@@ -344,6 +418,22 @@ ALTER TABLE `product_category`
 ALTER TABLE `product_size`
   ADD CONSTRAINT `product_size_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`),
   ADD CONSTRAINT `product_size_ibfk_2` FOREIGN KEY (`size_id`) REFERENCES `sizes` (`id`);
+
+--
+-- Filtros para la tabla `orders`
+--
+ALTER TABLE `orders`
+  ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+
+--
+-- Filtros para la tabla `items`
+--
+ALTER TABLE `items`
+  ADD CONSTRAINT `items_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
+  ADD CONSTRAINT `items_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`),
+  ADD CONSTRAINT `items_ibfk_3` FOREIGN KEY (`order_id`) REFERENCES `order` (`id`);
+
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
