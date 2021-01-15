@@ -1,5 +1,8 @@
 # grupo_4_vinariam
 
+  Login Admin: user: admin@admin.com pass: 123456
+
+
 E commerce dedicado a la venta de:
 
 - Vinos de reservas y cosechas especiales
