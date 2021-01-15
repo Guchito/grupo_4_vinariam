@@ -43,7 +43,7 @@
                     <select class="sinborde" name="brand" id="brand">
                         <option value="" disabled = "true">/ marca</option>
                         <% for (const brand of brands) { %>
-                            <option value=<% brand.id %>  >/ <%= brand.name %></option>
+                            <option value=<%= brand.id %>  >/ <%= brand.name %></option>
                         <% } %>
                     </select>
                 </div>
@@ -57,8 +57,8 @@
                     <label for="class" class="form-label"></label>
                     <select class="sinborde" name="class" id="class" >
                         <option value="" disabled = "true">/ destacado</option>
-                        <option value="no" <%= product.class == "no" ? "selected" : "" %> >No destacado</option>
-                        <option value="destacado" <%= product.class == "destacado" ? "selected" : "" %> >Destacado</option>                        
+                        <option value="no" <%= product.class == "no" ? "selected" : "" %> >/No destacado</option>
+                        <option value="destacado" <%= product.class == "destacado" ? "selected" : "" %> >/Destacado</option>                        
                     </select>
                 </div>
                 <div class="cargaCampos">
@@ -66,18 +66,24 @@
                     <select class="sinborde" name="category" id="category">
                         <option value="" disabled = "true">/ variedad</option>
                         <% for (const category of categories) { %>
-                            <option value=<% category.id %>  >/ <%= category.name %></option>
+                            <option value=<%= category.id %>  >/<%= category.name %></option>
                         <% } %>
                     </select>
                 </div>
                 <div class="cargaCampos">
-                    <input class="sinborde width300" type="number" id="stock" name="stock" value="<%= product.stock  %> "placeholder="/stock">
+                    <input class="sinborde width300" type="number" id="stock" name="stock" value="<%= product.stock  %>" placeholder="/stock">
                 </div>
                 <div class="cargaCampos">
-                    <input class="sinborde width300" type="number" id="discount" name="discount" placeholder="/descuento">
+                    <input class="sinborde width300" type="number" id="discount" name="discount" value="<%= product.discount %>" placeholder="/descuento">
                 </div>
                 <div class="cargaCampos">
-                    <input class="sinborde" type="number" id="size" name="size" value="<%= product.size  %> "placeholder="/presentacion (ml) " >
+                   <label for="size" class="form-label"></label>
+                    <select class="sinborde" name="size" id="size">
+                        <option value="" disabled = "true">/ tamaño</option>
+                        <% for (const size of sizes) { %>
+                            <option value=<%= size.id %>  >/ <%= size.name %>ml</option>
+                        <% } %>
+                    </select>
                 </div>
                 <div class="cargaCampos">
                     <label for="image"></label>
