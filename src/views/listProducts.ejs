@@ -12,19 +12,18 @@
                         <div class="filtrarPor">
                             <label> Filtrar:</label>
                             <select class="filtrosEstilo">
-                                <option value="/">Malbec</option>
-                                <option value="/">Cabernet Sauvignon</option>
-                                <option value="/">Syrah</option>
-                                <option value="/">Rosado</option>
+
+                                <% for(category of categories) { %>
+                                    <option class="categoryFilter" value=<%= category.id %>><%= category.name%></option>
+                                <%}%>
                             </select>
                         </div>
 
                         <div class="filtrarPor">
                             <label>Ordenar:</label>
                             <select class="filtrosEstilo">
-                                <option value="/">Mayor precio</option>
-                                <option value="/">Menor precio</option>
-                                <option value="/">Más buscados</option>
+                                <option value="may">Mayor precio</option>
+                                <option value="men">Menor precio</option>
                             </select>
                         </div>
 
@@ -63,5 +62,6 @@
         </main>
         
         <%- include ('./partials/footer') %>
+        <script src="/js/script.js"></script>
     </body>
 </html>
