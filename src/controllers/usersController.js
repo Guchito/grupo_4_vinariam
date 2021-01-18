@@ -6,15 +6,15 @@ const db = require('../database/models')
 
 const usersController = {
 	login: (req, res) => {
-        res.render('login');
+        res.render('users/login');
     },
     register: (req, res) => {
-        res.render('register');
+        res.render('users/register');
     }, 
     processRegister: async (req, res) => {
         let errors = validationResult(req);
         if (!errors.isEmpty()){
-            res.render('register', {errors: errors.errors})
+            res.render('users/register', {errors: errors.errors})
         } else {
            
         const newUser = {
@@ -38,7 +38,7 @@ const usersController = {
         const errors = validationResult(req);
         console.log(errors)
         if  (!errors.isEmpty()){
-            return res.render('login', {errors: errors.errors})
+            return res.render('users/login', {errors: errors.errors})
         }
         const user = await db.User.findOne({where: {email:req.body.email}})
         req.session.email = user.email; 
@@ -57,21 +57,21 @@ const usersController = {
             res.redirect('/admin')
         }
         
-        res.render('profile', {user: user});
+        res.render('users/profile', {user: user});
         
     },
 
     editUser: async (req,res) => {
     
         const user = await db.User.findOne({where: { email:req.session.email }});
-        return res.render('editUser', {user: user});
+        return res.render('users/editUser', {user: user});
     },
 
     updateUser: async (req,res) => {
         const errors = validationResult(req);
         const user = await db.User.findOne({where: { email:req.session.email }});
         if  (!errors.isEmpty()){
-            return res.render('editUser', {errors: errors.errors, user: user})
+            return res.render('users/editUser', {errors: errors.errors, user: user})
         };
 
         const updatedUser = {

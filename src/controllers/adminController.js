@@ -9,7 +9,7 @@ const db = require('../database/models')
 const adminController = {
     index: async (req, res) => {
         const user = await db.User.findOne({where:{email:req.session.email}})        
-        res.render('adminIndex', {user: user})
+        res.render('admin/adminIndex', {user: user})
 
     },
 
@@ -17,7 +17,7 @@ const adminController = {
         const categories = await db.Category.findAll();
         const brands = await db.Brand.findAll();
         const sizes = await db.Size.findAll();
-        res.render('uploadProduct', {categories, brands, sizes});
+        res.render('admin/uploadProduct', {categories, brands, sizes});
     },
     
     // Carga - Store
@@ -57,7 +57,7 @@ const adminController = {
         const sizes = await db.Size.findAll();
        // return res.send(product)
         
-        res.render('editProduct', {product, categories, brands, sizes});
+        res.render('admin/editProduct', {product, categories, brands, sizes});
     },
 
     processEdit: async (req, res) => {
