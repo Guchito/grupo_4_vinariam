@@ -1,5 +1,3 @@
-
-const helper = require('../helpers/helpers'); // Requiero a las funciones de helpers
 const db = require('../database/models');
 
 /*********Controllers ******************/
@@ -9,15 +7,12 @@ const productsController = {
 		const products = await db.Product.findAll({
 			include: ["categories", "brand"],
 		  });
-        res.render('listProducts', {products});
+		const categories = await db.Category.findAll();
+		res.render('listProducts', {products, categories});
 	},
 
 	detail: async (req, res) => {
 		const id = req.params.id;
-		/*const products = helper.getAllProducts();
-		const result = products.find((product) => {
-			return product.id == id
-		});*/
 		const product = await db.Product.findByPk(id, {
 			include: ["categories", "brand"],
 		  })
