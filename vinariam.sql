@@ -429,9 +429,9 @@ ALTER TABLE `orders`
 -- Filtros para la tabla `items`
 --
 ALTER TABLE `items`
-  ADD CONSTRAINT `items_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
+  ADD CONSTRAINT `items_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
   ADD CONSTRAINT `items_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`),
-  ADD CONSTRAINT `items_ibfk_3` FOREIGN KEY (`order_id`) REFERENCES `order` (`id`);
+  ADD CONSTRAINT `items_ibfk_3` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`);
 
 
 COMMIT;
