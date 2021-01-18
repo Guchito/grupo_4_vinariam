@@ -8,7 +8,7 @@ const productsController = {
 			include: ["categories", "brand"],
 		  });
 		const categories = await db.Category.findAll();
-		res.render('listProducts', {products, categories});
+		res.render('products/listProducts', {products, categories});
 	},
 
 	detail: async (req, res) => {
@@ -17,7 +17,7 @@ const productsController = {
 			include: ["categories", "brand"],
 		  })
 		const admin = (req.session.admin) ? true: "";
-		res.render('detail', {product, admin});
+		res.render('products/detail', {product, admin});
 	},
 
     cart: async (req, res) => {
@@ -36,7 +36,7 @@ const productsController = {
 		const shipping = 400;
 		const total = subTotal + shipping;
 		
-		res.render('cart', {products: someProducts, subTotal: subTotal, shipping: shipping, total: total});
+		res.render('products/cart', {products: someProducts, subTotal: subTotal, shipping: shipping, total: total});
     },
 
 
@@ -45,7 +45,7 @@ const productsController = {
 		const products = await db.Product.findAll({
 			include: ["categories", "brand"],
 		  });
-        res.render('experiences', {products: products});
+        res.render('products/experiences', {products: products});
 	}
 
 }
