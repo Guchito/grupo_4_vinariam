@@ -1,4 +1,4 @@
-const helper = require('../helpers/helpers');
+
 const db = require('../database/models')
 
 const adminSession = async function (req, res, next) {
