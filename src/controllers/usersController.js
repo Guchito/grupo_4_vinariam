@@ -1,7 +1,6 @@
 const helper = require('../helpers/helpers');
 const bcryptjs = require('bcryptjs');
 const { validationResult } = require('express-validator');
-const { getAUser } = require('../helpers/helpers');
 const db = require('../database/models')
 
 const usersController = {

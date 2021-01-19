@@ -12,10 +12,10 @@
                         <div class="filtrarPor">
                             <label> Filtrar:</label>
                             <select class="filtrosEstilo">
-
                                 <% for(category of categories) { %>
                                     <option class="categoryFilter" value=<%= category.id %>><%= category.name%></option> <!-- No se porque, siempre me toma value 6-->
                                 <%}%>
+                                <option class="categoryFilter" value="0">Todos</option>
                             </select>
                         </div>
 
