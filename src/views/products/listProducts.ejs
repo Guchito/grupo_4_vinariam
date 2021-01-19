@@ -35,7 +35,7 @@
                 <div class="conteinerProducts">
                     <div id="filtered"></div>
                     <% for (const product of products) { %>
-                        <article class="articuloListado">
+                        <article class="articuloListado" data-category="<%= product.categories[0].id%>">
                             <a href="/productos/detail/<%= product.id %>">
                                 <div class="productBoxImage">
                                     <img src="/img/<%= product.img %>" alt="producto">
