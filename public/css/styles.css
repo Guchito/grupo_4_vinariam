@@ -602,6 +602,7 @@ width: 100%;
     display: flex;
     min-width: 1350px;
     margin: 0 auto;
+    min-height: 600px;
 }
 
 .genteRegister{

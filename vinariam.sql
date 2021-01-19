@@ -209,6 +209,7 @@ CREATE TABLE `users` (
   `avatar` varchar(255) NOT NULL,
   `rol` int(11) NOT NULL DEFAULT 10,
   `dob` date DEFAULT NULL,
+  `auth` tinyint DEFAULT 0,
   `created_at` datetime DEFAULT current_timestamp(),
   `updated_at` datetime DEFAULT NULL ON UPDATE current_timestamp(),
   `deleted_at` datetime DEFAULT NULL
@@ -218,9 +219,9 @@ CREATE TABLE `users` (
 -- Volcado de datos para la tabla `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `last_name`, `user_name`, `email`, `password`, `avatar`, `rol`, `dob`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(15, 'admin', 'admin', 'admin', 'admin@admin.com', '$2a$10$kfavMTyWVOyIL7tr9pHsh.gxDaSpoOSRXLoKB9vpMzSKXRM2X6vl6', '1610487972954-.jpg', 20, '1991-01-01', '2021-01-12 21:46:13', '2021-01-12 18:48:53', NULL),
-(16, 'Agustin', 'Gaggero', 'Guchi', 'a_gaggero@hotmail.com', '$2a$10$HatHEVgu7TDYc3R05Kye5uT6LHoeoCDJb4Jo5Jhpmpfu3ooUCoBiS', '1610504257179-.PNG', 10, '1987-12-05', '2021-01-12 23:34:36', '2021-01-13 02:17:37', NULL);
+INSERT INTO `users` (`id`, `name`, `last_name`, `user_name`, `email`, `password`, `avatar`, `rol`, `dob`, `auth`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(15, 'admin', 'admin', 'admin', 'admin@admin.com', '$2a$10$kfavMTyWVOyIL7tr9pHsh.gxDaSpoOSRXLoKB9vpMzSKXRM2X6vl6', '1610487972954-.jpg', 20, '1991-01-01', '1', '2021-01-12 21:46:13', '2021-01-12 18:48:53', NULL),
+(16, 'Agustin', 'Gaggero', 'Guchi', 'a_gaggero@hotmail.com', '$2a$10$HatHEVgu7TDYc3R05Kye5uT6LHoeoCDJb4Jo5Jhpmpfu3ooUCoBiS', '1610504257179-.PNG', 10, '1987-12-05', '1', '2021-01-12 23:34:36', '2021-01-13 02:17:37', NULL);
 
 -- ------------------------------------------------------
 

@@ -1,7 +1,8 @@
-const helper = require('../helpers/helpers');
 const bcryptjs = require('bcryptjs');
 const { validationResult } = require('express-validator');
-const db = require('../database/models')
+const db = require('../database/models');
+const nodemailer = require('nodemailer');
+
 
 const usersController = {
 	login: (req, res) => {
@@ -15,7 +16,6 @@ const usersController = {
         if (!errors.isEmpty()){
             res.render('users/register', {errors: errors.errors})
         } else {
-           
         const newUser = {
             name: req.body.name,
             last_name: req.body.lastName,
@@ -30,6 +30,36 @@ const usersController = {
         res.redirect('/users/login');
     }
  
+    },
+    sendMail: (req,res) =>{
+        const transporter = nodemailer.createTransport({
+            host: "smtp.gmail.com",
+            port: 465,
+            secure: true,
+            auth: {
+                user: "vinariamdh@gmail.com",
+                pass: "sovilugu!"
+            }
+        });
+        
+        const mailOptions = {
+            from: 'vinariamdh@gmail.com',
+            to: 'agusgaggero@gmail.com',
+            subject: 'Testing',
+            text: 'its alive!'
+        };
+        
+        transporter.sendMail(mailOptions, (err, data) => {
+            if(err){
+                console.log('error '+data)
+            }else{
+                console.log('enviado') 
+            }
+        })
+        
+    },
+    sentMail: (req, res) => {
+        res.render('users/sentMail')
     },
 
     processLogin: async (req, res) => {

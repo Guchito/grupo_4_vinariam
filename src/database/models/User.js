@@ -29,6 +29,9 @@ module.exports = (sequelize, DataTypes) => {
         },
         dob: {
             type: DataTypes.DATE
+        },
+        auth: {
+            type: DataTypes.BOOLEAN
         }
 
     }

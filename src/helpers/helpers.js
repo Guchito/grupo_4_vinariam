@@ -5,6 +5,8 @@ const usersFilePath = path.resolve(__dirname, '../data/users.json');
 const multer = require('multer');
 const db = require('../database/models');
 
+
+
 const helper = { 
 
   //products
@@ -90,8 +92,7 @@ const helper = {
       }
        
       return user[0]
-    }
-  
+    }, 
   }
 
 module.exports = helper;

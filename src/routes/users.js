@@ -13,6 +13,8 @@ router.get('/login', guest, usersController.login); //users/login (el "users" ya
 router.post('/login', validator.login, usersController.processLogin);
 router.get('/register', guest , usersController.register);
 router.post('/processRegister', helper.uploadImg().any(), validator.register, usersController.processRegister);
+router.post('/sendMail', usersController.sendMail);
+router.get('/sentMail', usersController.sentMail);
 router.get('/profile', user ,usersController.profile);
 router.get('/logout', usersController.logout);
 router.get('/edit', usersController.editUser);
