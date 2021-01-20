@@ -9,6 +9,12 @@ const adminSession = require('./middlewares/adminSession')
 const createError = require('http-errors')
 
 
+const dotenv = require('dotenv').config();
+if (dotenv.error) {
+  throw dotenv.error
+}
+ 
+//console.log(dotenv.parsed)
 
 const app = express();
 

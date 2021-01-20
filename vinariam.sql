@@ -66,7 +66,6 @@ CREATE TABLE `categories` (
 INSERT INTO `categories` (`id`, `name`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (1, 'Malbec', '2021-01-12 18:59:06', NULL, NULL),
 (2, 'Cabernet Sauvignon', '2021-01-12 18:59:20', NULL, NULL),
-(3, 'Syrah', '2021-01-12 18:59:21', NULL, NULL),
 (4, 'Rosado', '2021-01-12 18:59:22', NULL, NULL),
 (5, 'Blanco', '2021-01-12 18:59:23', NULL, NULL),
 (6, 'Blend', '2021-01-12 18:59:23', NULL, NULL);
