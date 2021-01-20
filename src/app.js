@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const path = require('path');
 const session = require('express-session');
@@ -7,14 +9,6 @@ const cookieParser = require('cookie-parser')
 const rememberMe = require('./middlewares/rememberMe')
 const adminSession = require('./middlewares/adminSession')
 const createError = require('http-errors')
-
-
-const dotenv = require('dotenv').config();
-if (dotenv.error) {
-  throw dotenv.error
-}
- 
-//console.log(dotenv.parsed)
 
 const app = express();
 

@@ -16,7 +16,5 @@ for(const category of selectCategory){
                 one.style.display='block'
             }
         }
-        
     })
-
 }
