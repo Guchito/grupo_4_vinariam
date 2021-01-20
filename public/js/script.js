@@ -5,7 +5,6 @@ for(const category of selectCategory){
     category.addEventListener('click', (e) => {
         const selected = document.querySelectorAll(`[data-category="${category.value}"]`)
         const all = document.querySelectorAll('.articuloListado')
-        console.log(all)
         for (const one of all){
             one.style.display='none'
         }
