@@ -1,6 +1,4 @@
 const selectCategory = document.querySelectorAll('.categoryFilter')
-
-
 for(const category of selectCategory){
     category.addEventListener('click', (e) => {
         const selected = document.querySelectorAll(`[data-category="${category.value}"]`)

@@ -28,12 +28,6 @@ module.exports = {
                 } 
             })
         }),
-        /*.custom(value {
-            //users = helper.getAllUsers();
-            userExiste = await db.User.findOne({where:{user_name:value}});
-            return !userExiste
-        }).withMessage('Nombre de usuario ya existente').bail(),
-        */
         body('image')
         .custom((value, { req }) => req.files[0])
         .withMessage('La imagen de perfil es obligatoria')
