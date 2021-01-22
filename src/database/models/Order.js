@@ -20,16 +20,16 @@ module.exports = (sequelize, DataTypes) => {
     };
     const Order = sequelize.define(alias, cols, config);
     
-    /*Order.associate = function(models){
-        Order.hasMany(models.User,{
-            as: "users",
+    Order.associate = function(models){
+        Order.belongsTo(models.User,{
+            as: "user",
             foreignKey: "user_id"
         });
         Order.hasMany(models.Item,{
-            as: "item",
-            foreignKey: "item_id",
+            as: "items",
+            foreignKey: "order_id",
         });
-    }*/
+    }
 
     return Order;
 

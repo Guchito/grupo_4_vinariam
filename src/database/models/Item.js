@@ -32,20 +32,20 @@ module.exports = (sequelize, DataTypes) => {
 
     const Item = sequelize.define(alias, cols, config);
    
-  /*  Item.associate = (models) => {
-        Item.hasMany(models.User,{
+    Item.associate = (models) => {
+        Item.belongsTo(models.User,{
             as: "users",
             foreignKey: "user_id",
         });
-        Item.hasMany(models.Product,{
+        Item.belongsTo(models.Product,{
             as: "products",
             foreignKey: "product_id",
         });
-        Item.hasMany(models.Order,{
-            as: "order",
+        Item.belongsTo(models.Order,{
+            as: "orders",
             foreignKey: "order_id",
         });
-    };*/
+    };
 
     return Item;
 
