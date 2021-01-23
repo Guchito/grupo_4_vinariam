@@ -2,6 +2,7 @@ const { body } = require('express-validator');
 const bcrypt = require('bcryptjs');
 const helper = require('../helpers/helpers');
 const { User } = require('../database/models')
+const path = require('path') 
 
 module.exports = {
     register: [
@@ -15,7 +16,8 @@ module.exports = {
                 }
             })
         }),       
-        body('name').notEmpty().withMessage('Debes indicar tu nombre').bail(), 
+        body('name').notEmpty().withMessage('Debes indicar tu nombre').bail()
+        .isLength({min: 2, max:99}).withMessage('Tu nombre debe tener como mínimo 2 caracteres').bail(),
         body('lastName').notEmpty().withMessage('Debes indicar tu apellido').bail(), 
 
 
@@ -31,14 +33,20 @@ module.exports = {
         body('image')
         .custom((value, { req }) => req.files[0])
         .withMessage('La imagen de perfil es obligatoria')
-        .bail(),
+        .bail()
+        .custom((value, {req}) => {
+            const extensionesOk = ['.jpg', '.png','.jpeg', '.gif', '.svg'];
+            const extensionSubida = path.extname(req.files[0].originalname);
+            return extensionesOk.includes(extensionSubida);
+
+        }).withMessage("La extension no es valida").bail(),
         body('terminos').custom(value => {
             return value;
 
         }).withMessage('Debes aceptar los términos y condiciones del sitio').bail(),
         
         body('password').notEmpty().withMessage('El campo contraseña no puede estar vacío').bail()
-        .isLength({min: 6, max:99}).withMessage('La contraseña debe tener como mínimo 6 caracteres').bail()
+        .isLength({min: 8, max:99}).withMessage('La contraseña debe tener como mínimo 8 caracteres').bail()
         .custom((value, {req} )=> {
             return value == req.body.passwordconfirm;
         }).withMessage('Las contraseñas ingresadas no son iguales').bail(),
@@ -57,11 +65,6 @@ module.exports = {
                            return Promise.reject('El usuario y la contraseña son incorrectos');
                         }
                     })
-                    /*const userFound = users.filter(user => user.email == value);
-                    if(userFound[0]){
-                        return bcrypt.compareSync(req.body.password, userFound[0].password);
-                    }
-                    return false*/
                 })           ,
             body('password').notEmpty().withMessage('El campo contraseña es obligatorio').bail()
         ],
@@ -94,5 +97,21 @@ module.exports = {
             return value == req.body.passwordconfirm;
         }).withMessage('Las contraseñas ingresadas no son iguales').bail(),
         body('passwordconfirm').notEmpty().withMessage('Debes repetir la contraseña ingresada')
+    ], 
+    editProduct:[
+        //body('name').notEmpty().withMessage('El nombre no puede estar vacio').bail()
+        //.isLength({min: 5, max:99}).withMessage('El nombre debe tener como mínimo 5 caracteres').bail(),
+        body('detail').isLength({min: 20}).withMessage('La descripcion debe tener como mínimo 20 caracteres').bail(),
+        body('image').custom((value, {req}) => {
+            if (req.files[0]){
+            const extensionesOk = ['.jpg', '.png','.jpeg', '.gif', '.svg'];
+            const extensionSubida = path.extname(req.files[0].originalname);
+            return extensionesOk.includes(extensionSubida);
+            }else {
+                return true;
+            }
+
+        }).withMessage("La extension no es valida").bail()
     ]
+    
 }
