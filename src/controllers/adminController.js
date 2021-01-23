@@ -1,7 +1,7 @@
 const { writeProducts, getAllUsers } = require('../helpers/helpers');
 const helper = require('../helpers/helpers'); // Requiero a las funciones de helpers
 const db = require('../database/models')
-
+const {validationResult} = require('express-validator');
 
 
 /** CONTROLADORES **/
@@ -61,15 +61,33 @@ const adminController = {
     },
 
     processEdit: async (req, res) => {
+        let errors = validationResult(req);
+        const product = await db.Product.findByPk(req.params.id);
+        const brands = await db.Brand.findAll();
+        const categories = await db.Category.findAll();
+        const sizes = await db.Size.findAll();
+
+        //Si hay errores > 
+        if (!errors.isEmpty()){
+            return res.render('admin/editProduct', {errors: errors.errors, product, brands, categories, sizes})
+        } 
+        //Si no hay errores  
+        let imagen = "";
+        if (req.files[0]) { //Si vino imagen
+            console.log("estoy aca");
+            imagen = req.files[0].filename //Guardo la imagen que vino+
+        } else { //Si no vino imagen, guardo la imagen que tenia antes el producto
+            imagen = product.img
+        }
         const productToEdit = {
             name: req.body.name,
-            detail: req.body.description,
+            detail: req.body.detail,
             price: req.body.price,
             discount: req.body.discount,
             stock: req.body.stock,
             brand_id: req.body.brand,
             class: req.body.class,            
-            img: req.files[0].filename
+            img: imagen
         };
         const category = {
             id: req.body.category
@@ -77,12 +95,12 @@ const adminController = {
         const size = {
             id: req.body.size
         }
+    
         await db.Product.update(
             productToEdit,
             {where: {id: req.params.id}
         });
 
-        const product = await db.Product.findByPk(req.params.id);
         await product.setCategories(category.id, product.id); 
         await product.setSizes(size.id, product.id);
 
