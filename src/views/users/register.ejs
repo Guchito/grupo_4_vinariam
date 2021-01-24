@@ -13,6 +13,7 @@
             <div class="formRegister">
                 <form action="/users/processRegister" method="POST" enctype="multipart/form-data">
                     <h2 class="contanos">Contanos de vos</h2>
+                    <ul class="errors"></ul>
                     <% if (typeof errors != "undefined") { %>
 							
                         <% errors.forEach(error => { %>
@@ -43,6 +44,6 @@
         </main>
     </div>
     <%- include ('../partials/footer') %>
-
+ <script src="/js/scriptRegister.js"></script> 
 </body>
 </html>
