@@ -10,6 +10,7 @@
                 <div class="izquierdaLogin">
                 
                     <form action="/users/login" method="POST" class="formLogin"> 
+                        <ul style= "color:white" class="errors"></ul>
             
                         <% if (typeof errors != "undefined") { %>
 							
@@ -35,6 +36,7 @@
                 </div>
             </div>
         </main>
+        <script src="/js/scriptLogin.js"></script>
 </body>
 
 
