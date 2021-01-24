@@ -24,11 +24,11 @@ form.addEventListener("submit", (e) => {
     }
     if(email.value.trim().length <= 0){
         errors.push('El email es obligatorio')
-    } //falta hacer que el e-mail sea valido
+    } //falta hacer que el e-mail sea valido y no se repita con otros ya registrados
     if(password.value.trim().length < 9) {
         errors.push('La contraseña debe tener más de 8 caracteres')
     }
-    //Falta hacer que la imagen sea un archivo valido*/
+    //Falta hacer que la imagen sea un archivo valido
     if (errors.length) {
         for (const error of errors) {
             errorsElement.innerHTML += "<li>"+ error + "</li>";
