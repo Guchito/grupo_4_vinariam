@@ -6,10 +6,12 @@ const userName = document.querySelector('#userName');
 const email = document.querySelector('#email');
 const password = document.querySelector('#password');
 const passwordConfirm = document.querySelector('#passwordConfirm');
+const image = document.querySelector('#image');
 
 const errorsElement = document.querySelector(".errors");
  
 form.addEventListener("submit", (e) => {
+    console.log(name);
     const errors = [];
     errorsElement.innerHTML = '';
     if(name.value.trim().length < 3) {
@@ -23,6 +25,12 @@ form.addEventListener("submit", (e) => {
     }
     if(email.value.trim().length <= 0){
         errors.push('El email es obligatorio')
+    }
+    if(password.value.trim().length < 9) {
+        errors.push('La contraseña debe tener más de 8 caracteres')
+    }
+    if (image.value == null) {
+        errors.push('El avatar es obligatorio')
     }
     if (errors.length) {
         for (const error of errors) {
