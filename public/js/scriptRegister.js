@@ -24,6 +24,9 @@ form.addEventListener("submit", (e) => {
     if(email.value.trim().length <= 0){
         errors.push('El email es obligatorio')
     }
+    if(password.value.trim().length < 9) {
+        errors.push('La contraseña debe tener más de 8 caracteres')
+    }
     if (errors.length) {
         for (const error of errors) {
             errorsElement.innerHTML += "<li>"+ error + "</li>";
