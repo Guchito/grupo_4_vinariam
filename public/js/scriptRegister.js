@@ -15,6 +15,15 @@ form.addEventListener("submit", (e) => {
     if(name.value.trim().length < 3) {
         errors.push('El nombre debe tener más de 2 caracteres')
     }
+    if(lastName.value.trim().length < 3) {
+        errors.push('El apellido debe tener más de 2 caracteres')
+    }
+    if(lastName.value.trim().length <= 0){
+        errors.push('El nombre de usuario es obligatorio')
+    }
+    if(email.value.trim().length <= 0){
+        errors.push('El email es obligatorio')
+    }
     if (errors.length) {
         for (const error of errors) {
             errorsElement.innerHTML += "<li>"+ error + "</li>";
