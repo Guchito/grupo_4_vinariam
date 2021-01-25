@@ -16,8 +16,8 @@ form.addEventListener("submit", (e) => {
     if(email.value.trim().length <= 0){
         errors.push('El email es obligatorio')
     } //falta hacer que el e-mail sea valido 
-    if(password.value.trim().length <= 0) {
-        errors.push('La contraseña es obligatoria')
+    if(password.value.trim().length < 8) {
+        errors.push('La contraseña debe tener 8 caracteres como mínimo')
     } //falta hacer que la contraseña coincida con el e.mail en la db
     
     if (errors.length) {
