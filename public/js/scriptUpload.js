@@ -5,28 +5,34 @@ const detail= document.querySelector('#detail');
 const price = document.querySelector('#price');
 const stock = document.querySelector('#stock');
 const image = document.querySelector('#image');
+const productType = document.querySelector('.selectorCategoria');
+
 
 const errorsElement = document.querySelector(".errors");
  
 form.addEventListener("submit", (event) => {
     const errors = [];
+    
+    resetErrorTip()
 
     errorsElement.innerHTML = '';
     if(name.value.trim().length < 3) {
         errors.push('El nombre debe tener más de 2 caracteres')
     }
     if(detail.value.trim().length < 10) {
-        errors.push('Debe ingresar una descirpción detallada del producto.')
+        errors.push('Ingresá una descirpción detallada de al menos 10 caracteres.')
     }
     if(price.value.trim().length <= 0){
-        errors.push('Debe ingresar el valor del producto.')
+        errors.push('Ingresá el valor del producto.')
     } 
     if(stock.value.trim().length <= 0) {
-        errors.push('Debe cargar una unidad como mínimo de este producto.')
+        errors.push('Debe cargar una unidad como mínimo.')
     }
-    //Falta hacer que la imagen sea un archivo valido
+    /*if(productType...(ALGO){
+        errors.push('Selecciona el tipo de producto que querés cargar.')
+    } QUIERO QUE ME OBLIGUE A SELECCIONAR ALGUNO DE LOS 4 TIPOS DE PRODUCTO */
+
     if (errors.length) {
-        form.submit()
         for (const error of errors) {
             errorsElement.innerHTML += `<li>${error}</li>`;
         }
@@ -36,7 +42,7 @@ form.addEventListener("submit", (event) => {
 })
 
 
-*function showErrorTip(fieldName){
+function showErrorTip(fieldName){
     document.querySelector(`.tip-${fieldName}`).classList.add('error')
 }
 
@@ -45,3 +51,4 @@ function resetErrorTip(){
         el.classList.remove('error')
     })
 }
+
