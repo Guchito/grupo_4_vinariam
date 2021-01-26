@@ -10,21 +10,20 @@ const image = document.querySelector('#image');
 
 const errorsElement = document.querySelector(".errors");
  
-form.addEventListener("submit", (e) => {
+form.addEventListener("submit", (event) => {
     const errors = [];
     errorsElement.innerHTML = '';
     if(email.value.trim().length <= 0){
         errors.push('El email es obligatorio')
-    } //falta hacer que el e-mail sea valido 
-    if(password.value.trim().length < 8) {
-        errors.push('La contraseña debe tener 8 caracteres como mínimo')
+    } //falta hacer que el e-mail sea valido - 
+    if(password.value.trim().length <= 0) {
+        errors.push('La contraseña es obligatoria')
     } //falta hacer que la contraseña coincida con el e.mail en la db
     
     if (errors.length) {
         for (const error of errors) {
             errorsElement.innerHTML += "<li>"+ error + "</li>";
         }
-
         event.preventDefault();
     }
     

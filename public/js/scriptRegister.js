@@ -10,7 +10,7 @@ const image = document.querySelector('#image');
 
 const errorsElement = document.querySelector(".errors");
  
-form.addEventListener("submit", (e) => {
+form.addEventListener("submit", (event) => {
     const errors = [];
     errorsElement.innerHTML = '';
     if(name.value.trim().length < 3) {
@@ -33,8 +33,7 @@ form.addEventListener("submit", (e) => {
         for (const error of errors) {
             errorsElement.innerHTML += "<li>"+ error + "</li>";
         }
-
-        event.preventDefault();
+        e.preventDefault();
     }
     
 
