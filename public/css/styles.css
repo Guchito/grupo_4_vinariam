@@ -1252,3 +1252,17 @@ textarea {
     margin: 20px;
 }
 
+/************* ABOUT ****************/
+
+.tip{
+    font-size: 11px;
+    margin: 0;
+    padding: 0;
+    margin-top: 5px;
+    display: none;
+    color: crimson;
+}
+
+.tip.error{
+    display: block;
+}
