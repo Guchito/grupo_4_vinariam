@@ -23,6 +23,15 @@ module.exports = (sequelize, DataTypes) => {
         },
         status: {
             type: DataTypes.BOOLEAN
+        }, 
+        user_id: {
+            type: DataTypes.INTEGER.UNSIGNED
+        },
+        product_id: {
+            type: DataTypes.INTEGER.UNSIGNED
+        },
+        order_id: {
+            type: DataTypes.INTEGER.UNSIGNED
         }
     }
     const config = {
