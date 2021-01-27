@@ -28,15 +28,13 @@ form.addEventListener("submit", (event) => {
     if(password.value.trim().length < 8) {
         errors.push('La contraseña debe tener más de 8 caracteres')
     }
-    //falta extension valida
     if (image.value == "") {
         errors.push('El avatar es obligatorio');
     } else {
-        console.log(image);
-        /*if (!(extension == '.jpg' || extension == '.png' || extension == '.jpeg' || extension == '.svg')) {
-            errors.push('El formato de la imagen no es correcto');
-            
-        }*/
+        const ext = this.image.files[0].type;
+        if(!(ext == "image/jpeg" || ext == "image/png" || ext == "image/csv" || ext == "image/jpg")){
+            errors.push('El avatar tiene una extensión inválida');
+        }
     }
 
     if (errors.length) {
