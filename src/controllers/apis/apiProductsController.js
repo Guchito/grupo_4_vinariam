@@ -1,10 +1,9 @@
 const db = require('../../database/models');
-const bcrypt = require('bcryptjs');
 
 const apiProductsController = {
 	list: async (req, res, next) => {
         const products = await db.Product.findAll({
-            attributes: ['name']
+            attributes: ['id','name','detail','price','stock', 'class', 'brand_id']
         })
         res.json({
             meta: {
