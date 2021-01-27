@@ -15,7 +15,7 @@ form.addEventListener("submit", (event) => {
     errorsElement.innerHTML = '';
     if(email.value.trim().length <= 0){
         errors.push('El email es obligatorio')
-    } //falta hacer que el e-mail sea valido - 
+    } //falta hacer que el e-mail sea valido 
     if(password.value.trim().length <= 0) {
         errors.push('La contraseña es obligatoria')
     } //falta hacer que la contraseña coincida con el e.mail en la db

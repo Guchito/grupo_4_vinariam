@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const adminController = require('../controllers/adminController'); //requiero al controlador
-const usersController = require('../controllers/usersController');
 const helper = require('../helpers/helpers');
 const validator = require('../middlewares/validator');
 const admin = require('../middlewares/admin')

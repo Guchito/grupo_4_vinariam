@@ -40,12 +40,16 @@ const mainRouter = require('./routes/main'); // Rutas Main
 const productsRouter = require('./routes/products'); // Rutas / Products
 const usersRouter = require('./routes/users'); // Rutas / Users
 const adminRouter = require('./routes/admin'); // rutas /admin
+const apiRouterProducts = require('./routes/apis/apiProducts');
+const apiRouterUsers = require('./routes/apis/apiUsers');
 
 
 app.use('/', mainRouter);
 app.use('/productos', productsRouter);
 app.use('/users', usersRouter);
 app.use('/admin', adminRouter);
+app.use('/api/users', apiRouterUsers);
+app.use('/api/products', apiRouterProducts);
 
 app.use((req, res, next) => next(createError(404)));
 
