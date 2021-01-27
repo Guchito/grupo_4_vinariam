@@ -28,15 +28,24 @@ form.addEventListener("submit", (event) => {
     if(password.value.trim().length < 8) {
         errors.push('La contraseña debe tener más de 8 caracteres')
     }
-    //Falta hacer que la imagen sea un archivo valido
+    //falta extension valida
+    if (image.value == "") {
+        errors.push('El avatar es obligatorio');
+    } else {
+        console.log(image);
+        /*if (!(extension == '.jpg' || extension == '.png' || extension == '.jpeg' || extension == '.svg')) {
+            errors.push('El formato de la imagen no es correcto');
+            
+        }*/
+    }
+
     if (errors.length) {
         for (const error of errors) {
             errorsElement.innerHTML += "<li>"+ error + "</li>";
         }
-        e.preventDefault();
+        event.preventDefault();
     }
     
-
 })
 
 
