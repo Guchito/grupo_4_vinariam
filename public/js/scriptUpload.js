@@ -6,20 +6,21 @@ const price = document.querySelector('#price');
 const stock = document.querySelector('#stock');
 const image = document.querySelector('#image');
 const productType = document.querySelectorAll('.productoCategoria');
-let productoCategoria ;
+let productCategory ;
 
 //this.getAttribute("productoCategoria")
 //this.getAttribute("category-id")
-
-//productType.onclick = function() {}
+//object.onclick = function(){myScript};
 
 
 const errorsElement = document.querySelector(".errors");
 
 for (producto of productType) {
+    
     producto.onclick(() => {
-        const productCategory = this.getAttribute("category-id")
-        console.log(productCategory)
+      
+        productCategory = this.getAttribute("category-id")
+
         if (productCategory.length == 0){
             errors.push('Debe seleccionar una opción.')
         }
