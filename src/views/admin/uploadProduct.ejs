@@ -22,19 +22,25 @@
             <a class="navAdminElemnto" href="#">Métricas</a>
         </div>
         <div class="selectorCategoria">
+        
             <h3>/tipo de producto</h3>
-            <a href="/admin/carga">
+
+            <a category-id= 'cargaVinos' class="productoCategoria">
                 <img src="/img/cargaVino.svg" alt="Carga de vinos">
             </a>
-            <a href="/admin/carga">
+
+            <a category-id= 'cargaConservas' class="productoCategoria">
                 <img src="/img/cargaConservas.svg" alt="Carga de conservas">
             </a>
-            <a href="/admin/carga">
+
+            <a category-id= 'cargaExperiencias' class="productoCategoria">
                 <img src="/img/cargaExp.svg" alt="Carga de experiencias">
             </a>
-            <a href="/admin/carga">
+
+            <a category-id= 'cargaBoxes' class="productoCategoria">
                 <img src="/img/cargaBoxes.svg" alt="Carga de boxes">
             </a>
+
         </div>
         <div>
             <form class="carga" action="/admin/carga" method="POST" enctype="multipart/form-data">
@@ -88,7 +94,7 @@
                 </div>
                 <div class="cargaCampos">
                     <label for="image" class="form-label"></label>
-					<input type="file" name="image" id="image">
+                    <input type="file" name="image" id="image">
                 </div>
 
                 <div class="cargaCampos">
