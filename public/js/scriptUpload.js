@@ -5,14 +5,30 @@ const detail= document.querySelector('#detail');
 const price = document.querySelector('#price');
 const stock = document.querySelector('#stock');
 const image = document.querySelector('#image');
-const productType = document.querySelector('.selectorCategoria');
+const productType = document.querySelectorAll('.productoCategoria');
+let productoCategoria ;
+
+//this.getAttribute("productoCategoria")
+//this.getAttribute("category-id")
+
+//productType.onclick = function() {}
 
 
 const errorsElement = document.querySelector(".errors");
+
+for (producto of productType) {
+    producto.onclick(() => {
+        const productCategory = this.getAttribute("category-id")
+        console.log(productCategory)
+        if (productCategory.length == 0){
+            errors.push('Debe seleccionar una opción.')
+        }
+    })  
+}
  
 form.addEventListener("submit", (event) => {
     const errors = [];
-    
+
     resetErrorTip()
 
     errorsElement.innerHTML = '';
@@ -28,9 +44,6 @@ form.addEventListener("submit", (event) => {
     if(stock.value.trim().length <= 0) {
         errors.push('Debe cargar una unidad como mínimo.')
     }
-    /*if(productType...(ALGO){
-        errors.push('Selecciona el tipo de producto que querés cargar.')
-    } QUIERO QUE ME OBLIGUE A SELECCIONAR ALGUNO DE LOS 4 TIPOS DE PRODUCTO */
 
     if (errors.length) {
         for (const error of errors) {
@@ -42,9 +55,9 @@ form.addEventListener("submit", (event) => {
 })
 
 
-function showErrorTip(fieldName){
+/*function showErrorTip(fieldName){
     document.querySelector(`.tip-${fieldName}`).classList.add('error')
-}
+} ESTO TODAVIA NO LO USO*/ 
 
 function resetErrorTip(){
     document.querySelectorAll('.tip').forEach (el => {
