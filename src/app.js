@@ -19,7 +19,7 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({
   extended: false
 }));
-app.use(express.json());
+app.use(express.json({limit: '1mb'}));
 
 
 app.use(session ({secret:'aca va una frase secreta, shh!', resave: true, saveUninitialized: true}));

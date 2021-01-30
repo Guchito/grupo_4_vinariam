@@ -12,20 +12,42 @@ const errorsElement = document.querySelector(".errors");
  
 form.addEventListener("submit", (event) => {
     const errors = [];
+
     errorsElement.innerHTML = '';
+
     if(email.value.trim().length <= 0){
         errors.push('El email es obligatorio')
-    } //falta hacer que el e-mail sea valido 
-    if(password.value.trim().length <= 0) {
+    } else if(password.value.trim().length <= 0) {
         errors.push('La contraseña es obligatoria')
-    } //falta hacer que la contraseña coincida con el e.mail en la db
+    } else {
+        const data = {email: email.value, password: password.value};
+        fetch('http://localhost:3000/api/users/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'},
+            body: JSON.stringify(data)
+        })
+        .then(function (response){
+            return response.json();
+        })
+        .then(function(check){
+            const status = check.meta.status;
+            console.log('hola soy el estupido status: ' + status);
+            if(status == 400){
+              errors.push('El email ya esta en uso')
+            }; 
+        })
+        .catch(error => console.error('Error'))
+        } 
     
     if (errors.length) {
         for (const error of errors) {
-            errorsElement.innerHTML += "<li>"+ error + "</li>";
+            errorsElement.innerHTML += `<li>${error}</li>`;
         }
-        event.preventDefault();
+        console.log(errors);
     }
+
+    event.preventDefault();
     
 
 })
