@@ -1089,7 +1089,7 @@ padding-right: 40px;
 }
 
 .productoCategoria {
-    filter: grayscale(0.8);
+    filter: grayscale(1);
 }
 
 .productoCategoria.active {

@@ -6,7 +6,7 @@ const price = document.querySelector('#price');
 const stock = document.querySelector('#stock');
 const image = document.querySelector('#image');
 const productType = document.querySelectorAll('.productoCategoria');
-let productCategory ;
+let productCategory = "" ;
 
 //Función que resetea los errores
 function resetErrorTip(){
@@ -46,11 +46,18 @@ form.addEventListener("submit", (event) => {
     if(stock.value.trim().length <= 0) {
         errors.push('Ingresá al menos una unidad.')
     }
-
-    /*if (productCategory.length <= 0){
+    if (productCategory == ""){
         errors.push('Debe seleccionar al menos una categoría de producto.')
-    }*/
-
+        window.alert("Seleccioná qué tipo de producto vas a cargar.");
+    }
+    if (image.value == "") {
+        errors.push('Debe cargar la imagen del producto.');
+    } else {
+        const ext = this.image.files[0].type;
+        if(!(ext == "image/jpeg" || ext == "image/png" || ext == "image/csv" || ext == "image/jpg")){
+            errors.push('La imagen tiene una extensión inválida.');
+        }
+    }
     if (errors.length) {
         for (const error of errors) {
             errorsElement.innerHTML += `<li>${error}</li>`;
@@ -60,10 +67,6 @@ form.addEventListener("submit", (event) => {
 
 })
 
-
-/*function showErrorTip(fieldName){
-    document.querySelector(`.tip-${fieldName}`).classList.add('errors')
-} ESTO TODAVIA NO LO USO*/ 
 
 
 
