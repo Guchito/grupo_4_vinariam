@@ -12,21 +12,19 @@ let productCategory ;
 //this.getAttribute("category-id")
 //object.onclick = function(){myScript};
 
-
 const errorsElement = document.querySelector(".errors");
 
 for (producto of productType) {
-    
-    producto.onclick(() => {
-      
-        productCategory = this.getAttribute("category-id")
-
-        if (productCategory.length == 0){
-            errors.push('Debe seleccionar una opción.')
+     producto.onclick = function(){ 
+        for (let categoria of productType){
+            categoria.classList.remove('active')
         }
-    })  
+        this.classList.add('active')
+        productCategory = this.getAttribute("category-id")
+        console.log(productCategory)
+    }  
 }
- 
+
 form.addEventListener("submit", (event) => {
     const errors = [];
 
@@ -45,7 +43,9 @@ form.addEventListener("submit", (event) => {
     if(stock.value.trim().length <= 0) {
         errors.push('Debe cargar una unidad como mínimo.')
     }
-
+    /*if (productCategory.length <= 0){
+        errors.push('Debe seleccionar al menos una categoría de producto.')
+    }*/
     if (errors.length) {
         for (const error of errors) {
             errorsElement.innerHTML += `<li>${error}</li>`;
@@ -65,4 +65,5 @@ function resetErrorTip(){
         el.classList.remove('error')
     })
 }
+
 
