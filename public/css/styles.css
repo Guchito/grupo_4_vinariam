@@ -1088,6 +1088,14 @@ padding-right: 40px;
     transform: scale(1.3)
 }
 
+.productoCategoria {
+    filter: grayscale(1);
+}
+
+.productoCategoria.active {
+    filter: grayscale(0);
+}
+
 .navAdmin{
     background-color: white;
     width: 25%;
