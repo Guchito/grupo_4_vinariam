@@ -8,9 +8,12 @@ const image = document.querySelector('#image');
 const productType = document.querySelectorAll('.productoCategoria');
 let productCategory ;
 
-//this.getAttribute("productoCategoria")
-//this.getAttribute("category-id")
-//object.onclick = function(){myScript};
+//Función que resetea los errores
+function resetErrorTip(){
+    document.querySelectorAll('.tip').forEach (el => {
+        el.classList.remove('error')
+    })
+}
 
 const errorsElement = document.querySelector(".errors");
 
@@ -27,12 +30,12 @@ for (producto of productType) {
 
 form.addEventListener("submit", (event) => {
     const errors = [];
-
+    
     resetErrorTip()
 
     errorsElement.innerHTML = '';
     if(name.value.trim().length < 3) {
-        errors.push('El nombre debe tener más de 2 caracteres')
+        errors.push('El nombre debe tener más de 3 caracteres.')
     }
     if(detail.value.trim().length < 10) {
         errors.push('Ingresá una descirpción detallada de al menos 10 caracteres.')
@@ -41,11 +44,13 @@ form.addEventListener("submit", (event) => {
         errors.push('Ingresá el valor del producto.')
     } 
     if(stock.value.trim().length <= 0) {
-        errors.push('Debe cargar una unidad como mínimo.')
+        errors.push('Ingresá al menos una unidad.')
     }
+
     /*if (productCategory.length <= 0){
         errors.push('Debe seleccionar al menos una categoría de producto.')
     }*/
+
     if (errors.length) {
         for (const error of errors) {
             errorsElement.innerHTML += `<li>${error}</li>`;
@@ -57,13 +62,9 @@ form.addEventListener("submit", (event) => {
 
 
 /*function showErrorTip(fieldName){
-    document.querySelector(`.tip-${fieldName}`).classList.add('error')
+    document.querySelector(`.tip-${fieldName}`).classList.add('errors')
 } ESTO TODAVIA NO LO USO*/ 
 
-function resetErrorTip(){
-    document.querySelectorAll('.tip').forEach (el => {
-        el.classList.remove('error')
-    })
-}
+
 
 
