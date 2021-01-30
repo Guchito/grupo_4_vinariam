@@ -49,16 +49,21 @@ form.addEventListener("submit", (event) => {
     .then(function(check){
         const status = check.meta.status;
         console.log('hola soy el estupido status: ' + status);
-        if(status == 400){
+        if(status == 'Exist'){
           errors.push('El email ya esta en uso')
-        }; 
+          console.log('Entre en el push')
+          console.log(errors);
+          return;
+        } 
+        form.submit();
+        
     })
-    .catch(error => console.error('Error'))
     }
 
-    if (errors.length) {
+    if (errors.length > 0) {
         for (const error of errors) {
             errorsElement.innerHTML += `<li>${error}</li>`
+            console.log(error)
         }
         event.preventDefault();
     }
