@@ -22,19 +22,25 @@
             <a class="navAdminElemnto" href="#">Métricas</a>
         </div>
         <div class="selectorCategoria">
+        
             <h3>/tipo de producto</h3>
-            <a href="/admin/editar/<%= product.id %>">
+
+            <a category-id= 'cambioVinos' class="productoCategoria">
                 <img src="/img/cargaVino.svg" alt="Carga de vinos">
-            </a>
-            <a href="/admin/editar/<%= product.id %>">
+             </a>
+
+            <a category-id= 'cambioConservas' class="productoCategoria">
                 <img src="/img/cargaConservas.svg" alt="Carga de conservas">
             </a>
-            <a href="/admin/editar/<%= product.id %>">
+
+            <a category-id= 'cambioExperiencias' class="productoCategoria">
                 <img src="/img/cargaExp.svg" alt="Carga de experiencias">
             </a>
-            <a href="/admin/editar/<%= product.id %>">
+
+            <a category-id= 'cambioBoxes' class="productoCategoria">
                 <img src="/img/cargaBoxes.svg" alt="Carga de boxes">
             </a>
+
         </div>
         <div>
             <form class="carga" action="/admin/editar/<%=product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
@@ -115,6 +121,7 @@
         </div>
     </div>
 
+    <script src="/js/scriptEditProduct.js"></script>
 
 </body>
 </html>
