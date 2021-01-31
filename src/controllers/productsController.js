@@ -6,7 +6,7 @@ const productsController = {
 	listaProductos: async (req, res) => {
 		const products = await db.Product.findAll({
 			include: ["categories", "brand"],
-		  });
+		  });  
 		const categories = await db.Category.findAll();
 		res.render('products/listProducts', {products, categories});
 	},
