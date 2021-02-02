@@ -33,9 +33,10 @@ form.addEventListener("submit", (event) => {
     if(lastName.value.trim().length <= 0){
        errors.push('El nombre de usuario es obligatorio')
     }
-    if(email.value.trim().length <= 0){
-        errors.push('El email es obligatorio')
-    } else {
+    let regex =/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    if(!regex.test(email.value)){
+        errors.push('Ingrese un email valido')
+    }
     const data = {email: email.value};
     fetch('http://localhost:3000/api/users/checkEmail', {
         method: 'POST',
@@ -53,20 +54,19 @@ form.addEventListener("submit", (event) => {
           errors.push('El email ya esta en uso')
           console.log('Entre en el push')
           console.log(errors);
-          return;
         } 
-        form.submit();
-        
-    })
-    }
 
-    if (errors.length > 0) {
-        for (const error of errors) {
-            errorsElement.innerHTML += `<li>${error}</li>`
-            console.log(error)
+        if (errors.length > 0) {
+            for (const error of errors) {
+                errorsElement.innerHTML += `<li>${error}</li>`
+                console.log(error)
+            }
+        } else {
+            form.submit()
         }
-        event.preventDefault();
-    }
+    })
+    
+    event.preventDefault();
     
 })
 
