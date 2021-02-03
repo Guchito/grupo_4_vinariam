@@ -77,7 +77,32 @@ const apiUsersController = {
             
         })
 
-    } 
+    }, 
+    checkUserName: async (req, res, next) => {
+        const user_name = req.body.userName;
+        console.log(req.body.userName);
+        const user = await db.User.findOne({
+            where: {
+                user_name,
+            }
+        })
+
+        if (user) {
+            res.json({
+                meta: {
+                    status: 200,
+                }
+            })
+            return;
+        }
+
+        res.json({
+            meta: {
+                status: 400,
+            }
+            
+        })
+    }
 }
 
 module.exports = apiUsersController;
