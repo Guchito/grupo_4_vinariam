@@ -1,6 +1,5 @@
 const { body } = require('express-validator');
 const bcrypt = require('bcryptjs');
-const helper = require('../helpers/helpers');
 const { User } = require('../database/models')
 const path = require('path') 
 
@@ -71,32 +70,65 @@ module.exports = {
     ],
     edit: [
         body('email').isEmail().withMessage('El e-mail ingresado es inválido').bail()
-        .custom(value => {
-            return User.findOne({where:{email:value}})
-            .then(user => {
-                if(user){
-                    return Promise.reject('E-mail ya existente');
-                }    
-            })
+        .custom((value, {req})=> {
+            if(req.session.email != value){
+                return User.findOne({where:{email:value}})
+                .then(user => {
+                    if(user){
+                        return Promise.reject('E-mail ya existente');
+                    }    
+                })
+            }else return true
         }),
-        body('userName').custom(function (value) {
-            return User.findOne({where:{user_name:value}})
-            .then(user =>{
-                if (user){
-                    return Promise.reject('Nombre de usuario ya existente');
-                }
+        body('userName').custom((value, {req})=>{
+            return User.findOne({where:{email:req.session.email}})
+            .then (userOriginal => {
+                if(userOriginal.user_name  != value){
+                    return User.findOne({where:{user_name:value}})
+                    .then(user =>{
+                        if (user){
+                            return Promise.reject('Nombre de usuario ya existente');
+                        }
+                    })
+                }else return true
             })
             
         }),
-        body('image')
-        .custom((value, { req }) => req.files[0])
-        .withMessage('La imagen de perfil es obligatoria')
-        .bail(),
-        body('password').isLength({min: 6, max:99}).withMessage('La contraseña debe tener como mínimo 6 caracteres').bail()
-        .custom((value, {req} )=> {
-            return value == req.body.passwordconfirm;
-        }).withMessage('Las contraseñas ingresadas no son iguales').bail(),
-        body('passwordconfirm').notEmpty().withMessage('Debes repetir la contraseña ingresada')
+        body('image').custom((value, {req}) => {
+            if (req.files[0]){
+            const extensionesOk = ['.jpg', '.png','.jpeg', '.gif', '.svg'];
+            const extensionSubida = path.extname(req.files[0].originalname);
+            return extensionesOk.includes(extensionSubida);
+            }else {
+                return true;
+            }
+
+        }).withMessage("La extension no es valida").bail(),
+        
+        body('newPassword').custom((value, {req}) => {
+            if(value != ''){
+                body(value).isLength({min: 6, max:99}).withMessage('La contraseña debe tener como mínimo 6 caracteres').bail()
+                .custom((value, {req} )=> {
+                    return value == req.body.newPasswordConfirm;
+                }).withMessage('Las contraseñas ingresadas no son iguales').bail(),
+        
+                body('newPasswordConfirm').notEmpty().withMessage('Debes repetir la contraseña ingresada')
+            }
+        }),
+        
+        
+
+        body('password').notEmpty().withMessage('Ingrese su contraseña para confirmar cambios').bail()
+        .custom((value, {req})=>{
+            return User.findOne({where:{email:req.session.email}})
+            .then(user =>{
+                if(!bcrypt.compareSync(req.body.password, user.password)) {
+                    return Promise.reject('Contraseña incorrecta');
+                }
+            })
+
+        }).withMessage('Contraseña incorrecta').bail()
+
     ], 
     editProduct:[
         //body('name').notEmpty().withMessage('El nombre no puede estar vacio').bail()
@@ -112,6 +144,7 @@ module.exports = {
             }
 
         }).withMessage("La extension no es valida").bail()
+        .custom((value, { req }) => req.files[0]).withMessage('La imagen de perfil es obligatoria').bail()
     ]
     
 }

@@ -551,19 +551,14 @@ width: 100%;
     width: 150px;
     justify-content: space-evenly;
     align-items: center;
-    margin-bottom: 20px
-
-
-}
-
-.agregarYEditar a{
+    margin-bottom: 20px;
     text-decoration: none;
     color: black;
     text-transform: uppercase;
     letter-spacing: 2pt;
-    font-size: 10pt;
-
+    font-size: 10pt
 }
+
 
 .RateProduct{
     width: 80%;

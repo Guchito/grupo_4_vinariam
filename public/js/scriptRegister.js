@@ -1,5 +1,4 @@
 const form = document.querySelector('form');
-
 const name = document.querySelector('#name');
 const lastName = document.querySelector('#lastName');
 const userName = document.querySelector('#userName');

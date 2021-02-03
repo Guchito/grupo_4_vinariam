@@ -102,24 +102,19 @@ const usersController = {
         if  (!errors.isEmpty()){
             return res.render('users/editUser', {errors: errors.errors, user: user})
         };
-
         const updatedUser = {
             name: req.body.name,
             last_name: req.body.lastName,
             user_name: req.body.userName,
             dob: req.body.birthday,
             email: req.body.email,
-            password: bcryptjs.hashSync(req.body.password, 10),
+            password: req.body.newPassword ? bcryptjs.hashSync(req.body.newPassword, 10) : bcryptjs.hashSync(req.body.password, 10),
             avatar: req.files[0].filename
         };
-        console.log(req.session.email)
-        await db.User.update(updatedUser, 
-             {
-                 where: {
-                     email: req.session.email
-                 }
-             });
-             res.redirect('/users/profile')
+        
+
+        await db.User.update(updatedUser,{where:{email: req.session.email}});
+            res.redirect('/users/profile')
     },
 
     logout: (req, res) => {
