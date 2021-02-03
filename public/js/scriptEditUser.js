@@ -62,7 +62,9 @@ form.addEventListener("submit", (event) => {
             form.submit()
         }
     })
-    
+    //Falta validar username
+    //Falta validar e-mail, si pertenece al user en este form hay que dejarlo pasar
+    //Falta ver el tema del password
     event.preventDefault();
     
 })
