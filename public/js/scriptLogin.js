@@ -9,7 +9,7 @@ const passwordConfirm = document.querySelector('#passwordConfirm');
 const image = document.querySelector('#image');
 
 const errorsElement = document.querySelector(".errors");
- 
+
 form.addEventListener("submit", (event) => {
     const errors = [];
 

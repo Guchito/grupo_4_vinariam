@@ -44,6 +44,7 @@
         </div>
         <div>
             <form class="carga" action="/admin/editar/<%=product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                <ul style= "color:red" class="errors"></ul>
                 <% if (typeof errors != "undefined") { %>
 							
                     <% errors.forEach(error => { %>

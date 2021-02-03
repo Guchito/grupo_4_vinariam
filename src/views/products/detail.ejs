@@ -21,10 +21,8 @@
                         <h3 class="Cant">$<%=product.price %></h3>
                     </div> 
                     
-                    <div class="agregarYEditar">
-                        <a href="/productos/cart">Agregar </a> 
-                        <a href="/productos/cart"><i class="fas fa-shopping-cart"></i></a>  
-                    </div>
+                    <a class="agregarYEditar" href="/productos/cart">Agregar <i class="fas fa-shopping-cart"></i> </a> 
+                    
 
                     <div class="RateProduct">
                     <div>
@@ -50,10 +48,9 @@
                         <h3 class="Info Producto Cant"><%= product.detail %></h3>
                     </div>
                     <% if(admin == true ){ %>
-                    <div class="agregarYEditar">
-                        <a href="/admin/editar/<%= product.id %> ">Editar </a> 
-                        <a href="/admin/editar/<%= product.id %> "><i class="far fa-edit"></i></a> 
-                    </div>
+                    
+                        <a class="agregarYEditar" href="/admin/editar/<%= product.id %> ">Editar <i class="far fa-edit"></i></a> 
+                    
                     <%}%> 
                 </div>
 
