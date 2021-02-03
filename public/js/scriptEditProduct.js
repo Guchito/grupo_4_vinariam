@@ -5,6 +5,8 @@ const detail= document.querySelector('#detail');
 const price = document.querySelector('#price');
 const stock = document.querySelector('#stock');
 const image = document.querySelector('#image');
+const discount = document.querySelector('#discount');
+
 const productType = document.querySelectorAll('.productoCategoria');
 let productCategory = "" ;
 
@@ -31,7 +33,7 @@ for (producto of productType) {
 form.addEventListener("submit", (event) => {
     const errors = [];
     
-    resetErrorTip()
+    //resetErrorTip()
 
     errorsElement.innerHTML = '';
     if(name.value.trim().length < 3) {
@@ -45,6 +47,9 @@ form.addEventListener("submit", (event) => {
     } 
     if(stock.value.trim().length <= 0) {
         errors.push('Ingresá al menos una unidad.')
+    }
+    if(discount.value == ""){
+        errors.push('El descuento no puede estar vacío.');
     }
     if (productCategory == ""){
         errors.push('Debe seleccionar al menos una categoría de producto.')
