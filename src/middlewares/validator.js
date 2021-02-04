@@ -105,7 +105,7 @@ module.exports = {
 
         }).withMessage("La extension no es valida").bail(),
         
-        body('newPassword').custom((value, {req}) => {
+       /* body('newPassword').custom((value, {req}) => {
             if(value != ''){
                 body(value).isLength({min: 6, max:99}).withMessage('La contraseña debe tener como mínimo 6 caracteres').bail()
                 .custom((value, {req} )=> {
@@ -114,7 +114,7 @@ module.exports = {
         
                 body('newPasswordConfirm').notEmpty().withMessage('Debes repetir la contraseña ingresada')
             }
-        }),
+        })
         
         
 
@@ -127,7 +127,7 @@ module.exports = {
                 }
             })
 
-        }).withMessage('Contraseña incorrecta').bail()
+        }).withMessage('Contraseña incorrecta').bail()*/
 
     ], 
     editProduct:[

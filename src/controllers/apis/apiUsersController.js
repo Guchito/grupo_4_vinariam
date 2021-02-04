@@ -64,7 +64,8 @@ const apiUsersController = {
         if (!user) {
             res.json({
                 meta: {
-                    status: 'success',
+                    status: 'No exist',
+
                 }
             })
             return;
@@ -73,6 +74,9 @@ const apiUsersController = {
         res.json({
             meta: {
                 status: 'Exist',
+                data: {
+                    user
+                }
             }
             
         })
@@ -90,7 +94,10 @@ const apiUsersController = {
         if (user) {
             res.json({
                 meta: {
-                    status: 200,
+                    status: 'Exist',
+                    data: {
+                        user
+                    }
                 }
             })
             return;
@@ -98,7 +105,7 @@ const apiUsersController = {
 
         res.json({
             meta: {
-                status: 400,
+                status: 'No exist',
             }
             
         })
