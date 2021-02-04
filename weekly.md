@@ -141,3 +141,18 @@ Terminé y corregí los modelos en base a la modificación de schemas.
 
 Week 2:
 Vimos con Sofi el crud de users. Luego hice el crud de productos, tuvimos algunos problemas con la conexion a la base de datos. 
+
+# Sprint 7 
+
+* Sofi 
+
+Week 1:
+-Hicimos correcciones de las validaciones del backend entre todos. Ya teniamos gran parte hecha de sprints pasados. Hice la validacion del front de Login. 
+
+Week 2:
+-Hice la validacion del front del register. Tambien la configuracion de nuestras apis de usuarios y de productos. Tuvimos algunas complicaciones con las promesas, corregimos las validaciones front con Guchi de edit users y tambien de edit products. 
+
+* Guchi 
+
+
+* Vilu 
