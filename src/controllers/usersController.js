@@ -102,14 +102,22 @@ const usersController = {
         if  (!errors.isEmpty()){
             return res.render('users/editUser', {errors: errors.errors, user: user})
         };
+
+        let imagen = "";
+        if (req.files[0]) { //Si vino imagen
+            console.log("estoy aca");
+            imagen = req.files[0].filename //Guardo la imagen que vino+
+        } else { //Si no vino imagen, guardo la imagen que tenia antes el producto
+            imagen = user.avatar
+        }
         const updatedUser = {
             name: req.body.name,
             last_name: req.body.lastName,
             user_name: req.body.userName,
             dob: req.body.birthday,
             email: req.body.email,
-            password: req.body.newPassword ? bcryptjs.hashSync(req.body.newPassword, 10) : bcryptjs.hashSync(req.body.password, 10),
-            avatar: req.files[0].filename
+            //password: req.body.newPassword ? bcryptjs.hashSync(req.body.newPassword, 10) : bcryptjs.hashSync(req.body.password, 10),
+            avatar: imagen
         };
         
 
