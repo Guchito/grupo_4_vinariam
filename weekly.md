@@ -156,3 +156,11 @@ Week 2:
 
 
 * Vilu 
+Week 1:
+-Hice la validación del front de Carga de Productos, salió bastante bien y rápido, pero me trabé con las burbujas
+de colores y con el onclick, recibimos ayuda de profes acá. 
+
+Week 2:
+-La validación de Edición de Productos costó más, el script era muy parecido pero teníamos algunos errores de linkeo
+entre el script y el ejs, terminamos esta parte a lo último. 
+
