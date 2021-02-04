@@ -103,5 +103,18 @@ Nuevamente no calculamos bien los tiempos. La participación de todos y el traba
 - Modularizar el trabajo a hacer 
 
 * Hacer más: 
-- Repasar contenidos y practicar para llegar al sprint sin dudas sobre los conceptos base del mismko 
+- Repasar contenidos y practicar para llegar al sprint sin dudas sobre los conceptos base del mismo
 
+# Conclusiones de la retrospectiva sprint 7
+
+* Empezar a hacer:
+- Saber cuando parar y no meter horas de debug cuando estamos quemados, solo nos frustra más y no vemos la solución.
+- Cortar cuando ya no veamos salida y volverlo a arrancar con la cabeza fresca. 
+
+* Seguir haciendo: 
+- Revisar las grabaciones de las clases y asistir a los colearnings con preguntas puntuales. 
+- Ayudarnos entre todos cuando surge un problema
+
+* Hacer más: 
+- No obsesionarse con los pequeños detalles que nos hacen perder tiempo
+- Ser más pacientes cuando algo no sale y no frustrarse, bajar ansiedades (hablo por mi, Viole)
