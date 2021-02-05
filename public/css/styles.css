@@ -183,6 +183,7 @@ a .mayus:hover {
     display: flex;
     justify-content: center;
 }
+
 @media (max-width:480px){
     .footer{
         flex-direction: column;
@@ -637,7 +638,12 @@ width: 60%;
 padding: 12px 15px;
 font-family:'Montserrat', sans-serif;
 font-weight: 100;
+height: auto;
 
+}
+
+a.camposForm{
+    margin-top: 30px;
 }
 
 .camposForm:focus{
@@ -798,7 +804,7 @@ background-color: var(--colorFondo);
 .BloqueGeneralAdmin{
     display: flex;
     justify-content: space-evenly;
-    margin-bottom: 50px;
+    min-height: 60.4vh;
 }
 .hombreProfile{
     width: 300px; 

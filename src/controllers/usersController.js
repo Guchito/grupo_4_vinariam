@@ -105,8 +105,7 @@ const usersController = {
 
         let imagen = "";
         if (req.files[0]) { //Si vino imagen
-            console.log("estoy aca");
-            imagen = req.files[0].filename //Guardo la imagen que vino+
+            imagen = req.files[0].filename //Guardo la imagen que vino
         } else { //Si no vino imagen, guardo la imagen que tenia antes el producto
             imagen = user.avatar
         }
@@ -132,6 +131,28 @@ const usersController = {
         }
         req.session.destroy();
         res.redirect('/');
+    },
+
+    passwordRender: async (req,res) => {
+        const user = await db.User.findOne({where: { email:req.session.email }});
+        res.render('users/passwordUser', {user: user})
+    },
+
+    passwordPost: async (req, res) => {
+        const errors = validationResult(req);
+        if  (!errors.isEmpty()){
+            return res.render('users/passwordUser', {errors: errors.errors})
+        };
+
+        const newPassword = bcryptjs.hashSync(req.body.newPassword, 10);
+        
+        await db.User.update({
+            password: newPassword
+        },
+        {where:
+            {email: req.session.email}
+        });
+        res.redirect('/users/profile')
     }
     
 

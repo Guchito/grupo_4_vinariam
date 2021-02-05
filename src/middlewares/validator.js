@@ -64,7 +64,7 @@ module.exports = {
                            return Promise.reject('El usuario y la contraseña son incorrectos');
                         }
                     })
-                })           ,
+                }),
             body('password').notEmpty().withMessage('El campo contraseña es obligatorio').bail()
         ],
     ],
@@ -130,6 +130,30 @@ module.exports = {
         }).withMessage('Contraseña incorrecta').bail()*/
 
     ], 
+    editPassword:[
+        body('newPassword').notEmpty().withMessage('El campo contraseña no puede estar vacío').bail()
+        .isLength({min: 8, max:99}).withMessage('La contraseña debe tener como mínimo 8 caracteres').bail()
+        .custom((value, {req} )=> {
+            return value == req.body.newPasswordConfirm;
+        }).withMessage('Las contraseñas ingresadas no son iguales').bail(),
+        
+        body('newPasswordConfirm').notEmpty().withMessage('Debes repetir la contraseña ingresada'),
+        
+        body('oldPassword').notEmpty().withMessage('Tenes que ingresar tu contraseña actual').bail()
+        .custom((value, {req}) => {
+            console.log(req.body.oldPassword)
+            return User.findOne({where:{email:req.session.email}})
+            .then(user => {
+                if(!bcrypt.compareSync(req.body.oldPassword, user.password)) {
+                   return Promise.reject('La contraseña es incorrecta');
+                }
+            })
+        })
+
+
+    ],
+
+
     editProduct:[
         //body('name').notEmpty().withMessage('El nombre no puede estar vacio').bail()
         //.isLength({min: 5, max:99}).withMessage('El nombre debe tener como mínimo 5 caracteres').bail(),
