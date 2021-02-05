@@ -13,12 +13,14 @@ router.get('/login', guest, usersController.login); //users/login (el "users" ya
 router.post('/login', validator.login, usersController.processLogin);
 router.get('/register', guest , usersController.register);
 router.post('/processRegister', helper.uploadImg().any(), validator.register, usersController.processRegister);
-router.post('/sendMail', usersController.sendMail);
+router.post('/sendMail', user ,usersController.sendMail);
 router.get('/sentMail', usersController.sentMail);
 router.get('/profile', user ,usersController.profile);
-router.get('/logout', usersController.logout);
-router.get('/edit', usersController.editUser);
+router.get('/logout', user ,usersController.logout);
+router.get('/edit', user ,usersController.editUser);
 router.post('/edit', helper.uploadImg().any(), validator.edit, usersController.updateUser);
+router.get('/password', user ,usersController.passwordRender);
+router.post('/password', validator.editPassword, usersController.passwordPost);
 
 
 /*Export */

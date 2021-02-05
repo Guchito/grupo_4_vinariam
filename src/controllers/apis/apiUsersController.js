@@ -23,7 +23,6 @@ const apiUsersController = {
     login: async (req, res, next) => {
         const email = req.body.email;
         const password = req.body.password;
-        console.log('email: ' + email + ' Contraseña: ' + password);
 
         const user = await db.User.findOne({
             where: {
