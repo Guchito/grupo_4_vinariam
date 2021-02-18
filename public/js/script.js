@@ -1,6 +1,6 @@
 const selectCategory = document.querySelectorAll('.categoryFilter')
 for(const category of selectCategory){
-    category.addEventListener('click', (e) => {
+    category.addEventListener('click', () => {
         const selected = document.querySelectorAll(`[data-category="${category.value}"]`)
         const all = document.querySelectorAll('.articuloListado')
         for (const one of all){
