@@ -4,10 +4,21 @@ const bcrypt = require('bcryptjs');
 const apiUsersController = {
 	list: async (req, res) => {
         
-        const users = await db.User.findAll({
-                attributes: ['email', 'name','last_name','user_name', 'rol', 'dob']
+        const allUsers = await db.User.findAll({
+                attributes: ['id','name', 'email'], 
+                order: [
+                    ['id']
+                ],
+                limit: 5
+
             })
-        
+        const users = allUsers.map(user => {
+            return (
+                user.dataValues.urlDetail = `http://localhost:3000/api/users/${user.id}`,
+                user
+                
+            )
+        })
         res.json({
             meta: {
                 status: "success", 
@@ -15,6 +26,7 @@ const apiUsersController = {
             }, 
             data: {
                 users,
+
             }
         })
         
