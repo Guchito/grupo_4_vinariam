@@ -43,15 +43,15 @@ module.exports = (sequelize, DataTypes) => {
    
     Item.associate = (models) => {
         Item.belongsTo(models.User,{
-            as: "users",
+            as: "user",
             foreignKey: "user_id",
         });
         Item.belongsTo(models.Product,{
-            as: "products",
+            as: "product",
             foreignKey: "product_id",
         });
         Item.belongsTo(models.Order,{
-            as: "orders",
+            as: "order",
             foreignKey: "order_id",
         });
     };
