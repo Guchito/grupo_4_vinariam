@@ -5,10 +5,10 @@ const path = require('path');
 const session = require('express-session');
 const methodOverride = require('method-override');
 const soyMayorMiddleware = require('./middlewares/soyMayorMiddleware');
-const cookieParser = require('cookie-parser')
-const rememberMe = require('./middlewares/rememberMe')
-const adminSession = require('./middlewares/adminSession')
-const createError = require('http-errors')
+const cookieParser = require('cookie-parser');
+const rememberMe = require('./middlewares/rememberMe');
+const adminSession = require('./middlewares/adminSession');
+const createError = require('http-errors');
 
 const app = express();
 
@@ -40,6 +40,7 @@ const mainRouter = require('./routes/main'); // Rutas Main
 const productsRouter = require('./routes/products'); // Rutas / Products
 const usersRouter = require('./routes/users'); // Rutas / Users
 const adminRouter = require('./routes/admin'); // rutas /admin
+const cartRouter = require('./routes/cart');
 const apiRouterProducts = require('./routes/apis/apiProducts');
 const apiRouterUsers = require('./routes/apis/apiUsers');
 
@@ -50,6 +51,7 @@ app.use('/users', usersRouter);
 app.use('/admin', adminRouter);
 app.use('/api/users', apiRouterUsers);
 app.use('/api/products', apiRouterProducts);
+app.use('/cart', cartRouter);
 
 app.use((req, res, next) => next(createError(404)));
 
