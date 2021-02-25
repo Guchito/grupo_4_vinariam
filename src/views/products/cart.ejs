@@ -7,16 +7,18 @@
             <h1 class="tituloCart">Tu carrito de compras</h1>
             <div class="contenedorCart">
                 <div class="articulos">
+                    <% if(items.length != 0) { %> 
                     <% for (const item of items) {%>
                         <article class="resumen">
                             <a href="/productos/detail/<%= item.id %>"><img class="articuloCart" src="/img/<%= item.img %>" alt="Articulo"></a>
                             <p class="descripcion"><%=item.name %> </p>
                             <input class="cantidad" type="number" name="cantidad" value="1">
                             <p class="precio">$<%= item.unit_price %></p>
-                            <i class="fas fa-trash-alt"></i>
+                            <form method="POST" action="/cart/delete/<%= item.id %>?_method=DELETE" enctype="multipart/form-data">
+                                <button style="border:none"type="submit"><i class="fas fa-trash-alt"></i></button>
+                            </form>
                         </article>
-                    <% } %>
-                
+                        <% }%>
                     <article class="totales">
                         <div class="primeraColumna">
                             <p>Subtotal</p>
@@ -24,17 +26,20 @@
                             <p>Total</p>
                         </div>
                         <div class="segundaColumna">
-                            <p>$<%= items.sub_total %> </p>
+                            <p><%=subTotal%></p>
                             <p>Costo de envio </p>
                             <p>Total</p>
                         </div>
                     </article>
                     <div class="contenedorComprar">
                         <div class="comprarCarrito">
-                            <a href="/productos/cart">Comprar</a> 
-                            <a href="/productos/cart"><i class="fas fa-shopping-cart"></i></a>  
+                            <a href="/cart/buy">Comprar</a> 
+                            <a href="/cart/buy"><i class="fas fa-shopping-cart"></i></a>  
                         </div>
                     </div>
+                    <% } else{%>
+                        <p>No agregaste ningún item al carrito</p>
+                    <% }%>
                 </div>
                 <div class="dibujito">
                     <article class="mensaje">

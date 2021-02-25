@@ -13,7 +13,12 @@ const cartController = {
             }
         })
 
-        return res.render('products/cart', {items})
+        let contadorSubTotal=0;
+        for (const item of items) {
+            contadorSubTotal = contadorSubTotal + parseInt(item.sub_total);
+        }
+        subTotal = parseInt(contadorSubTotal)
+        return res.render('products/cart', {items, subTotal})
     },
     addToCart: async (req, res) => {
         const product = await db.Product.findByPk(req.params.id)
@@ -32,15 +37,21 @@ const cartController = {
             img: product.img,
             unit_price: price,
             quantity: 1, //hay que ver por que no nos esta llegando el body en req
-            sub_total: price * req.body.quantity,
+            sub_total: price * 1,
             user_id: userId,
         })
 
 
-        res.send('Agregaste un objeto al carrito');
+        res.redirect('/cart')
     },
-    deleteFromCart: (req, res) => {
-        res.send('Borraste del carrito');
+    deleteFromCart: async (req, res) => {
+        const {id} = req.params
+        await db.Item.destroy({
+            where: {
+                id: id
+            }
+        })
+        res.redirect('/cart')
     },
     buy: (req, res) => {
         res.send('Compraste');
