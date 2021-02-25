@@ -1,13 +1,31 @@
 const db = require('../database/models')
 
 const cartController = {
-    showCart: (req, res) => {
-        res.send('Soy un carrito');
+    showCart: async (req, res) => {
+        var userId = 0;
+        if (req.session.email){
+            const user = await db.User.findOne({ where: {email:req.session.email} }); 
+            userId = user.id
+        }
+        const items = await db.Item.findAll({
+            where: {
+                user_id: userId, 
+                order_id: null
+            }
+        })
+
+        let contadorSubTotal=0;
+        for (const item of items) {
+            contadorSubTotal = contadorSubTotal + parseInt(item.sub_total);
+        }
+        subTotal = parseInt(contadorSubTotal)
+        return res.render('products/cart', {items, subTotal, userId})
     },
     addToCart: async (req, res) => {
         const product = await db.Product.findByPk(req.params.id)
         const price =  product.price * (1 - product.discount/100);
         var userId = 0;
+        
 
         if (req.session.email){
             const user = await db.User.findOne({ where: {email:req.session.email} }); 
@@ -19,22 +37,76 @@ const cartController = {
             name: product.name,
             img: product.img,
             unit_price: price,
-            quantity: req.body.quantity,
-            sub_total: price * req.body.quantity,
+            quantity: 1, //hay que ver por que no nos esta llegando el body en req
+            sub_total: price * 1,
             user_id: userId,
         })
 
 
-        res.send('Agregaste un objeto al carrito');
+        res.redirect('/cart')
     },
-    deleteFromCart: (req, res) => {
-        res.send('Borraste del carrito');
+    deleteFromCart: async (req, res) => {
+        const {id} = req.params
+        await db.Item.destroy({
+            where: {
+                id: id
+            }
+        })
+        res.redirect('/cart')
     },
-    buy: (req, res) => {
-        res.send('Compraste');
+    buy: async (req, res) => {
+        var userId = 0;
+        if (req.session.email){
+            const user = await db.User.findOne({ where: {email:req.session.email} }); 
+            userId = user.id
+        }
+        const items = await db.Item.findAll({
+            where: {
+                user_id: userId, 
+                order_id: null
+            }
+        })
+
+        let contadorSubTotal=0;
+        for (const item of items) {
+            contadorSubTotal = contadorSubTotal + parseInt(item.sub_total);
+        }
+        total = parseInt(contadorSubTotal)
+
+        const order = await db.Order.create({
+            total: total,
+            user_id: userId
+        })
+
+        await db.Item.update({
+            order_id: order.id
+
+        }, {
+            where: {
+                user_id: userId, 
+                order_id: null
+            }
+        })
+
+        res.redirect('/cart')
     },
-    bought: (req, res) => {
-        res.send('Tus compras');
+    bought: async (req, res) => {
+        var userId = 0;
+        if (req.session.email){
+            const user = await db.User.findOne({ where: {email:req.session.email} }); 
+            userId = user.id
+        }
+        const users = await db.User.findByPk(userId, {
+            include: {
+                all: true,
+                nested: true
+            }
+        })
+
+        const myOrders = users.orders;
+
+        res.render('products/myOrders', {myOrders})
+        
     }
 }
 

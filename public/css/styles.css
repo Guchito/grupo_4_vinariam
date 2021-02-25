@@ -505,13 +505,17 @@ width: 100%;
 .comprarCarrito{
     display: flex;
     border-radius: 50px;
-    background-color: white;
     height: 40px;
     width: 150px;
     justify-content: space-evenly;
     align-items: center;
     margin-bottom: 20px
 
+
+}
+.alert{
+    border-radius: 50px;
+    border-style: none;
 
 }
 

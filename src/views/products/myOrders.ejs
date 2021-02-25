@@ -1,0 +1,28 @@
+
+<%- include ('../partials/head', {title: 'Mis pedidos'}) %>
+<body>
+    <div class="center">
+        <%- include ('../partials/header') %>
+        <main>
+            <h1 class="tituloCart">Tus pedidos</h1>
+            <div class="contenedorCart">
+                <div class="articulos">
+                    <% if(myOrders.length != 0) { %> 
+                    <% for (const myOrder of myOrders) {%>
+                        <article class="resumen">
+                            <p>Fecha de compra: <br> <%= myOrder.createdAt.toDateString()%> </p>
+                            <p style="font-weight: bold;">Pagaste: <%=myOrder.total %></p>
+                        </article>
+                    <% }} else {%>
+                        <p class="tituloCart">Aún no realizaste ordenes </p>
+                    <% }%>
+                </div>  
+            </div>
+            
+        </main>
+    </div>
+    <%- include ('../partials/footer') %>
+
+</body>
+
+</html>
