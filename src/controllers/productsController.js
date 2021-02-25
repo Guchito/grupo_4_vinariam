@@ -20,7 +20,7 @@ const productsController = {
 		res.render('products/detail', {product, admin});
 	},
 
-    cart: async (req, res) => {
+    /*cart: async (req, res) => {
 		const products = await db.Product.findAll({
 			include: ["categories", "brand"],
 		  });
@@ -37,7 +37,7 @@ const productsController = {
 		const total = subTotal + shipping;
 		
 		res.render('products/cart', {products: someProducts, subTotal: subTotal, shipping: shipping, total: total});
-    },
+    }*/
 
 
 	

@@ -7,12 +7,12 @@
             <h1 class="tituloCart">Tu carrito de compras</h1>
             <div class="contenedorCart">
                 <div class="articulos">
-                    <% for (const product of products) {%>
+                    <% for (const item of items) {%>
                         <article class="resumen">
-                            <a href="/productos/detail/<%= product.id %>"><img class="articuloCart" src="/img/<%= product.img %>" alt="Articulo"></a>
-                            <p class="descripcion"><%=product.name %> </p>
-                            <input class="cantidad" type="number" name="cantidad" placeholder="1">
-                            <p class="precio">$<%= product.price %></p>
+                            <a href="/productos/detail/<%= item.id %>"><img class="articuloCart" src="/img/<%= item.img %>" alt="Articulo"></a>
+                            <p class="descripcion"><%=item.name %> </p>
+                            <input class="cantidad" type="number" name="cantidad" value="1">
+                            <p class="precio">$<%= item.unit_price %></p>
                             <i class="fas fa-trash-alt"></i>
                         </article>
                     <% } %>
@@ -24,9 +24,9 @@
                             <p>Total</p>
                         </div>
                         <div class="segundaColumna">
-                            <p>$<%= subTotal %> </p>
-                            <p>$<%= shipping %> </p>
-                            <p>$<%= total %> </p>
+                            <p>$<%= items.sub_total %> </p>
+                            <p>Costo de envio </p>
+                            <p>Total</p>
                         </div>
                     </article>
                     <div class="contenedorComprar">

@@ -1,6 +1,7 @@
 require('dotenv').config(); 
 
 const express = require('express');
+const body_parser = require('body-parser');
 const path = require('path');
 const session = require('express-session');
 const methodOverride = require('method-override');
@@ -20,7 +21,7 @@ app.use(express.urlencoded({
   extended: false
 }));
 app.use(express.json({limit: '1mb'}));
-
+app.use(body_parser.urlencoded({extended:true}));
 
 app.use(session ({secret:'aca va una frase secreta, shh!', resave: true, saveUninitialized: true}));
 app.use(methodOverride('_method'));
