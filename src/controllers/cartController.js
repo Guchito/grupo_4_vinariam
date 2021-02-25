@@ -2,6 +2,7 @@ const db = require('../database/models')
 
 const cartController = {
     showCart: async (req, res) => {
+        var userId = 0;
         if (req.session.email){
             const user = await db.User.findOne({ where: {email:req.session.email} }); 
             userId = user.id
@@ -53,8 +54,41 @@ const cartController = {
         })
         res.redirect('/cart')
     },
-    buy: (req, res) => {
-        res.send('Compraste');
+    buy: async (req, res) => {
+        var userId = 0;
+        if (req.session.email){
+            const user = await db.User.findOne({ where: {email:req.session.email} }); 
+            userId = user.id
+        }
+        const items = await db.Item.findAll({
+            where: {
+                user_id: userId, 
+                order_id: null
+            }
+        })
+
+        let contadorSubTotal=0;
+        for (const item of items) {
+            contadorSubTotal = contadorSubTotal + parseInt(item.sub_total);
+        }
+        total = parseInt(contadorSubTotal)
+
+        const order = await db.Order.create({
+            total: total,
+            user_id: userId
+        })
+
+        await db.Item.update({
+            order_id: order.id
+
+        }, {
+            where: {
+                user_id: userId, 
+                order_id: null
+            }
+        })
+
+        res.redirect('/cart')
     },
     bought: (req, res) => {
         res.send('Tus compras');

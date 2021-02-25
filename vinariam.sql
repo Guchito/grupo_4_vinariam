@@ -231,7 +231,6 @@ INSERT INTO `users` (`id`, `name`, `last_name`, `user_name`, `email`, `password`
 
 CREATE TABLE `orders` (
   `id` int(10) UNSIGNED NOT NULL,
-  `order_number` int(10) UNSIGNED NOT NULL,
   `total` decimal(10,0) UNSIGNED NOT NULL,
   `user_id` int(10) UNSIGNED DEFAULT NULL,
   `created_at` datetime DEFAULT current_timestamp(),

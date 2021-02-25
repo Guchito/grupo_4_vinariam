@@ -31,10 +31,13 @@
                             <p>Total</p>
                         </div>
                     </article>
+                    <form method="GET" action="/cart/buy" enctype="multipart/form-data">
                     <div class="contenedorComprar">
                         <div class="comprarCarrito">
-                            <a href="/cart/buy">Comprar</a> 
-                            <a href="/cart/buy"><i class="fas fa-shopping-cart"></i></a>  
+                            <button style="border:none">
+                                <a>Comprar</a> 
+                                <a><i class="fas fa-shopping-cart"></i></a>  
+                            </button>
                         </div>
                     </div>
                     <% } else{%>
