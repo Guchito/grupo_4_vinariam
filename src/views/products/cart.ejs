@@ -10,7 +10,7 @@
                     <% for (const product of products) {%>
                         <article class="resumen">
                             <a href="/productos/detail/<%= product.id %>"><img class="articuloCart" src="/img/<%= product.img %>" alt="Articulo"></a>
-                            <p class="descripcion"><%=product.brand.name %> <%=product.name %> <%= product.categories[0].name%></p>
+                            <p class="descripcion"><%=product.name %> </p>
                             <input class="cantidad" type="number" name="cantidad" placeholder="1">
                             <p class="precio">$<%= product.price %></p>
                             <i class="fas fa-trash-alt"></i>
