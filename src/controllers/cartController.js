@@ -19,7 +19,7 @@ const cartController = {
             contadorSubTotal = contadorSubTotal + parseInt(item.sub_total);
         }
         subTotal = parseInt(contadorSubTotal)
-        return res.render('products/cart', {items, subTotal})
+        return res.render('products/cart', {items, subTotal, userId})
     },
     addToCart: async (req, res) => {
         const product = await db.Product.findByPk(req.params.id)
@@ -90,8 +90,23 @@ const cartController = {
 
         res.redirect('/cart')
     },
-    bought: (req, res) => {
-        res.send('Tus compras');
+    bought: async (req, res) => {
+        var userId = 0;
+        if (req.session.email){
+            const user = await db.User.findOne({ where: {email:req.session.email} }); 
+            userId = user.id
+        }
+        const users = await db.User.findByPk(userId, {
+            include: {
+                all: true,
+                nested: true
+            }
+        })
+
+        const myOrders = users.orders;
+
+        res.render('products/myOrders', {myOrders})
+        
     }
 }
 

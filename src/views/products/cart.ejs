@@ -34,22 +34,31 @@
                     <form method="GET" action="/cart/buy" enctype="multipart/form-data">
                     <div class="contenedorComprar">
                         <div class="comprarCarrito">
-                            <button style="border:none">
+                        </div>
+                        <% if(userId != 0) { %>
+                            <button class="alert" type ="submit" style="border-style:none">
                                 <a>Comprar</a> 
                                 <a><i class="fas fa-shopping-cart"></i></a>  
                             </button>
-                        </div>
+                            <% } else {%>
+                                <a style="font-weight: bold;">Necesitas loguearte para comprar</a>
+
+                            <% }%>
                     </div>
+                    
                     <% } else{%>
                         <p>No agregaste ningún item al carrito</p>
                     <% }%>
+            
                 </div>
+                <% if(items.length != 0) { %> 
                 <div class="dibujito">
                     <article class="mensaje">
                         <p>Combínalo con estos maridajes increíbles</p>
                         <img src="/img/sardo.png" alt="maridaje">
                     </article>
                 </div>
+                <% }%>
             </div>
             
         </main>
