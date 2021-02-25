@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
         quantity: {
             type: DataTypes.INTEGER.UNSIGNED
         },
-        subTotal: {
+        sub_total: {
             type: DataTypes.DECIMAL
         },
         img: {

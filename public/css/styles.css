@@ -438,7 +438,19 @@ width: 100%;
 }
 
 .cantidad{
-    width: 30px;
+    width: 50px;
+    border-radius: 50px;
+    background-color: white;
+    height: 30px;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    letter-spacing: 2pt;
+    font-size: 10pt;
+    border: none;
+    text-align: center;
+
 }
 
 
@@ -539,7 +551,7 @@ width: 100%;
     justify-content: center;
     text-align: left;
     font-weight: 300;
-    text-transform: uppercase;
+    
     padding-bottom: 0px;
 }
 
@@ -557,7 +569,8 @@ width: 100%;
     color: black;
     text-transform: uppercase;
     letter-spacing: 2pt;
-    font-size: 10pt
+    font-size: 10pt;
+    border: none;
 }
 
 

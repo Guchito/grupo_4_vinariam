@@ -49,9 +49,9 @@ app.use('/', mainRouter);
 app.use('/productos', productsRouter);
 app.use('/users', usersRouter);
 app.use('/admin', adminRouter);
+app.use('/cart', cartRouter);
 app.use('/api/users', apiRouterUsers);
 app.use('/api/products', apiRouterProducts);
-app.use('/cart', cartRouter);
 
 app.use((req, res, next) => next(createError(404)));
 
