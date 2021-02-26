@@ -2,7 +2,7 @@ const db = require('../../database/models');
 
 const apiProductsController = {
 	list: async (req, res) => {
-        const page = Number(req.query.page) || 1;
+        const page = Number(req.query.page) || 1; //PORQUE SI LA PERSONA NO PASA LA PAGINA QUE SEA LA PAGINA 1 JEJEJEE
         const allProducts = await db.Product.findAndCountAll({
                 include: [
                     {
@@ -28,7 +28,8 @@ const apiProductsController = {
 
         const malbec = products.filter((product) => {
            return product.categories.name == 'Malbec'
-           //ESTA MIERDA NO FUNCIONA
+           //TRAER CATEGORIAS, CON TODOS SUS PRODUCTOS ASOCIADOS, USAR MAP,
+           // POR CADA UNA DE LAS VUELTAS, PREGUNTA LA CANT DE PRODUCTOS POR ESA CATEGORIA, AGREGAR PROPIEDAD CON ESE LENGTH DE PRODUCTS.
           
         })
         const cabernet = products.filter((product) => {
@@ -99,3 +100,6 @@ const apiProductsController = {
 }
 
 module.exports = apiProductsController;
+
+
+// guardar en session storage esos productos id que esta queriendo comprar pero que no esta logueado, y cuando te logueas lo mandas

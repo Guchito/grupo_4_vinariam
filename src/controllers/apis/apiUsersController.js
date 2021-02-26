@@ -47,7 +47,7 @@ const apiUsersController = {
 
         })
             
-    user.dataValues.urlImg = `http://localhost:3000/api/users/${user.avatar}`
+    user.dataValues.urlImg = `http://localhost:3000/img/users/${user.avatar}`
     
     res.json({
         meta: {

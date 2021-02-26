@@ -22,6 +22,7 @@ const cartController = {
         return res.render('products/cart', {items, subTotal, userId})
     },
     addToCart: async (req, res) => {
+
         const product = await db.Product.findByPk(req.params.id)
         const price =  product.price * (1 - product.discount/100);
         var userId = 0;
