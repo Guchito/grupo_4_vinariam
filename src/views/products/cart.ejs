@@ -12,7 +12,7 @@
                         <article class="resumen">
                             <a href="/productos/detail/<%= item.id %>"><img class="articuloCart" src="/img/<%= item.img %>" alt="Articulo"></a>
                             <p class="descripcion"><%=item.name %> </p>
-                            <input class="cantidad" type="number" name="cantidad" value="1">
+                            <input class="cantidad" type="number" name="cantidad" value="<%= item.quantity%>">
                             <p class="precio">$<%= item.unit_price %></p>
                             <form method="POST" action="/cart/delete/<%= item.id %>?_method=DELETE" enctype="multipart/form-data">
                                 <button style="border:none"type="submit"><i class="fas fa-trash-alt"></i></button>
@@ -26,9 +26,9 @@
                             <p>Total</p>
                         </div>
                         <div class="segundaColumna">
-                            <p><%=subTotal%></p>
-                            <p>Costo de envio </p>
-                            <p>Total</p>
+                            <p>$<%=subTotal%></p>
+                            <p>$250</p>
+                            <p>$<%=subTotal + 250%></p>
                         </div>
                     </article>
                     <form method="GET" action="/cart/buy" enctype="multipart/form-data">

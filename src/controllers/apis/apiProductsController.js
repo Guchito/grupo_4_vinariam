@@ -83,7 +83,7 @@ const apiProductsController = {
 
         })
             
-    product.dataValues.urlImg = `http://localhost:3000/api/users/${product.img}`
+    product.dataValues.urlImg = `http://localhost:3000/img/users/${product.img}`
     
     res.json({
         meta: {
