@@ -38,8 +38,8 @@ const cartController = {
             name: product.name,
             img: product.img,
             unit_price: price,
-            quantity: 1, //hay que ver por que no nos esta llegando el body en req
-            sub_total: price * 1,
+            quantity: req.body.quantity, 
+            sub_total: price * req.body.quantity,
             user_id: userId,
         })
 
@@ -89,7 +89,7 @@ const cartController = {
             }
         })
 
-        res.redirect('/cart')
+        res.redirect('/cart/bought')
     },
     bought: async (req, res) => {
         var userId = 0;
