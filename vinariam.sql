@@ -221,7 +221,12 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `name`, `last_name`, `user_name`, `email`, `password`, `avatar`, `rol`, `dob`, `auth`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (0, 'guest', 'guest', 'guest', '', '', '', 0, '1991-01-01', '1', '2021-01-12 21:46:13', '2021-01-12 18:48:53', NULL),
 (15, 'admin', 'admin', 'admin', 'admin@admin.com', '$2a$10$kfavMTyWVOyIL7tr9pHsh.gxDaSpoOSRXLoKB9vpMzSKXRM2X6vl6', '1610487972954-.jpg', 20, '1991-01-01', '1', '2021-01-12 21:46:13', '2021-01-12 18:48:53', NULL),
-(16, 'Agustin', 'Gaggero', 'Guchi', 'a_gaggero@hotmail.com', '$2a$10$HatHEVgu7TDYc3R05Kye5uT6LHoeoCDJb4Jo5Jhpmpfu3ooUCoBiS', '1610504257179-.PNG', 10, '1987-12-05', '1', '2021-01-12 23:34:36', '2021-01-13 02:17:37', NULL);
+(16, 'Agustin', 'Gaggero', 'Guchi', 'a_gaggero@hotmail.com', '$2a$10$HatHEVgu7TDYc3R05Kye5uT6LHoeoCDJb4Jo5Jhpmpfu3ooUCoBiS', '1610504257179-.PNG', 10, '1987-12-05', '1', '2021-01-12 23:34:36', '2021-01-13 02:17:37', NULL),
+(17, 'Agustin', 'Gaggero', 'No', 'a_gajejeggero@hotmail.com', '$2a$10$HatHEVgu7TDYc3R05Kye5uT6LHoeoCDJb4Jo5Jhpmpfu3ooUCoBiS', '1610504257179-.PNG', 10, '1987-12-05', '1', '2021-01-12 23:34:36', '2021-01-13 02:17:37', NULL),
+(18, 'Agustin', 'Gaggero', 'Si', 'nono@hotmail.com', '$2a$10$HatHEVgu7TDYc3R05Kye5uT6LHoeoCDJb4Jo5Jhpmpfu3ooUCoBiS', '1610504257179-.PNG', 10, '1987-12-05', '1', '2021-01-12 23:34:36', '2021-01-13 02:17:37', NULL),
+(20, 'Agustin', 'Gaggero', 'Sjeei', 'nonasdo@hotmail.com', '$2a$10$HatHEVgu7TDYc3R05Kye5uT6LHoeoCDJb4Jo5Jhpmpfu3ooUCoBiS', '1610504257179-.PNG', 10, '1987-12-05', '1', '2021-01-12 23:34:36', '2021-01-13 02:17:37', NULL),
+(19, 'Agustin', 'Gaggero', 'Hola', 'a_gaggesisiro@hotmail.com', '$2a$10$HatHEVgu7TDYc3R05Kye5uT6LHoeoCDJb4Jo5Jhpmpfu3ooUCoBiS', '1610504257179-.PNG', 10, '1987-12-05', '1', '2021-01-12 23:34:36', '2021-01-13 02:17:37', NULL);
+
 
 -- ------------------------------------------------------
 

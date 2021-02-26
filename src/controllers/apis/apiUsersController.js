@@ -3,16 +3,19 @@ const bcrypt = require('bcryptjs');
 
 const apiUsersController = {
 	list: async (req, res) => {
-        
-        const allUsers = await db.User.findAll({
+        const page = Number(req.query.page) || 1;
+        console.log(page)
+        const allUsers = await db.User.findAndCountAll({
                 attributes: ['id','name', 'email'], 
                 order: [
                     ['id']
                 ],
-                limit: 5
+                limit: 5,
+                offset: 5 * (page - 1)
 
             })
-        const users = allUsers.map(user => {
+        const totalPages = Math.ceil(allUsers.count / 5)
+        const users = allUsers.rows.map(user => {
             return (
                 user.dataValues.urlDetail = `http://localhost:3000/api/users/${user.id}`,
                 user
@@ -22,7 +25,11 @@ const apiUsersController = {
         res.json({
             meta: {
                 status: "success", 
-                count: users.length
+                count: allUsers.count,
+                previousPage: page > 1 ? `http://localhost:3000/api/users?page=${page - 1}` : null,
+                currentPage: `http://localhost:3000/api/users?page=${page}`,
+                nextPage: page < totalPages ? `http://localhost:3000/api/users?page=${page + 1}` : null,
+                totalPages: totalPages
             }, 
             data: {
                 users,
@@ -30,6 +37,29 @@ const apiUsersController = {
             }
         })
         
+    },
+
+    detail: async (req, res, next) => {
+
+        const user = await db.User.findByPk(req.params.id, {
+            attributes: ['id','name', 'email', 'last_name', 'user_name', 'dob', 'avatar'], 
+            limit: 5
+
+        })
+            
+    user.dataValues.urlImg = `http://localhost:3000/api/users/${user.avatar}`
+    
+    res.json({
+        meta: {
+            status: "success", 
+            count: user.length
+        }, 
+        data: {
+            user
+
+        }
+    })
+
     },
 
     login: async (req, res, next) => {
