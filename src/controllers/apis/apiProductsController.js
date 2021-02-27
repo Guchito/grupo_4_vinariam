@@ -2,7 +2,7 @@ const db = require('../../database/models');
 
 const apiProductsController = {
 	list: async (req, res) => {
-        const page = Number(req.query.page) || 1; //PORQUE SI LA PERSONA NO PASA LA PAGINA QUE SEA LA PAGINA 1 JEJEJEE
+        const page = Number(req.query.page) || 1; //PORQUE SI LA PERSONA NO PASA LA PAGINA QUE SEA LA PAGINA 1
         const allProducts = await db.Product.findAndCountAll({
                 include: [
                     {
@@ -25,12 +25,18 @@ const apiProductsController = {
    
             )
         })
+        const categories = await db.Category.findAll({include:[{ all: true, nested: true }]})
+        const category = categories.map(cat => {
+            const quantity = cat.products.length
+            const name = cat.name
+            return name +': '+ quantity
+        })
 
+
+        /*
         const malbec = products.filter((product) => {
-           return product.categories.name == 'Malbec'
-           //TRAER CATEGORIAS, CON TODOS SUS PRODUCTOS ASOCIADOS, USAR MAP,
-           // POR CADA UNA DE LAS VUELTAS, PREGUNTA LA CANT DE PRODUCTOS POR ESA CATEGORIA, AGREGAR PROPIEDAD CON ESE LENGTH DE PRODUCTS.
-          
+            return product.categories.name == 'Malbec'
+            
         })
         const cabernet = products.filter((product) => {
             return product.categories.name == 'Cabernet Sauvignon'
@@ -38,7 +44,7 @@ const apiProductsController = {
         })
         const rosado = products.filter((product) => {
             return product.categories.name == 'Rosado'
-             
+            
         })
         const blanco = products.filter((product) => {
             return product.categories.name == 'Blanco'
@@ -48,16 +54,22 @@ const apiProductsController = {
             return product.categories.name == 'Blend'
             
         })
+        */
+        //TRAER CATEGORIAS, CON TODOS SUS PRODUCTOS ASOCIADOS, USAR MAP,
+        // POR CADA UNA DE LAS VUELTAS, PREGUNTA LA CANT DE PRODUCTOS POR ESA CATEGORIA, AGREGAR PROPIEDAD CON ESE LENGTH DE PRODUCTS.
         
         res.json({
             meta: {
                 status: "success", 
                 count: allProducts.count,
+                categories: category,
+                /*
                 count_category_malbec: malbec.length,
                 count_category_cabernet: cabernet.length,
                 count_category_rosado: rosado.length,
                 count_category_blanco: blanco.length,
                 count_category_blend: blend.length,
+                */
                 previousPage: page > 1 ? `http://localhost:3000/api/products?page=${page - 1}` : null,
                 currentPage: `http://localhost:3000/api/products?page=${page}`,
                 nextPage: page < totalPages ? `http://localhost:3000/api/products?page=${page + 1}` : null,
