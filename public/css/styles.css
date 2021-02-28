@@ -855,8 +855,9 @@ background-color: var(--colorFondo);
 }
 
 .bloqueDos img {
-width: 100%;
-padding-right: 40px;
+    width: 80%;
+    padding-right: 40px;
+
 
 }   
 

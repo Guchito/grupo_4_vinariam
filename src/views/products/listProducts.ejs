@@ -47,9 +47,10 @@
                                     </div>
                                    <div class="agregarAlCarro">
                                         <p>$<%= product.price %></p>
-                                        <a class="agregarYEditar" href="/productos/cart">
-                                            <p>Agregar <i class="fas fa-shopping-cart"></i></p>
-                                        </a>
+                                        <form action="/cart/addToCart/<%= product.id %> " method="POST">
+                                            <input hidden class="cantidad" name="quantity" id="quantity" type="number" min="1" value="1">
+                                            <button type="submit" class="agregarYEditar">Agregar <i class="fas fa-shopping-cart"></i></button>
+                                        </form>
                                         
                                   </div>
                                 </div>
