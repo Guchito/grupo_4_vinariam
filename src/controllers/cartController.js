@@ -33,12 +33,13 @@ const cartController = {
                 }]
             }
         }
+        console.log(req.session.productToCart)
 
     
         res.redirect('/cart')
     },
     showCart: async (req, res) => {
-        var userId = 0;
+        let userId = 0;
         if (req.session.email){
             const user = await db.User.findOne({ where: {email:req.session.email} }); 
             userId = user.id

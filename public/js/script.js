@@ -11,8 +11,10 @@ for(const category of selectCategory){
         }
         if(selected.length==0){
             for (const one of all){
+                console.log('hola')
                 one.style.display='block'
             }
         }
     })
 }
+
