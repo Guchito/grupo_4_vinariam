@@ -19,16 +19,21 @@ const cartController = {
                 user_id: user.id,
             })
         }else{
-
-            sessionStorage.setItem("name", product.name);
-            sessionStorage.setItem("img", product.img);
-            sessionStorage.setItem("unit_price", price);
-            sessionStorage.setItem("quantity", req.body.quantity);
-            sessionStorage.setItem("sub_total", price * req.body.quantity)
-
+            if(req.session.productToCart){
+                const product = {
+                    id: req.params.id,
+                    quantity: req.body.quantity
+                }
+                
+                req.session.productToCart.push(product);
+            }else{
+                req.session.productToCart = [{
+                    id: req.params.id,
+                    quantity: req.body.quantity
+                }]
+            }
         }
-        
-    
+
     
         res.redirect('/cart')
     },
@@ -44,7 +49,7 @@ const cartController = {
                 order_id: null
             }
         })
-
+        
         let contadorSubTotal=0;
         for (const item of items) {
             contadorSubTotal = contadorSubTotal + parseInt(item.sub_total);
