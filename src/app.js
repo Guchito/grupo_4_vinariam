@@ -13,6 +13,8 @@ const createError = require('http-errors');
 
 const app = express();
 
+app.listen(process.env.PORT || 3001, () => {     console.log('Servidor escuchando en el puerto 3001') });
+
 app.set('views', path.join(__dirname, '/views')); // Define la ubicación de la carpeta de las Vistas
 app.use(express.static(path.join(__dirname, '../public')));  // Necesario para los archivos estáticos en el folder /public
 app.set('view engine', 'ejs');
