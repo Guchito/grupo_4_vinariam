@@ -1,6 +1,42 @@
 const db = require('../database/models')
 
 const cartController = {
+    addToCart: async (req, res) => {
+    
+        const product = await db.Product.findByPk(req.params.id);
+        const price =  product.price * (1 - product.discount/100);
+
+        
+        if (req.session.email){
+            const user = await db.User.findOne({ where: {email:req.session.email} }); 
+            
+            await db.Item.create({
+                name: product.name,
+                img: product.img,
+                unit_price: price,
+                quantity: req.body.quantity, 
+                sub_total: price * req.body.quantity,
+                user_id: user.id,
+            })
+        }else{
+            if(req.session.productToCart){
+                const product = {
+                    id: req.params.id,
+                    quantity: req.body.quantity
+                }
+                
+                req.session.productToCart.push(product);
+            }else{
+                req.session.productToCart = [{
+                    id: req.params.id,
+                    quantity: req.body.quantity
+                }]
+            }
+        }
+
+    
+        res.redirect('/cart')
+    },
     showCart: async (req, res) => {
         var userId = 0;
         if (req.session.email){
@@ -13,38 +49,13 @@ const cartController = {
                 order_id: null
             }
         })
-
+        
         let contadorSubTotal=0;
         for (const item of items) {
             contadorSubTotal = contadorSubTotal + parseInt(item.sub_total);
         }
         subTotal = parseInt(contadorSubTotal)
         return res.render('products/cart', {items, subTotal, userId})
-    },
-    addToCart: async (req, res) => {
-
-        const product = await db.Product.findByPk(req.params.id)
-        const price =  product.price * (1 - product.discount/100);
-        var userId = 0;
-        
-
-        if (req.session.email){
-            const user = await db.User.findOne({ where: {email:req.session.email} }); 
-            userId = user.id
-        }
-
-
-        let item = await db.Item.create({
-            name: product.name,
-            img: product.img,
-            unit_price: price,
-            quantity: req.body.quantity, 
-            sub_total: price * req.body.quantity,
-            user_id: userId,
-        })
-
-
-        res.redirect('/cart')
     },
     deleteFromCart: async (req, res) => {
         const {id} = req.params

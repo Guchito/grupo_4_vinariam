@@ -70,7 +70,7 @@ const usersController = {
             return res.render('users/login', {errors: errors.errors})
         }
         const user = await db.User.findOne({where: {email:req.body.email}})
-        req.session.email = user.email; 
+        req.session.email = user.email;
 
         if (req.body.recordame){
             res.cookie('email', req.body.email, { maxAge: 1000 * 60 * 60 * 24 * 365 });
