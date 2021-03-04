@@ -1293,3 +1293,26 @@ textarea {
 .errors.errors{
     display: block;
 }
+
+/************* TUS PEDIDOS ****************/
+
+.bloquePedidos{
+    display: flex;
+}
+
+.uvas{
+    width: 55%;
+    margin-left: 150px;
+    margin-bottom: -5px;
+
+}
+
+
+.contenedorCart{
+    background-color: white;
+    width: 400px;
+    height: 300px;
+    border-radius: 20px;
+    margin-left: 25px;
+
+}
