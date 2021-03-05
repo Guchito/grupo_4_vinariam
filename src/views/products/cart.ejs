@@ -15,7 +15,7 @@
                             <input class="cantidad" type="number" name="cantidad" value="<%= item.quantity%>">
                             <p class="precio">$<%= item.unit_price %></p>
                             <form method="POST" action="/cart/delete/<%= item.id %>?_method=DELETE" enctype="multipart/form-data">
-                                <button style="border:none"type="submit"><i class="fas fa-trash-alt"></i></button>
+                                <button class="eliminar" type="submit"><i class="fas fa-trash-alt"></i></button>
                             </form>
                         </article>
                         <% }%>
@@ -36,9 +36,8 @@
                         <div class="comprarCarrito">
                         </div>
                         <% if(userId != 0) { %>
-                            <button class="alert" type ="submit" style="border-style:none">
-                                <a>Comprar</a> 
-                                <a><i class="fas fa-shopping-cart"></i></a>  
+                            <button class="alert" type ="submit">
+                                <a>Comprar <i class="fas fa-shopping-cart"></i></a> 
                             </button>
                             <% } else {%>
                                 <a href="/users/login" style="font-weight: bold;">Iniciar sesión para comprar</a>
@@ -53,9 +52,8 @@
                 </div>
                 <% if(items.length != 0) { %> 
                 <div class="dibujito">
-                    <article class="mensaje">
-                        <p>Combínalo con estos maridajes increíbles</p>
-                        <img src="/img/sardo.png" alt="maridaje">
+                    <article class="mensajeCart">
+                        <p>¡Gracias por tu compra!</p>
                     </article>
                 </div>
                 <% }%>
