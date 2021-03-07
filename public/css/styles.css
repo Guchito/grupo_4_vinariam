@@ -178,6 +178,11 @@ a .mayus:hover {
     align-items: flex-end;
 }
 
+.footerCart{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
 
 .footer{
     display: flex;
