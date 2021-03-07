@@ -10,6 +10,7 @@ const cookieParser = require('cookie-parser');
 const rememberMe = require('./middlewares/rememberMe');
 const adminSession = require('./middlewares/adminSession');
 const createError = require('http-errors');
+const cors = require('cors')
 
 const app = express();
 
@@ -33,6 +34,7 @@ app.use(cookieParser());
 // app.use(soyMayorMiddleware); // Desahibilito el middleware de soy mayor, porque es molesto para trabajar
 app.use(rememberMe);
 app.use(adminSession);
+app.use(cors())
 
 
 

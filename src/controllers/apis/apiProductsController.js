@@ -2,35 +2,53 @@ const db = require('../../database/models');
 
 const apiProductsController = {
 	list: async (req, res) => {
-        const page = Number(req.query.page) || 1; //PORQUE SI LA PERSONA NO PASA LA PAGINA QUE SEA LA PAGINA 1
-        const allProducts = await db.Product.findAndCountAll({
-                include: [
-                    {
-                        all: true, 
-                        nested: true
-                    }
-                ],
-                order: [
-                    ['id']
-                ],
-                limit: 5,
-                offset: 5 * (page - 1)
+        const page = Number(req.query.page) || 1; //PORQUE SI LA PERSONA NO PASA LA PAGINA QUIERO QUE SEA LA PAGINA 1
+        /*const lastProduct = await db.Product.findAll({
+            limit: 1,
+            order: [['id', 'DESC']]
+        });*/
 
-            })
-        const totalPages = Math.ceil(allProducts.count / 5)
-        const products = allProducts.rows.map(product => {
+        const allProducts = await db.Product.findAll()
+        const lastProduct = allProducts[allProducts.length - 1];
+        lastProduct.dataValues.imgUrl = `http://localhost:3000/img/${lastProduct.img}`
+
+       
+        const allProductsPaginated = await db.Product.findAndCountAll({
+            include: [
+                {
+                    all: true, 
+                    nested: true
+                }
+            ],
+            order: [
+                ['id']
+            ],
+            limit: 5,
+            offset: 5 * (page - 1)
+
+        })
+
+        const totalPages = Math.ceil(allProductsPaginated.count / 5)
+        const products = allProductsPaginated.rows.map(product => {
             return (
                 product.dataValues.urlDetail = `http://localhost:3000/api/products/${product.id}`,
                 product
    
             )
         })
-        const categories = await db.Category.findAll({include:[{ all: true, nested: true }]})
-        const category = categories.map(cat => {
+
+        const prices = allProducts.map(product => parseInt(product.price))
+        const totalPrice = prices.reduce((acum, price) => acum + price)
+
+        
+        const allCategories = await db.Category.findAll({include:[{ all: true, nested: true }]})
+        const categories = allCategories.map(cat => {
             const quantity = cat.products.length
             const name = cat.name
             return name +': '+ quantity
         })
+        const amountCategories = allCategories.length
+
 
 
         /*
@@ -61,19 +79,15 @@ const apiProductsController = {
         res.json({
             meta: {
                 status: "success", 
-                count: allProducts.count,
-                categories: category,
-                /*
-                count_category_malbec: malbec.length,
-                count_category_cabernet: cabernet.length,
-                count_category_rosado: rosado.length,
-                count_category_blanco: blanco.length,
-                count_category_blend: blend.length,
-                */
+                count: allProductsPaginated.count,
+                categories,
+                totalPrice,
+                amountCategories,
                 previousPage: page > 1 ? `http://localhost:3000/api/products?page=${page - 1}` : null,
                 currentPage: `http://localhost:3000/api/products?page=${page}`,
                 nextPage: page < totalPages ? `http://localhost:3000/api/products?page=${page + 1}` : null,
-                totalPages: totalPages
+                totalPages,
+                lastProduct
             }, 
             data: {
                 products,
