@@ -221,10 +221,10 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `name`, `last_name`, `user_name`, `email`, `password`, `avatar`, `rol`, `dob`, `auth`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (15, 'admin', 'admin', 'admin', 'admin@admin.com', '$2a$10$kfavMTyWVOyIL7tr9pHsh.gxDaSpoOSRXLoKB9vpMzSKXRM2X6vl6', '1610487972954-.jpg', 20, '1991-01-01', '1', '2021-01-12 21:46:13', '2021-01-12 18:48:53', NULL),
 (16, 'Agustin', 'Gaggero', 'Guchi', 'a_gaggero@hotmail.com', '$2a$10$HatHEVgu7TDYc3R05Kye5uT6LHoeoCDJb4Jo5Jhpmpfu3ooUCoBiS', '1610504257179-.PNG', 10, '1987-12-05', '1', '2021-01-12 23:34:36', '2021-01-13 02:17:37', NULL),
-(17, 'Sofia', 'Mussi', 'Sofa', 'la_sofi@hotmail.com', '$2a$10$HatHEVgu7TDYc3R05Kye5uT6LHoeoCDJb4Jo5Jhpmpfu3ooUCoBiS', '1610504257179-.PNG', 10, '1987-12-05', '1', '2021-01-12 23:34:36', '2021-01-13 02:17:37', NULL),
-(18, 'Violeta', 'Aguirre', 'Vilu', 'nono@hotmail.com', '$2a$10$HatHEVgu7TDYc3R05Kye5uT6LHoeoCDJb4Jo5Jhpmpfu3ooUCoBiS', '1610504257179-.PNG', 10, '1987-12-05', '1', '2021-01-12 23:34:36', '2021-01-13 02:17:37', NULL),
-(20, 'Juan', 'Carlos', 'Charly', 'nonasdo@hotmail.com', '$2a$10$HatHEVgu7TDYc3R05Kye5uT6LHoeoCDJb4Jo5Jhpmpfu3ooUCoBiS', '1610504257179-.PNG', 10, '1987-12-05', '1', '2021-01-12 23:34:36', '2021-01-13 02:17:37', NULL),
-(19, 'Franco', 'Marciano', 'Hola', 'lalalao@hotmail.com', '$2a$10$HatHEVgu7TDYc3R05Kye5uT6LHoeoCDJb4Jo5Jhpmpfu3ooUCoBiS', '1610504257179-.PNG', 10, '1987-12-05', '1', '2021-01-12 23:34:36', '2021-01-13 02:17:37', NULL);
+(17, 'Sofia', 'Mussi', 'Sofa', 'la_sofi@hotmail.com', '$2a$10$HatHEVgu7TDYc3R05Kye5uT6LHoeoCDJb4Jo5Jhpmpfu3ooUCoBiS', '1612030038111-.jpeg', 10, '1987-12-05', '1', '2021-01-12 23:34:36', '2021-01-13 02:17:37', NULL),
+(18, 'Violeta', 'Aguirre', 'Vilu', 'viluo@hotmail.com', '$2a$10$HatHEVgu7TDYc3R05Kye5uT6LHoeoCDJb4Jo5Jhpmpfu3ooUCoBiS', '1611628893559-.jpg', 10, '1987-12-05', '1', '2021-01-12 23:34:36', '2021-01-13 02:17:37', NULL),
+(20, 'Juan', 'Carlos', 'Charly', 'charly@hotmail.com', '$2a$10$HatHEVgu7TDYc3R05Kye5uT6LHoeoCDJb4Jo5Jhpmpfu3ooUCoBiS', '1612320329-.jpg', 10, '1987-12-05', '1', '2021-01-12 23:34:36', '2021-01-13 02:17:37', NULL),
+(19, 'Francisca', 'Marciano', 'fran', 'Fran@hotmail.com', '$2a$10$HatHEVgu7TDYc3R05Kye5uT6LHoeoCDJb4Jo5Jhpmpfu3ooUCoBiS', '1612393374757-.jpeg', 10, '1987-12-05', '1', '2021-01-12 23:34:36', '2021-01-13 02:17:37', NULL);
 
 
 -- ------------------------------------------------------

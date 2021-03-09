@@ -6,7 +6,7 @@ const apiUsersController = {
         const page = Number(req.query.page) || 1;
         console.log(page)
         const allUsers = await db.User.findAndCountAll({
-                attributes: ['id','name', 'email'], 
+                attributes: ['id', 'user_name','name', 'last_name', 'dob' , 'email', 'avatar'], 
                 order: [
                     ['id']
                 ],
@@ -18,6 +18,7 @@ const apiUsersController = {
         const users = allUsers.rows.map(user => {
             return (
                 user.dataValues.urlDetail = `http://localhost:3000/api/users/${user.id}`,
+                user.dataValues.imgUrl = `http://localhost:3000/img/users/${user.avatar}`,
                 user
                 
             )
