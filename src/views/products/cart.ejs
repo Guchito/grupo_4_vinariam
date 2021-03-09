@@ -13,7 +13,7 @@
                             <a href="/productos/detail/<%= item.id %>"><img class="articuloCart" src="/img/<%= item.img %>" alt="Articulo"></a>
                             <p class="descripcion"><%=item.name %> </p>
                             <input class="cantidad" type="number" name="cantidad" value="<%= item.quantity%>">
-                            <p class="precio">$<%= item.unit_price %></p>
+                            <p class="precio">$<%= item.unit_price || item.priceWDiscount %></p>
                             <form method="POST" action="/cart/delete/<%= item.id %>?_method=DELETE" enctype="multipart/form-data">
                                 <button class="eliminar" type="submit"><i class="fas fa-trash-alt"></i></button>
                             </form>

@@ -43,9 +43,15 @@ const apiProductsController = {
         
         const allCategories = await db.Category.findAll({include:[{ all: true, nested: true }]})
         const categories = allCategories.map(cat => {
-            const quantity = cat.products.length
-            const name = cat.name
-            return name +': '+ quantity
+            const eachCat = [];
+            /*eachCat.push(cat.name);
+            eachCat.push(' amount: ')
+            eachCat.push(cat.products.length);*/
+            eachCat.push({
+                name: cat.name,
+                amount: cat.products.length
+            })
+            return eachCat
         })
         const amountCategories = allCategories.length
 
