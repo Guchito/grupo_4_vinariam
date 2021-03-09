@@ -32,10 +32,13 @@ const apiProductsController = {
         const products = allProductsPaginated.rows.map(product => {
             return (
                 product.dataValues.urlDetail = `http://localhost:3000/api/products/${product.id}`,
+                product.dataValues.imgUrl = `http://localhost:3000/img/${product.img}`,
                 product
    
             )
         })
+        console.log(products)
+        
 
         const prices = allProducts.map(product => parseInt(product.price))
         const totalPrice = prices.reduce((acum, price) => acum + price)
