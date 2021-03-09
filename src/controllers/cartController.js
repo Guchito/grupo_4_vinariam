@@ -4,7 +4,9 @@ const cartController = {
     addToCart: async (req, res) => {
     
         const product = await db.Product.findByPk(req.params.id);
-        const price =  product.price * (1 - product.discount/100);
+        product.dataValues.priceWDiscount = parseInt(product.price * (1 - product.discount/100));
+        product.dataValues.quantity = parseInt(req.body.quantity);
+        product.dataValues.sub_total = product.dataValues.priceWDiscount * product.dataValues.quantity;
 
         
         if (req.session.email){
@@ -13,49 +15,52 @@ const cartController = {
             await db.Item.create({
                 name: product.name,
                 img: product.img,
-                unit_price: price,
-                quantity: req.body.quantity, 
-                sub_total: price * req.body.quantity,
+                unit_price: parseInt(product.price * (1 - product.discount/100)),
+                quantity: parseInt(req.body.quantity), 
+                sub_total: parseInt(product.price * (1 - product.discount/100) * req.body.quantity),
                 user_id: user.id,
             })
-        }else{
-            if(req.session.productToCart){
-                const product = {
-                    id: req.params.id,
-                    quantity: req.body.quantity
-                }
-                
-                req.session.productToCart.push(product);
-            }else{
-                req.session.productToCart = [{
-                    id: req.params.id,
-                    quantity: req.body.quantity
-                }]
-            }
+            
         }
+        if(req.session.productToCart){
 
-    
+            const productToSession = product.dataValues
+            
+            req.session.productToCart.push(productToSession);
+        }else{
+            req.session.productToCart = [product.dataValues]
+        }
+        // middleware global que siempre cree req.session.productToCart
+        //[...req.session.productToCart, product, price, quantity]
+
         res.redirect('/cart')
     },
     showCart: async (req, res) => {
-        var userId = 0;
+        let userId = 0
+        let items = [];
+
         if (req.session.email){
             const user = await db.User.findOne({ where: {email:req.session.email} }); 
             userId = user.id
-        }
-        const items = await db.Item.findAll({
-            where: {
-                user_id: userId, 
-                order_id: null
-            }
-        })
+            
+            items = await db.Item.findAll({
+                where: {
+                    user_id: userId, 
+                    order_id: null
+                }
+            })
         
+        
+        }else if (req.session.productToCart){
+            items = req.session.productToCart
+        }
         let contadorSubTotal=0;
         for (const item of items) {
-            contadorSubTotal = contadorSubTotal + parseInt(item.sub_total);
+            contadorSubTotal = parseInt(contadorSubTotal) + parseInt(item.sub_total);
         }
         subTotal = parseInt(contadorSubTotal)
         return res.render('products/cart', {items, subTotal, userId})
+        
     },
     deleteFromCart: async (req, res) => {
         const {id} = req.params
@@ -67,7 +72,7 @@ const cartController = {
         res.redirect('/cart')
     },
     buy: async (req, res) => {
-        var userId = 0;
+        let userId = 0;
         if (req.session.email){
             const user = await db.User.findOne({ where: {email:req.session.email} }); 
             userId = user.id
@@ -103,7 +108,7 @@ const cartController = {
         res.redirect('/cart/bought')
     },
     bought: async (req, res) => {
-        var userId = 0;
+        let userId = 0;
         if (req.session.email){
             const user = await db.User.findOne({ where: {email:req.session.email} }); 
             userId = user.id

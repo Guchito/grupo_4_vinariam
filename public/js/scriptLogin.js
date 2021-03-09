@@ -28,17 +28,16 @@ form.addEventListener("submit", (event) => {
     })
     .then(function(check){
         const status = check.meta.status;
-        console.log('hola soy el estupido status: ' + status);
-        console.log(errors);
+
         if(status == '400'){
             errors.push('El email y la contraseña no coinciden')
-            console.log(errors);
+
         }
 
         if (errors.length > 0) {
             for (const error of errors) {
                 errorsElement.innerHTML += `<li>${error}</li>`
-                console.log(error)
+
             }
         } else {
             form.submit()

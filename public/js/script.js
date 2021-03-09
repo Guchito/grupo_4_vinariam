@@ -1,5 +1,5 @@
-const selectCategory = document.querySelectorAll('.categoryFilter');
-const selectFilter = document.querySelector('.selectFilter');
+const selectCategory = document.querySelectorAll('.categoryFilter'); // Selecciono todas las categorias
+const selectFilter = document.querySelector('.selectFilter'); // Selecciono todo el dropdows
 
 selectFilter.addEventListener('change',(e)=>{     
     for(const category of selectCategory){

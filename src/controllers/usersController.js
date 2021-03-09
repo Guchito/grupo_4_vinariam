@@ -75,7 +75,23 @@ const usersController = {
         if (req.body.recordame){
             res.cookie('email', req.body.email, { maxAge: 1000 * 60 * 60 * 24 * 365 });
         };
-        res.redirect('/users/profile');	
+
+        if(req.session.productToCart){
+            console.log(req.session.productToCart)
+            for (const product of req.session.productToCart){
+               
+                await db.Item.create({
+                    name: product.name,
+                    img: product.img,
+                    unit_price: product.priceWDiscount,
+                    quantity: product.quantity, 
+                    sub_total: product.sub_total,
+                    user_id: user.id,
+                })
+            }
+            req.session.productToCart = null
+        }
+        res.redirect('/users/profile');
     },
 
     profile: async (req,res) => {
