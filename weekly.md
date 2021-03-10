@@ -164,3 +164,11 @@ Week 2:
 -La validación de Edición de Productos costó más, el script era muy parecido pero teníamos algunos errores de linkeo
 entre el script y el ejs, terminamos esta parte a lo último. 
 
+# Sprint 8 
+
+* Sofi 
+Week 1:
+-Estuve haciendo apis de productos y de usuarios. Guchi me ayudó con los conteos de categorías y luego con lo que necesitaba para React
+
+Week 2:
+-Hice los métodos del carrito: showCart, buy, bought, delete. Guchi hizo la logica de rutas, y luego la parte de mantener al usuario en session 

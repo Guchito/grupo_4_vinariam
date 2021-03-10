@@ -118,3 +118,14 @@ Nuevamente no calculamos bien los tiempos. La participación de todos y el traba
 * Hacer más: 
 - No obsesionarse con los pequeños detalles que nos hacen perder tiempo
 - Ser más pacientes cuando algo no sale y no frustrarse, bajar ansiedades (hablo por mi, Viole)
+
+# Conclusiones de la retrospectiva sprint 8 
+* Empezar a hacer:
+-Valorar nuestro esfuerzo y estar más seguros de nuestro laburo. Hicimos mucho, nos esforzamos mucho y los resultados son los que queríamos, siempre podemos mejorarlos pero logramos una gran base. 
+
+* Seguir haciendo: 
+-No dejar de programar para no perder el ritmo
+-Poniendole ganas y compromiso
+
+* Hacer más: 
+-Estudiar, capacitarnos 
