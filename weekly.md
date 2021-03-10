@@ -172,3 +172,8 @@ Week 1:
 
 Week 2:
 -Hice los métodos del carrito: showCart, buy, bought, delete. Guchi hizo la logica de rutas, y luego la parte de mantener al usuario en session 
+
+* Vilu
+
+Week 1 y 2:
+-Me dediqué a emprolijar UI, especialmente las vistas relacionadas al Cart 
