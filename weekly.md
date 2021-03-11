@@ -153,6 +153,11 @@ Week 2:
 -Hice la validacion del front del register. Tambien la configuracion de nuestras apis de usuarios y de productos. Tuvimos algunas complicaciones con las promesas, corregimos las validaciones front con Guchi de edit users y tambien de edit products. 
 
 * Guchi 
+Week 1: 
+-Hicimos correciones de validaciones del back entre todos. 
+
+Week 2:
+Corregimos y emprolijamos con sofi validaciones del front. Por suerte la mayoria ya estaba hecho del sprint pasado, y solo hubo que modificar algunas pocas cosas.
 
 
 * Vilu 
@@ -165,6 +170,21 @@ Week 2:
 entre el script y el ejs, terminamos esta parte a lo último. 
 
 # Sprint 8 
+
+* Guchi:
+Week 1: 
+- Estuve practicando react, sobretodo con la pagina de starwars. Pase el html del dashboard a react, por el momento estatico.
+
+Week 2:
+- Le di una mano a Sofi con algunos detalles de las apis de products. Agregue un par de cosas a las apis para mandarle los datos al Dashboard ya trabajados desde la api.
+- Hicimos la logica del carrito, toda la parte de la base de datos ya la teniamos hecha de antes.
+- Empezamos a darle forma a como hacer para guardar los items de alguien no logueado para el carrito. En un principio Lo quisimos hacer creandole un usuario momentaneo. 
+
+Week 3:
+- Hable con gonza y me tiro una punta de como hacer lo del carrito sin estar logueado, asi que me puse a jugar un poco con el codigo, hasta que salio, guardandolo en una session.
+- Me traje las apis desde el dashboard.
+- Samie me explico como habian resuelto con gonza el next para mostrar las distintas paginas de los productos, y con eso lo pude hacer adaptandolo a nuestras necesidades.
+- Agregue el Router para tener distintas paginas en el Dashboard, e hice las paginas de usuarios y la de productos. 
 
 * Sofi 
 Week 1:
