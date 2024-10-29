@@ -85,13 +85,25 @@ a .mayus:hover {
 .barraNav{
     display: flex;
     justify-content: space-around;
-    padding-bottom: 15px;
+    align-items: center;
     border-bottom: 1px solid #278828;
 }
 
 .barraNavBlanca{
     border-bottom: 1px solid white;
+    padding-bottom: 1rem;
 }
+
+.user{
+    display: flex;
+    justify-content: space-between;
+    width: 4rem;
+    
+}
+.lang{
+    display:flex;
+}
+
 
 .fa-bars{
     display: none;
