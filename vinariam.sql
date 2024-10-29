@@ -1,3 +1,17 @@
+usersSELECT `users`.`id`,
+    `users`.`name`,
+    `users`.`last_name`,
+    `users`.`user_name`,
+    `users`.`email`,
+    `users`.`password`,
+    `users`.`avatar`,
+    `users`.`rol`,
+    `users`.`dob`,
+    `users`.`auth`,
+    `users`.`created_at`,
+    `users`.`updated_at`,
+    `users`.`deleted_at`
+FROM `vinariam`.`users`;
 -- phpMyAdmin SQL Dump
 -- version 5.0.3
 -- https://www.phpmyadmin.net/
