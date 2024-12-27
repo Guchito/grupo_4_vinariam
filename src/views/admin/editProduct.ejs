@@ -4,26 +4,26 @@
 
     <%- include ('../partials/header') %>
 
-    <h1 class="tituloCarga">Carga de productos</h1>
+    <h1 class="tituloCarga">Products</h1>
     <div class="contenedorCarga">
         <div class="navAdmin">
             <div class="usuarioAdmin">
                 <img class="avatar" src="/img/avatar1.svg" alt="Avatar">
                 <div class="nombreAdmin">
-                    <h3>Violeta Aguirre</h3>
-                    <a href="/admin">Ver mi perfil</a>
+                    <h3>Agustin Gaggero</h3>
+                    <a href="/admin">See profile</a>
                 </div>
             </div>
-            <a class="navAdminElemnto" href="#">Proveedores</a>
-            <a class="navAdminElemnto selectedAdminNav" href="#">Editar producto</a>
-            <a class="navAdminElemnto" href="#">Pedidos</a>
-            <a class="navAdminElemnto" href="#">Configuración</a>
-            <a class="navAdminElemnto" href="#">Mensajes</a>
-            <a class="navAdminElemnto" href="#">Métricas</a>
+            <a class="navAdminElemnto" href="#">Suppliers</a>
+            <a class="navAdminElemnto selectedAdminNav" href="#">Edit product</a>
+            <a class="navAdminElemnto" href="#">Orders</a>
+            <a class="navAdminElemnto" href="#">Configuration</a>
+            <a class="navAdminElemnto" href="#">Messages</a>
+            <a class="navAdminElemnto" href="#">Metrics</a>
         </div>
         <div class="selectorCategoria">
         
-            <h3>/tipo de producto</h3>
+            <h3>/type of product</h3>
 
             <a category-id= 'cambioVinos' class="productoCategoria">
                 <img src="/img/cargaVino.svg" alt="Carga de vinos">
@@ -57,32 +57,32 @@
                 <div class="cargaCampos">
                     <label for="brand" class="form-label"></label>
                     <select class="sinborde" name="brand" id="brand">
-                        <option value="" disabled = "true">/ marca</option>
+                        <option value="" disabled = "true">/ brand</option>
                         <% for (const brand of brands) { %>
                             <option value=<%= brand.id %>  >/ <%= brand.name %></option>
                         <% } %>
                     </select>
                 </div>
                 <div class="cargaCampos">
-                    <input class="sinborde width300" type="text" id="name" name="name" value="<%= product.name %>" placeholder="/nombre">
+                    <input class="sinborde width300" type="text" id="name" name="name" value="<%= product.name %>" placeholder="/name">
                 </div>
                 <div class="cargaCampos">
-                    <input class="sinborde" type="number" id="price" name="price" value="<%= product.price %>" placeholder="/precio" >
+                    <input class="sinborde" type="number" id="price" name="price" value="<%= product.price %>" placeholder="/price" >
                 </div>
                 <div class="cargaCampos">
                     <label for="class" class="form-label"></label>
                     <select class="sinborde" name="class" id="class" >
-                        <option value="" disabled = "true">/ destacado</option>
-                        <option value="no" <%= product.class == "no" ? "selected" : "" %> >/No destacado</option>
-                        <option value="destacado" <%= product.class == "destacado" ? "selected" : "" %> >/Destacado</option>                        
+                        <option value="" disabled = "true">/ featured</option>
+                        <option value="no" <%= product.class == "no" ? "selected" : "" %> >/ Not featured</option>
+                        <option value="destacado" <%= product.class == "destacado" ? "selected" : "" %> >/ Featured</option>                        
                     </select>
                 </div>
                 <div class="cargaCampos">
                     <label for="category" class="form-label"></label>
                     <select class="sinborde" name="category" id="category">
-                        <option value="" disabled = "true">/ variedad</option>
+                        <option value="" disabled = "true">/ grape</option>
                         <% for (const category of categories) { %>
-                            <option value=<%= category.id %>  >/<%= category.name %></option>
+                            <option value=<%= category.id %>  >/ <%= category.name %></option>
                         <% } %>
                     </select>
                 </div>
@@ -90,12 +90,12 @@
                     <input class="sinborde width300" type="number" id="stock" name="stock" value="<%= product.stock  %>" placeholder="/stock">
                 </div>
                 <div class="cargaCampos">
-                    <input class="sinborde width300" type="number" id="discount" name="discount" value="<%= product.discount %>" placeholder="/descuento">
+                    <input class="sinborde width300" type="number" id="discount" name="discount" value="<%= product.discount %>" placeholder="/discount">
                 </div>
                 <div class="cargaCampos">
                    <label for="size" class="form-label"></label>
                     <select class="sinborde" name="size" id="size">
-                        <option value="" disabled = "true">/ tamaño</option>
+                        <option value="" disabled = "true">/ size</option>
                         <% for (const size of sizes) { %>
                             <option value=<%= size.id %>  >/ <%= size.name %>ml</option>
                         <% } %>
@@ -107,17 +107,17 @@
                 </div>
 
                 <div class="cargaCampos">
-                    <textarea class="sinborde" name="detail" id="detail"  placeholder="/descipción"><%= product.detail %> </textarea>
+                    <textarea class="sinborde" name="detail" id="detail"  placeholder="/desciption"><%= product.detail %> </textarea>
                 </div>
                 <div class="contenedorEditar">
                     <div class="Guardar">
-                        <button class="botonGuardar" type="submit">Editar producto</button>
+                        <button class="botonGuardar" type="submit">Edit product</button>
                     </div>
 
                 </div>
             </form>
             <form class="Guardar" method="POST" action="/admin/editar/<%=product.id %> ?_method=DELETE" enctype="multipart/form-data">
-                <button type="submit" class="botonEliminar">Eliminar producto</button> 
+                <button type="submit" class="botonEliminar">Delete product</button> 
             </form>
         </div>
     </div>

@@ -10,20 +10,20 @@
             <div class="usuarioAdmin">
                 <img class="avatar" src="/img/avatar1.svg" alt="Avatar">
                 <div class="nombreAdmin">
-                    <h3>Violeta Aguirre</h3>
-                    <a href="/admin">Ver mi perfil</a>
+                    <h3>Agustin Gaggero</h3>
+                    <a href="/admin">My profile</a>
                 </div>
             </div>
             <a class="navAdminElemnto" href="http://localhost:3002/">Dashboard</a>
-            <a class="navAdminElemnto selectedAdminNav" href="#">Cargar producto</a>
-            <a class="navAdminElemnto" href="#">Pedidos</a>
-            <a class="navAdminElemnto" href="#">Configuración</a>
-            <a class="navAdminElemnto" href="#">Mensajes</a>
-            <a class="navAdminElemnto" href="#">Métricas</a>
+            <a class="navAdminElemnto selectedAdminNav" href="#">Add product</a>
+            <a class="navAdminElemnto" href="#">Orders</a>
+            <a class="navAdminElemnto" href="#">Configuration</a>
+            <a class="navAdminElemnto" href="#">Messages</a>
+            <a class="navAdminElemnto" href="#">Metrics</a>
         </div>
         <div class="selectorCategoria">
         
-            <h3>/tipo de producto</h3>
+            <h3>/type of product</h3>
 
             <a category-id= 'cargaVinos' class="productoCategoria">
                 <img src="/img/cargaVino.svg" alt="Carga de vinos">
@@ -46,47 +46,47 @@
             <form class="carga" action="/admin/carga" method="POST" enctype="multipart/form-data">
                 <ul class="errors"> </ul>
                 <div class="cargaCampos">
-                    <input class="sinborde width300" type="text" id="name" name="name" placeholder="/nombre">
+                    <input class="sinborde width300" type="text" id="name" name="name" placeholder="/ name">
                 </div>
                 <div class="cargaCampos">
                     <label for="brand" class="form-label"></label>
                     <select class="sinborde" name="brand" id="brand">
-                        <option value="" disabled = "true">/ marca</option>
+                        <option value="" disabled = "true">/ brand</option>
                         <% for (const brand of brands) { %>
                             <option value= <%= brand.id %>  >/ <%= brand.name %></option>
                         <% } %>
                     </select>
                 </div>
                 <div class="cargaCampos">
-                    <input class="sinborde" type="number" id="price" name="price" placeholder="/ precio">
+                    <input class="sinborde" type="number" id="price" name="price" placeholder="/ price">
                 </div>
                 <div class="cargaCampos">
                     <label for="class" class="form-label"></label>
                     <select class="sinborde" name="class" id="class">
-                        <option value="" disabled = "true">/ variedad</option>
-                        <option value="no">No destacado</option>
-                        <option value="destacado">Destacado</option>                        
+                        <option value="" disabled = "true">/ graoe</option>
+                        <option value="no">/ not featured</option>
+                        <option value="destacado">/ featured</option>                        
                     </select>
                 </div>
                 <div class="cargaCampos">
                     <label for="category" class="form-label"></label>
                     <select class="sinborde" name="category" id="category">
-                        <option value="" disabled = "true">/ variedad</option>
+                        <option value="" disabled = "true">/ grape</option>
                         <% for (const category of categories) { %>
                             <option value= <%= category.id %>  >/ <%= category.name %></option>
                         <% } %>
                     </select>
                 </div>
                 <div class="cargaCampos">
-                    <input class="sinborde width300" type="number" id="stock" name="stock" placeholder="/stock">
+                    <input class="sinborde width300" type="number" id="stock" name="stock" placeholder="/ stock">
                 </div>
                 <div class="cargaCampos">
-                    <input class="sinborde width300" type="number" id="discount" name="discount" placeholder="/descuento">
+                    <input class="sinborde width300" type="number" id="discount" name="discount" placeholder="/ discount">
                 </div>
                 <div class="cargaCampos">
                     <label for="size" class="form-label"></label>
                     <select class="sinborde" name="size" id="size">
-                        <option value="" disabled = "true">/ presentacion (ml)</option>
+                        <option value="" disabled = "true">/ size (ml)</option>
                         <% for (const size of sizes) { %>
                             <option value= <%= size.id %>  >/ <%= size.name %> ml</option>
                         <% } %>
@@ -98,11 +98,11 @@
                 </div>
 
                 <div class="cargaCampos">
-                    <textarea class="sinborde" name="detail" id="detail" placeholder="/descipción"></textarea>
+                    <textarea class="sinborde" name="detail" id="detail" placeholder="/ description"></textarea>
                 </div>
                 <div class="contenedorGuardar">
                     <div class="Guardar">
-                        <button class="botonGuardar" type="submit">Cargar producto</button>
+                        <button class="botonGuardar" type="submit">Add product</button>
                     </div>
                 </div>
             </form>
