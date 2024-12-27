@@ -4,8 +4,8 @@
     <div class="center">
         <%- include ('../partials/header') %>
         <main>
-            <h1 class="tituloCart">Carro lleno, uvas contentas.</h1>
-            <h2 class="tituloPedidos">/ tus pedidos:</h2>
+            <h1 class="tituloCart">Cart full. Happy grapes</h1>
+            <h2 class="tituloPedidos">/ your orders:</h2>
 
             <div class="bloquePedidos">
 
@@ -14,8 +14,8 @@
                         <% if(myOrders.length != 0) { %> 
                         <% for (const myOrder of myOrders) {%>
                             <article class="resumen">
-                                <p>Fecha de compra: <br> <%= myOrder.createdAt.toDateString()%> </p>
-                                <p style="font-weight: bold;">Pagaste: <%=myOrder.total %></p>
+                                <p>Date: <br> <%= myOrder.createdAt.toDateString()%> </p>
+                                <p style="font-weight: bold;">Paid: <%=myOrder.total %></p>
                             </article>
                         <% }} else {%>
                             <p class="tituloCart">Aún no realizaste ordenes </p>

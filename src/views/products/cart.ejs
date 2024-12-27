@@ -4,7 +4,7 @@
     <div class="center">
         <%- include ('../partials/header') %>
         <main>
-            <h1 class="tituloCart">Tu carrito de compras</h1>
+            <h1 class="tituloCart">Your Shopping Cart</h1>
             <div class="contenedorCart">
                 <div class="articulos">
                     <% if(items.length != 0) { %> 
@@ -22,13 +22,13 @@
                     <article class="totales">
                         <div class="primeraColumna">
                             <p>Subtotal</p>
-                            <p>Envío</p>
+                            <p>Shipping</p>
                             <p>Total</p>
                         </div>
                         <div class="segundaColumna">
                             <p>$<%=subTotal%></p>
-                            <p>$250</p>
-                            <p>$<%=subTotal + 250%></p>
+                            <p>$50</p>
+                            <p>$<%=subTotal + 50%></p>
                         </div>
                     </article>
                     <form method="GET" action="/cart/buy" enctype="multipart/form-data">
@@ -37,23 +37,26 @@
                         </div>
                         <% if(userId != 0) { %>
                             <button class="alert" type ="submit">
-                                <a>Comprar <i class="fas fa-shopping-cart"></i></a> 
+                                <a>Buy <i class="fas fa-shopping-cart"></i></a> 
                             </button>
                             <% } else {%>
-                                <a href="/users/login" style="font-weight: bold;">Iniciar sesión para comprar</a>
+                                <a href="/users/login" style="font-weight: bold;">Log in to buy</a>
 
                             <% }%>
                     </div>
                     
                     <% } else{%>
-                        <p>No agregaste ningún item al carrito</p>
+                        <div class="containerEmpty">
+                            <p>Your cart is empty</p>
+
+                        </div>
                     <% }%>
             
                 </div>
                 <% if(items.length != 0) { %> 
                 <div class="dibujito">
                     <article class="mensajeCart">
-                        <p>¡Gracias por tu compra!</p>
+                        <p>Thanks for your purchase</p>
                     </article>
                 </div>
                 <% }%>

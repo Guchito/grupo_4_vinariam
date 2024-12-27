@@ -4,15 +4,15 @@
             <%- include ('../partials/header') %>
         </div>
         <main>
-            <h1 class="tituloListado">Vinos</h1>
+            <h1 class="tituloListado">Wines</h1>
             <div class="contenedorListado">
                 <div class="listadoIzquierda">
                     <div class="filtros">
 
                         <div class="filtrarPor">
-                            <label> Filtrar:</label>
+                            <label> Filter:</label>
                             <select class="filtrosEstilo selectFilter">
-                                <option class="categoryFilter" value="0">Todos</option>
+                                <option class="categoryFilter" value="0">All</option>
                                 <% for(category of categories) { %>
                                     <option class="categoryFilter" value=<%= category.id %>><%= category.name%></option>
                                 <%}%>
@@ -20,10 +20,10 @@
                         </div>
 
                         <div class="filtrarPor">
-                            <label>Ordenar:</label>
+                            <label>Order:</label>
                             <select class="filtrosEstilo">
-                                <option value="may">Mayor precio</option>
-                                <option value="men">Menor precio</option>
+                                <option value="may">Price: Higher</option>
+                                <option value="men">Price: Lower</option>
                             </select>
                         </div>
 
@@ -49,7 +49,7 @@
                                         <p>$<%= product.price %></p>
                                         <form action="/cart/addToCart/<%= product.id %> " method="POST">
                                             <input hidden class="cantidad" name="quantity" type="number" min="1" value="1">
-                                            <button type="submit" class="agregarYEditar">Agregar <i class="fas fa-shopping-cart"></i></button>
+                                            <button type="submit" class="agregarYEditar">Add to cart <i class="fas fa-shopping-cart"></i></button>
                                         </form>
                                         
                                   </div>

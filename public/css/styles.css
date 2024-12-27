@@ -159,6 +159,11 @@ a .mayus:hover {
     color: white;
     padding: 40px 3%;
 }
+
+.bloque a{
+    color: white;
+}
+
 .social{
     display: flex;
     flex-direction: column;
@@ -433,6 +438,11 @@ width: 100%;
 
 /************** CART ***************/
 
+.containerEmpty{
+    max-width: 1350px;
+    margin: 0 50px;
+}
+
 .tituloCart{
     margin: 30px;
 }
@@ -506,6 +516,7 @@ width: 100%;
     margin-bottom: 10px;
     max-width: 1350px;
     margin: 0 auto;
+    min-height: 54dvh;
 }
 
 .dibujito{
@@ -607,6 +618,12 @@ width: 100%;
     letter-spacing: 2pt;
     font-size: 10pt;
     border: none;
+}
+
+.agregarYEditar:hover{
+    cursor: pointer;
+    background-color: rgb(228, 228, 228);
+    transition: all 0.2s;
 }
 
 
@@ -879,7 +896,7 @@ background-color: var(--colorFondo);
     flex-direction: column;
     border-radius: 50px;
     background-color: white;
-    height: 600px;
+    height: auto;
     width: 350px;
     justify-content: space-evenly;
     align-items: center;
@@ -888,10 +905,15 @@ background-color: var(--colorFondo);
 
 .bloqueDos img {
     width: 80%;
-    padding-right: 40px;
-
-
 }   
+
+.fotoTarjeta{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+}
 
 
 .bloqueTres{

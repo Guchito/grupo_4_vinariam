@@ -12,7 +12,7 @@
             </div>
             <div class="formRegister">
                 <form action="/users/processRegister" method="POST" enctype="multipart/form-data">
-                    <h2 class="contanos">Contanos de vos</h2>
+                    <h2 class="contanos">Tell us about yourself</h2>
                     <ul class="errors"></ul>
                     <% if (typeof errors != "undefined") { %>
 							
@@ -23,20 +23,20 @@
                         <% }) %>
         
                     <% } %>
-                    <input class="camposForm" type="text" id="name" name="name" placeholder="Nombre"><br>
-                    <input class="camposForm" type="text" id="lastName" name="lastName" placeholder="Apellido"><br>
-                    <input class="camposForm" type="text" id="userName" name="userName" placeholder="Nombre de usuario"><br>
-                    <input class="camposForm" type="date" id="birthday" name="birthday"><br> 
-                    <input class="camposForm" type="email" id="email" name="email" placeholder="E-mail"><br>
-                    <input class="camposForm" type="password" id="password" name="password" placeholder="Clave"><br>
-                    <input class="camposForm" type="password" id="passwordconfirm" name="passwordconfirm" placeholder="Confirmá tu clave"><br>
+                    <input class="camposForm" type="text" id="name" name="name" placeholder="/ name"><br>
+                    <input class="camposForm" type="text" id="lastName" name="lastName" placeholder="/ last name"><br>
+                    <input class="camposForm" type="text" id="userName" name="userName" placeholder="/ user name"><br>
+                    <input class="camposForm" type="date" id="birthday" name="/ birthday"><br> 
+                    <input class="camposForm" type="email" id="email" name="email" placeholder="/ e-mail"><br>
+                    <input class="camposForm" type="password" id="password" name="password" placeholder="/ password"><br>
+                    <input class="camposForm" type="password" id="passwordconfirm" name="passwordconfirm" placeholder="/ confirm password"><br>
                     <div class="camposForm">
-                        <label for="image" class="form-label, text-photo">Elegí una foto de perfil</label>
+                        <label for="image" class="form-label, text-photo">Choose your profile picture</label>
                         <input type="file" name="image" id="image">
                     </div>
                 <div class="botones">
-                    <input class="boton" type="checkbox" name="terminos" value="terminos"><label class="terminos" name="terminos">Acepto los Términos y Condiciones</label><br>
-                    <button class="boton camposForm" type="submit" name="register" id="register"><strong>Continuar</strong></button>
+                    <input class="boton" type="checkbox" name="terminos" value="terminos"><label class="terminos" name="terminos">I accept the terms</label><br>
+                    <button class="boton camposForm" type="submit" name="register" id="register"><strong>Register</strong></button>
                 </div>
             </form>
             </div>

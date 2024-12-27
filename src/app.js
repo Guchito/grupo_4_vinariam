@@ -31,7 +31,7 @@ app.use(cookieParser());
 
 /**Middlewares */
 
-// app.use(soyMayorMiddleware); // Desahibilito el middleware de soy mayor, porque es molesto para trabajar
+app.use(soyMayorMiddleware); // Desahibilito el middleware de soy mayor, porque es molesto para trabajar
 app.use(rememberMe);
 app.use(adminSession);
 app.use(cors())

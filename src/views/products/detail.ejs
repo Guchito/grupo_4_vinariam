@@ -23,7 +23,7 @@
                     
                     <form action="/cart/addToCart/<%= product.id %> " method="POST">
                         <input class="cantidad" name="quantity" id="quantity" type="number" min="1" value="1">
-                        <button type="submit" class="agregarYEditar">Agregar <i class="fas fa-shopping-cart"></i></button>
+                        <button type="submit" class="agregarYEditar">Add to cart <i class="fas fa-shopping-cart"></i></button>
                     </form>
                     
 
@@ -35,13 +35,13 @@
                         <img class="circle" src="/img/circle1.svg" alt="circle1">
                     </div>
                     <div>
-                        <h3 class="Cant">ACIDEZ VOLATIL 0,55 gr/l</h3>
+                        <h3 class="Cant">VOLATILE ACIDITY 0.55 g/l</h3>
                     </div>
                     <div>
                         <img class="circle" src="/img/circle2.svg" alt="circle2">
                     </div>
                     <div>
-                        <h3 class="Cant">ACIDEZ TOTAL 5,20 gr/l.</h3>
+                        <h3 class="Cant">TOTAL ACIDITY 5.20 g/l</h3>
                     </div>
                     <div>
                         <img class="circle" src="/img/circle3.svg" alt="circle3">
@@ -52,7 +52,7 @@
                     </div>
                     <% if(admin == true ){ %>
                     
-                        <a class="agregarYEditar" href="/admin/editar/<%= product.id %> ">Editar <i class="far fa-edit"></i></a> 
+                        <a class="agregarYEditar" href="/admin/editar/<%= product.id %> ">Edit <i class="far fa-edit"></i></a> 
                     
                     <%}%> 
                 </div>
