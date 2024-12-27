@@ -113,8 +113,7 @@ a .mayus:hover {
 
 @media (max-width:480px){
     .LogoPrincipal{
-        width: 90%;
-        margin: 10px auto;
+        width: 100%;
         justify-content: space-between;
     }
 
@@ -144,9 +143,11 @@ a .mayus:hover {
 @media (max-width:480px){
     .fa-bars{
         font-size: 28px;
+        margin-left: 10px;
     }
     .LogoPrincipal .fa-shopping-cart{
         font-size: 25px;
+        margin-right: 10px;
     }
 }
 
@@ -1028,10 +1029,12 @@ background-color: var(--colorFondo);
 
 .nombre-info h4{
     margin: 5px 0 10px 0;
+    min-height: 40px;
 }
 
 .productDescription{
-    height: 150px;
+    height: fit-content;
+    min-height: 220px;
     font-weight: 200;
     font-size: 13px;
     line-height: 1.5;

@@ -19,6 +19,7 @@ const mainController = {
         res.render('enter');
     },
     soyMayor: (req,res) => {
+        console.log("im here")
         req.session.mayor = true;
         res.redirect('/');
     },
