@@ -94,7 +94,9 @@ a .mayus:hover {
     display: none;
 }
 
-
+.mobileOnly{
+    display: none;
+}
 
 @media (max-width:1100px){
     .LogoPrincipal{
@@ -122,9 +124,39 @@ a .mayus:hover {
 
 @media (max-width:1100px){
     .barraNav{
+        margin-top: -1px;
+        position: fixed;
+        left: -120%;
+        top: 100px;
+        gap: 15px;
+        flex-direction: column;
+        background-color: var(--colorFondo);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        padding-bottom: 20px;
+        padding-left: 0px;
+        z-index: 100;
+
+    }
+
+    .mobileOnly{
+        display: block;
+    }
+    .user{
         display: none;
     }
+
+    .hamburger{
+        cursor:pointer
+    }
+
+   
     
+    .barraNav.active{
+        left: 0;
+    }
+
     nav{
         display: flex;
         justify-content: center;
@@ -148,6 +180,10 @@ a .mayus:hover {
     .LogoPrincipal .fa-shopping-cart{
         font-size: 25px;
         margin-right: 10px;
+    }
+
+    .barraNav{
+        margin-top: -22px;
     }
 }
 
@@ -293,7 +329,7 @@ width: 100%;
     }
     .logoMobile{
         display: flex;
-        width: 50%;
+        height: 35px;
     }
 }
 
