@@ -3,20 +3,22 @@
 <body>
     <div class="center">
         <%- include ('../partials/header') %>
-        <main>
+        <main class="mainCart">
             <h1 class="tituloCart">Your Shopping Cart</h1>
             <div class="contenedorCart">
                 <div class="articulos">
                     <% if(items.length != 0) { %> 
                     <% for (const item of items) {%>
                         <article class="resumen">
-                            <a href="/productos/detail/<%= item.id %>"><img class="articuloCart" src="/img/<%= item.img %>" alt="Articulo"></a>
                             <p class="descripcion"><%=item.name %> </p>
-                            <input class="cantidad" type="number" name="cantidad" value="<%= item.quantity%>">
-                            <p class="precio">$<%= item.unit_price || item.priceWDiscount %></p>
-                            <form method="POST" action="/cart/delete/<%= item.id %>?_method=DELETE" enctype="multipart/form-data">
-                                <button class="eliminar" type="submit"><i class="fas fa-trash-alt"></i></button>
-                            </form>
+                            <div class="blockWine">
+                                <a href="/productos/detail/<%= item.id %>"><img class="articuloCart" src="/img/<%= item.img %>" alt="Articulo"></a>
+                                <input class="cantidad" type="number" name="cantidad" value="<%= item.quantity%>">
+                                <p class="precio">$<%= item.unit_price || item.priceWDiscount %></p>
+                                <form method="POST" action="/cart/delete/<%= item.id %>?_method=DELETE" enctype="multipart/form-data">
+                                    <button class="eliminar" type="submit"><i class="fas fa-trash-alt"></i></button>
+                                </form>
+                            </div>
                         </article>
                         <% }%>
                     <article class="totales">
@@ -56,7 +58,7 @@
                 <% if(items.length != 0) { %> 
                 <div class="dibujito">
                     <article class="mensajeCart">
-                        <p>Thanks for your purchase</p>
+                        <p>Thanks <br> for your purchase</p>
                     </article>
                 </div>
                 <% }%>
@@ -64,9 +66,9 @@
             
         </main>
     </div>
-    <div class="footerCart">
-        <%- include ('../partials/footer') %>
-    </div>
+    
+    <%- include ('../partials/footer') %>
+    
 
 </body>
 

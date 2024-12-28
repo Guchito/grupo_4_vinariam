@@ -4,29 +4,31 @@
     <div class="center">
         <%- include ('../partials/header') %>
         <main>
-            <h1 class="tituloCart">Cart full. Happy grapes</h1>
-            <h2 class="tituloPedidos">/ your orders:</h2>
-
-            <div class="bloquePedidos">
-
-                <div class="contenedorPedidos">
-                    <div class="articulos">
-                        <% if(myOrders.length != 0) { %> 
-                        <% for (const myOrder of myOrders) {%>
-                            <article class="resumen">
-                                <p>Date: <br> <%= myOrder.createdAt.toDateString()%> </p>
-                                <p style="font-weight: bold;">Paid: <%=myOrder.total %></p>
-                            </article>
-                        <% }} else {%>
-                            <p class="tituloCart">Aún no realizaste ordenes </p>
-                        <% }%>
-                    </div>  
-                </div>
-
-                <div class="uvas">
-                    <img class="uvas" src="/img/uvascontentas.svg" alt="uvascontentas">
-                </div>
-          </div>
+            <div class="orderContainer">
+                <h1 class="tituloCart">Cart full. Happy grapes</h1>
+                <h2 class="tituloPedidos">/ your orders:</h2>
+    
+                <div class="bloquePedidos">
+    
+                    <div class="contenedorPedidos">
+                        <div class="articulos">
+                            <% if(myOrders.length != 0) { %> 
+                            <% for (const myOrder of myOrders) {%>
+                                <article class="resumen">
+                                    <p>Date: <br> <%= myOrder.createdAt.toDateString()%> </p>
+                                    <p style="font-weight: bold;">Paid: <%=myOrder.total %></p>
+                                </article>
+                            <% }} else {%>
+                                <p class="tituloCart">You haven't made any orders yet </p>
+                            <% }%>
+                        </div>  
+                    </div>
+    
+                    <div class="uvas">
+                        <img src="/img/uvascontentas.svg" alt="uvascontentas">
+                    </div>
+              </div>
+            </div>
             
         </main>
     </div>
