@@ -380,10 +380,15 @@ width: 100%;
     padding-top: 50px;
 }
 
-@media (max-width:1100px){
+@media (max-width:800px){
     .fonditosyVinos{
         min-width: auto;
         display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-content: flex-start;
+        align-items: flex-start;
+        margin: -10px;
     }
     
 }
@@ -404,6 +409,14 @@ width: 100%;
     justify-content: space-evenly;
     height: 400px;
 }
+
+@media (max-width:800px){
+    .articulo{
+        flex-basis: calc(50% - 10px);
+    }
+    
+}
+
 @media (max-width:480px){
     .articulo{
         width: 100%;
@@ -978,6 +991,18 @@ background-color: var(--colorFondo);
 
 /******************** LISTADO DE PRODUCTOS ************************/
 
+@media (max-width:1100px){
+    .mainListado{
+        margin-top: 120px;
+    }
+}
+
+@media (max-width:480px){
+    .mainListado{
+        margin-top: 100px;
+    }
+}
+
 .tituloListado{
     justify-content: center;
     text-align: left;
@@ -990,10 +1015,27 @@ background-color: var(--colorFondo);
     display: flex;
 }
 
+@media (max-width:1100px){
+    .contenedorListado{
+        display: flex;   
+        flex-direction: column;
+    }
+}
+
 .listadoIzquierda{
     display: flex;
     flex-direction: column;
     margin: 60px 25px;
+}
+
+@media (max-width:1100px){
+    .listadoIzquierda{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin: 60px 25px;
+        
+    }
 }
 
 .product-filter {
@@ -1031,6 +1073,24 @@ background-color: var(--colorFondo);
   
 }
 
+@media (max-width:1100px){
+    .mujerComprando{
+        width: auto;
+    }
+}
+
+@media (max-width:1100px){
+    .imgMujerComprando{
+        height: 250px;
+    }
+}
+
+@media (max-width:480px){
+    .mujerComprando{
+        display:none;
+    }
+}
+
 .conteinerProducts{ 
     display: flex;
     flex-wrap: wrap;
@@ -1038,6 +1098,19 @@ background-color: var(--colorFondo);
 .articuloListado{
     width: calc(25% - 20px);
     margin: 0 10px;
+}
+
+@media (max-width:1100px){
+    .articuloListado{
+        flex-basis: calc(33.3% - 20px);
+    }
+    
+}
+
+@media (max-width:480px){
+    .articuloListado{
+        flex-basis: 100%;
+    }
 }
 
 .articulosTodos{
