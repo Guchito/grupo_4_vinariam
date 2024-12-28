@@ -207,7 +207,7 @@ a .mayus:hover {
     justify-content: space-around;
 }
 
-@media (max-width:480px){
+@media (max-width:660px){
     .bloque{
         display: none;
     }
@@ -226,13 +226,6 @@ a .mayus:hover {
     .social{
         justify-content: space-around;
     }
-    .bloque{
-        height: 11vh;
-        
-    }
-    .bloque:first-child{
-        margin-left: 120px;
-    }
     
 }
 .abajo{
@@ -240,10 +233,6 @@ a .mayus:hover {
     align-items: flex-end;
 }
 
-.footerCart{
-    width: 100%;
-    bottom: 0;
-}
 
 .footer{
     display: flex;
@@ -488,6 +477,26 @@ width: 100%;
 
 /************** CART ***************/
 
+.mainCart{
+    min-height: 61dvh;
+}
+
+@media (max-width:1100px){
+    .mainCart{
+        margin-top: 120px;
+        min-height: 61dvh;
+    }
+    
+}
+
+@media (max-width:660px){
+    .mainCart{
+        margin-top: 120px;
+        min-height: 80dvh;
+    }
+    
+}
+
 .containerEmpty{
     max-width: 1350px;
     margin: 0 50px;
@@ -503,10 +512,22 @@ width: 100%;
 
 .resumen{
     display: flex;
+    flex-direction: column;
     align-items: center;
-    padding: 20px 30px;
+    padding: 20px 0px;
     justify-content: space-between;
 
+}
+
+.descripcion{
+    margin: 0;
+    font-weight: bold;
+}
+
+.blockWine{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .eliminar{
@@ -516,10 +537,9 @@ width: 100%;
 
 
 .resumen img,
-.resumen p,
 .resumen input,
 .resumen i{
-    margin: 0 20px;
+    margin: 0 10px;
 }
 
 .articuloCart{
@@ -549,15 +569,19 @@ width: 100%;
     border-top: 1px solid #278828;
     width: 425px;
     padding-top: 50px;
+    justify-content: space-between;
 }
 
-.primeraColumna{
-    margin: 0 75px 0 28px;
+@media (max-width:1100px){
+    .totales{
+        margin: 50px 0;
+        justify-content: space-around;
+        width: auto;
+    }
+    
 }
 
-.segundaColumna{
-    margin: 0 0 0 146px;
-}
+
 
 
 .contenedorCart{
@@ -566,7 +590,15 @@ width: 100%;
     margin-bottom: 10px;
     max-width: 1350px;
     margin: 0 auto;
-    min-height: 54dvh;
+}
+
+@media (max-width:1100px){
+    .contenedorCart{
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto;
+    }
+    
 }
 
 .dibujito{
@@ -575,12 +607,27 @@ width: 100%;
     background-size: auto;
     background-repeat: no-repeat;   
 }
+@media (max-width:1100px){
+    .dibujito{
+        width: auto;
+        height: 450px;
+    }
+    
+}
 
 
 .mensajeCart{
     font-size: 18pt;
     margin-left: 95px;
     margin-top: 100px;
+}
+
+@media (max-width:1100px){
+    .mensajeCart{
+        margin-left: 85px;
+        margin-top: 65px;
+    }
+    
 }
 .mensaje img{
     width: 200px;
@@ -634,14 +681,34 @@ width: 100%;
     margin-bottom: 50px;
 }
 
+@media (max-width:1100px){
+    .BloqueGeneral{
+        flex-direction: column;
+        align-items: center;
+        margin-top: 120px;
+    }
+}
+
 .mujer{
     width: 30%;
+}
 
+@media (max-width:1100px){
+    .mujer{
+    order: 3;
+    }
 }
 
 .ContenedorInfoProducto{
     width: 35%;
     padding-left: 50px;
+}
+
+@media (max-width:1100px){    
+    .ContenedorInfoProducto{
+        width: 90%;
+        padding: 0;
+    }
 }
 
 .tituloVino{
@@ -699,6 +766,12 @@ width: 100%;
 
 .vinoproduct img{
     height: 64vh;
+}
+
+@media (max-width:1100px){
+    .vinoproduct img{
+        height: 40vh;
+    }
 }
 
 .vinoproduct{
@@ -1423,12 +1496,36 @@ textarea {
 }
 
 /************* ABOUT ****************/
+@media (max-width:1100px){
+    .mainAbout{
+    margin-top: 120px;   
+    }
+
+}
+
+@media (max-width:480px){
+    .mainAbout{
+    margin-top: 100px;   
+    }
+
+}
+
+
 .map{
     border-radius: 5%;
+    width: 100%; 
+    height: 450px; 
 }
 
 .bloqueAbout{
     display: flex;
+}
+
+@media (max-width:800px){
+    .bloqueAbout{
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 .about{
@@ -1440,10 +1537,23 @@ textarea {
     padding-left: 120px;
 }
 
+@media (max-width:800px){
+    .about img{
+        padding-left: 0px;
+    }
+}
+
 .ladoDerecho{
-    width: 30%;
+    width: 40%;
     margin: 20px;
 }
+
+@media (max-width:800px){
+    .ladoDerecho{
+        width: 90%;
+    }
+}
+
 
 /************* ERRORES LINDOS ****************/
 
@@ -1462,24 +1572,65 @@ textarea {
 
 /************* TUS PEDIDOS ****************/
 
+@media (max-width:1100px){
+    .orderContainer{
+    margin-top: 120px;   
+    }
+}
+
+@media (max-width:480px){
+    .orderContainer{
+    margin-top: 100px;   
+    }
+}
+
+
 .bloquePedidos{
     display: flex;
+}
+
+@media (max-width:660px){
+    .bloquePedidos{
+        flex-direction: column;
+        align-items: center;
+    }
+
 }
 
 .uvas{
     width: 55%;
     margin-left: 150px;
     margin-bottom: -5px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
 
+.uvas img{
+    width: 50%;
+}
+
+@media (max-width:1100px){
+    .uvas img{
+        width: 100%;
+    }
 }
 
 .contenedorPedidos{
     background-color: white;
     width: 400px;
-    height: 300px;
+    height: auto;
+    min-height: 300px;
     border-radius: 20px;
     margin-left: 25px;
+    margin-bottom: 25px;
+}
 
+@media (max-width:660px){
+    .contenedorPedidos{
+        margin-left: 0px;
+        width: 90%;
+    }
 }
 
 .tituloPedidos{
