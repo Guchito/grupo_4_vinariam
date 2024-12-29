@@ -183,7 +183,7 @@ a .mayus:hover {
     }
 
     .barraNav{
-        margin-top: -22px;
+        margin-top: -25px;
     }
 }
 
@@ -869,6 +869,12 @@ background-color: var(--colorFondo);
 
 .content{
     display: flex;
+}
+
+@media (max-width:1100px){
+    .content{
+        flex-direction: column-reverse;
+    }
 }
 
 .izquierdaLogin{
