@@ -993,8 +993,37 @@ background-color: var(--colorFondo);
 .BloqueGeneralAdmin{
     display: flex;
     justify-content: space-evenly;
-    min-height: 60.4vh;
+    min-height: 60.4dvh;
 }
+@media (max-width:1100px){
+    .BloqueGeneralAdmin{
+        margin-top: 120px;
+        flex-wrap: wrap;
+    }
+    .bloqueUno {
+        
+        flex-basis: 100%; 
+    }
+      
+    .bloqueDos {
+        
+        flex-basis: calc(45% - 10px); 
+    }
+      
+    .bloqueTres {
+        
+        flex-basis: calc(45% - 10px);
+    }
+}
+
+@media (max-width:660px){
+    .BloqueGeneralAdmin{
+        margin-top: 100px;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 .hombreProfile{
     width: 300px; 
     height: 300px;
