@@ -4,110 +4,112 @@
 
     <%- include ('../partials/header') %>
 
-    <h1 class="tituloCarga">Carga de productos</h1>
-    <div class="contenedorCarga">
-        <div class="navAdmin">
-            <div class="usuarioAdmin">
-                <img class="avatar" src="/img/avatar1.svg" alt="Avatar">
-                <div class="nombreAdmin">
-                    <h3>Agustin Gaggero</h3>
-                    <a href="/admin">My profile</a>
-                </div>
-            </div>
-            <a class="navAdminElemnto" href="http://localhost:3002/">Dashboard</a>
-            <a class="navAdminElemnto selectedAdminNav" href="#">Add product</a>
-            <a class="navAdminElemnto" href="#">Orders</a>
-            <a class="navAdminElemnto" href="#">Configuration</a>
-            <a class="navAdminElemnto" href="#">Messages</a>
-            <a class="navAdminElemnto" href="#">Metrics</a>
-        </div>
-        <div class="selectorCategoria">
-        
-            <h3>/type of product</h3>
-
-            <a category-id= 'cargaVinos' class="productoCategoria">
-                <img src="/img/cargaVino.svg" alt="Carga de vinos">
-             </a>
-
-            <a category-id= 'cargaConservas' class="productoCategoria">
-                <img src="/img/cargaConservas.svg" alt="Carga de conservas">
-            </a>
-
-            <a category-id= 'cargaExperiencias' class="productoCategoria">
-                <img src="/img/cargaExp.svg" alt="Carga de experiencias">
-            </a>
-
-            <a category-id= 'cargaBoxes' class="productoCategoria">
-                <img src="/img/cargaBoxes.svg" alt="Carga de boxes">
-            </a>
-
-        </div>
-        <div>
-            <form class="carga" action="/admin/carga" method="POST" enctype="multipart/form-data">
-                <ul class="errors"> </ul>
-                <div class="cargaCampos">
-                    <input class="sinborde width300" type="text" id="name" name="name" placeholder="/ name">
-                </div>
-                <div class="cargaCampos">
-                    <label for="brand" class="form-label"></label>
-                    <select class="sinborde" name="brand" id="brand">
-                        <option value="" disabled = "true">/ brand</option>
-                        <% for (const brand of brands) { %>
-                            <option value= <%= brand.id %>  >/ <%= brand.name %></option>
-                        <% } %>
-                    </select>
-                </div>
-                <div class="cargaCampos">
-                    <input class="sinborde" type="number" id="price" name="price" placeholder="/ price">
-                </div>
-                <div class="cargaCampos">
-                    <label for="class" class="form-label"></label>
-                    <select class="sinborde" name="class" id="class">
-                        <option value="" disabled = "true">/ graoe</option>
-                        <option value="no">/ not featured</option>
-                        <option value="destacado">/ featured</option>                        
-                    </select>
-                </div>
-                <div class="cargaCampos">
-                    <label for="category" class="form-label"></label>
-                    <select class="sinborde" name="category" id="category">
-                        <option value="" disabled = "true">/ grape</option>
-                        <% for (const category of categories) { %>
-                            <option value= <%= category.id %>  >/ <%= category.name %></option>
-                        <% } %>
-                    </select>
-                </div>
-                <div class="cargaCampos">
-                    <input class="sinborde width300" type="number" id="stock" name="stock" placeholder="/ stock">
-                </div>
-                <div class="cargaCampos">
-                    <input class="sinborde width300" type="number" id="discount" name="discount" placeholder="/ discount">
-                </div>
-                <div class="cargaCampos">
-                    <label for="size" class="form-label"></label>
-                    <select class="sinborde" name="size" id="size">
-                        <option value="" disabled = "true">/ size (ml)</option>
-                        <% for (const size of sizes) { %>
-                            <option value= <%= size.id %>  >/ <%= size.name %> ml</option>
-                        <% } %>
-                    </select>
-                </div>
-                <div class="cargaCampos">
-                    <label for="image" class="form-label"></label>
-                    <input type="file" name="image" id="image">
-                </div>
-
-                <div class="cargaCampos">
-                    <textarea class="sinborde" name="detail" id="detail" placeholder="/ description"></textarea>
-                </div>
-                <div class="contenedorGuardar">
-                    <div class="Guardar">
-                        <button class="botonGuardar" type="submit">Add product</button>
+    <main class="uploadMain">
+        <h1 class="tituloCarga">Carga de productos</h1>
+        <div class="contenedorCarga">
+            <div class="navAdmin">
+                <div class="usuarioAdmin">
+                    <img class="avatar" src="/img/avatar1.svg" alt="Avatar">
+                    <div class="nombreAdmin">
+                        <h3>Agustin Gaggero</h3>
+                        <a href="/admin">My profile</a>
                     </div>
                 </div>
-            </form>
+                <a class="navAdminElemnto" href="http://localhost:3002/">Dashboard</a>
+                <a class="navAdminElemnto selectedAdminNav" href="#">Add product</a>
+                <a class="navAdminElemnto" href="#">Orders</a>
+                <a class="navAdminElemnto" href="#">Configuration</a>
+                <a class="navAdminElemnto" href="#">Messages</a>
+                <a class="navAdminElemnto" href="#">Metrics</a>
+            </div>
+            <div class="selectorCategoria">
+            
+                <h3>/type of product</h3>
+    
+                <a category-id= 'cargaVinos' class="productoCategoria">
+                    <img src="/img/cargaVino.svg" alt="Carga de vinos">
+                 </a>
+    
+                <a category-id= 'cargaConservas' class="productoCategoria">
+                    <img src="/img/cargaConservas.svg" alt="Carga de conservas">
+                </a>
+    
+                <a category-id= 'cargaExperiencias' class="productoCategoria">
+                    <img src="/img/cargaExp.svg" alt="Carga de experiencias">
+                </a>
+    
+                <a category-id= 'cargaBoxes' class="productoCategoria">
+                    <img src="/img/cargaBoxes.svg" alt="Carga de boxes">
+                </a>
+    
+            </div>
+            <div class="cargaForm">
+                <form class="carga" action="/admin/carga" method="POST" enctype="multipart/form-data">
+                    <ul class="errors"> </ul>
+                    <div class="cargaCampos">
+                        <input class="sinborde width300" type="text" id="name" name="name" placeholder="/ name">
+                    </div>
+                    <div class="cargaCampos">
+                        <label for="brand" class="form-label"></label>
+                        <select class="sinborde" name="brand" id="brand">
+                            <option value="" disabled = "true">/ brand</option>
+                            <% for (const brand of brands) { %>
+                                <option value= <%= brand.id %>  >/ <%= brand.name %></option>
+                            <% } %>
+                        </select>
+                    </div>
+                    <div class="cargaCampos">
+                        <input class="sinborde" type="number" id="price" name="price" placeholder="/ price">
+                    </div>
+                    <div class="cargaCampos">
+                        <label for="class" class="form-label"></label>
+                        <select class="sinborde" name="class" id="class">
+                            <option value="" disabled = "true">/ graoe</option>
+                            <option value="no">/ not featured</option>
+                            <option value="destacado">/ featured</option>                        
+                        </select>
+                    </div>
+                    <div class="cargaCampos">
+                        <label for="category" class="form-label"></label>
+                        <select class="sinborde" name="category" id="category">
+                            <option value="" disabled = "true">/ grape</option>
+                            <% for (const category of categories) { %>
+                                <option value= <%= category.id %>  >/ <%= category.name %></option>
+                            <% } %>
+                        </select>
+                    </div>
+                    <div class="cargaCampos">
+                        <input class="sinborde width300" type="number" id="stock" name="stock" placeholder="/ stock">
+                    </div>
+                    <div class="cargaCampos">
+                        <input class="sinborde width300" type="number" id="discount" name="discount" placeholder="/ discount">
+                    </div>
+                    <div class="cargaCampos">
+                        <label for="size" class="form-label"></label>
+                        <select class="sinborde" name="size" id="size">
+                            <option value="" disabled = "true">/ size (ml)</option>
+                            <% for (const size of sizes) { %>
+                                <option value= <%= size.id %>  >/ <%= size.name %> ml</option>
+                            <% } %>
+                        </select>
+                    </div>
+                    <div class="cargaCampos">
+                        <label for="image" class="form-label"></label>
+                        <input type="file" name="image" id="image">
+                    </div>
+    
+                    <div class="cargaCampos">
+                        <textarea class="sinborde" name="detail" id="detail" placeholder="/ description"></textarea>
+                    </div>
+                    <div class="contenedorGuardar">
+                        <div class="Guardar">
+                            <button class="botonGuardar" type="submit">Add product</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
-    </div>
+    </main>
 
     <script src="/js/scriptUpload.js"></script>
 </body>

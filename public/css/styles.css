@@ -12,6 +12,7 @@ body{
     
 }
 
+
 .center{
     max-width: 1500px;
     margin: 0 auto;
@@ -693,11 +694,6 @@ width: 100%;
     width: 30%;
 }
 
-@media (max-width:1100px){
-    .mujer{
-    order: 3;
-    }
-}
 
 .ContenedorInfoProducto{
     width: 35%;
@@ -790,14 +786,33 @@ width: 100%;
     min-height: 600px;
 }
 
+@media (max-width:1100px){
+    .contentR{
+        flex-direction: column;
+        min-width: auto;
+        min-height: auto;
+        align-items: center;
+        margin-top: 100px;
+    }
+    
+}
+
 .genteRegister{
     display: flex;
     justify-content: flex-start;
-    flex-basis: 50%;
-    padding-left: 100px;
     padding-top: 50px;
     min-width: 700px;
+    z-index: -1;
 }
+
+@media (max-width:1100px){
+    .genteRegister{
+        min-width: auto;
+        position: absolute;
+    }
+}
+
+
 .mujerRegister{
     width: 300px; height: 300px;
     top: 200px;
@@ -806,6 +821,16 @@ width: 100%;
     position: relative;
     
 }
+
+@media (max-width:720px){
+    .genteRegister{
+        left: -120px;
+    }
+    .mujerRegister{
+        left: 160px;
+    }
+}
+
 .hombreRegister{
     width: 300px; 
     height: 300px;
@@ -823,7 +848,7 @@ margin-bottom: 10px;
 border: var(--colorFondo);
 border: 5px solid var(--colorFondo);
 border-radius: 50px;
-width: 60%;
+width: 90%;
 padding: 12px 15px;
 font-family:'Montserrat', sans-serif;
 font-weight: 100;
@@ -842,6 +867,12 @@ background-color: var(--colorFondo);
 .formRegister{
     margin-bottom: 100px;
     width: 40%;
+}
+
+@media (max-width:660px){
+    .formRegister{
+        width: 90%;
+    }
 }
 
 .botones{
@@ -869,6 +900,12 @@ background-color: var(--colorFondo);
 
 .content{
     display: flex;
+}
+
+@media (max-width:1100px){
+    .content{
+        flex-direction: column-reverse;
+    }
 }
 
 .izquierdaLogin{
@@ -1024,6 +1061,32 @@ background-color: var(--colorFondo);
     }
 }
 
+.logout{
+    border-radius: 50px;
+    padding: 10px 15px;
+    border-style: none;
+    background-color: white;
+    cursor: pointer;
+}
+
+.logout:hover{
+    background-color: var(--colorAzul);
+    color: white;
+}
+
+.logoutAdmin{
+    background-color: var(--colorFondo)
+}
+
+.backTo p, .backTo h1{
+    margin: 0;
+}
+
+.backTo h1{
+    color: var(--colorAzul);
+    margin-bottom: 20px;
+}
+
 .hombreProfile{
     width: 300px; 
     height: 300px;
@@ -1042,6 +1105,9 @@ background-color: var(--colorFondo);
     justify-content: space-evenly;
 }
 
+.bloqueUnoTitulo h1{
+    color: var(--colorAzul);
+}
 
 .bloqueDos{
     display: flex;
@@ -1300,18 +1366,27 @@ background-color: var(--colorFondo);
 
 /****** ADMIN PROFILE *******/
 
+@media (max-width:1100px){
+    .mainAdminIndex{
+        margin-top: 120px;
+    }
+}
+
+
 .contenedorPadre{
     display: flex;
 }
 
 .contenedorAdmin{
-    margin: 10px;
+    margin-right: 10px;
     justify-content: space-evenly;
+    max-width: 350px;
 }
 
 .barraAdmin{
     background-color: white;
-    width: 250px;
+    width: 300px;
+    padding: 20px 50px 20px 20px;
     border-radius: 0px 45px 45px 0px;
 }
 
@@ -1344,8 +1419,26 @@ background-color: var(--colorFondo);
 }
 
 
+@media (max-width:660px){
+    .contenedorPadre{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .barraAdmin{
+        border-radius: 45px;
+        margin-bottom: 20px;
+    }
+}
+
 
 /******** CARGA DE PRODUCTOS ********************/
+@media (max-width:1100px){
+    .uploadMain{
+        margin-top: 120px;
+    }
+}
+
 
 .tituloCarga{
     margin: 10px;
@@ -1356,9 +1449,22 @@ background-color: var(--colorFondo);
     justify-content: space-between;
 }
 
+@media (max-width:900px){
+    .contenedorCarga{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 .selectorCategoria{
     width: 16%;
     margin-top: 20px;
+}
+
+@media (max-width:900px){
+    .selectorCategoria{
+        width: 300px;
+    }
 }
 
 .selectorCategoria h3{
@@ -1387,6 +1493,15 @@ background-color: var(--colorFondo);
     background-color: white;
     width: 25%;
     border-radius: 0px 45px 45px 0px;
+}
+
+@media (max-width:900px){
+    .navAdmin{
+        border-radius: 45px;
+        margin-bottom: 20px;
+        width: 300px;
+        padding: 10px;
+    }
 }
 
 .navAdminElemnto {
@@ -1437,8 +1552,12 @@ background-color: var(--colorFondo);
     display: flex;
     flex-direction: column;
     margin-right: 150px;
+}
 
-
+@media (max-width:1100px){
+    .carga{
+        margin-right: 0px;
+    }
 }
 
 .cargarFoto{
@@ -1504,7 +1623,11 @@ textarea {
     height: 150px;
   }
 
-
+  @media (max-width:900px){
+    .cargaForm {
+        margin: 10px;
+    }
+  }
   /******** EDICION DE PRODUCTOS ********************/
 
   .contenedorEditar{

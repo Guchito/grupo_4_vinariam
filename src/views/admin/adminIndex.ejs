@@ -4,47 +4,49 @@
 
     <%- include ('../partials/header') %>
 
-    <h1 class="tituloCarga">Panel administrador</h1>
+    <main class="mainAdminIndex">
+
+        <h1 class="tituloCarga">Panel administrador</h1>
+        <div class="contenedorPadre">
     
-
-    <div class="contenedorPadre">
-
-        <div class="contenedorAdmin">
-            <div class="barraAdmin">
-                <div class="usuarioAdmin">
-                    <img class="avatar" src="/img/avatar1.svg" alt="Avatar">
-                    <div class="nombreAdmin">
-                        <h3> <%= user.user_name %></h3>
-                        <p><a href="/users/logout">Logout</a></p>
+            <div class="contenedorAdmin">
+                <div class="barraAdmin">
+                    <div class="usuarioAdmin">
+                        <img class="avatar" src="/img/avatar1.svg" alt="Avatar">
+                        <div class="nombreAdmin">
+                            <h3 class="mayus"> <%= user.user_name %></h3>
+                            <p><a href="/users/logout" class="logout logoutAdmin">Logout</a></p>
+                        </div>
+                    </div>
+    
+                    <a class="navAdminElemnto" href="./admin/carga">Add product</a>
+                    <a class="navAdminElemnto" href="http://localhost:3002/">Dashboard</a>
+                    <a class="navAdminElemnto" href="#">Orders</a>
+                    <a class="navAdminElemnto" href="#">Configuration</a>
+                    <a class="navAdminElemnto" href="#">Messages</a>
+                    <a class="navAdminElemnto" href="#">Metrics</a>
+    
+                </div>
+                
+            </div>
+            <div class="bloqueAdminPadre">
+                <div class="bloqueAdmin">
+                    <div class="textoAdmin">
+                    <h2 class="datosPerfil">Your info</h2>
+                    <div class="fotoAdmin">
+                            <img class="avatarProfile" src="/img/users/<%=user.avatar%>" alt="foto">
+                        </div>
+                        <p class="datosPersonales">
+                            <br> <%= user.name + " " +  user.last_name %> </br>
+                            <br> <%= user.address %>  </br>
+                        </p>
                     </div>
                 </div>
-
-                <a class="navAdminElemnto" href="./admin/carga">Add product</a>
-                <a class="navAdminElemnto" href="http://localhost:3002/">Dashboard</a>
-                <a class="navAdminElemnto" href="#">Orders</a>
-                <a class="navAdminElemnto" href="#">Configuration</a>
-                <a class="navAdminElemnto" href="#">Messages</a>
-                <a class="navAdminElemnto" href="#">Metrics</a>
-
             </div>
-            
+    
         </div>
-        <div class="bloqueAdminPadre">
-            <div class="bloqueAdmin">
-                <div class="textoAdmin">
-                <h2 class="datosPerfil">Your info</h2>
-                <div class="fotoAdmin">
-                        <img class="avatarProfile" src="/img/users/<%=user.avatar%>" alt="foto">
-                    </div>
-                    <p class="datosPersonales">
-                        <br> <%= user.name + " " +  user.last_name %> </br>
-                        <br> <%= user.address %>  </br>
-                    </p>
-                </div>
-            </div>
-        </div>
-
-    </div>
+    </main>
+    
 
 </body>
 </html>
