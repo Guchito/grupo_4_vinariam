@@ -5,6 +5,7 @@ module.exports = {
     "database": process.env.DB_DATABASE,
     "host": process.env.DB_HOST,
     "dialect": process.env.DB_DIALECT,
+    "dialectModule": require('mysql2'),
     "define": {
       "underscored": true
     }
@@ -22,6 +23,7 @@ module.exports = {
     "database": process.env.DB_NAME,    
     "host": process.env.DB_HOST,    
     "dialect": "mysql",
+    "dialectModule": require('mysql2'),
     "define": {
       "underscored": true
     }
