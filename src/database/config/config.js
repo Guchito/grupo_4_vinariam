@@ -29,7 +29,7 @@ module.exports = {
     },
     "port": process.env.DB_PORT,
     "dialectOptions": {
-      "database": process.env.DB_NAME, // Ensure the database name is set
+      "database": process.env.DB_NAME, // Ensure the database name is set.
   },
   }
 }
