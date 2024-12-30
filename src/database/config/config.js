@@ -28,7 +28,9 @@ module.exports = {
       "underscored": true
     },
     "port": process.env.DB_PORT,
-    "logging": console.log, // Logs generated SQL to the console
+    "dialectOptions": {
+      "database": process.env.DB_NAME, // Ensure the database name is set
+  },
   }
 }
 
