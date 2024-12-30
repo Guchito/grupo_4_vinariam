@@ -921,11 +921,13 @@ background-color: var(--colorFondo);
     flex-basis: 50%;
     position: relative;
     top: 150px;
+    z-index: -1;
 }
 
 .mujerLogin{
     display: flex;
     width: 700px; height: 600px; 
+    z-index: -2;
 }
 
 .formLogin{
