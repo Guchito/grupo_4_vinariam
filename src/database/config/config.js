@@ -26,7 +26,9 @@ module.exports = {
     "dialectModule": require('mysql2'),
     "define": {
       "underscored": true
-    }
+    },
+    "port": process.env.DB_PORT,
+    "logging": console.log, // Logs generated SQL to the console
   }
 }
 
