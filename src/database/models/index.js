@@ -9,6 +9,9 @@ const config = require(__dirname + '/../config/config.js')[env];
 const db = {};
 
 let sequelize;
+sequelize.query('SELECT * FROM bawa2iwypo9nf8e0e6vx.products', { type: QueryTypes.SELECT })
+    .then(results => console.log(results))
+    .catch(error => console.error(error));
 if (config.use_env_variable) {
   sequelize = new Sequelize(process.env[config.use_env_variable], config);
 } else {
