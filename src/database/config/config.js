@@ -24,6 +24,7 @@ module.exports = {
     "host": process.env.DB_HOST,    
     "dialect": "mysql",
     "dialectModule": require('mysql2'),
+    "port": process.env.DB_PORT,
     "define": {
       "underscored": true
     }
