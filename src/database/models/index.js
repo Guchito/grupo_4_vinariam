@@ -9,7 +9,7 @@ const config = require(__dirname + '/../config/config.js')[env];
 const db = {};
 
 let sequelize;
-sequelize.query('SELECT * FROM bawa2iwypo9nf8e0e6vx.products', { type: QueryTypes.SELECT })
+sequelize.query('SELECT * FROM bawa2iwypo9nf8e0e6vx.products', { type: Sequelize.QueryTypes.SELECT })
     .then(results => console.log(results))
     .catch(error => console.error(error));
 if (config.use_env_variable) {
