@@ -54,8 +54,9 @@ Visit the live site: [Vinariam E-Commerce](https://grupo-4-vinariam.vercel.app/)
 
 ## 🔑 Login Admin
 
-| **User**: contact me for a live demo of the admin site.
-| **Pass**:  
+| **User**:
+| **Pass**:
+Contact me for a live demo of the admin site.
 
 ---
 
