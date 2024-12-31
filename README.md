@@ -6,7 +6,7 @@ This project leverages a variety of modern technologies to deliver a comprehensi
 
 ## 🌐 Live Demo
 
-Visit the live site: [Vinariam E-Commerce](https://grupo-4-vinariam.vercel.app/)
+Visit the live site: [Vinariam E-Commerce](https://vinariam.vercel.app/)
 
 ## 🚀 Technologies Used
 
