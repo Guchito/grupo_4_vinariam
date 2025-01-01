@@ -141,9 +141,10 @@ const usersController = {
     },
 
     logout: (req, res) => {
-        if(req.cookies.email){
-            res.clearCookie('email');
-            
+        
+        if(req.cookies.session){
+            res.clearCookie('session');
+            res.redirect('/');
         }
         req.session.destroy();
         res.redirect('/');
