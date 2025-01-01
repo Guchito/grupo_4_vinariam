@@ -36,7 +36,7 @@ Visit the live site: [Vinariam E-Commerce](https://vinariam.vercel.app/)
 | `dotenv`           | Loading environment variables from a `.env` file. |
 | `ejs`              | Templating.                                       |
 | `express-generator`| Generating the Express.js application.            |
-| `express-session`  | Managing sessions.                                |
+| `cookie-session`   | Managing sessions.                                |
 | `express-validator`| Validating requests.                              |
 | `method-override`  | Overriding HTTP methods.                          |
 | `multer`           | Handling multipart/form-data requests.            |
