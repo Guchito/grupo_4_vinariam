@@ -8,6 +8,7 @@ const userNameOld = userName.value;
 const password = document.querySelector('#newPassword');
 const passwordConfirm = document.querySelector('#NewPasswordConfirm');
 const image = document.querySelector('#image');
+const URL = process.env.URL || 'http://localhost:3000'
 
 const errorsElement = document.querySelector(".errors");
  
@@ -19,24 +20,24 @@ form.addEventListener("submit", (event) => {
     if (image.value != "") {
         const ext = this.image.files[0].type;
         if(!(ext == "image/jpeg" || ext == "image/png" || ext == "image/csv" || ext == "image/jpg")){
-            errors.push('El avatar tiene una extensión inválida');
+            errors.push('The avatar has an invalid extension');
         }
     }
     if(name.value.trim().length < 3) {
-        errors.push('El nombre debe tener más de 2 caracteres')
+        errors.push('Name must have at least 3 characters')
     }
     if(lastName.value.trim().length < 3) {
-        errors.push('El apellido debe tener más de 2 caracteres')
+        errors.push('Last name must have at least 3 characters')
     }
     if(userName.value.trim().length <= 0){
-       errors.push('El nombre de usuario es obligatorio')
+       errors.push('Username is required')
     }
     let regex =/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
     if(!regex.test(email.value)){
-        errors.push('Ingrese un email valido')
+        errors.push('Enter valid email')
     }
     const data1 = {email: email.value};
-    let promiseEmail = fetch('http://localhost:3000/api/users/checkEmail', {
+    let promiseEmail = fetch(`${URL}/api/users/checkEmail`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'},
@@ -46,7 +47,7 @@ form.addEventListener("submit", (event) => {
         return response.json();
     })
     const data2 = {userName: userName.value};
-    let promiseUserName = fetch('http://localhost:3000/api/users/checkUserName', {
+    let promiseUserName = fetch(`${URL}/api/users/checkUserName`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'},
@@ -62,13 +63,13 @@ form.addEventListener("submit", (event) => {
         if(email.value != emailOld) 
         {
             if(statusEmail == 'Exist'){
-                errors.push('El email ya esta en uso')
+                errors.push('The email already exists')
             }
         }
 
         if(userName.value != userNameOld){
             if(statusUserName == 'Exist'){
-                errors.push('El nombre de usuario ya esta en uso')
+                errors.push('Username already exists')
             } 
         }
         if (errors.length > 0) {
@@ -81,13 +82,6 @@ form.addEventListener("submit", (event) => {
 
 
     })
-    
- 
-        
-    
-    //Falta validar username
-    //Falta validar e-mail, si pertenece al user en este form hay que dejarlo pasar
-    //Falta ver el tema del password
   
     
 })

@@ -1,4 +1,5 @@
 const db = require('../../database/models');
+const URL = process.env.URL || 'http://localhost:3000'
 
 const apiProductsController = {
 	list: async (req, res) => {
@@ -10,7 +11,7 @@ const apiProductsController = {
 
         const allProducts = await db.Product.findAll()
         const lastProduct = allProducts[allProducts.length - 1];
-        lastProduct.dataValues.imgUrl = `http://localhost:3000/img/${lastProduct.img}`
+        lastProduct.dataValues.imgUrl = `${URL}/img/${lastProduct.img}`
 
        
         const allProductsPaginated = await db.Product.findAndCountAll({
@@ -31,8 +32,8 @@ const apiProductsController = {
         const totalPages = Math.ceil(allProductsPaginated.count / 5)
         const products = allProductsPaginated.rows.map(product => {
             return (
-                product.dataValues.urlDetail = `http://localhost:3000/api/products/${product.id}`,
-                product.dataValues.imgUrl = `http://localhost:3000/img/${product.img}`,
+                product.dataValues.urlDetail = `${URL}/api/products/${product.id}`,
+                product.dataValues.imgUrl = `${URL}/img/${product.img}`,
                 product
    
             )
@@ -92,9 +93,9 @@ const apiProductsController = {
                 categories,
                 totalPrice,
                 amountCategories,
-                previousPage: page > 1 ? `http://localhost:3000/api/products?page=${page - 1}` : null,
-                currentPage: `http://localhost:3000/api/products?page=${page}`,
-                nextPage: page < totalPages ? `http://localhost:3000/api/products?page=${page + 1}` : null,
+                previousPage: page > 1 ? `${URL}/api/products?page=${page - 1}` : null,
+                currentPage: `${URL}/api/products?page=${page}`,
+                nextPage: page < totalPages ? `${URL}/api/products?page=${page + 1}` : null,
                 totalPages,
                 lastProduct
             }, 
@@ -118,7 +119,7 @@ const apiProductsController = {
 
         })
             
-    product.dataValues.urlImg = `http://localhost:3000/img/users/${product.img}`
+    product.dataValues.urlImg = `${URL}/img/users/${product.img}`
     
     res.json({
         meta: {
