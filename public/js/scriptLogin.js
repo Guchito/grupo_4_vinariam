@@ -1,6 +1,7 @@
 const form = document.querySelector('form');
 const email = document.querySelector('#email');
 const password = document.querySelector('#password');
+const URL = process.env.URL || 'http://localhost:3000'
 
 const errorsElement = document.querySelector(".errors");
 
@@ -10,14 +11,14 @@ form.addEventListener("submit", (event) => {
     errorsElement.innerHTML = '';
 
     if(password.value.trim().length <= 0) {
-        errors.push('La contraseña es obligatoria')
+        errors.push('Password is required')
     } 
     let regex =/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
     if(!regex.test(email.value)){
-        errors.push('ingrese un email valido')
+        errors.push('Inster valid email')
     } 
     const data = {email: email.value, password: password.value};
-    fetch('http://localhost:3000/api/users/login', {
+    fetch(`${URL}/api/users/login`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'},
@@ -30,7 +31,7 @@ form.addEventListener("submit", (event) => {
         const status = check.meta.status;
 
         if(status == '400'){
-            errors.push('El email y la contraseña no coinciden')
+            errors.push('Email and password dont match')
 
         }
 

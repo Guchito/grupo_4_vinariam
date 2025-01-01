@@ -1,5 +1,7 @@
 const db = require('../../database/models');
 const bcrypt = require('bcryptjs');
+const URL = process.env.URL || 'http://localhost:3000'
+
 
 const apiUsersController = {
 	list: async (req, res) => {
@@ -17,8 +19,8 @@ const apiUsersController = {
         const totalPages = Math.ceil(allUsers.count / 5)
         const users = allUsers.rows.map(user => {
             return (
-                user.dataValues.urlDetail = `http://localhost:3000/api/users/${user.id}`,
-                user.dataValues.imgUrl = `http://localhost:3000/img/users/${user.avatar}`,
+                user.dataValues.urlDetail = `${URL}/api/users/${user.id}`,
+                user.dataValues.imgUrl = `${URL}/img/users/${user.avatar}`,
                 user
                 
             )
@@ -27,9 +29,9 @@ const apiUsersController = {
             meta: {
                 status: "success", 
                 count: allUsers.count,
-                previousPage: page > 1 ? `http://localhost:3000/api/users?page=${page - 1}` : null,
-                currentPage: `http://localhost:3000/api/users?page=${page}`,
-                nextPage: page < totalPages ? `http://localhost:3000/api/users?page=${page + 1}` : null,
+                previousPage: page > 1 ? `${URL}/api/users?page=${page - 1}` : null,
+                currentPage: `${URL}/api/users?page=${page}`,
+                nextPage: page < totalPages ? `${URL}/api/users?page=${page + 1}` : null,
                 totalPages: totalPages
             }, 
             data: {
@@ -48,7 +50,7 @@ const apiUsersController = {
 
         })
             
-    user.dataValues.urlImg = `http://localhost:3000/img/users/${user.avatar}`
+    user.dataValues.urlImg = `${URL}/img/users/${user.avatar}`
     
     res.json({
         meta: {
