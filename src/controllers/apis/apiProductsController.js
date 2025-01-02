@@ -108,34 +108,49 @@ const apiProductsController = {
     },
 
     detail: async (req, res, next) => {
-
-        const product = await db.Product.findByPk(req.params.id, {
-            include: [
-            {
-                all: true, 
-                nested: true
-            }
-        ], 
-
-        })
-            
-    product.dataValues.urlImg = `${URL}/img/users/${product.img}`
+        try {
+            const product = await db.Product.findByPk(req.params.id, {
+                include: [
+                    {
+                        all: true, 
+                        nested: true
+                    }
+                ]
+            });
     
-    res.json({
-        meta: {
-            status: "success", 
-            count: product.length
-        }, 
-        data: {
-            product
-
+            if (!product) {
+                return res.status(404).json({
+                    meta: {
+                        status: 'error',
+                        message: 'Product not found',
+                    }
+                });
+            }
+    
+            // Add image URL to product data
+            product.dataValues.urlImg = `${URL}/img/${product.img}`;
+    
+            res.status(200).json({
+                meta: {
+                    status: 'success', 
+                    count: 1, // Since we're returning a single product
+                }, 
+                data: {
+                    product
+                }
+            });
+        } catch (error) {
+            console.error(error);
+            res.status(500).json({
+                meta: {
+                    status: 'error',
+                    message: 'An error occurred while fetching the product details',
+                }
+            });
         }
-    })
-
     }
 }
 
 module.exports = apiProductsController;
 
 
-// guardar en session storage esos productos id que esta queriendo comprar pero que no esta logueado, y cuando te logueas lo mandas
