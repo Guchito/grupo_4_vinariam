@@ -5,155 +5,209 @@ const URL = process.env.URL || 'http://localhost:3000'
 
 const apiUsersController = {
 	list: async (req, res) => {
-        const page = Number(req.query.page) || 1;
-        console.log(page)
-        const allUsers = await db.User.findAndCountAll({
-                attributes: ['id', 'user_name','name', 'last_name', 'dob' , 'email', 'avatar'], 
-                order: [
-                    ['id']
-                ],
-                limit: 5,
-                offset: 5 * (page - 1)
-
-            })
-        const totalPages = Math.ceil(allUsers.count / 5)
-        const users = allUsers.rows.map(user => {
-            return (
-                user.dataValues.urlDetail = `${URL}/api/users/${user.id}`,
-                user.dataValues.imgUrl = `${URL}/img/users/${user.avatar}`,
-                user
-                
-            )
-        })
-        res.json({
-            meta: {
-                status: "success", 
-                count: allUsers.count,
-                previousPage: page > 1 ? `${URL}/api/users?page=${page - 1}` : null,
-                currentPage: `${URL}/api/users?page=${page}`,
-                nextPage: page < totalPages ? `${URL}/api/users?page=${page + 1}` : null,
-                totalPages: totalPages
-            }, 
-            data: {
-                users,
-
-            }
-        })
-        
+        try {
+            const page = Number(req.query.page) || 1;
+            const limit = 5;
+            const offset = limit * (page - 1);
+    
+            const allUsers = await db.User.findAndCountAll({
+                attributes: ['id', 'user_name', 'name', 'last_name', 'dob', 'email', 'avatar'],
+                order: [['id']],
+                limit,
+                offset,
+            });
+    
+            const totalPages = Math.ceil(allUsers.count / limit);
+    
+            const users = allUsers.rows.map(user => {
+                user.dataValues.urlDetail = `${URL}/api/users/${user.id}`;
+                user.dataValues.imgUrl = `${URL}/img/users/${user.avatar}`;
+                return user;
+            });
+    
+            res.json({
+                meta: {
+                    status: "success",
+                    count: allUsers.count,
+                    previousPage: page > 1 ? `${URL}/api/users?page=${page - 1}` : null,
+                    currentPage: page,
+                    nextPage: page < totalPages ? `${URL}/api/users?page=${page + 1}` : null,
+                    totalPages,
+                },
+                data: {
+                    users,
+                },
+            });
+        } catch (error) {
+            console.error(error);
+            res.status(500).json({
+                meta: {
+                    status: "error",
+                    message: "An error occurred while fetching the users list",
+                },
+            });
+        }
     },
 
     detail: async (req, res, next) => {
-
-        const user = await db.User.findByPk(req.params.id, {
-            attributes: ['id','name', 'email', 'last_name', 'user_name', 'dob', 'avatar'], 
-            limit: 5
-
-        })
-            
-    user.dataValues.urlImg = `${URL}/img/users/${user.avatar}`
+        try {
+            const user = await db.User.findByPk(req.params.id, {
+                attributes: ['id', 'name', 'email', 'last_name', 'user_name', 'dob', 'avatar'],
+            });
     
-    res.json({
-        meta: {
-            status: "success", 
-            count: user.length
-        }, 
-        data: {
-            user
-
+            if (!user) {
+                return res.status(404).json({
+                    meta: {
+                        status: "error",
+                        message: "User not found",
+                    },
+                });
+            }
+    
+            // Add the URL for the user's avatar
+            user.dataValues.urlImg = `${URL}/img/users/${user.avatar}`;
+    
+            res.json({
+                meta: {
+                    status: "success",
+                    count: 1, // Single user fetched
+                },
+                data: {
+                    user,
+                },
+            });
+        } catch (error) {
+            console.error(error);
+            res.status(500).json({
+                meta: {
+                    status: "error",
+                    message: "An error occurred while fetching the user details",
+                },
+            });
         }
-    })
-
     },
 
     login: async (req, res, next) => {
-        const email = req.body.email;
-        const password = req.body.password;
-
-        const user = await db.User.findOne({
-            where: {
-                email,
+        try {
+            const { email, password } = req.body;
+    
+            const user = await db.User.findOne({
+                where: { email },
+            });
+    
+            if (user && bcrypt.compareSync(password, user.password)) {
+                // Generate token or handle session creation here if needed
+                res.status(200).json({
+                    meta: {
+                        status: 'success',
+                    },
+                    data: {
+                        user: {
+                            id: user.id,
+                            email: user.email,
+                            name: user.name,
+                            last_name: user.last_name,
+                        }, // Return only necessary user information
+                    },
+                });
+            } else {
+                res.status(401).json({
+                    meta: {
+                        status: 'error',
+                        message: 'Invalid email or password',
+                    },
+                });
             }
-        })
-
-        if (user && bcrypt.compareSync(password, user.password)) {
-            res.json({
+        } catch (error) {
+            console.error(error);
+            res.status(500).json({
                 meta: {
-                    status: 'success',
+                    status: 'error',
+                    message: 'An error occurred while processing your request',
                 },
-                data: {
-                    user
-                }
-            })
-            return;
-        } else {
-
-        res.json({
-            meta: {
-                status: '400',
-            }
-            
-        })
-    }
-    }, 
+            });
+        }
+    },
 
     checkEmail: async (req, res, next) => {
-        const email = req.body.email;
-        console.log(req.body.email);
-        const user = await db.User.findOne({
-            where: {
-                email,
+        try {
+            const { email } = req.body;
+    
+            const user = await db.User.findOne({
+                where: { email },
+            });
+    
+            if (!user) {
+                return res.status(404).json({
+                    meta: {
+                        status: 'No exist',
+                    },
+                });
             }
-        })
-
-        if (!user) {
-            res.json({
-                meta: {
-                    status: 'No exist',
-
-                }
-            })
-            return;
-        }
-
-        res.json({
-            meta: {
-                status: 'Exist',
-                data: {
-                    user
-                }
-            }
-            
-        })
-
-    }, 
-    checkUserName: async (req, res, next) => {
-        const user_name = req.body.userName;
-        console.log(req.body.userName);
-        const user = await db.User.findOne({
-            where: {
-                user_name,
-            }
-        })
-
-        if (user) {
-            res.json({
+    
+            res.status(200).json({
                 meta: {
                     status: 'Exist',
-                    data: {
-                        user
-                    }
-                }
-            })
-            return;
+                },
+                data: {
+                    user: {
+                        id: user.id,
+                        email: user.email,
+                        name: user.name,
+                        last_name: user.last_name,
+                    }, // Return only necessary user information
+                },
+            });
+        } catch (error) {
+            console.error(error);
+            res.status(500).json({
+                meta: {
+                    status: 'error',
+                    message: 'An error occurred while processing your request',
+                },
+            });
         }
-
-        res.json({
-            meta: {
-                status: 'No exist',
+    },
+    checkUserName: async (req, res, next) => {
+        try {
+            const { userName } = req.body;
+    
+            const user = await db.User.findOne({
+                where: { user_name: userName },
+            });
+    
+            if (user) {
+                return res.status(200).json({
+                    meta: {
+                        status: 'Exist',
+                    },
+                    data: {
+                        user: {
+                            id: user.id,
+                            user_name: user.user_name,
+                            name: user.name,
+                            last_name: user.last_name,
+                        }, // Return only the necessary user information
+                    },
+                });
             }
-            
-        })
+    
+            return res.status(404).json({
+                meta: {
+                    status: 'No exist',
+                },
+            });
+        } catch (error) {
+            console.error(error);
+            res.status(500).json({
+                meta: {
+                    status: 'error',
+                    message: 'An error occurred while checking the username',
+                },
+            });
+        }
     }
-}
+
+};
 
 module.exports = apiUsersController;

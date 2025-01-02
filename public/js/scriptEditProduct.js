@@ -37,30 +37,30 @@ form.addEventListener("submit", (event) => {
 
     errorsElement.innerHTML = '';
     if(name.value.trim().length < 3) {
-        errors.push('El nombre debe tener más de 3 caracteres.')
+        errors.push('The name must have at least 3 characters.')
     }
     if(detail.value.trim().length < 10) {
-        errors.push('Ingresá una descirpción detallada de al menos 10 caracteres.')
+        errors.push('Enter a detailed description of at least 10 characters.')
     }
     if(price.value.trim().length <= 0){
-        errors.push('Ingresá el valor del producto.')
+        errors.push('Enter the value of the product.')
     } 
     if(stock.value.trim().length <= 0) {
-        errors.push('Ingresá al menos una unidad.')
+        errors.push('Enter at least one unit.')
     }
     if(discount.value == ""){
-        errors.push('El descuento no puede estar vacío.');
+        errors.push('Enter a discount.');
     }
     if (productCategory == ""){
-        errors.push('Debe seleccionar al menos una categoría de producto.')
-        window.alert("Seleccioná qué tipo de producto vas a cargar.");
+        errors.push('You must select at least one product category.')
+        window.alert("Select what type of product you want to upload.");
     }
     if (image.value == "") {
-        errors.push('Debe cargar la imagen del producto.');
+        errors.push('You must upload the product image.');
     } else {
         const ext = this.image.files[0].type;
         if(!(ext == "image/jpeg" || ext == "image/png" || ext == "image/csv" || ext == "image/jpg")){
-            errors.push('La imagen tiene una extensión inválida.');
+            errors.push('The image has an invalid extension.');
         }
     }
     if (errors.length) {
