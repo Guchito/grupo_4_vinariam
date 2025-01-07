@@ -322,8 +322,11 @@ width: 100%;
         height: 35px;
     }
 }
-.banner{
+.banner{ 
     width: 100%;
+    max-width: 1082px;
+    max-height: 285px;
+
 }
 .destacados h1{
     font-weight: 400;
